@@ -7,14 +7,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="heading-title iq-breadcrumb-title iq-mtb-100">
-                            <h2 class="title iq-tw-8 iq-font-white">Life Lack Meaning</h2>
+                            <h2 class="title iq-tw-8 iq-font-white">{{$articles->libelle}}</h2>
                             <div class="white"></div>
                         </div>
 
                     </div>
                     <div class="col-md-6 align-self-center">
                         <ul class="breadcrumb">
-							<li class="breadcrumb-item"><a href="{{url('/')}}"><i
+						    	<li class="breadcrumb-item"><a href="{{url('/')}}"><i
 										class="fa fa-home" aria-hidden="true"></i>CIBLE</a></li>
 							<li class="breadcrumb-item active">
                                 <a href="{{route('blog')}}">BLOG</a></li>
@@ -42,7 +42,7 @@
 
                                                 <div class="iq-blog-image">
                                                     <img width="1200" height="550"
-                                                        src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-modale-info.png')}}"
+                                                        src="{{asset($articles->img)}}"
                                                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                                                         alt="" loading="lazy"
                                                         sizes="100vw" />
@@ -61,18 +61,17 @@
 
 																<i class="fa fa-calendar" aria-hidden="true"></i>
 																<span class="screen-reader-text">Posted on</span> <a
-																	
+
 																	rel="bookmark"><time
 																		class="entry-date published updated"
-																		datetime="2018-12-31T06:46:02+00:00">December
-																		31, 2018</time></a>
+																		datetime="{{$articles->created_at}}">{{$articles->created_at}}</time></a>
 															</li>
 															<li class="list-inline-item">
 																<a href="javascript:void(0)"><i class="fa fa-comment-o"
 																		aria-hidden="true"></i>
 																	0 </a>
 															</li>
-															
+
 															<li class="list-inline-item">
 																<a href=""><i class="fa fa-eye"
 																		aria-hidden="true"></i>
@@ -82,21 +81,7 @@
                                                     </div>
 
                                                     <div class="blog-content mt-4">
-                                                        <p>There are many variations of passages of Lorem Ipsum
-                                                            available, but the majority have suffered alteration in some
-                                                            form, by injected humour, or randomised words which
-                                                            don&#8217;t look even slightly believable. If you are going
-                                                            to use a passage of Lorem Ipsum, you need to be sure there
-                                                            isn&#8217;t anything embarrassing hidden in the middle of
-                                                            text.</p>
-                                                        <p class="mb-0">All the Lorem Ipsum generators on the Internet
-                                                            tend to repeat predefined chunks as necessary, making this
-                                                            the first true generator on the Internet. It uses a
-                                                            dictionary of over 200 Latin words, combined with a handful
-                                                            of model sentence structures, to generate Lorem Ipsum which
-                                                            looks reasonable. The generated Lorem Ipsum is therefore
-                                                            always free from repetition, injected humour, or
-                                                            non-characteristic words etc.</p>
+                                                        <p>{{$articles->desc}}</p>
                                                     </div>
 
 
@@ -110,56 +95,54 @@
                                                             rel="nofollow" id="cancel-comment-reply-link"
                                                             href="index.html#respond" style="display:none;">Cancel
                                                             reply</a></small></h3>
-                                                <form
-                                                    action="https://wordpress.iqonic.design/appino/particles-3/wp-comments-post.php"
-                                                    method="post" id="commentform" class="comment-form" novalidate>
+
+                                                {!! Form::open(['route' => 'commentaires.store']) !!}
+
                                                     <p class="comment-notes"><span id="email-notes">
-                                                        Votre adresse email ne sera pas publiée. 
+                                                        Votre adresse email ne sera pas publiée.
                                                         </span> ( Les champs requis sont indiqués <span class="required">*</span>)
                                                         </p>
                                                     <p class="comment-form-comment"><label for="comment">Commentaire</label>
-                                                        <textarea id="comment" name="comment" cols="45" rows="8"
-                                                            maxlength="65525" required="required"></textarea></p>
-                                                    <p class="comment-form-author w-50 mx-0 pr-2"><label for="author">Nom & prénoms <span
-                                                                class="required">*</span></label> <input id="author"
-                                                            name="author" type="text" value="" size="30" maxlength="245"
-                                                            required='required' /></p>
-                                                    <p class="comment-form-email w-50 mx-0"><label for="email">Email <span
-                                                                class="required">*</span></label> <input id="email"
-                                                            name="email" type="email" value="" size="30" maxlength="100"
-                                                            aria-describedby="email-notes" required='required' /></p>
-                                                    <!-- <p class="comment-form-url"><label for="url">Website</label> <input
-                                                            id="url" name="url" type="url" value="" size="30"
-                                                            maxlength="200" /></p> -->
-                                                    <!-- <p class="comment-form-cookies-consent"><input
-                                                            id="wp-comment-cookies-consent"
-                                                            name="wp-comment-cookies-consent" type="checkbox"
-                                                            value="yes" /> <label for="wp-comment-cookies-consent">Save
-                                                            my name, email, and website in this browser for the next
-                                                            time I comment.</label></p> -->
-                                                    <p class="form-submit" data-toggle="modal" data-target="#exampleModalCenter"><input name="submit" type="submit"
-                                                            id="submit" class="submit" value="Poster mon commentaire" /> <input
-                                                            type='hidden' name='comment_post_ID' value='882'
-                                                            id='comment_post_ID' />
-                                                        <input type='hidden' name='comment_parent' id='comment_parent'
-                                                            value='0' />
+                                                        <textarea id="comment" name="desc" cols="45" rows="8"
+                                                            maxlength="65525" required="required">
+
+                                                        </textarea>
                                                     </p>
+                                                    <p class="comment-form-author w-50 mx-0 pr-2">
+                                                        <label for="author">Nom & prénoms <span
+                                                                class="required">*</span></label>
+                                                        <input id="author"
+                                                            name="name" type="text" value="" size="30" maxlength="245"
+                                                            required='required' />
+                                                    </p>
+                                                    <p class="comment-form-email w-50 mx-0">
+                                                        <label for="email">Email <span
+                                                                class="required">*</span>
+                                                        </label>
+                                                        <input id="email"
+                                                            name="email" type="email" value="" size="30" maxlength="100"
+                                                            aria-describedby="email-notes" required='required' />
+                                                    </p>
+                                                        <input name="submit" type="submit"
+                                                               id="submit" class="submit" value="Poster mon commentaire" />
                                                     <input type="hidden" id="ak_js" name="ak_js"
-                                                        value="18" /><textarea name="ak_hp_textarea" cols="45" rows="8"
-                                                        maxlength="100" style="display: none !important;"></textarea>
-                                                </form>
+                                                        value="18" />
+                                                    <textarea name="ak_hp_textarea" cols="45" rows="8"
+                                                        maxlength="100" style="display: none !important;">
+                                                    </textarea>
+                                                {!! Form::close() !!}
                                             </div><!-- #respond -->
                                         </div><!-- #comments -->
                                     </article><!-- #post-## -->
                                     <!-- Button trigger modal -->
 
-  
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="border: none;">
-                                                   
+
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
