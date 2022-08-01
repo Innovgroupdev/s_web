@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $description
  * @property string $name
  * @property string $email
+ * @property string $article_id
  * @property boolean $is_valid
  */
 class Commentaire extends Model
@@ -23,16 +24,24 @@ class Commentaire extends Model
     use HasFactory;
 
     public $table = 'commentaires';
-    
+
 
     protected $dates = ['deleted_at'];
 
 
+    /**
+     * Get the post that owns the comment.
+     */
+    public function article()
+    {
+        return $this->belongsTo(Articles::class, 'article_id');
+    }
 
     public $fillable = [
         'description',
         'name',
         'email',
+        'article_id',
         'is_valid'
     ];
 
@@ -45,6 +54,7 @@ class Commentaire extends Model
         'description' => 'string',
         'name' => 'string',
         'email' => 'string',
+        'article_id' => 'string',
         'is_valid' => 'boolean'
     ];
 
@@ -59,5 +69,5 @@ class Commentaire extends Model
         'email' => 'required'
     ];
 
-    
+
 }

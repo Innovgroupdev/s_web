@@ -6,7 +6,7 @@
             <th>Libelle</th>
         <th>Description</th>
 {{--        <th>Img Url</th>--}}
-        <th>Nom et prénom</th>
+        <th>Autheur</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -17,7 +17,7 @@
                 <td>{{ $categories->lib }}</td>
             <td>{{ $categories->desc }}</td>
 {{--            <td><img src="{{ $categories->img_url }}"></td>--}}
-            <td>{{ $categories->name }}</td>
+            <td>{{ optional($categories->user)->name}}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['categories.destroy', $categories->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

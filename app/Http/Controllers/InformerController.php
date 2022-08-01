@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateInformerRequest;
 use App\Http\Requests\UpdateInformerRequest;
+use App\Models\Informer;
 use App\Repositories\InformerRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -62,7 +63,21 @@ class InformerController extends AppBaseController
 
         return redirect(route('informers.index'));
     }
+    public function enregistre(Request $request)
+    {
+        $request->validate([
+            'numero' => 'required|min:5|unique:informers',
+            'email' => 'required|unique:informers',
 
+        ]);
+            $informer = new Informer();
+            $informer->pays = $request->pays;
+            $informer->numero = $request->numero;
+            $informer->email = $request->email;
+            $informer->save();
+            return response()->json($informer);
+
+    }
     /**
      * Display the specified Informer.
      *

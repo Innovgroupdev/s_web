@@ -2,20 +2,41 @@
     <table class="table" id="commentaires-table">
         <thead>
         <tr>
-            <th>Description</th>
-        <th>Name</th>
+            <th>ID</th>
+        <th>Auteur</th>
         <th>Email</th>
-        <th>Is Valid</th>
+            <th>Description</th>
+
+        <th>Articles</th>
+            <th>Validaiton</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($commentaires as $commentaire)
             <tr>
-                <td>{{ $commentaire->description }}</td>
+                <td>{{ $commentaire->id }}</td>
+
+
             <td>{{ $commentaire->name }}</td>
             <td>{{ $commentaire->email }}</td>
-            <td>{{ $commentaire->is_valid }}</td>
+                <td>{{ $commentaire->description }}</td>
+
+                <td>{{ optional($commentaire->article)->libelle}}</td>
+                @if($commentaire->is_valid == 0)
+                <td>
+                        <span style="color: red">
+                            En cours
+                        </span>
+                </td>
+                    @else
+                    <td>
+                        <span style="color: #0b2e13">
+                             Traité
+                        </span>
+                    </td>
+                @endif
+
                 <td width="120">
                     {!! Form::open(['route' => ['commentaires.destroy', $commentaire->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

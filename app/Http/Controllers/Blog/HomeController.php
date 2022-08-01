@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
 use App\Models\Articles;
+use App\Models\Commentaire;
 use App\Models\Publicites;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,10 +19,10 @@ class HomeController extends Controller
     {
         $articles = DB::table('articles')->orderBy('created_at', 'desc')->get();
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
-        //dd($articleRecentFive);
+        $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
 
         $publicites = Publicites::all();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive']));
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes']));
     }
 
     public function article($id)
@@ -38,8 +39,10 @@ class HomeController extends Controller
         }
 
         $publicites = Publicites::all();
+
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles']));
+        $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes']));
     }
 
     public function detail()
@@ -47,7 +50,8 @@ class HomeController extends Controller
 
         $publicites = Publicites::all();
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive']));
+        $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes']));
     }
 
     public function category()

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
+use App\Models\News;
 use App\Repositories\NewsRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Illuminate\Support\Facades\DB;
 use Response;
 
 class NewsController extends AppBaseController
@@ -62,6 +64,30 @@ class NewsController extends AppBaseController
 
         return redirect(route('news.index'));
     }
+
+    public function enregistre(Request $request)
+    {
+        if($request->get('email')){
+            $news = new News();
+            $news->email = $request->email;
+            $news->save();
+            return response()->json($news);
+        }
+
+    }
+
+//    public function validateEmail(Request $request)
+//    {
+//        $news = News::where('email', $request->email)->first('email');
+//        if($news){
+//            $return =  false;
+//        }
+//        else{
+//            $return= true;
+//        }
+//        echo json_encode($return);
+//        exit;
+//    }
 
     /**
      * Display the specified News.

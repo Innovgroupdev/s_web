@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCommentaireRequest;
 use App\Http\Requests\UpdateCommentaireRequest;
+use App\Models\Commentaire;
 use App\Repositories\CommentaireRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -55,7 +56,6 @@ class CommentaireController extends AppBaseController
     public function store(CreateCommentaireRequest $request)
     {
         $input = $request->all();
-        dd($input);
 
         $commentaire = $this->commentaireRepository->create($input);
 
@@ -64,6 +64,23 @@ class CommentaireController extends AppBaseController
         return redirect(route('commentaires.index'));
     }
 
+    public function enregistreCom(CreateCommentaireRequest $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'email' => 'required',
+
+        ]);
+        $input = $request->all();
+        $comment = $this->commentaireRepository->create($input);
+//        $comment->name = $request->name;
+//        $comment->email = $request->email;
+//        $comment->description = $request->description;
+        $comment->save();
+        return response()->json($comment);
+
+    }
     /**
      * Display the specified Commentaire.
      *

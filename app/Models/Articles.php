@@ -31,13 +31,33 @@ class Articles extends Model
      * @return BelongsTo
      * @description get the category for the blog post.
      */
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo(Categories::class);
+        return $this->belongsTo(Categories::class, 'categorie_id');
     }
-    protected $dates = ['deleted_at'];
+
+    /**
+     * Get the comments for the blog article.
+     */
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 
 
+//    public function category()
+//    {
+//        return $this->belongsTo(Categories::class, "categorie_id");
+//    }
+//    public function getCategoryAttribute(){
+//        return $this->category->with('id','categorie_id')->get();
+//    }
+//    protected $dates = ['deleted_at'];
+//
+//    public static function with($relations)
+//    {
+//        return parent::with($relations); //
+//    }
 
     public $fillable = [
         'libelle',

@@ -31,7 +31,7 @@
 <!-- Categorie Id Field -->
 <div class="col-sm-12">
     {!! Form::label('categorie_id', 'Categorie :') !!}
-    <p>{{ $articles->lib }}</p>
+    <p>{{ optional($articles->category)->lib }}</p>
 </div>
 
 <!-- Created At Field -->
