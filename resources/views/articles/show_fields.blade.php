@@ -34,6 +34,11 @@
     <p>{{ optional($articles->category)->lib }}</p>
 </div>
 
+<div class="col-sm-12">
+    {!! Form::label('contenu', 'Contenu :') !!}
+    <p>{{ $articles->contenu }}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="col-sm-12">
     {!! Form::label('created_at', 'Date de création:') !!}
