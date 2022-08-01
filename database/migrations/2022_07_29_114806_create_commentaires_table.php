@@ -20,6 +20,9 @@ class CreateCommentairesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->boolean('is_valid');
+            $table->integer('article_id')->unsigned();
+            $table->softDeletes();
+            $table->foreign('article_id')->references('id')->on('articles');
             $table->timestamps();
             $table->softDeletes();
         });
