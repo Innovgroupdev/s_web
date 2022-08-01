@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCategoriesRequest;
 use App\Http\Requests\UpdateCategoriesRequest;
+use App\Models\Articles;
 use App\Models\Categories;
 use App\Models\User;
 use App\Repositories\CategoriesRepository;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\DB;
 use Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CategoriesController extends AppBaseController
 {
@@ -28,18 +30,16 @@ class CategoriesController extends AppBaseController
      *
      * @param Request $request
      *
-     * @return Response
+     * @return JsonResponse
      */
     public function index(Request $request)
     {
         //$categories = $this->categoriesRepository->all();
+        $categories = Categories::find(3);
+        dd($categories->toJson());
 
-        $categories = DB::table('users')
-            ->join('categories', 'categories.user_id', '=', 'users.id')
-            ->get();
 
-        return view('categories.index')
-            ->with('categories', $categories);
+        return (new JsonResponse($categories->toJson(), 200));
     }
 
 
@@ -63,12 +63,26 @@ class CategoriesController extends AppBaseController
     public function store(Request $request)
     {
        // $input = $request->all();
-        $user = auth()->user();
-        $categories = Categories::create([
-            'lib' => $request->lib,
-            'desc' => $request->desc,
-            'user_id' => $user->id
+        $request->validate([
+            'lib' => 'string|min:3',
+            'desc' => 'string|min:5',
+
         ]);
+        $user = auth()->user();
+        //dd($user);
+        $categories = new Categories();
+        $categories->lib = $request->lib;
+        $categories->desc = $request->desc;
+        $categories->user_id = $user->id;
+        if(!empty($categories)){
+            $categories->save();
+        }
+        else{
+            Flash::error('Categories empty');
+        }
+
+
+        //dd($categorie);
 
       //  $categories = $this->categoriesRepository->create($input);
 

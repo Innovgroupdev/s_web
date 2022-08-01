@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -22,6 +23,14 @@ class Categories extends Model
 
     public $table = 'categories';
 
+    /**
+     * @return HasMany
+     * @description get all articles for the category
+     */
+    public function articles()
+    {
+        return $this->hasMany(Articles::class);
+    }
 
     protected $dates = ['deleted_at'];
 
@@ -48,8 +57,8 @@ class Categories extends Model
      * @var array
      */
     public static $rules = [
-        'lib' => 'required',
-        'desc' => 'img string text'
+        'lib' => 'required|min:3',
+        'desc' => 'required|min:5'
     ];
 
 

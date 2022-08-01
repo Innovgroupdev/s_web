@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -25,8 +26,15 @@ class Articles extends Model
     use HasFactory;
 
     public $table = 'articles';
-    
 
+    /**
+     * @return BelongsTo
+     * @description get the category for the blog post.
+     */
+    public function categories()
+    {
+        return $this->belongsTo(Categories::class);
+    }
     protected $dates = ['deleted_at'];
 
 
@@ -67,5 +75,5 @@ class Articles extends Model
         'categorie_id' => 'required'
     ];
 
-    
+
 }

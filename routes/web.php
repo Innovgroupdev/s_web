@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,5 +33,19 @@ Route::resource('articles', App\Http\Controllers\ArticlesController::class);
 
 ///Route::get('home', 'Blog\HomeController@index')->name('home');
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
-Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
+Route::get('/blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
+Route::get('article', 'Blog\HomeController@detail')->name('detail');
 Route::get('category', [App\Http\Controllers\Blog\HomeController::class, 'category'])->name('category');
+
+
+Route::resource('informers', App\Http\Controllers\InformerController::class);
+
+
+Route::resource('essayers', App\Http\Controllers\EssayerController::class);
+
+
+Route::resource('news', App\Http\Controllers\NewsController::class);
+
+Route::resource('commentaires', App\Http\Controllers\CommentaireController::class);
+
+//Route::post("commentaire/register", [App\Http\Controllers\Blog\HomeController::class, 'store']);
