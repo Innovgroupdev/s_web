@@ -30,17 +30,45 @@ class CategoriesController extends AppBaseController
      *
      * @param Request $request
      *
-     * @return JsonResponse
+     * @return Response
      */
     public function index(Request $request)
     {
-        //$categories = $this->categoriesRepository->all();
-        $categories = Categories::find(3);
-        dd($categories->toJson());
+        $categories = $this->categoriesRepository->all();
 
+        //$categories = Categories::all();
 
-        return (new JsonResponse($categories->toJson(), 200));
+        return view('categories.index')->with('categories', $categories);
     }
+
+//    /**
+//     * Display a listing of the Categories.
+//     *
+//     * @param Request $request
+//     *
+//     * @return JsonResponse
+//     */
+//    public function index(Request $request)
+//    {
+//        $categories = Articles::with("category")->get();
+//        dd($categories);
+//        return (new JsonResponse($categories, 200));
+////        $categories = Categories::all();
+////        $articles = Articles::all();
+////        $items= collect();
+////        foreach ($categories as $category){
+////            foreach ($articles as $article){
+////                if($category->id == $article->categorie_id){
+////                    $items->push($article) ;
+////                }
+////            }
+////        }
+////        dd($items);
+//       // $category = Categories::find(3)->articles();
+//
+//        //$articles=$category->fresh('articles');
+//        //dd($category);
+//    }
 
 
     /**

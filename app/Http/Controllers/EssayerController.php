@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateEssayerRequest;
 use App\Http\Requests\UpdateEssayerRequest;
+use App\Models\Essayer;
 use App\Repositories\EssayerRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -63,6 +64,24 @@ class EssayerController extends AppBaseController
         return redirect(route('essayers.index'));
     }
 
+    public function enregistre(Request $request)
+    {
+        $request->validate([
+            'numero' => 'required|min:5|unique:informers',
+            'email' => 'required|unique:informers',
+
+        ]);
+        $essayer = new Essayer();
+        $essayer->nom = $request->nom;
+        $essayer->numero = $request->numero;
+        $essayer->email = $request->email;
+        $essayer->pays = $request->pays;
+        $essayer->profession = $request->profession;
+        $essayer->raison = $request->raison;
+        $essayer->save();
+        return response()->json($essayer);
+
+    }
     /**
      * Display the specified Essayer.
      *

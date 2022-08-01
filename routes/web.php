@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\News;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 /*
@@ -14,7 +15,9 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('partials.index');
+    //$news = News::all();
+    $countries = \App\Models\Country::all();
+    return view('partials.index',compact('countries'));
 });
 
 
@@ -33,8 +36,8 @@ Route::resource('articles', App\Http\Controllers\ArticlesController::class);
 
 ///Route::get('home', 'Blog\HomeController@index')->name('home');
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
-Route::get('/blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
-Route::get('article', 'Blog\HomeController@detail')->name('detail');
+Route::get('blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
+Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('category', [App\Http\Controllers\Blog\HomeController::class, 'category'])->name('category');
 
 
@@ -49,3 +52,8 @@ Route::resource('news', App\Http\Controllers\NewsController::class);
 Route::resource('commentaires', App\Http\Controllers\CommentaireController::class);
 
 //Route::post("commentaire/register", [App\Http\Controllers\Blog\HomeController::class, 'store']);
+Route::get('/validate-email',[App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
+Route::post("/enregistre", [App\Http\Controllers\NewsController::class, 'enregistre'])->name('enregistre');
+Route::post("informer-enregistre", [App\Http\Controllers\InformerController::class, 'enregistre'])->name('informer-enregistre');
+Route::post("essayer-enregistre", [App\Http\Controllers\EssayerController::class, 'enregistre'])->name('essayer-enregistre');
+Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');

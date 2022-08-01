@@ -32,13 +32,23 @@ class Categories extends Model
         return $this->hasMany(Articles::class);
     }
 
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     protected $dates = ['deleted_at'];
 
-
+//   public function getArticleAttribute(){
+//       return $this->article->where('id', 'categorie_id')->get;
+//   }
 
     public $fillable = [
         'lib',
-        'desc'
+        'des'
     ];
 
     /**

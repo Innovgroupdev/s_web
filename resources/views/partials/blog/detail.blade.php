@@ -1,3 +1,6 @@
+
+
+
 @extends('partials.model')
 @section('content')
 <section class="iq-breadcrumb overview-block-pb"
@@ -91,19 +94,16 @@
                                         </div>
                                         <div id="comments" class="comments-area">
                                             <div id="respond" class="comment-respond">
-                                                <h3 id="reply-title" class="comment-reply-title">Laisser un commentaire <small><a
-                                                            rel="nofollow" id="cancel-comment-reply-link"
-                                                            href="index.html#respond" style="display:none;">Cancel
-                                                            reply</a></small></h3>
+                                                <h3 id="reply-title" class="comment-reply-title">Laisser un commentaire </h3>
 
-                                                {!! Form::open(['route' => 'commentaires.store']) !!}
-
+                                                <form id="formComment">
+                                                    @csrf
                                                     <p class="comment-notes"><span id="email-notes">
                                                         Votre adresse email ne sera pas publiée.
                                                         </span> ( Les champs requis sont indiqués <span class="required">*</span>)
                                                         </p>
                                                     <p class="comment-form-comment"><label for="comment">Commentaire</label>
-                                                        <textarea id="comment" name="desc" cols="45" rows="8"
+                                                        <textarea id="desc" name="desc" cols="45" rows="8"
                                                             maxlength="65525" required="required">
 
                                                         </textarea>
@@ -111,26 +111,21 @@
                                                     <p class="comment-form-author w-50 mx-0 pr-2">
                                                         <label for="author">Nom & prénoms <span
                                                                 class="required">*</span></label>
-                                                        <input id="author"
-                                                            name="name" type="text" value="" size="30" maxlength="245"
+                                                        <input id="name" type="text" name="name" value="" size="30" maxlength="245"
                                                             required='required' />
                                                     </p>
                                                     <p class="comment-form-email w-50 mx-0">
                                                         <label for="email">Email <span
                                                                 class="required">*</span>
                                                         </label>
-                                                        <input id="email"
-                                                            name="email" type="email" value="" size="30" maxlength="100"
-                                                            aria-describedby="email-notes" required='required' />
+                                                        <input id="email" name="email" type="email" value="" size="30" maxlength="100"
+                                                             required='required' />
                                                     </p>
-                                                        <input name="submit" type="submit"
-                                                               id="submit" class="submit" value="Poster mon commentaire" />
-                                                    <input type="hidden" id="ak_js" name="ak_js"
-                                                        value="18" />
-                                                    <textarea name="ak_hp_textarea" cols="45" rows="8"
-                                                        maxlength="100" style="display: none !important;">
-                                                    </textarea>
-                                                {!! Form::close() !!}
+                                                    <span id="error_comment"></span>
+                                                    <input value="{{$articles->id}}" type="hidden" id="num"/>
+                                                    <input type="submit"  class="submit w-50 mx-auto" value="Poster mon commentaire" />
+                                                    <span id="saveSuccess"></span>
+                                                </form>
                                             </div><!-- #respond -->
                                         </div><!-- #comments -->
                                     </article><!-- #post-## -->
@@ -138,33 +133,33 @@
 
 
                                         <!-- Modal -->
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="border: none;">
+{{--                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--                                            <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--                                            <div class="modal-content">--}}
+{{--                                                <div class="modal-header" style="border: none;">--}}
 
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                                <div class="modal-body text-center pb-0 ">
-                                                    <div class="mx-auto my-3 text-center d-flex justify-content-center align-items-center" style="border: 2px solid orangered;width : 100px;height:100px;border-radius: 50%;align-items: center;">
-                                                        <p style="font-weight:600;font-size:3rem;color : orangered" class="m-0">
-                                                            !
-                                                        </p>
-                                                    </div>
-                                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 1.5rem;">Votre Commentaire à été envoyé !</h5>
-                                                <p class="mb-0 pb-0">
-                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam a ex blanditiis, magnam nihil atque in quo doloribus aut esse.
-                                                </p>
-                                                </div>
-                                                <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                                                <button type="button" class="btn btn-primary">D'accord</button>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
+{{--                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                                                    <span aria-hidden="true">&times;</span>--}}
+{{--                                                </button>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="modal-body text-center pb-0 ">--}}
+{{--                                                    <div class="mx-auto my-3 text-center d-flex justify-content-center align-items-center" style="border: 2px solid orangered;width : 100px;height:100px;border-radius: 50%;align-items: center;">--}}
+{{--                                                        <p style="font-weight:600;font-size:3rem;color : orangered" class="m-0">--}}
+{{--                                                            !--}}
+{{--                                                        </p>--}}
+{{--                                                    </div>--}}
+{{--                                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 1.5rem;">Votre Commentaire à été envoyé !</h5>--}}
+{{--                                                <p class="mb-0 pb-0">--}}
+{{--                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam a ex blanditiis, magnam nihil atque in quo doloribus aut esse.--}}
+{{--                                                </p>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">--}}
+{{--                                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->--}}
+{{--                                                <button type="button" class="btn btn-primary">D'accord</button>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                 </div>
 
                                 <div class="col-md-4 col-sm-12">
@@ -175,5 +170,80 @@
                     </main><!-- #main -->
                 </div><!-- .container -->
             </div><!-- #content -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script>
+                const formComment = document.querySelector("#formComment");
 
+                if(formComment){
+                    formComment.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData =  new FormData(e.target)
+                        console.log(formData.entries())
+
+                        let num = $("#num").val();
+                        let name = $("#name").val();
+                        let email = $("#email").val();
+                        let description = $("#desc").val();
+                       let _token = $("input[name=_token]").val();
+
+                        console.log(name,email,description,num)
+                       //debugger
+                        $.ajax({
+                            url: "{{route('commentaire-enregistre')}}",
+                            type: "POST",
+                            data:{
+                                email:email,
+                                name:name,
+                                description:description,
+                                article_id:num,
+                                _token:_token
+                            },
+                            success:function (response) {
+                                if (response){
+                                    $('#formComment')[0].reset();
+                                    $('#error_comment').hide();
+                                    $('#formComment')[0].hide();
+                                    $('#saveSuccess').html('<label> Commentaire enregistré avec succès</label>')
+                                }
+                            },
+                            error:function () {
+                                $('#error_comment').html('<label> Veuillez revoir les données saisies</label>')
+                            }
+
+                        });
+                    })
+                }
+
+                {{--$('#formComment').submit(function(e){--}}
+                {{--    e.preventDefault();--}}
+                {{--    let nom = $("#nom").val();--}}
+                {{--    let email = $("#email").val();--}}
+                {{--    let desc = $("#desc").val();--}}
+                {{--    let _token = $("input[name=_token]").val();--}}
+                {{--    alert(nom,desc,email)--}}
+
+                {{--    $.ajax({--}}
+                {{--        url: "{{route('commentaire-enregistre')}}",--}}
+                {{--        type: "POST",--}}
+                {{--        data:{--}}
+                {{--            email:email,--}}
+                {{--            nom:nom,--}}
+                {{--            desc:desc,--}}
+                {{--            _token:_token--}}
+                {{--        },--}}
+                {{--        success:function (response) {--}}
+                {{--            if (response){--}}
+                {{--                $('#formComment')[0].reset();--}}
+                {{--                $('#error_comment').hide();--}}
+                {{--                $('#formComment')[0].hide();--}}
+                {{--                $('#saveSuccess').html('<label> Commentaire enregistré avec succès</label>')--}}
+                {{--            }--}}
+                {{--        },--}}
+                {{--        error:function () {--}}
+                {{--            $('#error_comment').html('<label> Veuillez revoir les données saisies</label>')--}}
+                {{--        }--}}
+
+                {{--    });--}}
+                {{--});--}}
+            </script>
 @endsection

@@ -47,23 +47,11 @@
     <div id="recent-comments-2" class="widget widget_recent_comments">
         <h2 class="widget-title">Commentaires récents</h2>
         <ul id="recentcomments">
+            @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>rink</a></span> on
-                <a href="{{route('detail')}}">Construction
-                    industry</a>
+                <a href="blog/{{$articleCommente->article_id}}">{{$articleCommente->description}}</a>
             </li>
-            <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>John
-                        Smith</a></span> on <a href="{{route('detail')}}">Construction
-                    industry</a></li>
-            <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>John
-                        Smith</a></span> on <a href="{{route('detail')}}">Life
-                    Lack Meaning</a></li>
-            <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>rink</a></span> on
-                <a href="{{route('detail')}}">Life
-                    Lack Meaning</a>
-            </li>
-            <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>JD Adams</a></span>
-                on <a href="{{route('detail')}}">Construction
-                    industry</a></li>
+            @endforeach
         </ul>
     </div>
     <!-- <div id="archives-2" class="widget widget_archive">

@@ -1,13 +1,13 @@
 <!-- Libelle Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('libelle', 'Libelle:') !!}
+<div class="form-group col-12">
+    {!! Form::label('libelle', 'Libelle') !!}
     {!! Form::text('lib', null, ['class' => 'form-control','required' => 'required']) !!}
 </div>
 
 <!-- Desc Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('desc', 'Desc:') !!}
-    {!! Form::text('desc', null, ['class' => 'form-control', 'required' => 'required']) !!}
+<div class="form-group col-12">
+    {!! Form::label('desc', 'Description') !!}
+    {!! Form::textarea('desc', null, ['class' => 'form-control', 'required' => 'required', 'rows'  => '3']) !!}
 </div>
 
 <!-- Img Url Field -->

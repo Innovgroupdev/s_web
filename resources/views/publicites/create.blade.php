@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Create Publicites</h1>
+                    <h3>Ajouter une  Publicité</h3>
                 </div>
             </div>
         </div>
@@ -15,10 +15,10 @@
 
         @include('adminlte-templates::common.errors')
 
-        <div class="card">
+        <div class="card pt-4">
 
             {!! Form::open(['route' => 'publicites.store', 'files' => true]) !!}
-            <div class="card-body">
+            <div class="card-body px-4">
 
                 <div class="row">
                     @include('publicites.fields')
@@ -26,9 +26,10 @@
 
             </div>
 
-            <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('publicites.index') }}" class="btn btn-default">Cancel</a>
+            <div class="card-footer py-4">
+            <a href="{{ route('publicites.index') }}" class="btn btn-secondary p-4">Annuler</a>
+                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4']) !!}
+            
             </div>
 
             {!! Form::close() !!}

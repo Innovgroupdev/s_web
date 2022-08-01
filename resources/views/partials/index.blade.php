@@ -36,9 +36,10 @@
                                                                             – Festival – Anniversaire – Mariage – Soirée.
                                                                         </p>
 
-                                                                        <a class="btn btn-outline-light px-4 py-3" style="border-radius : 50px" data-toggle="modal" data-target="#exampleModalCenter">
-                                                                            Soyez informé au lancement
-                                                                        </a>
+
+
+                                                                        <a data-target="#exampleModalCenterHeader" data-toggle="modal" class="button  button-icon " href="#">
+                                                                            Soyez informé au lancement </a>
                                                                         <!-- <h5
 																					data-animation="animated fadeInLeft">
 																					Télécharger l'application mobile</h5>
@@ -217,7 +218,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="button-position text-left">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenter" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterBilleterie" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -255,7 +256,7 @@
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Recrutez les acteurs de l’événementiel en quelques minutes</span></li>
                                                                 </ul>
                                                                 <div class="button-position text-left mt-4">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenter" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterRaison" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1455,18 +1456,6 @@
                                                                 <div class="text-center">
                                                                     <a data-target="#exampleModalCenter" data-toggle="modal" class="button  button-icon " href="#">
                                                                         M’informer au lancement </a>
-                                                                    <!-- <a
-																				class="button  button-icon " href="#">
-																				<i aria-hidden="true"
-																					class="ion ion-social-apple"></i>App
-																				Store</a> <a
-																				class="button  button-icon " href="#">
-																				<i aria-hidden="true"
-																					class="ion ion-social-android"></i>Google
-																				Play</a>
-																				<a class="button  button-icon "
-																				href="#"> <i aria-hidden="true"
-																					class="ion ion-social-windows"></i>Application web</a>  -->
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1479,124 +1468,6 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <!-- <div id="pricing" data-vc-full-width="true" data-vc-full-width-init="false"
-											class="vc_row wpb_row vc_row-fluid vc_custom_1548668040120 vc_row-has-fill">
-											<div class="wpb_column vc_column_container vc_col-sm-12">
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div class="vc_row wpb_row vc_inner vc_row-fluid">
-															<div class="wpb_column vc_column_container vc_col-sm-12">
-																<div class="vc_column-inner">
-																	<div class="wpb_wrapper">
-																		<div class="heading-title text-center">
-																			<h2 class="title">Price</h2>
-																			<p>The price of social media content ranges
-																				from $100 per month. Generally, a number
-																				of factors impact the price you pay for
-																				social content.</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="vc_row wpb_row vc_inner vc_row-fluid">
-															<div
-																class="wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-																<div class="vc_column-inner">
-																	<div class="wpb_wrapper">
-																		<div class="iq-pricing text-center">
-																			<div class="price-title">
-																				<h2><small>$</small>19<small>/Month</small>
-																				</h2>
-																				<span
-																					class="text-uppercase iq-font-white">STARTER</span>
-																			</div>
-																			<ul>
-																				<li>
-																					<s>100 MB Disk Space</s>
-																				</li>
-																				<li>2 Subdomains</li>
-																				<li>5 Email Accounts</li>
-																				<li>Webmail Support</li>
-																				<li>Customer Support 24/7</li>
-																			</ul>
-																			<div class="price-footer">
-																				<img class="img-responsive center-block"
-																					src="wp-content/uploads/sites/9/2019/02/price-1.jpg"
-																					alt="#">
-																				<a class="button" href="# ">Purchase</a>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div
-																class="wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-																<div class="vc_column-inner">
-																	<div class="wpb_wrapper">
-																		<div class="iq-pricing text-center iq-popular">
-																			<div class="price-title">
-																				<h2><small>$</small>29<small>/Month</small>
-																				</h2>
-																				<span
-																					class="text-uppercase iq-font-white">REGULAR</span>
-																			</div>
-																			<ul>
-																				<li>100 MB Disk Space</li>
-																				<li>
-																					<s>2 Subdomains</s>
-																				</li>
-																				<li>5 Email Accounts</li>
-																				<li>Webmail Support</li>
-																				<li>Customer Support 24/7</li>
-																			</ul>
-																			<div class="price-footer">
-																				<img class="img-responsive center-block"
-																					src="wp-content/uploads/sites/9/2019/02/price-1.jpg"
-																					alt="#">
-																				<a class="button" href="# ">Purchase</a>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div
-																class="wpb_column vc_column_container vc_col-sm-4 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-																<div class="vc_column-inner">
-																	<div class="wpb_wrapper">
-																		<div class="iq-pricing text-center">
-																			<div class="price-title">
-																				<h2><small>$</small>49<small>/Month</small>
-																				</h2>
-																				<span
-																					class="text-uppercase iq-font-white">ENTERPRISE</span>
-																			</div>
-																			<ul>
-																				<li>
-																					<s>100 MB Disk Space</s>
-																				</li>
-																				<li>2 Subdomains</li>
-																				<li>5 Email Accounts</li>
-																				<li>Webmail Support</li>
-																				<li>
-																					<s>Customer Support 24/7</s>
-																				</li>
-																			</ul>
-																			<div class="price-footer">
-																				<img class="img-responsive center-block"
-																					src="wp-content/uploads/sites/9/2019/02/price-1.jpg"
-																					alt="#">
-																				<a class="button" href="# ">Purchase</a>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div> -->
                                 <div class="vc_row-full-width vc_clearfix"></div>
                                 <div id="blog" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid iq-faq-block">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -1963,13 +1834,15 @@
                                                                     <div class="col-lg-7">
                                                                         <div class="text-center ">
                                                                             <div class="widget_appino_widget">
-                                                                                <form method="post" action="/" class="appino-subscription" id="appino_subscription">
+                                                                                <form id="appino_subscription">
+                                                                                    @csrf
                                                                                     <div class="email-form">
                                                                                         <div class="newsletter-email">
-                                                                                            <input placeholder="Entez votre Addresse mail *" type="text" name="sub_email" class="news_text" id="subnewsemail" />
+                                                                                            <input placeholder="Entez votre Addresse mail *" type="email" name="sub_email" class="news_text" id="email" required />
+                                                                                            <span id="error_email"></span>
                                                                                         </div>
                                                                                         <div class="email-subscribe">
-                                                                                            <input type="submit" id="sidebar_button" class="sub_button" value="Soumettre">
+                                                                                            <input type="submit" class="sub_button" value="Soumettre">
                                                                                             <div class="alax-loader">
                                                                                                 <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
@@ -2030,23 +1903,27 @@
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
                         <p class="mb-0 pb-0">
                             Votre adresse email ne sera pas publiée.
-                        </p>
-                        <form action="" method="post" id="commentform" class="comment-form text-left" novalidate>
 
+                        </p>
+                        <form id="inform" class="comment-form text-left">
+                            @csrf
                             <div class="row my-4">
                                 <div class="col-4 mb-3 pr-0 mr-0">
-                                    <select class="">
-                                        <option>Pays</option>
+                                    <select class="" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{$country->name}}" id="pays">{{$country->name}} - {{$country->code}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-8 mb-3">
-                                    <input id="number" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    <input id="numberI" placeholder="Numéro de téléphone" id="numero" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
-                                    <input id="email" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    <input id="emailI" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                    <input name="submit" type="submit" data-dismiss="modal" id="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                    <span id="error_inform"></span>
+                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                 </div>
                             </div>
 
@@ -2062,7 +1939,176 @@
         </div>
     </div>
 
-    <!-- =========================================================================================================================== -->
+    <!-- =========================================Header================================================================================= -->
+    <div class="modal fade" id="exampleModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content pt-0">
+                <!-- <div class="modal-header" style="border: none;">
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div> -->
+                <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                    <div class="container-fluid p-0 m-0" style="position:relative">
+                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                    </div>
+                    <div class="p-3">
+                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
+                        <p class="mb-0 pb-0">
+                            Votre adresse email ne sera pas publiée.
+
+                        </p>
+                        <form id="informHeader" class="comment-form text-left">
+                            @csrf
+                            <div class="row my-4">
+                                <div class="col-4 mb-3 pr-0 mr-0">
+                                    <select class="" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-8 mb-3">
+                                    <input id="numberH" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                </div>
+                                <div class="col-12">
+                                    <input id="emailH" placeholder="Email" type="emailH" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                </div>
+                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                    <span id="error_informH"></span>
+                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">D'accord</button>
+                                                </div> -->
+            </div>
+        </div>
+    </div>
+
+<!-- =========================================Plus qu’une billetterie en ligne================================================================================= -->
+    <div class="modal fade" id="exampleModalCenterBilleterie" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content pt-0">
+                <!-- <div class="modal-header" style="border: none;">
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div> -->
+                <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                    <div class="container-fluid p-0 m-0" style="position:relative">
+                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                    </div>
+                    <div class="p-3">
+                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
+                        <p class="mb-0 pb-0">
+                            Votre adresse email ne sera pas publiée.
+
+                        </p>
+                        <form id="informBilleterie" class="comment-form text-left">
+                            @csrf
+                            <div class="row my-4">
+                                <div class="col-4 mb-3 pr-0 mr-0">
+                                    <select class="" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{$country->name}}" id="paysB">{{$country->name}} - {{$country->code}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-8 mb-3">
+                                    <input id="numberB" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                </div>
+                                <div class="col-12">
+                                    <input id="emailB" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                </div>
+                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                    <span id="error_informB"></span>
+                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">D'accord</button>
+                                                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+<!-- =========================================Pourquoi opter pour CIBLE ================================================================================= -->
+    <div class="modal fade" id="exampleModalCenterRaison" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content pt-0">
+                <!-- <div class="modal-header" style="border: none;">
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div> -->
+                <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                    <div class="container-fluid p-0 m-0" style="position:relative">
+                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                    </div>
+                    <div class="p-3">
+                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
+                        <p class="mb-0 pb-0">
+                            Votre adresse email ne sera pas publiée.
+
+                        </p>
+                        <form id="informRaison" class="comment-form text-left">
+                            @csrf
+                            <div class="row my-4">
+                                <div class="col-4 mb-3 pr-0 mr-0">
+                                    <select class="" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{$country->name}}" id="paysR">{{$country->name}} - {{$country->code}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-8 mb-3">
+                                    <input id="numberR" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                </div>
+                                <div class="col-12">
+                                    <input id="emailR" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                </div>
+                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                    <span id="error_informR"></span>
+                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">D'accord</button>
+                                                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================Soyez informé au lancement !============================================================================== -->
     <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter1Title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content pt-0">
@@ -2083,30 +2129,37 @@
                             <p class="mb-0 pb-0">
                                 Votre adresse email ne sera pas publiée.
                             </p>
-                            <form action="" method="post" id="commentform" class="comment-form text-left" novalidate>
+                            <form id="Soyerform" class="comment-form text-left" >
 
                                 <div class="row my-4">
                                     <div class="col-12 mb-3">
-                                        <input id="nom" placeholder="Nom & prénom(s)" name="nom" type="text" value="" size="30" maxlength="100" aria-describedby="nom-notes" required='required' />
+                                        <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="100" aria-describedby="nom-notes" required='required'  />
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input id="email" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                        <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required/>
                                     </div>
                                     <div class="col-12 mb-3 ">
 
-                                        <input id="profession" placeholder="Profession" name="profession" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required='required' />
+                                        <input id="professionE" placeholder="Profession" name="profession" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required />
+                                    </div>
+                                    <div class="col-12 mb-3 ">
+
+                                        <input id="raisonE" placeholder="Raison" name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required/>
                                     </div>
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
-                                        <select class="">
-                                            <option>Pays</option>
+                                        <select class="" required>
+                                            @foreach ($countries as $country)
+                                                <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-sm-8 mb-3">
-                                        <input id="number" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                        <input id="numeroE" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required />
                                     </div>
 
                                     <div class="col-12 mt-4 d-flex justify-content-center">
-                                        <input name="submit" type="submit" data-dismiss="modal" id="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                        <span id="error_informE"></span>
+                                        <input name="submit" type="submit"  class="submit w-50 mx-auto" value="Envoyer" />
                                     </div>
                                 </div>
 
@@ -2118,13 +2171,10 @@
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary">D'accord</button>
                                                 </div> -->
+
                 </div>
             </div>
         </div>
-
-
-
-
 
     </div><!-- .site-content-contain -->
     <style>
@@ -2194,6 +2244,199 @@
             console.log(element.classList)
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('#appino_subscription').submit(function(e){
+           e.preventDefault();
+           let email = $("#email").val();
+           let _token = $("input[name=_token]").val();
+           let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
+           $.ajax({
+               url: "{{route('enregistre')}}",
+               type: "POST",
+               data:{
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#appino_subscription')[0].reset();
+                       $('#error_email').hide();
+                   }
+               },
+               error:function () {
+                   $('#error_email').html('<label> Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
+    <script>
+        $('#inform').submit(function(e){
+           e.preventDefault();
+           let pays = $("#pays").val();
+           let email = $("#emailI").val();
+           let numero = $("#numberI").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
+
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#inform')[0].reset();
+                       $('#error_inform').hide();
+                       $('#inform')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_inform').html('<label> Numéro ou Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
+    <script>
+        $('#informHeader').submit(function(e){
+           e.preventDefault();
+           let pays = $("#paysH").val();
+           let email = $("#emailH").val();
+           let numero = $("#numberH").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,$("#emailH").val(),numero)
+            //debugger
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   email:email,
+                   pays:pays,
+                   numero:numero,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#informHeader')[0].reset();
+                       $('#error_informH').hide();
+                       $('#informHeader')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informH').html('<label> Numéro ou Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
+    <script>
+        $('#informBilleterie').submit(function(e){
+           e.preventDefault();
+           let pays = $("#paysB").val();
+           let email = $("#emailB").val();
+           let numero = $("#numberB").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
+
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#informBilleterie')[0].reset();
+                       $('#error_informB').hide();
+                       $('#informBilleterie')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informB').html('<label> Numéro ou Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
+    <script>
+        $('#informRaison').submit(function(e){
+           e.preventDefault();
+           let pays = $("#paysR").val();
+           let email = $("#emailR").val();
+           let numero = $("#numberR").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
+
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#informRaison')[0].reset();
+                       $('#error_informR').hide();
+                       $('#informRaison')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informR').html('<label> Numéro ou Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
+    <script>
+        $('#Soyerform').submit(function(e){
+           e.preventDefault();
+           let nom = $("#nomE").val();
+           let email = $("#emailE").val();
+           let numero = $("#numeroE").val();
+           let pays = $("#paysE").val();
+           let profession = $("#professionE").val();
+           let raison = $("#raisonE").val();
+           let _token = $("input[name=_token]").val();
+           console.log(nom,pays,email,numero,profession,raison)
+
+           $.ajax({
+               url: "{{route('essayer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   profession:profession,
+                   raison:raison,
+                   nom:nom,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#Soyerform')[0].reset();
+                       $('#error_informE').hide();
+                       $('#Soyerform')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informE').html('<label> Numéro ou Email existe déjà</label>')
+               }
+
+           });
+        });
+    </script>
 
     @endsection
