@@ -127,6 +127,7 @@ class ArticlesController extends AppBaseController
     public function edit($id)
     {
         $articles = $this->articlesRepository->find($id);
+        $categories = Categories::all();
 
         if (empty($articles)) {
             Flash::error('Articles not found');
@@ -134,7 +135,7 @@ class ArticlesController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
-        return view('articles.edit')->with('articles', $articles);
+        return view('articles.edit',compact('articles','categories'));
     }
 
     /**
