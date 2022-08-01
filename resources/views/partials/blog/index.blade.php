@@ -38,7 +38,7 @@
                                     <div class="iq-blog-box">
 
                                         <div class="iq-blog-image">
-                                            <img width="1200" height="550" src="{{asset($articles->img)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+                                            <img width="1200" height="550" style="max-height:600px" src="{{asset($articles->img)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
                                         </div>
 
                                         <div class="iq-blog-detail">

@@ -10,8 +10,9 @@
     </div>
     <div id="recent-posts-2" class="widget widget_recent_entries">
         <h2 class="widget-title">Articles récents</h2>
+        @foreach($articleRecentFive as $articleRecentFive)
         <ul>
-            @foreach($articleRecentFive as $articleRecentFive)
+          
             <li>
                 <a href="blog/{{$articleRecentFive->id}}">{{$articleRecentFive->libelle}}</a>
             </li>
@@ -93,14 +94,18 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
                 <div class="carousel-inner">
+                        @php 
+                         $i = 0;
+                        @endphp
                     @foreach($publicites as $publicites)
-                    <div class="carousel-item active">
-
+                      @php
+                       $i++;
+                      @endphp
+                    <div class="carousel-item @if($i == 1) active @endif">
+                        <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer">
                         <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="First slide">
-                        <br>
-                        <h6>
-                            {{$publicites->libelle}}
-                        </h6>
+                        </a>
+                       
                     </div>
                     @endforeach
                 </div>

@@ -32,8 +32,9 @@
 
                     <!-- Desc Field -->
                     <div class="form-group col-12">
-                        {!! Form::label('desc', 'Description:') !!}
-                        {!! Form::textarea('desc', null, ['class' => 'form-control','rows' => '2', 'required' =>'required']) !!}
+                        {!! Form::label('desc', 'Description') !!}
+                        <span class="text-danger">(maximum 200 caractères) </span>
+                        {!! Form::textarea('desc', null, ['class' => 'form-control','rows' => '2', 'required' =>'required','maxlength' =>'200']) !!}
                     </div>
 
                     <div class="col-12 mb-3 ">

@@ -16,14 +16,9 @@
    <h6 class="text-danger fw-700">
     <strong>{{ optional($articles->category)->lib }}</strong>
     </h6> 
-    <p>{{ $articles->desc }}</p>
+    <p> <strong>{{ $articles->desc }}</strong></p>
 </div>
 
-<!-- Tags Field -->
-<div class="col-sm-12">
-    {!! Form::label('tags', 'Tags:') !!}
-    <p>{{ $articles->tags }}</p>
-</div>
 
 <!-- Img Field -->
 
@@ -39,9 +34,15 @@
     <p>{{ $articles->lib }}</p>
 </div> -->
 
+<div class="col-sm-12" style="overflow:auto">
+    <!-- {!! Form::label('contenu', 'Contenu :') !!} -->
+    <!-- {{ $articles->contenu }} -->
+    {!!$articles->contenu  !!}
+</div>
+<!-- Tags Field -->
 <div class="col-sm-12">
-    {!! Form::label('contenu', 'Contenu :') !!}
-    <p>{{ $articles->contenu }}</p>
+    {!! Form::label('tags', 'Tags:') !!}
+    <p>{{ $articles->tags }}</p>
 </div>
 
 <!-- Created At Field -->

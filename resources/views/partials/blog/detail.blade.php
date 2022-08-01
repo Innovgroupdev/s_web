@@ -3,6 +3,7 @@
 
 @extends('partials.model')
 @section('content')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <section class="iq-breadcrumb overview-block-pb"
             style="">
             <div class="container">
@@ -45,6 +46,7 @@
 
                                                 <div class="iq-blog-image">
                                                     <img width="1200" height="550"
+                                                    style="max-height:600px"
                                                         src="{{asset($articles->img)}}"
                                                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                                                         alt="" loading="lazy"
@@ -84,7 +86,11 @@
                                                     </div>
 
                                                     <div class="blog-content mt-4">
-                                                        <p>{{$articles->desc}}</p>
+                                                        <strong>{{$articles->desc}}</strong>
+                                                    </div>
+
+                                                    <div class="blog-content mt-4" style="overflow:auto">
+                                                    {!!$articles->contenu  !!}
                                                     </div>
 
 
@@ -133,33 +139,33 @@
 
 
                                         <!-- Modal -->
-{{--                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--                                            <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--                                            <div class="modal-content">--}}
-{{--                                                <div class="modal-header" style="border: none;">--}}
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="border: none;">
 
-{{--                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                                                    <span aria-hidden="true">&times;</span>--}}
-{{--                                                </button>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="modal-body text-center pb-0 ">--}}
-{{--                                                    <div class="mx-auto my-3 text-center d-flex justify-content-center align-items-center" style="border: 2px solid orangered;width : 100px;height:100px;border-radius: 50%;align-items: center;">--}}
-{{--                                                        <p style="font-weight:600;font-size:3rem;color : orangered" class="m-0">--}}
-{{--                                                            !--}}
-{{--                                                        </p>--}}
-{{--                                                    </div>--}}
-{{--                                                <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 1.5rem;">Votre Commentaire à été envoyé !</h5>--}}
-{{--                                                <p class="mb-0 pb-0">--}}
-{{--                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam a ex blanditiis, magnam nihil atque in quo doloribus aut esse.--}}
-{{--                                                </p>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">--}}
-{{--                                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->--}}
-{{--                                                <button type="button" class="btn btn-primary">D'accord</button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body text-center pb-0 ">
+                                                <div class="mx-auto my-3 text-center d-flex justify-content-center align-items-center" style="border: 2px solid orangered;width : 100px;height:100px;border-radius: 50%;align-items: center;">
+                                                    <p style="font-weight:600;font-size:3rem;color : orangered" class="m-0">
+                                                        !
+                                                    </p>
+                                                </div>
+                                            <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 1.5rem;">Votre Commentaire à été envoyé !</h5>
+                                            <p class="mb-0 pb-0">
+                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam a ex blanditiis, magnam nihil atque in quo doloribus aut esse.
+                                            </p>
+                                            </div>
+                                            <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                            <button type="button" class="btn btn-primary">D'accord</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-4 col-sm-12">
@@ -198,16 +204,53 @@
                                 article_id:num,
                                 _token:_token
                             },
+                            beforeSend : function(){
+                                let timerInterval
+                                    Swal.fire({
+                                    title: 'Envoie en cours ...',
+                                    html: 'Chargement dans <b></b> milliseconds.',
+                                    timer: 1000000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                    }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                    })
+                            },
                             success:function (response) {
                                 if (response){
                                     $('#formComment')[0].reset();
+                                  
+                                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Commentaire publié avec succès',
+                                    text : "Votre commentaire sera prise en compte après validation de l'administration",
+                                    showConfirmButton: true,
+                                    })
                                     $('#error_comment').hide();
                                     $('#formComment')[0].hide();
                                     $('#saveSuccess').html('<label> Commentaire enregistré avec succès</label>')
+                                   
                                 }
                             },
                             error:function () {
                                 $('#error_comment').html('<label> Veuillez revoir les données saisies</label>')
+                                Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                                })
                             }
 
                         });
