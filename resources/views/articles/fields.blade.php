@@ -39,3 +39,8 @@
     {!! Form::label('categorie_id', 'Categorie Id:') !!}
     {!! Form::text('categorie_id', null, ['class' => 'form-control']) !!}
 </div>
+
+
+
+
+

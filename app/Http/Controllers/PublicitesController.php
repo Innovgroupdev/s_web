@@ -105,7 +105,6 @@ class PublicitesController extends AppBaseController
     public function edit($id)
     {
         $publicites = $this->publicitesRepository->find($id);
-
         if (empty($publicites)) {
             Flash::error('Publicites not found');
 
@@ -132,9 +131,12 @@ class PublicitesController extends AppBaseController
 
             return redirect(route('publicites.index'));
         }
+          
         $fileName = time().$request->file('img_url')->getClientOriginalName();
+        // dd($fileName); 
         $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
         $user = auth()->user();
+       
         $data = [
             'libelle' =>  $request->libelle,
             'user_id' =>  $user->id,
