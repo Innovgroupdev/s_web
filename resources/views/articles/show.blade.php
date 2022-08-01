@@ -20,7 +20,7 @@
     <div class="content px-3">
         <div class="card">
             <div class="card-body">
-                <div class="row">
+                <div class="row container-fluid">
                     @include('articles.show_fields')
                 </div>
             </div>

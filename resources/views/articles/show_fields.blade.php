@@ -1,12 +1,19 @@
 <!-- Libelle Field -->
 <div class="col-sm-12">
-    {!! Form::label('libelle', 'Libelle:') !!}
-    <p>{{ $articles->libelle }}</p>
+    <!-- {!! Form::label('libelle', 'Libelle:') !!}  -->
+    <p>{{ $articles->libelle }} . <i class="fas fa-events"></i> {{ $articles->created_at }}</p>
+</div>
+<div class="col-sm-12 d-flex justify-content-center">
+    <!-- {!! Form::label('img', 'Img:') !!} -->
+    <img src="{{ asset($articles->img) }}" style="max-height : 700px" class="img img-responsive w-75 mx-auto" />
 </div>
 
 <!-- Desc Field -->
-<div class="col-sm-12">
-    {!! Form::label('desc', 'Desc:') !!}
+<div class="col-sm-12 mt-4">
+   <h1 class="mb-3">
+   {{ $articles->libelle }} 
+   </h1>
+   <h6 class="text-danger">{{ $articles->lib }}</h6> --
     <p>{{ $articles->desc }}</p>
 </div>
 
@@ -17,10 +24,6 @@
 </div>
 
 <!-- Img Field -->
-<div class="col-sm-12">
-    {!! Form::label('img', 'Img:') !!}
-    <img src="{{ asset($articles->img) }}" width= '50' height='50' class="img img-responsive" />
-</div>
 
 <!-- User Id Field -->
 {{--<div class="col-sm-12">--}}
@@ -29,16 +32,16 @@
 {{--</div>--}}
 
 <!-- Categorie Id Field -->
-<div class="col-sm-12">
+<!-- <div class="col-sm-12">
     {!! Form::label('categorie_id', 'Categorie :') !!}
     <p>{{ $articles->lib }}</p>
-</div>
+</div> -->
 
 <!-- Created At Field -->
-<div class="col-sm-12">
+<!-- <div class="col-sm-12">
     {!! Form::label('created_at', 'Date de création:') !!}
     <p>{{ $articles->created_at }}</p>
-</div>
+</div> -->
 
 <!-- Updated At Field -->
 {{--<div class="col-sm-12">--}}
