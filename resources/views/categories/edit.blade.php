@@ -25,9 +25,10 @@
                 </div>
             </div>
 
-            <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('categories.index') }}" class="btn btn-default">Cancel</a>
+            <div class="card-footer  py-4">
+            <a href="{{ route('categories.index') }}" class="btn btn-secondary py-3 px-4">Annuler</a>
+                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary py-3 px-4']) !!}
+               
             </div>
 
             {!! Form::close() !!}

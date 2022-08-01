@@ -30,14 +30,14 @@ class ArticlesController extends AppBaseController
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(ArticlesRepository $request)
     {
-        //$articles = $this->articlesRepository->all();
+        $articles = $this->articlesRepository->all();
 
-        $articles = DB::table('articles')
-            ->join('categories', 'articles.categorie_id', '=', 'categories.id')
-            ->join('users', 'articles.user_id', '=', 'users.id')
-            ->get();
+        // $articles = DB::table('articles')
+        //     ->join('categories', 'articles.categorie_id', '=', 'categories.id')
+        //     ->join('users', 'articles.user_id', '=', 'users.id')
+        //     ->get();
            // dd($categories);
 
         return view('articles.index')

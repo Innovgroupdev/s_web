@@ -31,7 +31,7 @@ Route::resource('publicites', App\Http\Controllers\PublicitesController::class);
 
 Route::resource('articles', App\Http\Controllers\ArticlesController::class);
 
-Route::get('home', 'Blog\HomeController@index')->name('home');
+///Route::get('home', 'Blog\HomeController@index')->name('home');
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
-Route::get('article', 'Blog\HomeController@detail')->name('detail');
-Route::get('category', 'Blog\HomeController@category')->name('category');
+Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
+Route::get('category', [App\Http\Controllers\Blog\HomeController::class, 'category'])->name('category');
