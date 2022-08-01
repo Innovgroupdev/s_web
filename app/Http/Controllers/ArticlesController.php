@@ -75,6 +75,7 @@ class ArticlesController extends AppBaseController
         $article = new Articles();
         $article->libelle = $request->libelle;
         $article->desc = $request->desc;
+        $article->contenu = $request->contenu;
         $article->tags = $request->tags;
         $article->categorie_id = $request->categorie_id;
         $article->user_id = $user->id;

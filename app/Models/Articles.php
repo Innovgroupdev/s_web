@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @version July 27, 2022, 8:32 pm UTC
  *
  * @property string $libelle
+ * @property string $contenu
  * @property string $desc
  * @property string $tags
  * @property string $img
@@ -64,6 +65,7 @@ class Articles extends Model
         'desc',
         'tags',
         'img',
+        'contenu',
         'user_id',
         'categorie_id'
     ];
@@ -78,6 +80,7 @@ class Articles extends Model
         'desc' => 'string',
         'tags' => 'string',
         'img' => 'string',
+        'contenu' => 'string',
         'user_id' => 'integer',
         'categorie_id' => 'integer'
     ];
@@ -91,6 +94,7 @@ class Articles extends Model
         'libelle' => 'required',
         'desc' => 'required',
         'tags' => 'required',
+        'contenu' => 'required',
         'user_id' => 'required',
         'categorie_id' => 'required'
     ];
