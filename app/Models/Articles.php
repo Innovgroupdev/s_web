@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $tags
  * @property string $img
  * @property integer $user_id
+ * @property boolean $state
  * @property integer $categorie_id
  */
 class Articles extends Model
@@ -32,10 +33,23 @@ class Articles extends Model
      * @return BelongsTo
      * @description get the category for the blog post.
      */
-    public function category()
+//    public function categorie()
+//    {
+//        return $this->belongsTo(Categories::class, 'categorie_id');
+//    }
+
+        public function articles(){
+            return $this->hasMany(Articles::class,'article_id');
+        }
+    /**
+     * @return BelongsTo
+     * @description get the category for the blog post.
+     */
+    public function user()
     {
-        return $this->belongsTo(Categories::class, 'categorie_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
+
 
     /**
      * Get the comments for the blog article.
@@ -66,6 +80,7 @@ class Articles extends Model
         'tags',
         'img',
         'contenu',
+        'state',
         'user_id',
         'categorie_id'
     ];
@@ -81,6 +96,7 @@ class Articles extends Model
         'tags' => 'string',
         'img' => 'string',
         'contenu' => 'string',
+        'state' => 'boolean',
         'user_id' => 'integer',
         'categorie_id' => 'integer'
     ];
@@ -95,7 +111,6 @@ class Articles extends Model
         'desc' => 'required',
         'tags' => 'required',
         'contenu' => 'required',
-        'user_id' => 'required',
         'categorie_id' => 'required'
     ];
 

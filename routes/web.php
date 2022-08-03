@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Articles;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -16,8 +17,9 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     //$news = News::all();
+    $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
     $countries = \App\Models\Country::all();
-    return view('partials.index',compact('countries'));
+    return view('partials.index',compact('countries','articleRecentFive'));
 });
 
 
@@ -57,3 +59,4 @@ Route::post("/enregistre", [App\Http\Controllers\NewsController::class, 'enregis
 Route::post("informer-enregistre", [App\Http\Controllers\InformerController::class, 'enregistre'])->name('informer-enregistre');
 Route::post("essayer-enregistre", [App\Http\Controllers\EssayerController::class, 'enregistre'])->name('essayer-enregistre');
 Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
+Route::put("articles/state{id}", [App\Http\Controllers\ArticlesController::class, 'desactiver']);

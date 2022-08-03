@@ -18,7 +18,7 @@
 
         <div class="card">
 
-            {!! Form::model($articles, ['route' => ['articles.update', $articles->id], 'method' => 'patch', 'files' => true]) !!}
+            {!! Form::model($articles, ['route' => ['articles.update', $articles->id], 'method' => 'patch', 'files' => true,'enctype'=>'multipart/form-data']) !!}
 
             <div class="card-body">
                 <div class="row">
@@ -96,9 +96,9 @@
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
-   
+
     $(document).ready(function() {
-      
+
         $('#contenu').summernote({
                 height: 100,   //set editable area's height
             });
@@ -146,9 +146,9 @@
 	//get
 	$("#btn-get-content").on("click", function() {
 		var y =$($sumNote.code());
-	
+
 		console.log(y[0]);console.log(y.find("p> font"));
-	var x = y.find("font").remove();		
+	var x = y.find("font").remove();
 		$("#content").text($("#ta-1").val());
 	});
 	//get text$($sumNote.code()).find("font").remove()$($sumNote.code()).find("font").remove()

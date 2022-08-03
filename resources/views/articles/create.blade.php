@@ -42,7 +42,7 @@
                         <label for="ta-1" class="font-bold font-open mb-2">Contenu de l'article <span style="color: red;">*</span></label>
                         <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>
                         </div>
-                      
+
                         <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" name="contenu" id="ta-1" cols="30" rows="2"> {{old('contenu')}}</textarea>
                         @error('contenu')
                         <div class="invalid-feedback">{{$message}}</div>
@@ -56,7 +56,7 @@
                         {!! Form::text('tags', null, ['class' => 'form-control','placeholder' => 'Ex : tag1,tag2,tag3...']) !!}
                     </div>
 
-                  
+
 
                 <!-- Categorie Id Field -->
                     <div class="form-group col-sm-6">
@@ -77,23 +77,23 @@
                     </div>
                     <div class="clearfix"></div> -->
                     <p class="text-center">  Veuillez cliquer pour choisir une image (*)</p>
-<div class="col-12 mb-3 d-flex justify-content-center">
-   
+            <div class="col-12 mb-3 d-flex justify-content-center">
+
                     <label class="h6 w-50 text-center mx-auto" for="motivationImages" style="cursor: pointer !important; display: block !important">
                         <img id="imageMotivation" class="w-100 mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                         </iframe>
-                      
+
                     </label>
                     <input type="file" accept="image/*" name="img" required=""  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
-                   
+
                 </div>
             </div>
 
             <div class="card-footer">
             <a href="{{ route('articles.index') }}" class="btn btn-secondary p-4 ">Annuler</a>
                 {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4']) !!}
-                
+
             </div>
 
             {!! Form::close() !!}
@@ -101,7 +101,7 @@
         </div>
 
         <!-- ============================================================================== -->
-      
+
     </div>
     <style>
             #btnSave {
@@ -164,9 +164,9 @@
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
-   
+
     $(document).ready(function() {
-      
+
         $('#contenu').summernote({
                 height: 100,   //set editable area's height
             });
@@ -214,9 +214,9 @@
 	//get
 	$("#btn-get-content").on("click", function() {
 		var y =$($sumNote.code());
-	
+
 		console.log(y[0]);console.log(y.find("p> font"));
-	var x = y.find("font").remove();		
+	var x = y.find("font").remove();
 		$("#content").text($("#ta-1").val());
 	});
 	//get text$($sumNote.code()).find("font").remove()$($sumNote.code()).find("font").remove()

@@ -167,17 +167,26 @@ class CategoriesController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateCategoriesRequest $request)
+    public function update($id, Request $request)
     {
-        $categories = $this->categoriesRepository->find($id);
+        //$categories = $this->categoriesRepository->find($id);
+        $request->validate([
+            'lib'=>'required',
+            'desc'=>'required'
+        ]);
+        $categories = Categories::find($id);
 
         if (empty($categories)) {
             Flash::error('Categories not found');
 
             return redirect(route('categories.index'));
         }
+        $categories->lib = $request->lib;
+        $categories->desc =$request->desc;
+        //dd($categories);
+        $categories->save();
 
-        $categories = $this->categoriesRepository->update($request->all(), $id);
+       // $categories = $this->categoriesRepository->update($request->all(), $id);
 
         Flash::success('Categories updated successfully.');
 

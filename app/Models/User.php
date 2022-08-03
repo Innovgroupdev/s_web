@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -22,6 +23,16 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+
+    /**
+     * @return HasMany
+     * @description get all articles for the category
+     */
+    public function articles()
+    {
+        return $this->hasMany(Articles::class,'article_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

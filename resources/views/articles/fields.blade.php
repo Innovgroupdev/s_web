@@ -1,22 +1,55 @@
-<!-- Libelle Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('libelle', 'Libelle:') !!}
-    {!! Form::text('libelle', null, ['class' => 'form-control', 'required' =>'required']) !!}
+
+
+<div class="row">
+    <!-- Libelle Field -->
+    <div class="form-group col-12">
+        {!! Form::label('libelle', 'Libelle:') !!}
+        {!! Form::text('libelle', null, ['class' => 'form-control', 'required' =>'required']) !!}
+    </div>
+
+    <!-- Desc Field -->
+    <div class="form-group col-12">
+        {!! Form::label('desc', 'Description') !!}
+        <span class="text-danger">(maximum 200 caractères) </span>
+        {!! Form::textarea('desc', null, ['class' => 'form-control','rows' => '2', 'required' =>'required','maxlength' =>'200']) !!}
+    </div>
+
+    <div class="col-12 mb-3 ">
+        <div class="d-flex justify-content-between align-items-center">
+            <label for="ta-1" class="font-bold font-open mb-2">Contenu de l'article <span style="color: red;">*</span></label>
+            <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>
+        </div>
+
+        <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" value="{{$articles->contenu}}" name="contenu" id="ta-1" cols="30" rows="2"> {{old('contenu')}}</textarea>
+        @error('contenu')
+        <div class="invalid-feedback">{{$message}}</div>
+        @enderror
+    </div>
+
+
+    <!-- Tags Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('tags', 'Tags (Séparé par des virgules)') !!}
+        {!! Form::text('tags', null, ['class' => 'form-control','placeholder' => 'Ex : tag1,tag2,tag3...']) !!}
+    </div>
+
+
+
+    <!-- Categorie Id Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('categorie_id', 'Categories:') !!}
+        <select class="form-control" name="categorie_id">
+            @foreach($categories as $cat)
+                <option value="{{$cat->id}}">
+                    {{ $cat->lib }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+
 </div>
 
-<!-- Desc Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('desc', 'Description:') !!}
-    {!! Form::textarea('desc', null, ['class' => 'form-control', 'required' =>'required']) !!}
-</div>
 
-<!-- Tags Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('tags', 'Tags:') !!}
-    {!! Form::text('tags', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Img Field -->
 <!-- Img Field -->
 <div class="col-12 mb-3 d-flex justify-content-center">
 
@@ -26,28 +59,11 @@
         </iframe>
 
     </label>
-    <input type="file" accept="image/*" value="{{$articles->img}}" name="img_url"  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
+    <input type="file" accept="image/*" value="{{$articles->img}}" name="img"  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
 
 </div>
 <div class="clearfix"></div>
 
-
-<!-- User Id Field -->
-{{--<div class="form-group col-sm-6">--}}
-{{--    {!! Form::label('user_id', 'User Id:') !!}--}}
-{{--    {!! Form::text('user_id', null, ['class' => 'form-control']) !!}--}}
-{{--</div>--}}
-
-<!-- Categorie Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('categorie_id', 'Catégories :') !!}
-    <select class="form-control">
-
-        <option value="{{$articles->categorie_id}}">
-            {{ optional($articles->category)->lib }}
-        </option>
-    </select>
-{{--    {!! Form::text('categorie_id', null, ['class' => 'form-control']) !!}--}}
 </div>
 
 

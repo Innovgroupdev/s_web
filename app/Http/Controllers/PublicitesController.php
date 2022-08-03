@@ -10,6 +10,7 @@ use App\Repositories\PublicitesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use phpDocumentor\Reflection\Types\Null_;
 use Response;
 
 class PublicitesController extends AppBaseController
@@ -124,29 +125,39 @@ class PublicitesController extends AppBaseController
      */
     public function update($id, Request $request)
     {
-        $publicites = $this->publicitesRepository->find($id);
+        $request->validate([
+            'libelle'=>'required'
+        ]);
+        //$publicites = $this->publicitesRepository->find($id);
+        $publicites = Publicites::find($id);
 
         if (empty($publicites)) {
             Flash::error('Publicites not found');
 
             return redirect(route('publicites.index'));
         }
-          
-        $fileName = time().$request->file('img_url')->getClientOriginalName();
-        // dd($fileName); 
-        $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
+
+        //$fileName = time().$request->file('img_url')->getClientOriginalName();
+        // dd($fileName);
+        //$path = $request->file('img_url')->storeAs('images', $fileName, 'public');
         $user = auth()->user();
-       
-        $data = [
-            'libelle' =>  $request->libelle,
-            'user_id' =>  $user->id,
-            'img_url' =>  '/storage/'.$path
-        ];
+        if($request->file('img_url') != null){
 
-        $publicites = $this->publicitesRepository->update($data, $id);
+            $publicites->libelle = $request->libelle;
+            $fileName = time().$request->file('img_url')->getClientOriginalName();
+            $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
 
-        Flash::success('Publicites updated successfully.');
 
+            $publicites->img_url = '/storage/'.$path;
+            $publicites->user_id = $user->id;
+            Flash::success('Publicités modifiée avec succès.');
+            $publicites->save();
+        }
+        else{
+            $publicites->libelle = $request->libelle;
+            Flash::success('Publicités modifiée avec succès.');
+            $publicites->save();
+        }
         return redirect(route('publicites.index'));
     }
 
@@ -169,7 +180,8 @@ class PublicitesController extends AppBaseController
             return redirect(route('publicites.index'));
         }
 
-        $this->publicitesRepository->delete($id);
+       // $this->publicitesRepository->delete($id);
+        $publicites->forceDelete();
 
         Flash::success('Publicites deleted successfully.');
 

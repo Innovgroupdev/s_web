@@ -67,7 +67,7 @@ class ArticlesController extends AppBaseController
      */
     public function store(Request $request)
     {
-        $input = $request->all();
+       // $input = $request->all();
        // dd($input);
 
         //$articles = $this->articlesRepository->create($input);
@@ -128,7 +128,7 @@ class ArticlesController extends AppBaseController
     {
         $articles = $this->articlesRepository->find($id);
         $categories = Categories::all();
-
+        //dd($categories);
         if (empty($articles)) {
             Flash::error('Articles not found');
 
@@ -146,9 +146,9 @@ class ArticlesController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateArticlesRequest $request)
+    public function update($id, Request $request)
     {
-        $articles = $this->articlesRepository->find($id);
+        $articles = Articles::find($id);
 
         if (empty($articles)) {
             Flash::error('Articles not found');
@@ -156,9 +156,35 @@ class ArticlesController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
-        $articles = $this->articlesRepository->update($request->all(), $id);
+        $user = auth()->user();
+        if($request->file('img') != null){
+            $articles->libelle = $request->libelle;
+            $articles->desc = $request->desc;
+            $articles->tags = $request->tags;
+            $fileName = time().$request->file('img')->getClientOriginalName();
+            $path = $request->file('img')->storeAs('images', $fileName, 'public');
 
-        Flash::success('Articles updated successfully.');
+
+            $articles->img = '/storage/'.$path;
+            $articles->user_id = $user->id;
+            $articles->categorie_id = $request->categorie_id;
+            $articles->contenu = $request->contenu;
+            //dd($articles);
+            Flash::success('Article modifié avec succès.');
+            $articles->save();
+        }
+        else{
+            $articles->libelle = $request->libelle;
+            $articles->desc = $request->desc;
+            $articles->tags = $request->tags;
+            $articles->save();
+        }
+
+
+
+       // $articles = $this->articlesRepository->update($request->all(), $id);
+
+       // Flash::success('Articles updated successfully.');
 
         return redirect(route('articles.index'));
     }
@@ -182,10 +208,19 @@ class ArticlesController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
-        $this->articlesRepository->delete($id);
+        //$this->articlesRepository->delete($id);
+        $article = Articles::where('id',$id)->forceDelete();
 
         Flash::success('Articles deleted successfully.');
 
+        return redirect(route('articles.index'));
+    }
+
+    public function desactiver($id){
+        DB::table('articles')
+            ->where('id', $id)
+            ->update(['state' => 1]);
+        Flash::success('Article désactiver avec succès.');
         return redirect(route('articles.index'));
     }
 }

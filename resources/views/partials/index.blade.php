@@ -1495,10 +1495,11 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="appino-recentblog v1">
                                                                     <div class="owl-carousel" data-dots="false" data-nav="false" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
+                                                                       @foreach($articleRecentFive as $articleRecentFive)
                                                                         <div class="item">
                                                                             <div class="iq-blog-box">
                                                                                 <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-1-26-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage0">
+                                                                                    <img src="{{ asset($articleRecentFive->img)}}" class="img-fluid center-block imgBlog" alt="blogimage0">
                                                                                 </div>
                                                                                 <div class="iq-blog-detail">
                                                                                     <div class="iq-blog-meta">
@@ -1507,9 +1508,9 @@
                                                                                             <li class="list-inline-item">
                                                                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                                                                                 <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
+                                                                                                    on</span> <a href="blog/{{$articleRecentFive->id}}" rel="bookmark"><time class="entry-date published updated" datetime="{{$articleRecentFive->created_at}}">
+                                                                                                        {{$articleRecentFive->created_at}}
+                                                                                                    </time></a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
                                                                                                 <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
@@ -1523,243 +1524,18 @@
                                                                                     </div>
                                                                                     <div class="blog-title">
                                                                                         <a href="{{route('detail')}}">
-                                                                                            <h6>Life Lack
-                                                                                                Meaning</h6>
+                                                                                            <h6>{{$articleRecentFive->libelle}}</h6>
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
+                                                                                        <p>{{$articleRecentFive->desc}}.</p>
                                                                                     </div>
-                                                                                    <div class="blog-button"><a class="button" href="{{route('detail')}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    <div class="blog-button"><a class="button" href="blog/{{$articleRecentFive->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-2-26-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage1">
-                                                                                </div>
-                                                                                <div class="iq-blog-detail">
-                                                                                    <div class="iq-blog-meta">
-                                                                                        <ul class="list-inline">
-
-                                                                                            <li class="list-inline-item">
-                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                                                                <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="blog-title">
-                                                                                        <a href="2018/12/31/construction-industry-3/index.html">
-                                                                                            <h6>Construction
-                                                                                                industry</h6>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
-                                                                                    </div>
-                                                                                    <div class="blog-button"><a class="button" href="2018/12/31/construction-industry-3/index.html">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-3-26-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage2">
-                                                                                </div>
-                                                                                <div class="iq-blog-detail">
-                                                                                    <div class="iq-blog-meta">
-                                                                                        <ul class="list-inline">
-
-                                                                                            <li class="list-inline-item">
-                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                                                                <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="blog-title">
-                                                                                        <a href="2018/12/31/build-construction-industry-2/index.html">
-                                                                                            <h6>Build
-                                                                                                Construction
-                                                                                            </h6>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
-                                                                                    </div>
-                                                                                    <div class="blog-button"><a class="button" href="2018/12/31/build-construction-industry-2/index.html">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-4-26-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage3">
-                                                                                </div>
-                                                                                <div class="iq-blog-detail">
-                                                                                    <div class="iq-blog-meta">
-                                                                                        <ul class="list-inline">
-
-                                                                                            <li class="list-inline-item">
-                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                                                                <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="blog-title">
-                                                                                        <a href="2018/12/08/construction-industry-2/index.html">
-                                                                                            <h6>Construction
-                                                                                                industry</h6>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
-                                                                                    </div>
-                                                                                    <div class="blog-button"><a class="button" href="2018/12/08/construction-industry-2/index.html">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-5-26-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage4">
-                                                                                </div>
-                                                                                <div class="iq-blog-detail">
-                                                                                    <div class="iq-blog-meta">
-                                                                                        <ul class="list-inline">
-
-                                                                                            <li class="list-inline-item">
-                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                                                                <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="blog-title">
-                                                                                        <a href="2018/12/08/life-lack-meaning-2/index.html">
-                                                                                            <h6>Life Lack
-                                                                                                Meaning</h6>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
-                                                                                    </div>
-                                                                                    <div class="blog-button"><a class="button" href="2018/12/08/life-lack-meaning-2/index.html">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset('wp-content/uploads/sites/9/2018/12/blog-6-3-1.jpg')}}" class="img-fluid center-block imgBlog" alt="blogimage5">
-                                                                                </div>
-                                                                                <div class="iq-blog-detail">
-                                                                                    <div class="iq-blog-meta">
-                                                                                        <ul class="list-inline">
-
-                                                                                            <li class="list-inline-item">
-                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                                                                <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="{{route('detail')}}" rel="bookmark"><time class="entry-date published updated" datetime="2018-12-31T06:46:02+00:00">December
-                                                                                                        31,
-                                                                                                        2018</time></a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
-                                                                                            </li>
-                                                                                            <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                    <div class="blog-title">
-                                                                                        <a href="2018/12/08/life-lack-meaning/index.html">
-                                                                                            <h6>Life Lack
-                                                                                                Meaning</h6>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="blog-content">
-                                                                                        <p>Lorem Ipsum is simply
-                                                                                            dummy text of the
-                                                                                            printing and
-                                                                                            typesetting
-                                                                                            industry.</p>
-                                                                                    </div>
-                                                                                    <div class="blog-button"><a class="button" href="2018/12/08/life-lack-meaning/index.html">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                        @endforeach
                                                                     </div>
                                                                 </div>
                                                             </div>

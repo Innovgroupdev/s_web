@@ -64,9 +64,9 @@ class Commentaire extends Model
      * @var array
      */
     public static $rules = [
-        'description' => 'required',
-        'name' => 'required',
-        'email' => 'required'
+//        'description' => 'required',
+//        'name' => 'required',
+//        'email' => 'required'
     ];
 
 

@@ -12,7 +12,7 @@
         <h2 class="widget-title">Articles récents</h2>
         @foreach($articleRecentFive as $articleRecentFive)
         <ul>
-          
+
             <li>
                 <a href="blog/{{$articleRecentFive->id}}">{{$articleRecentFive->libelle}}</a>
             </li>
@@ -64,9 +64,14 @@
                             </div> -->
     <div id="categories-2" class="widget widget_categories">
         <h2 class="widget-title">Catégories</h2>
+
         <ul>
-            <li class="cat-item cat-item-17"><a href="{{route('category')}}">Builder</a>
+
+            <li class="cat-item cat-item-17"><a href="{{route('category')}}">
+
+                </a>
             </li>
+
             <li class="cat-item cat-item-21"><a href="{{route('category')}}">Fashion</a>
             </li>
             <li class="cat-item cat-item-23"><a href="{{route('category')}}">Photography</a>
@@ -94,7 +99,7 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
                 <div class="carousel-inner">
-                        @php 
+                        @php
                          $i = 0;
                         @endphp
                     @foreach($publicites as $publicites)
@@ -105,7 +110,7 @@
                         <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer">
                         <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="First slide">
                         </a>
-                       
+
                     </div>
                     @endforeach
                 </div>
