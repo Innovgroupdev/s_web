@@ -122,7 +122,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/3-1.png')}}" />
-                                                                    <h5>Obtenez <br> vos cadeaux souvenirs</h5>
+                                                                    <h5>Garder <br> des souvenirs</h5>
                                                                     <p>A chaque événement, des gadgets souvenirs vous sont proposés.
                                                                         C’est à vous de choisir et d’en profiter…</p>
                                                                 </div>
@@ -134,8 +134,9 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/clible-app-usage-icone.png')}}" />
                                                                     <h5>Simplifiez-vous <br> la vie</h5>
-                                                                    <p>Pour vous simplifier la vie, deux applications ont été conçues :
-                                                                        une pour entreprises et l’autre pour particuliers.
+                                                                    <p>
+                                                                        Facilitez-vous la vie avec une application pour les entreprises
+                                                                        et une application pour les particuliers
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -158,7 +159,7 @@
                                                                 <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/clible-app-a-propos-icone.png')}}" />
                                                                     <h5>Exigez <br> Le meilleur de nous</h5>
                                                                     <p>Demandez-nous encore plus de fonctionnalités...
-                                                                        Nous tâcherons à toujours réaliser vos meilleures idées. </p>
+                                                                        Nous tâcherons de toujours réaliser vos meilleures idées. </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -241,19 +242,20 @@
                                                                     <h2 class="title">Pourquoi opter pour CIBLE ?</h2>
                                                                     <p>La seule raison de ne pas télécharger l’application CIBLE,
                                                                         c’est de trouver une application plus complète,
-                                                                        moins cher et mieux conçue. Mais hélas… Pourquoi ?
+                                                                        moins chère et mieux conçue. Mais hélas… <br>
+                                                                        <b>Pourquoi alors CIBLE?</b>
                                                                     </p>
                                                                 </div>
                                                                 <ul class="iq-list">
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Possibilité d’acheter vos tickets sans dépenser votre argent</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>La possibilité d’acheter vos tickets sans dépenser votre argent</span></li>
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Des cadeaux (gadgets) personnalisés à chaque événement
                                                                         </span></li>
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span> Minimisez vos charges organisationnelles et gagnez plus</span></li>
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Bénéficiez des enquêtes de satisfaction</span></li>
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Gagnez du temps et minimisez vos déplacements</span></li>
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Un système de vérification de tickets simple et gratuit</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Vivez votre événement en présentiel et en ligne…</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Recrutez les acteurs de l’événementiel en quelques minutes</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Vivez vos évènements en présentiel et en ligne…</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Recrutez les acteurs de l’évènementiel en quelques minutes</span></li>
                                                                 </ul>
                                                                 <div class="button-position text-left mt-4">
                                                                     <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterRaison" href="#screenshots">Soyez informé au lancement </a>
@@ -298,7 +300,10 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title title-white text-center" style="color:#fff">
                                                                     <h2 class="title">Découvrez CIBLE en vidéo</h2>
-                                                                    <p>Si vous pouvez croire en vous, vous pouvez croire en CIBLE. Essayez, adoptez et recommandez… C’est vous qui gagnez après tout…</p>
+                                                                    <p>
+                                                                    Un design soigné, des Fonctionnalités complètes et des
+                                                                    processus optimisés pour <br> vous offrir la meilleure expérience utilisateur.
+                                                                   </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -359,9 +364,9 @@
                                                                                     <a class="active round-right nav-link" href="#tab11" aria-controls="tab11" role="tab" data-toggle="tab" aria-selected="true">
                                                                                         <div class="iq-fancy-box-01 text-right">
                                                                                             <i aria-hidden="true" class="ion ion-ios-checkmark-outline"></i>
-                                                                                            <h5>Créer et publier vos événement</h5>
+                                                                                            <h5>Créer et publier</h5>
                                                                                             <div class="fancy-content-01">
-                                                                                                <p>Informez en quelques minutes des millions d’utilisateurs</p>
+                                                                                                <p>Informez des millions d’utilisateurs de vos évènements en 02 clics </p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </a>
@@ -372,7 +377,7 @@
                                                                                             <i aria-hidden="true" class="ion ion-ios-color-wand-outline"></i>
                                                                                             <h5>Vendre des tickets</h5>
                                                                                             <div class="fancy-content-01">
-                                                                                                <p>Suivi en temps réel vos ventes depuis votre téléphone</p>
+                                                                                                <p>Suivez en temps réel vos ventes depuis votre téléphone</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </a>
@@ -474,9 +479,10 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title text-center">
-                                                                    <h2 class="title">Parce que vous êtes un boss, <br> utilisez CIBLE</h2>
-                                                                    <p>Un design soigné, des Fonctionnalités complètes et des
-                                                                        processus optimisés pour vous offrir la meilleure expérience utilisateur.
+                                                                    <h2 class="title">Parce que vous êtes un BOSS, <br> utilisez CIBLE</h2>
+                                                                    <p>
+                                                                        Si vous pouvez croire en vous, vous pouvez croire en CIBLE. <br>
+                                                                        Essayez, adoptez et recommandez… C’est vous qui gagnez après tout…
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -556,7 +562,7 @@
                                                                         <i aria-hidden="true" class="ion ion-ios-albums-outline"></i>
                                                                     </div>
                                                                     <div class="fancy-content">
-                                                                        <h6>Consultez gratuitement les événements autour de vous</h6>
+                                                                        <h6>Consultez gratuitement les évènements autour de vous</h6>
                                                                         <!-- <p>A color scheme is the choice of
 																					colors used in design for a range of
 																					media.</p>  -->
@@ -574,7 +580,7 @@
                                                                         <i aria-hidden="true" class="ion ion-ios-person-outline"></i>
                                                                     </div>
                                                                     <div class="fancy-content">
-                                                                        <h6>Créez gratuitement un compte pour acheter un ticket</h6>
+                                                                        <h6>Créez gratuitement un compte pour acheter vos tickets</h6>
                                                                         <!-- <p>The quality of the selection is very
 																					high as it takes into the account.
 																				</p>  -->
@@ -775,7 +781,7 @@
                                                 </div>
                                                 <div class="container d-flex justify-content-center pt-4 pt-lg-5">
                                                     <a class="button text-light" style="cursor:pointer" data-toggle="modal" data-target="#exampleModalCenter1">
-                                                        J’essayerai Cible
+                                                        J’essayerai CIBLE
                                                     </a>
                                                 </div>
                                             </div>
@@ -1000,7 +1006,7 @@
                                                                                                 "
                                                                                             </span>
                                                                                             <span style="font-weight: 400;">
-                                                                                                Je serai votre meilleure amie chez CIBLE. Je vous raconterai tout…
+                                                                                                Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout…
                                                                                                 <span class="font-bold text-dark h2">
                                                                                                     "
                                                                                                 </span>
@@ -1028,7 +1034,7 @@
                                                                                                 "
                                                                                             </span>
                                                                                             <span style="font-weight: 400;">
-                                                                                                Vous méritez le beau ;
+                                                                                                Vous méritez le beau ;<br>
                                                                                                 je vous offrirai toujours le plus beau.</span>
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
@@ -1056,7 +1062,7 @@
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
-                                                                                            <span style="font-weight: 400;">Je ne trahirai jamais le design ; je vous garantis zéro bug.</span>
+                                                                                            <span style="font-weight: 400;">Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</span>
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
@@ -1083,7 +1089,7 @@
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
-                                                                                            <span style="font-weight: 400;">Mon Job ? Vous rendre fiers d’appartenir à la famille CIBLE</span>
+                                                                                            <span style="font-weight: 400;">Mon Job ? Vous rendre fiers <br>  d’appartenir à la famille CIBLE</span>
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
@@ -1110,7 +1116,7 @@
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
-                                                                                            <span style="font-weight: 400;">Pour votre satisfaction, chaque minute compte ; chaque effort est nécessaire.</span>
+                                                                                            <span style="font-weight: 400;">Pour votre satisfaction, chaque minute compte ; <br>  chaque effort est nécessaire.</span>
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
@@ -1137,7 +1143,7 @@
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
-                                                                                            <span style="font-weight: 400;">Vous surprendre ; toujours vous surprendre avec de nouvelles fonctionnalités</span>
+                                                                                            <span style="font-weight: 400;">Vous surprendre ; toujours vous surprendre <br>  avec de nouvelles fonctionnalités</span>
                                                                                             <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span>
@@ -1441,8 +1447,8 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title title-white text-center" style="color:#fff">
                                                                     <h2 class="title">Téléchargement gratuit </h2>
-                                                                    <p>Tirez profit de chaque événement autour de vous. Téléchargez maintenant
-                                                                        l'application CIBLE selon votre profil.
+                                                                    <p>Tirez profit de chaque événement autour de vous. <br>
+                                                                        Téléchargez au lancement l'application CIBLE selon votre profil.
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -1593,7 +1599,7 @@
                                                                 <div class="heading-title title-white text-center" style="color:#fff">
                                                                     <h2 class="title">Souscrire à notre Newsletter
                                                                     </h2>
-                                                                    <p>Ne manquez pas d'être informé sur nos nouvelles Fonctionnalités
+                                                                    <p>Ne manquez pas d'être informé sur nos nouvelles fonctionnalités
                                                                         et de recevoir nos meilleurs articles autour de l'événementiel.
                                                                         Soyez dans l’action ; agissez aujourd’hui.
                                                                     </p>
@@ -1920,7 +1926,7 @@
                                     </div>
                                     <div class="col-12 mb-3 ">
 
-                                        <input id="raisonE" placeholder="Raison" name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required/>
+                                        <textarea id="raisonE" placeholder="Vos motivations" name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
                                     </div>
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
                                         <select class="" required>

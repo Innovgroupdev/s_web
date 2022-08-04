@@ -27,8 +27,8 @@ class HomeController extends Controller
         //$catArticles=Categories::with("articles")->first();
        // dump($catArticles);
         //$catArticle= Categories::where('id', '=', 1)->with('articles')->get();
-        $catArticle = Articles::with("categories")->first();
-        dd($catArticle);
+       // $catArticle = Articles::with("categories")->first();
+        //dd($catArticle);
 
         $publicites = Publicites::all();
         return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes']));

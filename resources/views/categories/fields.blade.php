@@ -4,13 +4,13 @@
 
 <div class="form-group col-12">
     {!! Form::label('libelle', 'Libelle') !!}
-    {!! Form::text('lib', null, ['class' => 'form-control','required' => 'required']) !!}
+    {!! Form::text('lib', null, ['class' => 'form-control','required' => 'required','maxlength'=>'100']) !!}
 </div>
 
 <!-- Desc Field -->
 <div class="form-group col-12">
     {!! Form::label('desc', 'Description') !!}
-    {!! Form::textarea('desc', null, ['class' => 'form-control', 'required' => 'required', 'rows'  => '3']) !!}
+    {!! Form::textarea('desc', null, ['class' => 'form-control', 'required' => 'required', 'rows'  => '3','maxlength'=>'400']) !!}
 </div>
 
 <!-- Img Url Field -->

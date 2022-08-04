@@ -17,15 +17,15 @@
 </div> -->
 <p class="text-center">  Veuillez cliquer pour choisir une image (*)</p>
 <div class="col-12 mb-3 d-flex justify-content-center">
-   
+
                     <label class="h6 w-50 text-center mx-auto" for="motivationImages" style="cursor: pointer !important; display: block !important">
-                        <img id="imageMotivation" class="w-100 mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
+                        <img id="imageMotivation" required="" class="w-100 mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                         </iframe>
-                      
+
                     </label>
-                    <input type="file" accept="image/*" name="img_url" required=""  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
-                   
+                    <input type="file" accept="image/*" name="img_url" required="required"  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
+
                 </div>
 <!-- Libelle Field -->
 <div class="form-group col-12">

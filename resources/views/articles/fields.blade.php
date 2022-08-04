@@ -12,19 +12,25 @@
         {!! Form::label('desc', 'Description') !!}
         <span class="text-danger">(maximum 200 caractères) </span>
         {!! Form::textarea('desc', null, ['class' => 'form-control','rows' => '2', 'required' =>'required','maxlength' =>'200']) !!}
+
+     <!-- Desc Field -->
+    <div class="form-group col-12">
+        {!! Form::label('contenu', 'Contenu') !!}
+        <span class="text-danger">(maximum 200 caractères) </span>
+        {!! Form::textarea('contenu', null, ['class' => 'form-control','rows' => '2', 'required' =>'required']) !!}
     </div>
 
-    <div class="col-12 mb-3 ">
-        <div class="d-flex justify-content-between align-items-center">
-            <label for="ta-1" class="font-bold font-open mb-2">Contenu de l'article <span style="color: red;">*</span></label>
-            <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>
-        </div>
+{{--    <div class="col-12 mb-3 ">--}}
+{{--        <div class="d-flex justify-content-between align-items-center">--}}
+{{--            <label for="ta-1" class="font-bold font-open mb-2">Contenu de l'article <span style="color: red;">*</span></label>--}}
+{{--            <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>--}}
+{{--        </div>--}}
 
-        <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" value="{{$articles->contenu}}" name="contenu" id="ta-1" cols="30" rows="2"> {{old('contenu')}}</textarea>
-        @error('contenu')
-        <div class="invalid-feedback">{{$message}}</div>
-        @enderror
-    </div>
+{{--        <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" value="{{$articles->contenu}}" name="contenu" id="ta-1" cols="30" rows="2"> {{old('contenu')}}</textarea>--}}
+{{--        @error('contenu')--}}
+{{--        <div class="invalid-feedback">{{$message}}</div>--}}
+{{--        @enderror--}}
+{{--    </div>--}}
 
 
     <!-- Tags Field -->

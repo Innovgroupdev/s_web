@@ -18,13 +18,13 @@
 
 <!-- Created At Field -->
 <div class="col-sm-12">
-    {!! Form::label('created_at', 'Created At:') !!}
+    {!! Form::label('created_at', 'Date de création:') !!}
     <p>{{ $informer->created_at }}</p>
 </div>
 
 <!-- Updated At Field -->
-<div class="col-sm-12">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $informer->updated_at }}</p>
-</div>
+{{--<div class="col-sm-12">--}}
+{{--    {!! Form::label('updated_at', 'Updated At:') !!}--}}
+{{--    <p>{{ $informer->updated_at }}</p>--}}
+{{--</div>--}}
 

@@ -5,9 +5,8 @@
             <th>ID</th>
         <th>Auteur</th>
         <th>Email</th>
-            <th>Description</th>
-
-        <th>Articles</th>
+{{--            <th>Description</th>--}}
+{{--        <th>Articles</th>--}}
             <th>Validaiton</th>
             <th colspan="3">Action</th>
         </tr>
@@ -20,9 +19,9 @@
 
             <td>{{ $commentaire->name }}</td>
             <td>{{ $commentaire->email }}</td>
-                <td>{{ $commentaire->description }}</td>
+{{--                <td>{{ $commentaire->description }}</td>--}}
 
-                <td>{{ optional($commentaire->article)->libelle}}</td>
+{{--                <td>{{ optional($commentaire->article)->libelle}}</td>--}}
                 @if($commentaire->is_valid == 0)
                 <td>
                         <span style="color: red">

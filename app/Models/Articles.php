@@ -33,14 +33,12 @@ class Articles extends Model
      * @return BelongsTo
      * @description get the category for the blog post.
      */
-//    public function categorie()
-//    {
-//        return $this->belongsTo(Categories::class, 'categorie_id');
-//    }
+    public function categorie()
+    {
+        return $this->belongsTo(Categories::class, 'categorie_id');
+    }
 
-        public function articles(){
-            return $this->hasMany(Articles::class,'article_id');
-        }
+
     /**
      * @return BelongsTo
      * @description get the category for the blog post.

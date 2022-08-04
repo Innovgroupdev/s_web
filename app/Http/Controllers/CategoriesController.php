@@ -151,7 +151,7 @@ class CategoriesController extends AppBaseController
         $categories = $this->categoriesRepository->find($id);
 
         if (empty($categories)) {
-            Flash::error('Categories not found');
+            Flash::error('Catégorie non trouvée');
 
             return redirect(route('categories.index'));
         }
@@ -171,9 +171,10 @@ class CategoriesController extends AppBaseController
     {
         //$categories = $this->categoriesRepository->find($id);
         $request->validate([
-            'lib'=>'required',
-            'desc'=>'required'
+            'lib'=>'required|string|min:3',
+            'desc'=>'required|string|min:10'
         ]);
+
         $categories = Categories::find($id);
 
         if (empty($categories)) {
@@ -188,7 +189,7 @@ class CategoriesController extends AppBaseController
 
        // $categories = $this->categoriesRepository->update($request->all(), $id);
 
-        Flash::success('Categories updated successfully.');
+        Flash::success('Catégories modifiée avec succès.');
 
         return redirect(route('categories.index'));
     }
@@ -207,15 +208,19 @@ class CategoriesController extends AppBaseController
         $categories = $this->categoriesRepository->find($id);
 
         if (empty($categories)) {
-            Flash::error('Categories not found');
+            Flash::error('Catégorie non trouvée');
 
             return redirect(route('categories.index'));
         }
 
-        $this->categoriesRepository->delete($id);
+       // $this->categoriesRepository->delete($id);
 
-        Flash::success('Categories deleted successfully.');
-
+        if(Articles::where('categorie_id',$id)->exists()){
+            Flash::error('Cette action ne peut pas être effectuée; il existe déjà une catégorie dans un article');
+        }else{
+            $article = Categories::where('id',$id)->forceDelete();
+            Flash::success('Catégorie supprimée avec succès.');
+        }
         return redirect(route('categories.index'));
     }
 }

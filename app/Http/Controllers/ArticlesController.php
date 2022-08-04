@@ -71,6 +71,12 @@ class ArticlesController extends AppBaseController
        // dd($input);
 
         //$articles = $this->articlesRepository->create($input);
+        $request->validate([
+            'libelle'=>'required|string|min:3',
+            'tags'=>'required|string|min:3',
+            'contenu'=>'required|string|min:50',
+            'desc'=>'required|string|min:10'
+        ]);
         $user = auth()->user();
         $article = new Articles();
         $article->libelle = $request->libelle;
@@ -86,7 +92,7 @@ class ArticlesController extends AppBaseController
 
         $article->save();
 
-        Flash::success('Articles saved successfully.');
+        Flash::success('Article enregistré avec succès.');
 
         return redirect(route('articles.index'));
     }
@@ -109,7 +115,7 @@ class ArticlesController extends AppBaseController
 //        dd($articles);
 
         if (empty($articles)) {
-            Flash::error('Articles not found');
+            Flash::error('Article non trouvé');
 
             return redirect(route('articles.index'));
         }
@@ -130,7 +136,7 @@ class ArticlesController extends AppBaseController
         $categories = Categories::all();
         //dd($categories);
         if (empty($articles)) {
-            Flash::error('Articles not found');
+            Flash::error('Article non trouvé');
 
             return redirect(route('articles.index'));
         }
@@ -151,10 +157,16 @@ class ArticlesController extends AppBaseController
         $articles = Articles::find($id);
 
         if (empty($articles)) {
-            Flash::error('Articles not found');
+            Flash::error('Articles non trouvé');
 
             return redirect(route('articles.index'));
         }
+        $request->validate([
+            'libelle'=>'required|string|min:3',
+            'tags'=>'required|string|min:3',
+            'contenu'=>'required|string|min:50',
+            'desc'=>'required|string|min:10'
+        ]);
 
         $user = auth()->user();
         if($request->file('img') != null){
@@ -177,6 +189,7 @@ class ArticlesController extends AppBaseController
             $articles->libelle = $request->libelle;
             $articles->desc = $request->desc;
             $articles->tags = $request->tags;
+            Flash::success('Article modifié avec succès.');
             $articles->save();
         }
 
@@ -203,7 +216,7 @@ class ArticlesController extends AppBaseController
         $articles = $this->articlesRepository->find($id);
 
         if (empty($articles)) {
-            Flash::error('Articles not found');
+            Flash::error('Articles non trouvé');
 
             return redirect(route('articles.index'));
         }
@@ -211,7 +224,7 @@ class ArticlesController extends AppBaseController
         //$this->articlesRepository->delete($id);
         $article = Articles::where('id',$id)->forceDelete();
 
-        Flash::success('Articles deleted successfully.');
+        Flash::success('Article supprimé avec succès.');
 
         return redirect(route('articles.index'));
     }

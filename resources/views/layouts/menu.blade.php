@@ -31,21 +31,21 @@
 <li class="nav-item">
     <a href="{{ route('informers.index') }}" class="nav-link {{ Request::is('informers*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-users"></i>
-        <p>Informers</p>
+        <p>Prospects</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="{{ route('essayers.index') }}" class="nav-link {{ Request::is('essayers*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-users"></i>
-        <p>Essayers</p>
+        <p>Motivations</p>
     </a>
 </li>
 
 <li class="nav-item">
     <a href="{{ route('news.index') }}" class="nav-link {{ Request::is('news*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-users"></i>
-        <p>News</p>
+        <p>Newsletter</p>
     </a>
 </li>
 

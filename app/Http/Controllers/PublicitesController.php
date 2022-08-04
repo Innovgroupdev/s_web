@@ -58,6 +58,10 @@ class PublicitesController extends AppBaseController
     public function store(Request $request)
     {
        // $input = $request->all();
+        $request->validate([
+            'libelle'=>'required|string|min:3',
+            'img_url'=>'required'
+        ]);
         $user = auth()->user();
         $pub = new Publicites();
         $pub->libelle = $request->libelle;
@@ -107,7 +111,7 @@ class PublicitesController extends AppBaseController
     {
         $publicites = $this->publicitesRepository->find($id);
         if (empty($publicites)) {
-            Flash::error('Publicites not found');
+            Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
@@ -132,7 +136,7 @@ class PublicitesController extends AppBaseController
         $publicites = Publicites::find($id);
 
         if (empty($publicites)) {
-            Flash::error('Publicites not found');
+            Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
@@ -175,7 +179,7 @@ class PublicitesController extends AppBaseController
         $publicites = $this->publicitesRepository->find($id);
 
         if (empty($publicites)) {
-            Flash::error('Publicites not found');
+            Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
@@ -183,7 +187,7 @@ class PublicitesController extends AppBaseController
        // $this->publicitesRepository->delete($id);
         $publicites->forceDelete();
 
-        Flash::success('Publicites deleted successfully.');
+        Flash::success('Publicité supprimée.');
 
         return redirect(route('publicites.index'));
     }

@@ -49,7 +49,8 @@
         <h2 class="widget-title">Commentaires récents</h2>
         <ul id="recentcomments">
             @foreach($articleCommentes as $articleCommente)
-            <li class="recentcomments"><span class="comment-author-link"><a rel='external nofollow ugc' class='url'>rink</a></span> on
+            <li class="recentcomments"><span class="comment-author-link">
+                    <a rel='external nofollow ugc' class='url'>rink</a></span>
                 <a href="blog/{{$articleCommente->article_id}}">{{$articleCommente->description}}</a>
             </li>
             @endforeach
@@ -66,12 +67,6 @@
         <h2 class="widget-title">Catégories</h2>
 
         <ul>
-
-            <li class="cat-item cat-item-17"><a href="{{route('category')}}">
-
-                </a>
-            </li>
-
             <li class="cat-item cat-item-21"><a href="{{route('category')}}">Fashion</a>
             </li>
             <li class="cat-item cat-item-23"><a href="{{route('category')}}">Photography</a>

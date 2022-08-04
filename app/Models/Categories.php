@@ -27,15 +27,12 @@ class Categories extends Model
      * @return HasMany
      * @description get all articles for the category
      */
-//    public function articles()
-//    {
-//        return $this->hasMany(Articles::class,'article_id');
-//    }
-
-
-    public function categorie(){
-        return $this->belongsTo(Categories::class,'categorie_id');
+    public function articles()
+    {
+        return $this->hasMany(Articles::class,'article_id');
     }
+
+
     /**
      * Get the post that owns the comment.
      */
