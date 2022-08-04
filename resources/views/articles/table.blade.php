@@ -111,6 +111,8 @@
                 text: "Cette action est irreversible!",
                 icon: "warning",
                 buttons: true,
+                confirmButtonText: 'Oui, supprimer!',
+                cancelButtonText: 'Non, annuler!',
                 dangerMode: true,
             })
                 .then((willDelete) => {

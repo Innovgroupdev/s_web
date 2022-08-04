@@ -1759,8 +1759,11 @@
                                 <div class="col-12">
                                     <input id="emailH" placeholder="Email" type="emailH" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
                                 </div>
+                                <div class="col-12 text-center text-danger mt-3">
+                                     <strong> <span id="error_informH"  style="color:red!important" ></span></strong>
+                                </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                    <span id="error_informH"></span>
+                                   
                                     <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                 </div>
                             </div>
@@ -2104,15 +2107,52 @@
                    numero:numero,
                    _token:_token
                },
+               beforeSend : function(){
+                                let timerInterval
+                                    Swal.fire({
+                                    title: 'Envoie en cours ...',
+                                    html: 'Chargement dans <b></b> milliseconds.',
+                                    timer: 1000000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                    }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                    })
+                            },
                success:function (response) {
                    if (response){
+
+                    
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
                        $('#informHeader')[0].reset();
                        $('#error_informH').hide();
                        $('#informHeader')[0].hide();
                    }
                },
                error:function () {
-                   $('#error_informH').html('<label> Numéro ou Email existe déjà</label>')
+                   $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                   Swal.fire({o
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                                })
                }
 
            });
