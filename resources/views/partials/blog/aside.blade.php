@@ -50,7 +50,7 @@
         <ul id="recentcomments">
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
-                    <a rel='external nofollow ugc' class='url'>rink</a></span>
+                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a></span>
                 <a href="blog/{{$articleCommente->article_id}}">{{$articleCommente->description}}</a>
             </li>
             @endforeach
@@ -66,13 +66,14 @@
     <div id="categories-2" class="widget widget_categories">
         <h2 class="widget-title">Catégories</h2>
 
+
         <ul>
-            <li class="cat-item cat-item-21"><a href="{{route('category')}}">Fashion</a>
+            @foreach($categories as $categorie)
+            <li class="cat-item cat-item-21"><a href="category/{{$categorie->id}}">
+                    {{$categorie->lib}}
+                </a>
             </li>
-            <li class="cat-item cat-item-23"><a href="{{route('category')}}">Photography</a>
-            </li>
-            <li class="cat-item cat-item-24"><a href="{{route('category')}}">Technology</a>
-            </li>
+            @endforeach
         </ul>
 
     </div>

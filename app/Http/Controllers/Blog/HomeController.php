@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
 use App\Models\Articles;
+use App\Models\Categorie;
 use App\Models\Categories;
 use App\Models\Commentaire;
 use App\Models\Publicites;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Arr;
 
 class HomeController extends Controller
 {
@@ -22,16 +25,18 @@ class HomeController extends Controller
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
 
-//        $catArticle= Categories::with('articles')->get();
-//        $catArticles = $catArticle->first()->articles();
-        //$catArticles=Categories::with("articles")->first();
-       // dump($catArticles);
-        //$catArticle= Categories::where('id', '=', 1)->with('articles')->get();
-       // $catArticle = Articles::with("categories")->first();
-        //dd($catArticle);
+        $categories = Categorie::all();
+//        $getCollections = collect([]);
+//        foreach ($categories as $categorie){
+//            $catArticles = Categorie::find($categorie->id)->articles;
+//            $getCollections = $getCollections->push($catArticles);
+//        }
+
+        //$catArticleCollections = $getCollections;
+       // dd($catArticleCollections);
 
         $publicites = Publicites::all();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes']));
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories']));
     }
 
     public function article($id)
@@ -48,23 +53,29 @@ class HomeController extends Controller
         }
 
         $publicites = Publicites::all();
+        $categories = Categorie::all();
 
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories']));
     }
 
     public function detail()
     {
 
         $publicites = Publicites::all();
+        $categories = Categorie::all();
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories']));
     }
 
-    public function category()
+    public function category($id)
     {
-        return view('partials.blog.category');
+
+
+        $catArticles = Categorie::find($id)->articles;
+
+        return view('partials.blog.category',compact(['catArticles']));
     }
 }
