@@ -40,7 +40,7 @@ Route::resource('articles', App\Http\Controllers\ArticlesController::class);
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
-Route::get('category', [App\Http\Controllers\Blog\HomeController::class, 'category'])->name('category');
+Route::get('category/{id}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
 
 
 Route::resource('informers', App\Http\Controllers\InformerController::class);

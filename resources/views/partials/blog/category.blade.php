@@ -22,7 +22,7 @@
                             <li class="breadcrumb-item active">
                             Catégorie name
                                </li>
-                           
+
 						</ul>
                     </div>
 				</div>
@@ -44,32 +44,34 @@
 												<div class="wpb_wrapper">
 													<div class="appino-recentblog v3">
 														<div class="row">
+                                                            @foreach($catArticles as $catArticle)
 															<div class="col-lg-4 col-md-6 appino-space-bottom">
 																<div class="iq-blog-box">
 																	<div class="iq-blog-image clearfix ">
-																		<img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-modale-info.png')}}"
+																		<img src="{{ asset("$catArticle->img")}}"
 																			class="img-fluid center-block  category"
 																			alt="blogimage0">
 																	</div>
 																	<div class="iq-blog-detail">
 																		<div class="iq-blog-meta">
 																			<ul class="list-inline">
-																				
+
 																				<li class="list-inline-item">
 																					<i class="fa fa-calendar"
 																						aria-hidden="true"></i>
 																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
+																						class="screen-reader-text">Publié
+																						le</span> <a
 																						href="{{route('detail')}}"
 																						rel="bookmark"><time
 																							class="entry-date published updated"
-																							datetime="2018-12-31T06:46:02+00:00">December
-																							31, 2018</time></a>
+																							datetime="{{$catArticle->created_at}}">
+                                                                                            {{$catArticle->created_at}}
+                                                                                        </time></a>
 																				</li>
 																				<li class="list-inline-item">
 																					<a
-																						href="{{route('detail')}}"><i
+																						href="blog/{{$catArticle->id}}"><i
 																							class="fa fa-comment-o"
 																							aria-hidden="true"></i>
 																						0</a>
@@ -78,272 +80,22 @@
 																		</div>
 																		<div class="blog-title">
 																			<a
-																				href="{{route('detail')}}">
-																				<h5>Life Lack Meaning</h5>
+																				href="blog/{{$catArticle->id}}">
+																				<h5>{{$catArticle->lib}}</h5>
 																			</a>
 																		</div>
 																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
+																			<p>{{$catArticle->desc}}.</p>
 																		</div>
 																		<div class="blog-button"><a
 																				class="button pull-left"
-																				href="{{route('detail')}}">Voir plus <i class="fa fa-angle-right"
+																				href="blog/{{$catArticle->id}}">Voir plus <i class="fa fa-angle-right"
 																					aria-hidden="true"></i></a>
 																		</div>
 																	</div>
 																</div>
 															</div>
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="../wp-content/uploads/sites/9/2018/12/blog-2-26-1.jpg"
-																			class="img-fluid center-block category"
-																			alt="blogimage1">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
-																				
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
-																						href="../2018/12/31/construction-industry-3/index.html"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="2018-12-31T06:44:49+00:00">December
-																							31, 2018</time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="../2018/12/31/construction-industry-3/index.html"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						0</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="../2018/12/31/construction-industry-3/index.html">
-																				<h5>Construction industry</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="../2018/12/31/construction-industry-3/index.html">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="../wp-content/uploads/sites/9/2018/12/blog-3-26-1.jpg"
-																			class="img-fluid center-block category"
-																			alt="blogimage2">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
-																				
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
-																						href="../2018/12/31/build-construction-industry-2/index.html"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="2018-12-31T06:43:56+00:00">December
-																							31, 2018</time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="../2018/12/31/build-construction-industry-2/index.html"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						0</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="../2018/12/31/build-construction-industry-2/index.html">
-																				<h5>Build Construction</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="../2018/12/31/build-construction-industry-2/index.html">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="../wp-content/uploads/sites/9/2018/12/blog-4-26-1.jpg"
-																			class="img-fluid center-block category"
-																			alt="blogimage3">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
-																				
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
-																						href="../2018/12/08/construction-industry-2/index.html"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="2018-12-08T11:21:41+00:00">December
-																							8, 2018</time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="../2018/12/08/construction-industry-2/index.html"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						3</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="../2018/12/08/construction-industry-2/index.html">
-																				<h5>Construction industry</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="../2018/12/08/construction-industry-2/index.html">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="../wp-content/uploads/sites/9/2018/12/blog-5-26-1.jpg"
-																			class="img-fluid center-block category"
-																			alt="blogimage4">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
-																				
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
-																						href="../2018/12/08/life-lack-meaning-2/index.html"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="2018-12-08T11:20:30+00:00">December
-																							8, 2018</time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="../2018/12/08/life-lack-meaning-2/index.html"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						0</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="../2018/12/08/life-lack-meaning-2/index.html">
-																				<h5>Life Lack Meaning</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="../2018/12/08/life-lack-meaning-2/index.html">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="../wp-content/uploads/sites/9/2018/12/blog-6-3-1.jpg"
-																			class="img-fluid center-block category"
-																			alt="blogimage5">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
-																				
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Posted
-																						on</span> <a
-																						href="../2018/12/08/life-lack-meaning/index.html"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="2018-12-08T11:19:45+00:00">December
-																							8, 2018</time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="../2018/12/08/life-lack-meaning/index.html"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						0</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="../2018/12/08/life-lack-meaning/index.html">
-																				<h5>Life Lack Meaning</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>Lorem Ipsum is simply dummy text of the
-																				printing and typesetting industry.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="../2018/12/08/life-lack-meaning/index.html">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
+                                                            @endforeach
 														</div>
 													</div>
 													<ul class='page-numbers'>
@@ -363,7 +115,7 @@
 					</main><!-- #main -->
 				</div><!-- #primary -->
 			</div><!-- #content -->
-			
+
 		</div><!-- .site-content-contain -->
   <style>
     img.category{
