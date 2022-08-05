@@ -56,7 +56,7 @@
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                            0 </a>
+                                                            {{$articles->nbvue}}</a>
                                                     </li>
                                                 </ul>
                                             </div>

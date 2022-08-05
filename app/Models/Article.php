@@ -52,6 +52,7 @@ class Article extends Model
         'contenu',
         'state',
         'user_id',
+        'nbvue',
         'categorie_id'
     ];
 
@@ -68,6 +69,7 @@ class Article extends Model
         'contenu' => 'string',
         'state' => 'boolean',
         'user_id' => 'integer',
+        'nbvue' => 'integer',
         'categorie_id' => 'integer'
     ];
 
