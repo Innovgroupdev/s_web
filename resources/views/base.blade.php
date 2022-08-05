@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{mix("/css/app.css")}}" rel="stylesheet">
-    <title>Laravel</title>
+    <title>CIBLE</title>
 </head>
 <body>
 @include("_partials.header")

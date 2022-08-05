@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <img class="img-fluid" src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}"
                              alt="appino">
                     </a>

@@ -1,6 +1,6 @@
 @extends('partials.model')
 @section('content')
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="site-content-contain">
     <div id="content" class="site-content">
 
@@ -1001,15 +1001,11 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">La Diva</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication digitale </p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">
-                                                                                                Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout…
-                                                                                                <span class="font-bold text-dark h2">
-                                                                                                    "
-                                                                                                </span>
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                            <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout….</p>
+                                                                                           
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1029,16 +1025,12 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Geek</h5>
                                                                                         <p class="team-post text-secondary">Développeur Front-End</p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">
-                                                                                                Vous méritez le beau ;<br>
-                                                                                                je vous offrirai toujours le plus beau.</span>
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                            <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                            <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Vous méritez le beau ;<br>
+                                                                                                je vous offrirai toujours le plus beau.</p>
+                                                                                           
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1058,14 +1050,11 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Saint </h5>
                                                                                         <p class="team-post text-secondary"> Développeur Back-End </p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</span>
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                            <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</p>
+                                                                                           
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1085,14 +1074,14 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Zeus</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication</p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                       
+                                                                                            <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                            <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Mon Job ? Vous rendre fiers <br> d’appartenir à la famille CIBLE</p>
+                                                                                            <!-- <span class="font-bold text-dark h2">
                                                                                                 "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">Mon Job ? Vous rendre fiers <br>  d’appartenir à la famille CIBLE</span>
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
+                                                                                            </span> -->
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1112,14 +1101,11 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">El Professor </h5>
                                                                                         <p class="team-post text-secondary">Chargé de la Relation Client </p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">Pour votre satisfaction, chaque minute compte ; <br>  chaque effort est nécessaire.</span>
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                       
+                                                                                       <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                       <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                       Pour votre satisfaction, chaque minute <br>  compte ;  chaque effort est nécessaire.</p>
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1139,14 +1125,11 @@
                                                                                         <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">L’aigle </h5>
                                                                                         <p class="team-post text-secondary">Product Owner, Chargé de la stratégie </p>
-                                                                                        <p class="team-post text-secondary">
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
-                                                                                            <span style="font-weight: 400;">Vous surprendre ; toujours vous surprendre <br>  avec de nouvelles fonctionnalités</span>
-                                                                                            <span class="font-bold text-dark h2">
-                                                                                                "
-                                                                                            </span>
+                                                                                        <p class="team-post text-secondary mt-0">
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                       <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                       Vous surprendre ; toujours vous surprendre <br>  avec de nouvelles fonctionnalités</p>
+                                                                                            
                                                                                         </p>
                                                                                         <p class="mt-3">
                                                                                             <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
@@ -1534,7 +1517,13 @@
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="blog-content">
-                                                                                        <p>{{$articleRecentFive->desc}}.</p>
+                                                                                        <p style="height: 65px;">
+                                                                                            <!-- {{$articleRecentFive->desc}}. -->
+                                                                                           {{ substr($articleRecentFive->desc, 0, 70)}}
+                                                                                           @if(strlen($articleRecentFive->desc) > 70)
+                                                                                             ...
+                                                                                           @endif
+                                                                                        </p>
                                                                                     </div>
                                                                                     <div class="blog-button"><a class="button" href="blog/{{$articleRecentFive->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
@@ -1619,15 +1608,17 @@
                                                                                 <form id="appino_subscription">
                                                                                     @csrf
                                                                                     <div class="email-form">
-                                                                                        <div class="newsletter-email">
-                                                                                            <input placeholder="Entez votre Addresse mail *" type="email" name="sub_email" class="news_text" id="email" required />
-                                                                                            <span id="error_email"></span>
-                                                                                        </div>
-                                                                                        <div class="email-subscribe">
-                                                                                            <input type="submit" class="sub_button" value="Soumettre">
-                                                                                            <div class="alax-loader">
+                                                                                        <div class="newsletter-email d-flex" style="position:relative">
+                                                                                            <input placeholder="Entez votre Addresse mail *" style="border-radius : 50px 0 0 50px" type="email" name="sub_email" class="news_text" id="email" required />
+                                                                                            <div class="alax-loader" style="position:absolute;left : 485px;top:10%">
                                                                                                 <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
+                                                                                            <input type="submit" class="sub_button bg-dark" style="margin-left:-15%;background:#343a40!important" value="Soumettre">
+                                                                                           
+                                                                                        </div>
+                                                                                        <div class="email-subscribe">
+                                                                                        <span id="error_email" style="color:#fff!important"></span>
+                                                                                           
                                                                                         </div>
                                                                                         <div class="subscribe">
                                                                                             <input type="hidden" name="action" value="subscribe" />
@@ -2090,8 +2081,13 @@
         });
     </script>
     <script>
-        $('#informHeader').submit(function(e){
-           e.preventDefault();
+         const formComment = document.querySelector("#informHeader");
+         if(formComment){
+                    formComment.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData =  new FormData(e.target)
+                        console.log(formData.entries())
+        //    e.preventDefault();
            let pays = $("#paysH").val();
            let email = $("#emailH").val();
            let numero = $("#numberH").val();
@@ -2107,8 +2103,8 @@
                    numero:numero,
                    _token:_token
                },
-               beforeSend : function(){
-                                let timerInterval
+               beforeSend : function () {
+                                let timerInterval;
                                     Swal.fire({
                                     title: 'Envoie en cours ...',
                                     html: 'Chargement dans <b></b> milliseconds.',
@@ -2129,7 +2125,7 @@
                                     if (result.dismiss === Swal.DismissReason.timer) {
                                         console.log('I was closed by the timer')
                                     }
-                                    })
+                                })
                             },
                success:function (response) {
                    if (response){
@@ -2148,7 +2144,7 @@
                },
                error:function () {
                    $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                   Swal.fire({o
+                   Swal.fire({
                                 icon: 'error',
                                 title: 'Erreur !',
                                 text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
@@ -2157,6 +2153,7 @@
 
            });
         });
+    }
     </script>
     <script>
         $('#informBilleterie').submit(function(e){

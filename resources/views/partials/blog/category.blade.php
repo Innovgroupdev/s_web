@@ -89,7 +89,7 @@
 																		</div>
 																		<div class="blog-button"><a
 																				class="button pull-left"
-																				href="blog/{{$catArticle->id}}">Voir plus <i class="fa fa-angle-right"
+																				href="/blog/{{$catArticle->id}}">Voir plus <i class="fa fa-angle-right"
 																					aria-hidden="true"></i></a>
 																		</div>
 																	</div>

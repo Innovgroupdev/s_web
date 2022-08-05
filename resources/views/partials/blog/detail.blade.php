@@ -98,6 +98,48 @@
                                                 </div>
                                             </div>
                                         </div>
+                                         <!-- Comments areas -->
+                                         <div class="container-fluid">
+                                            <div class="item-comment-area comtainer-fluid">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar">
+                                                        <img src="{{asset('images/cible-app-avatar.png')}}" style="border-radius:50%" alt="" width="50" height="50">
+                                                    </div>
+                                                    <div class="name ml-3 mt-2">
+                                                        <h5 class="mb-0 pb-0" style="line-height: 1rem"> KOEVI komi pascal</h3>
+                                                        <span class="small mt-0" style="line-height: .5rem">koevipascaldecor@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                <p class="text-secondary mt-3 " > 
+                                                <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
+                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo consequuntur et ex!
+                                            
+                                                </p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="item-comment-area comtainer-fluid mt-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar">
+                                                        <img src="{{asset('images/cible-app-avatar.png')}}" style="border-radius:50%" alt="" width="50" height="50">
+                                                    </div>
+                                                    <div class="name ml-3 mt-2">
+                                                        <h5 class="mb-0 pb-0" style="line-height: 1rem"> KOEVI komi pascal</h3>
+                                                        <span class="small mt-0" style="line-height: .5rem">koevipascaldecor@gmail.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-text">
+                                                <p class="text-secondary mt-3 " > 
+                                                <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
+                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo consequuntur et ex!
+                                            
+                                                </p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                        <!-- End Comments areas -->
                                         <div id="comments" class="comments-area">
                                             <div id="respond" class="comment-respond">
                                                 <h3 id="reply-title" class="comment-reply-title">Laisser un commentaire </h3>
@@ -134,6 +176,7 @@
                                                 </form>
                                             </div><!-- #respond -->
                                         </div><!-- #comments -->
+                                       
                                     </article><!-- #post-## -->
                                     <!-- Button trigger modal -->
 
