@@ -14,7 +14,7 @@
         <ul>
 
             <li>
-                <a href="blog/{{$articleRecentFive->id}}">{{$articleRecentFive->libelle}}</a>
+                <a href="/blog/{{$articleRecentFive->id}}">{{$articleRecentFive->libelle}}</a>
             </li>
         </ul>
         @endforeach
