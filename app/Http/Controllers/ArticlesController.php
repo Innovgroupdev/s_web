@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateArticlesRequest;
 use App\Http\Requests\UpdateArticlesRequest;
 use App\Models\Articles;
+use App\Models\Article;
 use App\Models\Categories;
 use App\Repositories\ArticlesRepository;
 use App\Http\Controllers\AppBaseController;
@@ -119,8 +120,8 @@ class ArticlesController extends AppBaseController
 
             return redirect(route('articles.index'));
         }
-
-        return view('articles.show')->with('articles', $articles);
+        $articleCommentaires = $this->articleCommentaires($id);
+        return view('articles.show',compact(['articles', 'articleCommentaires'])) ;
     }
 
     /**
@@ -236,4 +237,13 @@ class ArticlesController extends AppBaseController
         Flash::success('Article désactiver avec succès.');
         return redirect(route('articles.index'));
     }
+    public function articleCommentaires($id)
+    {
+
+
+        $articleCommentaires = Article::find($id)->commentaires;
+
+        return  $articleCommentaires;
+    }
+    
 }

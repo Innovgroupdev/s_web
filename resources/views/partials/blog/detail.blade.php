@@ -74,7 +74,7 @@
 															<li class="list-inline-item">
 																<a href="javascript:void(0)"><i class="fa fa-comment-o"
 																		aria-hidden="true"></i>
-                                                                    0</a>
+                                                                        {{$articleCommentaires->count()}}</a>
 															</li>
 
 															<li class="list-inline-item">
@@ -98,46 +98,51 @@
                                                 </div>
                                             </div>
                                         </div>
-                                         <!-- Comments areas -->
-                                         <div class="container-fluid">
-                                            <div class="item-comment-area comtainer-fluid">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar">
-                                                        <img src="{{asset('images/cible-app-avatar.png')}}" style="border-radius:50%" alt="" width="50" height="50">
-                                                    </div>
-                                                    <div class="name ml-3 mt-2">
-                                                        <h5 class="mb-0 pb-0" style="line-height: 1rem"> KOEVI komi pascal</h3>
-                                                        <span class="small mt-0" style="line-height: .5rem">koevipascaldecor@gmail.com</span>
-                                                    </div>
-                                                </div>
-                                                <div class="comment-text">
-                                                <p class="text-secondary mt-3 " > 
-                                                <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
-                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo consequuntur et ex!
-                                            
-                                                </p>
-                                                </div>
-                                            </div>
-                                            <hr>
+                                          <!-- Comments areas -->
+                                          <div class="container-fluid">
+                                          @php
+                                          $i = 0;
+                                          @endphp
+                                         
+                                          @foreach($articleCommentaires as $articleCommentaire)
+                                          
+                                          @if( $i != 0)
+                                          <hr>
+                                          @endif
+                                         
+
+                                          @php
+                                          $i ++;
+                                          @endphp
+                                           <div style="position:absolute;margin-top:-6rem;" id="c{{$articleCommentaire->id}}"></div>
                                             <div class="item-comment-area comtainer-fluid mt-4">
+                                                <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar">
                                                         <img src="{{asset('images/cible-app-avatar.png')}}" style="border-radius:50%" alt="" width="50" height="50">
                                                     </div>
                                                     <div class="name ml-3 mt-2">
-                                                        <h5 class="mb-0 pb-0" style="line-height: 1rem"> KOEVI komi pascal</h3>
-                                                        <span class="small mt-0" style="line-height: .5rem">koevipascaldecor@gmail.com</span>
+                                                        <h5 class="mb-0 pb-0" style="line-height: 1rem"> {{$articleCommentaire->name}}</h3>
+                                                        <span class="small mt-0" style="line-height: .5rem">{{$articleCommentaire->email}}</span>
                                                     </div>
+                                                </div>
+                                                <div>
+                                              
+                                                </div>
                                                 </div>
                                                 <div class="comment-text">
                                                 <p class="text-secondary mt-3 " > 
                                                 <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
-                                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo consequuntur et ex!
-                                            
+                                                {{$articleCommentaire->description}}
+                                                </p>
+                                                <p class="small text-right text-secondary">
+                                                {{$articleCommentaire->created_at}}
                                                 </p>
                                                 </div>
                                             </div>
-                                            <hr>
+                                          
+                                           @endforeach
+                                           
                                         </div>
                                         <!-- End Comments areas -->
                                         <div id="comments" class="comments-area">
@@ -182,33 +187,7 @@
 
 
                                         <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header" style="border: none;">
-
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            </div>
-                                            <div class="modal-body text-center pb-0 ">
-                                                <div class="mx-auto my-3 text-center d-flex justify-content-center align-items-center" style="border: 2px solid orangered;width : 100px;height:100px;border-radius: 50%;align-items: center;">
-                                                    <p style="font-weight:600;font-size:3rem;color : orangered" class="m-0">
-                                                        !
-                                                    </p>
-                                                </div>
-                                            <h5 class="modal-title" id="exampleModalLongTitle" style="font-size: 1.5rem;">Votre Commentaire à été envoyé !</h5>
-                                            <p class="mb-0 pb-0">
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam a ex blanditiis, magnam nihil atque in quo doloribus aut esse.
-                                            </p>
-                                            </div>
-                                            <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                                            <button type="button" class="btn btn-primary">D'accord</button>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
 
                                 <div class="col-md-4 col-sm-12">

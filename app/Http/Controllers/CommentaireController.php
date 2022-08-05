@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateCommentaireRequest;
 use App\Http\Requests\UpdateCommentaireRequest;
 use App\Models\Commentaire;
+use App\Models\Article;
 use App\Repositories\CommentaireRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -98,6 +99,7 @@ class CommentaireController extends AppBaseController
             return redirect(route('commentaires.index'));
         }
 
+        
         return view('commentaires.show')->with('commentaire', $commentaire);
     }
 
@@ -134,16 +136,32 @@ class CommentaireController extends AppBaseController
         $commentaire = $this->commentaireRepository->find($id);
 
         if (empty($commentaire)) {
-            Flash::error('Commentaire not found');
+            Flash::error('Commentaire non trouvé');
 
             return redirect(route('commentaires.index'));
         }
 
         $commentaire = $this->commentaireRepository->update($request->all(), $id);
 
-        Flash::success('Commentaire updated successfully.');
+        Flash::success('Commentaire modifié avec succès .');
 
         return redirect(route('commentaires.index'));
+    }
+    
+    public function updateDetail($id, UpdateCommentaireRequest $request)
+    {
+        $commentaire = $this->commentaireRepository->find($id);
+
+        if (empty($commentaire)) {
+            Flash::error('Commentaire non trouvé');
+
+            return redirect(route('commentaires.index'));
+        }
+
+        $commentaire = $this->commentaireRepository->update($request->all(), $id);
+
+        Flash::success('Commentaire modifié avec succès .');
+
     }
 
     /**
@@ -171,4 +189,5 @@ class CommentaireController extends AppBaseController
 
         return redirect(route('commentaires.index'));
     }
+    
 }

@@ -35,8 +35,8 @@
         <ul id="recentcomments">
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
-                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> a écrit</span>
-                <a href="blog/{{$articleCommente->article_id}}">{{$articleCommente->description}}</a>
+                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> --</span>
+                <a href="/blog/{{$articleCommente->article_id}}#c{{$articleCommente->id}}">{{$articleCommente->description}}</a>
             </li>
             @endforeach
         </ul>

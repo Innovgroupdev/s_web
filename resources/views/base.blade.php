@@ -11,5 +11,6 @@
 @yield('body')
 </body>
 @include("_partials._footer")
+
 <script src="{{mix("/js/app.js")}}"></script>
 </html>

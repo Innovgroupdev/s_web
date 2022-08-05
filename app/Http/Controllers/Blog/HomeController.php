@@ -22,8 +22,8 @@ class HomeController extends Controller
     }
     public function blog()
     {
-        $articles = DB::table('articles')->orderBy('created_at', 'desc')->get();
-        $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        $articleRecentFive = Article::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
         $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
         $categories = Categorie::all();
@@ -66,7 +66,9 @@ class HomeController extends Controller
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
         $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives']));
+
+        $articleCommentaires = Article::find($id)->commentaires;
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires']));
     }
 
     public function detail()

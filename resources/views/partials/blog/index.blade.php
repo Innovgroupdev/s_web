@@ -33,12 +33,12 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-7 col-sm-12">
                             <article id="post-879" class="post-879 post type-post status-publish format-image has-post-thumbnail hentry category-photography tag-picture post_format-post-format-image">
-                                @foreach($articles as $articles)
+                                @foreach($articles as $article)
                                 <div class="iq-page-blog">
                                     <div class="iq-blog-box">
 
                                         <div class="iq-blog-image">
-                                            <img width="1200" height="550" style="max-height:600px" src="{{asset($articles->img)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+                                            <img width="1200" height="550" style="max-height:600px" src="{{asset($article->img)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
                                         </div>
 
                                         <div class="iq-blog-detail">
@@ -48,36 +48,36 @@
                                                     <li class="list-inline-item">
 
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                        <span class="screen-reader-text">Posted on</span> <a href="../2018/12/31/construction-industry-3/index.html" rel="bookmark"><time class="entry-date published updated" datetime="{{$articles->created_at}}">{{$articles->created_at}}</time></a>
+                                                        <span class="screen-reader-text">Posted on</span> <a href="../2018/12/31/construction-industry-3/index.html" rel="bookmark"><time class="entry-date published updated" datetime="{{$article->created_at}}">{{$article->created_at}}</time></a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                            0 </a>
+                                                        {{$article->commentaires()->count()}}</a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                            {{$articles->nbvue}}</a>
+                                                            {{$article->nbvue}}</a>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="blog-title">
                                                 <h5 class="entry-title">
                                                     <a href="#">
-                                                        {{$articles->libelle}} </a>
+                                                        {{$article->libelle}} </a>
                                                 </h5>
                                             </div>
 
                                             <div class="blog-content">
                                             <p>
-                                                {{ substr($articles->desc, 0, 200)}}
-                                                @if(strlen($articles->desc) > 200)
+                                                {{ substr($article->desc, 0, 200)}}
+                                                @if(strlen($article->desc) > 200)
                                                     ...
                                                 @endif
                                             </p>
                                             </div>
 
                                             <div class="blog-button">
-                                                <a class="button pull-left" href="blog/{{$articles->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                <a class="button pull-left" href="blog/{{$article->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                             </div>
 
 

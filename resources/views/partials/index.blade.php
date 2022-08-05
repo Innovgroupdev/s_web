@@ -299,7 +299,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title title-white text-center" style="color:#fff">
-                                                                    <h2 class="title">Découvrez CIBLE en vidéo</h2>
+                                                                    <h2 class="title">Découvrez bientôt CIBLE en vidéo</h2>
                                                                     <p>
                                                                     Un design soigné, des Fonctionnalités complètes et des
                                                                     processus optimisés pour <br> vous offrir la meilleure expérience utilisateur.
@@ -315,7 +315,7 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-bg about-img popup-gallery play-video">
                                                                     <img class="img-fluid center-block img-fluid center-block " style="border-radius:10px" src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-3-1.jpg')}}" alt="#">
-                                                                    <a href="https://www.youtube.com/watch?v=kzyFmrFky7Y" class="iq-video popup-youtube"><i class="ion-ios-play-outline"></i></a>
+                                                                    <a  class="iq-video popup-youtube text-light"><i class="ion-ios-play-outline"></i></a>
                                                                     <div class="iq-waves">
                                                                         <div class="waves wave-1"></div>
                                                                         <div class="waves wave-2"></div>
