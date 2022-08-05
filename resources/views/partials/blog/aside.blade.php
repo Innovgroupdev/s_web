@@ -54,7 +54,7 @@
 
         <ul>
             @foreach($categories as $categorie)
-            <li class="cat-item cat-item-21"><a href="category/{{$categorie->id}}">
+            <li class="cat-item cat-item-21"><a href="/category/{{$categorie->id}}">
                     {{$categorie->lib}}
                 </a>
             </li>

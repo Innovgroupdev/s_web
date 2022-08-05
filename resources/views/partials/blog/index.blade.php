@@ -68,7 +68,12 @@
                                             </div>
 
                                             <div class="blog-content">
-                                                <p>{{$articles->desc}}</p>
+                                            <p>
+                                                {{ substr($articles->desc, 0, 200)}}
+                                                @if(strlen($articles->desc) > 200)
+                                                    ...
+                                                @endif
+                                            </p>
                                             </div>
 
                                             <div class="blog-button">

@@ -45,56 +45,51 @@
 													<div class="appino-recentblog v3">
 														<div class="row">
                                                             @foreach($catArticles as $catArticle)
-															<div class="col-lg-4 col-md-6 appino-space-bottom">
-																<div class="iq-blog-box">
-																	<div class="iq-blog-image clearfix ">
-																		<img src="{{ asset("$catArticle->img")}}"
-																			class="img-fluid center-block  category"
-																			alt="blogimage0">
-																	</div>
-																	<div class="iq-blog-detail">
-																		<div class="iq-blog-meta">
-																			<ul class="list-inline">
+															<div class="item col-12 col-md-6 col-lg-4">
+                                                                            <div class="iq-blog-box">
+                                                                                <div class="iq-blog-image clearfix">
+                                                                                    <img src="{{ asset($catArticle->img)}}" class="img-fluid center-block imgBlog" alt="blogimage0">
+                                                                                </div>
+                                                                                <div class="iq-blog-detail">
+                                                                                    <div class="iq-blog-meta">
+                                                                                        <ul class="list-inline">
 
-																				<li class="list-inline-item">
-																					<i class="fa fa-calendar"
-																						aria-hidden="true"></i>
-																					<span
-																						class="screen-reader-text">Publié
-																						le</span> <a
-																						href="{{route('detail')}}"
-																						rel="bookmark"><time
-																							class="entry-date published updated"
-																							datetime="{{$catArticle->created_at}}">
-                                                                                            {{$catArticle->created_at}}
-                                                                                        </time></a>
-																				</li>
-																				<li class="list-inline-item">
-																					<a
-																						href="blog/{{$catArticle->id}}"><i
-																							class="fa fa-comment-o"
-																							aria-hidden="true"></i>
-																						{{$catArticle->nbvue}}</a>
-																				</li>
-																			</ul>
-																		</div>
-																		<div class="blog-title">
-																			<a
-																				href="blog/{{$catArticle->id}}">
-																				<h5>{{$catArticle->lib}}</h5>
-																			</a>
-																		</div>
-																		<div class="blog-content">
-																			<p>{{$catArticle->desc}}.</p>
-																		</div>
-																		<div class="blog-button"><a
-																				class="button pull-left"
-																				href="/blog/{{$catArticle->id}}">Voir plus <i class="fa fa-angle-right"
-																					aria-hidden="true"></i></a>
-																		</div>
-																	</div>
-																</div>
-															</div>
+                                                                                            <li class="list-inline-item">
+                                                                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                                                                <span class="screen-reader-text">Posted
+                                                                                                    on</span> <a href="blog/{{$catArticle->id}}" rel="bookmark"><time class="entry-date published updated" datetime="{{$catArticle->created_at}}">
+                                                                                                        {{$catArticle->created_at}}
+                                                                                                    </time></a>
+                                                                                            </li>
+                                                                                            <li class="list-inline-item">
+                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                                                                    0</a>
+                                                                                            </li>
+                                                                                            <li class="list-inline-item">
+                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                                                    0 </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="blog-title">
+                                                                                        <a href="{{route('detail')}}">
+                                                                                            <h6>{{$catArticle->libelle}}</h6>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div class="blog-content">
+                                                                                        <p style="height: 65px;">
+                                                                                            <!-- {{$catArticle->desc}}. -->
+                                                                                           {{ substr($catArticle->desc, 0, 70)}}
+                                                                                           @if(strlen($catArticle->desc) > 70)
+                                                                                             ...
+                                                                                           @endif
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$catArticle->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                             @endforeach
 														</div>
 													</div>

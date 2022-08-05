@@ -1525,7 +1525,7 @@
                                                                                            @endif
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="blog-button"><a class="button" href="blog/{{$articleRecentFive->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$articleRecentFive->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

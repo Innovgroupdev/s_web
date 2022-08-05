@@ -5,7 +5,7 @@
 </div>
 <div class="col-sm-12 d-flex justify-content-center">
     <!-- {!! Form::label('img', 'Img:') !!} -->
-    <img src="{{ asset($articles->img) }}" style="max-height : 700px" class="img img-responsive w-75 mx-auto" />
+    <img src="{{ asset($articles->img) }}" style="max-height : 700px;border-radius:5px" class="img img-responsive mx-auto" />
 </div>
 
 <!-- Desc Field -->
