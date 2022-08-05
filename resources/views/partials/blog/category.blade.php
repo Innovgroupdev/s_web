@@ -74,7 +74,7 @@
 																						href="blog/{{$catArticle->id}}"><i
 																							class="fa fa-comment-o"
 																							aria-hidden="true"></i>
-																						0</a>
+																						{{$catArticle->nbvue}}</a>
 																				</li>
 																			</ul>
 																		</div>

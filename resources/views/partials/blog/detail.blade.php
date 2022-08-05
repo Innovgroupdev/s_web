@@ -74,13 +74,13 @@
 															<li class="list-inline-item">
 																<a href="javascript:void(0)"><i class="fa fa-comment-o"
 																		aria-hidden="true"></i>
-																	0 </a>
+                                                                    0</a>
 															</li>
 
 															<li class="list-inline-item">
 																<a href=""><i class="fa fa-eye"
 																		aria-hidden="true"></i>
-																	0 </a>
+                                                                    {{$articles->nbvue}} </a>
 															</li>
 														</ul>
                                                     </div>
@@ -231,7 +231,7 @@
                             success:function (response) {
                                 if (response){
                                     $('#formComment')[0].reset();
-                                  
+
                                     Swal.fire({
                                     icon: 'success',
                                     title: 'Commentaire publié avec succès',
@@ -241,7 +241,7 @@
                                     $('#error_comment').hide();
                                     $('#formComment')[0].hide();
                                     $('#saveSuccess').html('<label> Commentaire enregistré avec succès</label>')
-                                   
+
                                 }
                             },
                             error:function () {

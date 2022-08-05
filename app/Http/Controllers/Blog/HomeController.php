@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Articles;
 use App\Models\Categorie;
 use App\Models\Categories;
@@ -24,7 +25,7 @@ class HomeController extends Controller
         $articles = DB::table('articles')->orderBy('created_at', 'desc')->get();
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-
+        $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
         $categories = Categorie::all();
 //        $getCollections = collect([]);
 //        foreach ($categories as $categorie){
@@ -35,8 +36,9 @@ class HomeController extends Controller
         //$catArticleCollections = $getCollections;
        // dd($catArticleCollections);
 
+
         $publicites = Publicites::all();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories']));
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
 
     public function article($id)
@@ -44,6 +46,8 @@ class HomeController extends Controller
 
         $articles = Articles::all();
         $articles  =  $articles->find($id);
+        $nb = 0;
+
        // dd($articles);
 
         if (empty($articles)) {
@@ -51,13 +55,18 @@ class HomeController extends Controller
 
             //return redirect(route('articles.index'));
         }
-
+        $nb++;
+        $article = Article::find($id);
+        $article->nbvue = $article->nbvue + $nb;
+        $article->save();
+        //dd($nb);
         $publicites = Publicites::all();
         $categories = Categorie::all();
 
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
+        $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives']));
     }
 
     public function detail()
@@ -66,8 +75,9 @@ class HomeController extends Controller
         $publicites = Publicites::all();
         $categories = Categorie::all();
         $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
+        $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
 
     public function category($id)

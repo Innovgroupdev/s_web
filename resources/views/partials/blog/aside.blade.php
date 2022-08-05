@@ -22,26 +22,11 @@
     <div id="recent-posts-2" class="widget widget_recent_entries">
         <h2 class="widget-title">Articles populaires</h2>
         <ul>
+            @foreach($articlePopFives as $articlePopFive)
             <li>
-                <a href="{{route('detail')}}">Life Lack
-                    Meaning</a>
+                <a href="/blog/{{$articlePopFive->id}}">{{$articlePopFive->libelle}}</a>
             </li>
-            <li>
-                <a href="{{route('detail')}}">Construction
-                    industry</a>
-            </li>
-            <li>
-                <a href="{{route('detail')}}">Build
-                    Construction</a>
-            </li>
-            <li>
-                <a href="{{route('detail')}}">Construction
-                    industry</a>
-            </li>
-            <li>
-                <a href="{{route('detail')}}">Life Lack
-                    Meaning</a>
-            </li>
+            @endforeach
         </ul>
 
     </div>
@@ -50,7 +35,7 @@
         <ul id="recentcomments">
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
-                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a></span>
+                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> a écrit</span>
                 <a href="blog/{{$articleCommente->article_id}}">{{$articleCommente->description}}</a>
             </li>
             @endforeach
