@@ -219,7 +219,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="button-position text-left">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterBilleterie" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -258,7 +258,7 @@
                                                                     <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Recrutez les acteurs de l’évènementiel en quelques minutes</span></li>
                                                                 </ul>
                                                                 <div class="button-position text-left mt-4">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterRaison" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1748,7 +1748,7 @@
                                     <input id="numberH" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
-                                    <input id="emailH" placeholder="Email" type="emailH" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
                                 </div>
                                 <div class="col-12 text-center text-danger mt-3">
                                      <strong> <span id="error_informH"  style="color:red!important" ></span></strong>
