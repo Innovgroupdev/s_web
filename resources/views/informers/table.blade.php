@@ -2,26 +2,26 @@
     <table class="table" id="informers-table">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Email</th>
-        <th>Pays</th>
-        <th>Numero</th>
+            <th class="p-4">Id</th>
+            <th class="p-4">Email</th>
+        <th class="p-4">Pays</th>
+        <th class="p-4">Numero</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($informers as $informer)
             <tr>
-                <td>{{ $informer->id }}</td>
-                <td>{{ $informer->email }}</td>
-            <td>{{ $informer->pays }}</td>
-            <td>{{ $informer->numero }}</td>
+                <td class="p-4">{{ $informer->id }}</td>
+                <td class="p-4">{{ $informer->email }}</td>
+            <td class="p-4">{{ $informer->pays }}</td>
+            <td class="p-4">{{ $informer->numero }}</td>
                 <td width="120">
 {{--                    {!! Form::open(['route' => ['informers.destroy', $informer->id], 'method' => 'delete']) !!}--}}
                     <div class='btn-group'>
                         <a href="{{ route('informers.show', [$informer->id]) }}"
-                           class='btn btn-default btn-xs'>
-                            <i class="far fa-eye"></i>
+                           class='btn btn-primary py-2 px-3 btn-xs'>
+                            Détails
                         </a>
 {{--                        <a href="{{ route('informers.edit', [$informer->id]) }}"--}}
 {{--                           class='btn btn-default btn-xs'>--}}

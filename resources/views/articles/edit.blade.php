@@ -110,7 +110,7 @@
     (function() {
 	var content =
 		"<p><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzC_Ho_08G0m7PyxJOPLpPujM9UTLxvaE-5nXewscnqa3GMWjGwg' alt='Image result for summernote.js'></p><h1>Summernote</h1>";
-	var $sumNote = $("#ta-1")
+	var $sumNote = $("#contenu")
 		.summernote({
 			callbacks: {
 				onPaste: function(e,x,d) {
@@ -149,7 +149,7 @@
 
 		console.log(y[0]);console.log(y.find("p> font"));
 	var x = y.find("font").remove();
-		$("#content").text($("#ta-1").val());
+		$("#content").text($("#contenu").val());
 	});
 	//get text$($sumNote.code()).find("font").remove()$($sumNote.code()).find("font").remove()
 	$("#btn-get-text").on("click", function() {

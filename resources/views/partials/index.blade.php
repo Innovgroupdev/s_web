@@ -1932,9 +1932,11 @@
                                     <div class="col-sm-8 mb-3">
                                         <input id="numeroE" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required />
                                     </div>
-
+                                    <div class="col-12 text-center">
+                                    <span id="error_informE" class="text-danger"></span>
+                                    </div>
                                     <div class="col-12 mt-4 d-flex justify-content-center">
-                                        <span id="error_informE"></span>
+                                        
                                         <input name="submit" type="submit"  class="submit w-50 mx-auto" value="Envoyer" />
                                     </div>
                                 </div>
@@ -2037,6 +2039,12 @@
                },
                success:function (response) {
                    if (response){
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
                        $('#appino_subscription')[0].reset();
                        $('#error_email').hide();
                    }
@@ -2243,15 +2251,50 @@
                    nom:nom,
                    _token:_token
                },
+               beforeSend : function () {
+                                let timerInterval;
+                                    Swal.fire({
+                                    title: 'Envoie en cours ...',
+                                    html: 'Chargement dans <b></b> milliseconds.',
+                                    timer: 1000000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                    }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                })
+                            },
                success:function (response) {
                    if (response){
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
                        $('#Soyerform')[0].reset();
                        $('#error_informE').hide();
                        $('#Soyerform')[0].hide();
                    }
                },
                error:function () {
-                   $('#error_informE').html('<label> Numéro ou Email existe déjà</label>')
+                   $('#error_informE').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                   Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                                })
                }
 
            });

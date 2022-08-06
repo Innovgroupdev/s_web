@@ -2,13 +2,12 @@
     <table class="table" id="commentaires-table">
         <thead>
         <tr>
-            <th>ID</th>
-        <th>Auteur</th>
-        <th>Email</th>
-{{--            <th>Description</th>--}}
-{{--        <th>Articles</th>--}}
-            <th>Validaiton</th>
-            <th colspan="3">Action</th>
+            <th class="p-4">ID</th>
+        <th class="p-4">Auteur</th>
+        <th class="p-4">Email</th>
+
+            <th class="p-4">Statut</th>
+            <th colspan="3" class="p-4">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -36,17 +35,20 @@
                     </td>
                 @endif
 
-                <td width="120">
+                <td width="120" >
+                  <div class="d-flex justify-content-end align-items-center">
+
+                  
                     {!! Form::open(['route' => ['commentaires.destroy', $commentaire->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('commentaires.show', [$commentaire->id]) }}"
-                           class='btn btn-default btn-xs'>
+                           class='btn btn-success btn-xs px-3 py-2 mr-2'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('commentaires.edit', [$commentaire->id]) }}"
+                        <!-- <a href="{{ route('commentaires.edit', [$commentaire->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
-                        </a>
+                        </a> -->
 {{--                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}--}}
                     </div>
                     {!! Form::close() !!}
@@ -63,7 +65,7 @@
                                                 
                                                   @if($commentaire->is_valid)
                                                   <input class="form-check-input" id="is_valid{{ $commentaire->id}}" name="is_valid" type="hidden" value="0">
-                                                  <button  type="submit" class="btn btn-primary py-2 px-3 d-flex" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer">
+                                                  <button  type="submit" class="btn btn-primary py-2 px-3 d-flex justify-content-center" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer;width:115px">
                                                   Valider
                                                   <div class="alax-loader ml-2" >
                                                     <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
@@ -73,7 +75,7 @@
                                                  
                                                  
                                                   <input class="form-check-input" id="is_valid{{ $commentaire->id}}" name="is_valid" type="hidden" value="1">
-                                                  <button   type="submit" class="btn btn-warning py-2 px-3 d-flex" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer">
+                                                  <button   type="submit" class="btn btn-warning py-2 px-3 d-flex justify-content-center" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer;width:115px">
                                                   Désactiver
                                                   <div class="alax-loader ml-2" >
                                                     <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
@@ -82,6 +84,7 @@
                                                  
                                                   @endif
                                                   </form>
+                        </div>
                 </td>
             </tr>
         @endforeach
