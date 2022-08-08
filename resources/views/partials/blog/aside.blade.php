@@ -112,7 +112,7 @@
 <style>
     img.pub {
         border-radius: 5px;
-        height: 18rem
+        height: 25rem
     }
 </style>
 <script>

@@ -1383,7 +1383,7 @@
                                                                                     Que vous soyez particulier ou entreprise, téléchargez CIBLE sur Play store ou App
                                                                                     Store, inscrivez-vous en renseignant les informations demandées à chaque étape
                                                                                     puis valider à la fin. Si vous voulez faire partie des premiers utilisateurs de
-                                                                                    CIBLE, enregistrez-vous ici.
+                                                                                    CIBLE,<a href=""  data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a> 
                                                                                 </div>
                                                                             </div>
                                                                         </div>

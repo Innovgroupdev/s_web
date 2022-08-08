@@ -86,7 +86,16 @@
                     }
                 });
         });
+        function detail(image,libelle){
+           Swal.fire({
+        html: "Lien : <a href='"+libelle+"' target='_blank'>"+libelle+"</a>",
+  imageUrl: image,
+ imageWidth: 400,
+//   imageHeight: 200,
 
+ imageAlt: 'Custom image',
+});
+        }
     </script>
 
 {{--    <script>--}}

@@ -258,8 +258,8 @@ $('.show_confirm').click(function(event) {
               result.dismiss === Swal.DismissReason.cancel
             ) {
               swalWithBootstrapButtons.fire(
-                'Cancelled',
-                'Your imaginary file is safe :)',
+                'Annulé',
+                "L'article à été conservé :)",
                 'error'
               )
             }
