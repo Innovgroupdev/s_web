@@ -68,6 +68,7 @@ class HomeController extends Controller
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
 
         $articleCommentaires = Article::find($id)->commentaires;
+        // dd( $articleCommentaires);
         return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires']));
     }
 

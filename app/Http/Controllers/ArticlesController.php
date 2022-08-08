@@ -170,7 +170,7 @@ class ArticlesController extends AppBaseController
         ]);
 
         $user = auth()->user();
-        if($request->file('img') != null){
+        if($request->file('img') !== null){
             $articles->libelle = $request->libelle;
             $articles->desc = $request->desc;
             $articles->tags = $request->tags;
@@ -182,7 +182,7 @@ class ArticlesController extends AppBaseController
             $articles->user_id = $user->id;
             $articles->categorie_id = $request->categorie_id;
             $articles->contenu = $request->contenu;
-            //dd($articles);
+            // dd($articles);
             Flash::success('Article modifié avec succès.');
             $articles->save();
         }
@@ -190,7 +190,11 @@ class ArticlesController extends AppBaseController
             $articles->libelle = $request->libelle;
             $articles->desc = $request->desc;
             $articles->tags = $request->tags;
+            $articles->user_id = $user->id;
+            $articles->categorie_id = $request->categorie_id;
+            $articles->contenu = $request->contenu;
             Flash::success('Article modifié avec succès.');
+            // dd($articles);
             $articles->save();
         }
 

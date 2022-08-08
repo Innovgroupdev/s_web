@@ -74,7 +74,19 @@
 															<li class="list-inline-item">
 																<a href="javascript:void(0)"><i class="fa fa-comment-o"
 																		aria-hidden="true"></i>
-                                                                        {{$articleCommentaires->count()}}</a>
+                                                                        @php
+                                                                        $j = 0;
+                                                                        @endphp
+                                        
+                                                                        @foreach($articleCommentaires as $articleCommentaire)
+                                                                         @if($articleCommentaire->is_valid)
+                                                                         @php
+                                                                            $j ++;
+                                                                        @endphp
+                                                                         @endif
+                                                                        @endforeach
+                                                                        {{ $j }}
+                                                                </a>
 															</li>
 
 															<li class="list-inline-item">
@@ -100,10 +112,11 @@
                                         </div>
                                           <!-- Comments areas -->
                                           <div class="container-fluid">
+                                        @if($articleCommentaires->count() > 0)
                                           @php
                                           $i = 0;
                                           @endphp
-                                         
+                                        
                                           @foreach($articleCommentaires as $articleCommentaire)
                                           
                                           @if( $i != 0)
@@ -114,6 +127,7 @@
                                           @php
                                           $i ++;
                                           @endphp
+                                          @if($articleCommentaire->is_valid)
                                            <div style="position:absolute;margin-top:-6rem;" id="c{{$articleCommentaire->id}}"></div>
                                             <div class="item-comment-area comtainer-fluid mt-4">
                                                 <div class="d-flex align-items-center justify-content-between">
@@ -123,7 +137,7 @@
                                                     </div>
                                                     <div class="name ml-3 mt-2">
                                                         <h5 class="mb-0 pb-0" style="line-height: 1rem"> {{$articleCommentaire->name}}</h3>
-                                                        <span class="small mt-0" style="line-height: .5rem">{{$articleCommentaire->email}}</span>
+                                                        <!-- <span class="small mt-0" style="line-height: .5rem">{{$articleCommentaire->email}}</span> -->
                                                     </div>
                                                 </div>
                                                 <div>
@@ -140,9 +154,9 @@
                                                 </p>
                                                 </div>
                                             </div>
-                                          
+                                            @endif
                                            @endforeach
-                                           
+                                        @endif
                                         </div>
                                         <!-- End Comments areas -->
                                         <div id="comments" class="comments-area">

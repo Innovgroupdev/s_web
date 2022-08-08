@@ -62,7 +62,9 @@
                         @csrf
 
 <div class="d-flex justify-content-center">
+@if($articleCommentaires->count() > 0)
     <a href="#" class="btn btn-primary py-3 px-5" data-toggle="modal" data-target="#exampleModalCenter">Voir les commentaires</a>
+    @endif
     <a href="{{ route('articles.edit', [$articles->id]) }}" class="btn btn-success py-3 px-5 mx-1">Modifier</a>
     <input name="_method" type="hidden" value="DELETE">
     <a type="submit" data-toggle="tooltip" title='Delete' class="btn btn-danger py-3 px-5 show_confirm"  >Supprimer</a>
@@ -86,6 +88,7 @@
                                             <hr>
                                              <!-- Comments areas -->
                                          <div class="container-fluid">
+                                         @if($articleCommentaires->count() > 0)
                                           @php
                                           $i = 0;
                                           @endphp
@@ -122,8 +125,8 @@
                                                 <input class="form-check-input" id="contenu" type="hidden" value="{{ $articles->contenu}}">
                                                 <input class="form-check-input" id="desc" type="hidden" value="{{ $articles->desc}}">
                                                 
-                                                  @if($articleCommentaire->is_valid)
-                                                  <input class="form-check-input" id="is_valid{{ $articleCommentaire->id}}" name="is_valid" type="hidden" value="0">
+                                                  @if(!$articleCommentaire->is_valid)
+                                                  <input class="form-check-input" id="is_valid{{ $articleCommentaire->id}}" name="is_valid" type="hidden" value="1">
                                                   <button  type="submit" class="btn btn-primary py-2 px-3 d-flex" id="btn{{ $articleCommentaire->id}}" onclick="submitComment({{ $articleCommentaire->id}})" style="cursor:pointer">
                                                   Valider
                                                   <div class="alax-loader ml-2" >
@@ -133,7 +136,7 @@
                                                   @else
                                                  
                                                  
-                                                  <input class="form-check-input" id="is_valid{{ $articleCommentaire->id}}" name="is_valid" type="hidden" value="1">
+                                                  <input class="form-check-input" id="is_valid{{ $articleCommentaire->id}}" name="is_valid" type="hidden" value="0">
                                                   <button   type="submit" class="btn btn-warning py-2 px-3 d-flex" id="btn{{ $articleCommentaire->id}}" onclick="submitComment({{ $articleCommentaire->id}})" style="cursor:pointer">
                                                   Désactiver
                                                   <div class="alax-loader ml-2" >
@@ -157,7 +160,7 @@
                                             </div>
                                           
                                            @endforeach
-                                           
+                                           @endif
                                         </div>
                                         <!-- End Comments areas -->
                                             </div>
@@ -165,7 +168,6 @@
                                         </div>
                                         </div>
                                     </div>
-                                    <!-- is_valid{{ $articleCommentaire->id}} -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
        function submitComment(idComment){
@@ -202,18 +204,19 @@
                 console.log(btn)
                     
                     btn.textContent = ''
-                  if(is_valid == 1){
+                    console.log(is_valid)
+                  if(is_valid == 0){
                     $('#btn'+idComment).addClass('btn-primary')
                     $('#btn'+idComment).removeClass('btn-warning')
                     btn.textContent = 'Valider'
-                    $('#is_valid'+idComment).val(0);
+                    $('#is_valid'+idComment).val(1);
                   }
                  
                   else {
                     $('#btn'+idComment).removeClass('btn-primary')
                     $('#btn'+idComment).addClass('btn-warning')
                     btn.textContent = 'Désactiver'
-                    $('#is_valid'+idComment).val(1);
+                    $('#is_valid'+idComment).val(0);
                   }
                   
                   

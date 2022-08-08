@@ -62,22 +62,22 @@
                                             </div>
                                             <div class="blog-title">
                                                 <h5 class="entry-title">
-                                                    <a href="#">
+                                                    <a href="/blog/{{$article->id}}">
                                                         {{$article->libelle}} </a>
                                                 </h5>
                                             </div>
 
                                             <div class="blog-content">
                                             <p>
-                                                {{ substr($article->desc, 0, 200)}}
-                                                @if(strlen($article->desc) > 200)
+                                                {{ substr($article->desc, 0, 250)}}
+                                                @if(strlen($article->desc) > 250)
                                                     ...
                                                 @endif
                                             </p>
                                             </div>
 
                                             <div class="blog-button">
-                                                <a class="button pull-left" href="blog/{{$article->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                <a class="button pull-left" href="/blog/{{$article->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                             </div>
 
 

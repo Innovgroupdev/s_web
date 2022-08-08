@@ -20,7 +20,7 @@
         {!! Form::textarea('contenu', null, ['class' => 'form-control','rows' => '2', 'required' =>'required']) !!}
     </div> -->
 
-    <div class="col-12 mb-3 ">
+    <div class="col-12 my-3 ">
                         <div class="d-flex justify-content-between align-items-center">
                         <label for="contenu" class="font-bold font-open mb-2">Contenu de l'article <span style="color: red;">*</span></label>
                         <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>

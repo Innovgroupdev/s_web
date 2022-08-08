@@ -73,7 +73,12 @@
                                                                                     </div>
                                                                                     <div class="blog-title">
                                                                                         <a href="{{route('detail')}}">
-                                                                                            <h6>{{$catArticle->libelle}}</h6>
+                                                                                            <h6>
+                                                                                            {{ substr($catArticle->libelle, 0, 29)}}
+                                                                                           @if(strlen($catArticle->libelle) >= 29)
+                                                                                             ...
+                                                                                           @endif
+                                                                                            </h6>
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="blog-content">

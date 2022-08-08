@@ -701,7 +701,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title text-center">
-                                                                    <h2 class="title">Nos clients en mode témoignage
+                                                                    <h2 class="title">Nos futurs clients en mode témoignage
                                                                     </h2>
                                                                     <p>
                                                                         Il n'y a rien de plus gratifiant pour nous qu'un client satisfait.
@@ -1249,8 +1249,8 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-folder-outline " aria-hidden="true"></i>
-                                                                        <span class="timer" data-to="1540" data-speed="10000">1540</span>
-                                                                        <label style='color:#ffffff;'>EVENEMENTS PUBLIES</label>
+                                                                        <span class="timer" data-to="0" data-speed="10000">0</span>
+                                                                        <label style='color:#ffffff;'>EVENEMENTS PUBLIE</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1261,8 +1261,8 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-paper-outline " aria-hidden="true"></i>
-                                                                        <span class="timer" data-to="2530" data-speed="10000">2530</span>
-                                                                        <label style='color:#ffffff;'>TICKETS VENDUS</label>
+                                                                        <span class="timer" data-to="0" data-speed="10000">0</span>
+                                                                        <label style='color:#ffffff;'>TICKETS VENDU</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1273,8 +1273,8 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-person-outline " aria-hidden="true"></i>
-                                                                        <span class="timer" data-to="8120" data-speed="10000">8120</span>
-                                                                        <label style='color:#ffffff;'>UTILISATEURS</label>
+                                                                        <span class="timer" data-to="0" data-speed="10000">0</span>
+                                                                        <label style='color:#ffffff;'>UTILISATEUR</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1285,8 +1285,8 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-star " aria-hidden="true"></i>
-                                                                        <span class="timer" data-to="1620" data-speed="10000">1620</span>
-                                                                        <label style='color:#ffffff;'>RECOMMANDATIONS</label>
+                                                                        <span class="timer" data-to="0" data-speed="10000">0</span>
+                                                                        <label style='color:#ffffff;'>RECOMMANDATION</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1410,6 +1410,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <a style='' class="button " data-toggle="modal" data-target="#FAQModalCenterHeader" href="#screenshots">Posez votre question </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1502,7 +1503,7 @@
                                                                                                     </time></a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                                                                <a href="/blog/{{$articleRecentFive->id}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
                                                                                                     0</a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
@@ -1512,8 +1513,14 @@
                                                                                         </ul>
                                                                                     </div>
                                                                                     <div class="blog-title">
-                                                                                        <a href="{{route('detail')}}">
-                                                                                            <h6>{{$articleRecentFive->libelle}}</h6>
+                                                                                        <a href="/blog/{{$articleRecentFive->id}}">
+                                                                                            <h6>
+                                                                                                <!-- {{$articleRecentFive->libelle}} -->
+                                                                                                {{ substr($articleRecentFive->libelle, 0, 29)}}
+                                                                                           @if(strlen($articleRecentFive->libelle) >= 29)
+                                                                                             ...
+                                                                                           @endif
+                                                                                            </h6>
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="blog-content">
@@ -1770,7 +1777,67 @@
             </div>
         </div>
     </div>
+   <!-- =========================================Header================================================================================= -->
+   <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content pt-0">
+                <!-- <div class="modal-header" style="border: none;">
 
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div> -->
+                <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                    <div class="container-fluid p-0 m-0" style="position:relative">
+                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/FAQ.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/FAQ.jpg')}}">
+                        <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="">
+                    </div>
+                    <div class="p-3">
+                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Posez votre question !</h5>
+                        <p class="mb-0 pb-0">
+                            Votre adresse email ne sera pas publiée.
+
+                        </p>
+                        <form id="informHeader" class="comment-form text-left">
+                            @csrf
+                            <div class="row my-4">
+                                <div class="col-4 mb-3 pr-0 mr-0">
+                                    <select class="" required>
+                                        @foreach ($countries as $country)
+                                            <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-8 mb-3">
+                                    <input id="numberH" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                </div>
+                                <div class="col-12">
+                                    <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                </div>
+                                <div class="col-12 my-3 ">
+                                <textarea id="raisonE" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
+                                </div>
+                                <div class="col-12 text-center text-danger mt-3">
+                                     <strong> <span id="error_informHFAQ"  style="color:red!important" ></span></strong>
+                                </div>
+                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                   
+                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">D'accord</button>
+                                                </div> -->
+            </div>
+        </div>
+    </div>
 <!-- =========================================Plus qu’une billetterie en ligne================================================================================= -->
     <div class="modal fade" id="exampleModalCenterBilleterie" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

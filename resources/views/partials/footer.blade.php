@@ -22,7 +22,7 @@
                     <div class="fancy-content">
                         <h5>Siège social</h5>
                         <span>
-                        Immeuble FADEL, Agbalépédogan, Lomé-TOG</span>
+                        Immeuble FADEL, Agbalépédogan, Lomé-TOGO</span>
                     </div>
                 </div>
             </div>
@@ -59,20 +59,19 @@
 
 
                 <div class="col-lg-6">
-                    <ul class="info-share">
+                    <!-- <ul class="info-share">
                         <li><a href="https://www.facebook.com/"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="https://twitter.com/"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://plus.google.com/"><i class="fa fa-youtube-play"></i></a></li>
                         <li><a href="https://www.instagram.com/"><i class="fa fa-twitter "></i></a></li>
                         <li><a href="https://www.instagram.com/">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill : #fff; width:14px;height : 14px">
-                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                 <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg></a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="footer-copyright">
-                        Copyright 2021 <a href="https://www.innov-is-afrique.com/">INNOV IS</a> All
+                        Copyright 2021 <a href="http://www.innovgroup.tech/" target="_blank">DIGITAL INNOV GROUP</a> All
                         Rights Reserved. </div>
                 </div>
             </div>
