@@ -29,13 +29,10 @@
 
             <div class="card-footer py-4">
             <a href="{{ route('publicites.index') }}" class="btn btn-secondary p-4">Annuler</a>
-<<<<<<< HEAD
                 {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4']) !!}
 
-=======
-                {!! Form::submit('Enregistrer', ['onclick' => 'coppperCrop()','class' => 'btn btn-primary p-4']) !!}
-            
->>>>>>> a559aaa36d87dc6df33dfb16ad976e855935b547
+{{--                {!! Form::submit('Enregistrer', ['onclick' => 'coppperCrop()','class' => 'btn btn-primary p-4']) !!}--}}
+
             </div>
 
             {!! Form::close() !!}
@@ -63,18 +60,18 @@
                 // $("#labelMotivation").append('<input type="file" accept="image/*" value='+url+' name="img_url" required="required"  class="is-invalid"   id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">')
                 // document.getElementById('motivationImages').select()
                 // document.getElementById('motivationImages').value = url;
-                
+
                 $("#motivationImages").attr("valueAsDate", base64data);
                 $("#crop").click()
                 console.log( document.getElementById('motivationImages'))
-                
+
                 // $.ajax({
                 //     type: "POST",
                 //     dataType: "json",
                 //     url: "/upload",
                 //     token : "",
                 //     data: {image: base64data},
-                //     success: function(data) { 
+                //     success: function(data) {
                 //         // bs_modal.modal('hide');
                 //         alert("success upload image");
                 //     }
