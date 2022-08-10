@@ -4,7 +4,7 @@
 <body>
 <script>
     function setCookie(nom,valeur,jour){
-        document.cookie = 'prenom1=Pierre; expires=Sun, 22 Jan 2017 12:00:00 UTC; path=/'; 
+       
         if(jour){
             var date = new Date()
             date.setTime(date.getTime()+(jour*24*60*60*1000));
@@ -13,7 +13,7 @@
         else{
             var exp = '';
         }
-        document.cookie = nom+'='+valeur+exp+';path=/';
+        document.cookie = nom+'='+valeur+exp+'domain=/;path=/';
     }
     function getCookie(nom){
         nomEtValeur = nom + "=";
@@ -40,7 +40,7 @@
         document.getElementById(id).value = cookieValue
        
      }
-     console.log(document.getElementById(id))
+    //  console.log(document.cookie)
     }
         </script>
 <header id="main-header" class="head default">

@@ -216,7 +216,7 @@
              setTimeout(() => {
                setCookieValueToInput('nom','name');
                setCookieValueToInput('email','email');
-           }, 4000);
+           }, 10000);
                 const formComment = document.querySelector("#formComment");
 
                 if(formComment){

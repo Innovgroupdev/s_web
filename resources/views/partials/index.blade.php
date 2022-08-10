@@ -2070,6 +2070,11 @@
         }
     </style>
     <script>
+         setTimeout(() => {
+               setCookieValueToInput('numero','numberH');
+               setCookieValueToInput('email','emailH');
+               console.log(document.cookie)
+           }, 15000);
         function viewParticulier(element) {
             console.log(element.classList)
             jQuery("#" + element.id).removeClass("active");
@@ -2115,6 +2120,8 @@
                        $('#appino_subscription')[0].reset();
                        $('#error_email').hide();
                    }
+                //    setCookie('nom',name,30);
+                                    setCookie('email',email,30);
                },
                error:function () {
                    $('#error_email').html('<label> Email existe déjà</label>')
@@ -2201,6 +2208,8 @@
                                         console.log('I was closed by the timer')
                                     }
                                 })
+                                setCookie('numero',numero,30);
+                                    setCookie('email',email,30);
                             },
                success:function (response) {
                    if (response){
@@ -2341,6 +2350,8 @@
                                         console.log('I was closed by the timer')
                                     }
                                 })
+                                setCookie('numero',numero,30);
+                                    setCookie('email',email,30);
                             },
                success:function (response) {
                    if (response){
