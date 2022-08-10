@@ -1,0 +1,21 @@
+.section {
+    @extend %container;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .section__title{
+        font-size: 2.18em;
+        color: $primaryColor;
+        margin-bottom: 40px;
+    }
+}
+
+.section__intro{
+    display: flex;
+    width: 100vw;
+    position: relative;
+    height:calc(100vh - 100px);
+
+
+
+
+}
