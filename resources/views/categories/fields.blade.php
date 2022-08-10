@@ -10,7 +10,7 @@
 <!-- Desc Field -->
 <div class="form-group col-12">
     {!! Form::label('desc', 'Description') !!}
-    {!! Form::textarea('desc', null, ['class' => 'form-control', 'required' => 'required', 'rows'  => '3','maxlength'=>'400']) !!}
+    {!! Form::textarea('desc', null, ['class' => 'form-control', 'rows'  => '3','maxlength'=>'400']) !!}
 </div>
 
 <!-- Img Url Field -->

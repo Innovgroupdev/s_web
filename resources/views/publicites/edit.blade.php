@@ -26,7 +26,7 @@
                                         <img id="imageMotivation" class=" mx-auto bg-secondary" src="{{$publicites->img_url}}" alt="avatar" style="max-width:100%;max-height: 500px;border-radius:10px">
                                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                                         </iframe>
-
+                                        <p class="text-center mt-3">  Format recommandé : A4 (496 x 701 Pixels) | Taille maximale recommandé :  2MO</p>
                                     </label>
                                     <input type="file" accept="image/*" value="{{$publicites->img_url}}" name="img_url"  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
 

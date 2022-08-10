@@ -83,7 +83,7 @@
                         <img id="imageMotivation" class="w-100 mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                         </iframe>
-
+                        <p class="text-center mt-3">  Format recommandé : A4 (888 x 459 Pixels) | Taille maximale recommandé :  2MO</p>
                     </label>
                     <input type="file" accept="image/*" name="img" required=""  class="is-invalid" onchange="readProfil(this.value)" id="motivationImages" style="display: none !important; visibility: hidden !important; position: absolute; opacity: 0; z-index: -999 !important;">
 

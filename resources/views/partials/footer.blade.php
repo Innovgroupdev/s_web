@@ -215,5 +215,6 @@
 <script src="{{ asset('wp-content/themes/appino/assets/js/particles/app5152.js?ver=1.0')}}" id='jquery-app-js'></script>
 
 <!-- === back-to-top End === -->
+
 </body>
 </html>

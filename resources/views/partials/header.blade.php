@@ -2,6 +2,47 @@
 <head>
 </head>
 <body>
+<script>
+    function setCookie(nom,valeur,jour){
+        document.cookie = 'prenom1=Pierre; expires=Sun, 22 Jan 2017 12:00:00 UTC; path=/'; 
+        if(jour){
+            var date = new Date()
+            date.setTime(date.getTime()+(jour*24*60*60*1000));
+            var exp = '; expires='+date.toGMTString;
+        }
+        else{
+            var exp = '';
+        }
+        document.cookie = nom+'='+valeur+exp+';path=/';
+    }
+    function getCookie(nom){
+        nomEtValeur = nom + "=";
+        var allCookies = document.cookie.split(';');
+        for(let i = 0; i < allCookies.length;i++){
+            var c = allCookies[i];
+            while(c.charAt(0)==' '){
+                c = c.substring(1,c.length)
+            }
+            if(c.indexOf(nomEtValeur) == 0){
+                return c.substring(nomEtValeur,c.length);
+            }
+        }
+        return null;
+    }
+    function removeCookie(nom){
+        setCookie(nom,'',-1)
+    }
+    function setCookieValueToInput(cookie,id){
+      
+     if(getCookie(cookie)){
+        var nomEtValeur = getCookie(cookie).split('=')
+        var cookieValue = nomEtValeur[1]
+        document.getElementById(id).value = cookieValue
+       
+     }
+     console.log(document.getElementById(id))
+    }
+        </script>
 <header id="main-header" class="head default">
     <div class="container">
         <div class="row">
@@ -97,5 +138,6 @@
         </div>
     </div>
 </header>
+
 </body>
 </html>

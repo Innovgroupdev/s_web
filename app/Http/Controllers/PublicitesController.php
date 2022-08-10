@@ -66,6 +66,7 @@ class PublicitesController extends AppBaseController
         $pub = new Publicites();
         $pub->libelle = $request->libelle;
         $pub->user_id = $user->id;
+        // dd(time().$request->file('required'));
         $fileName = time().$request->file('img_url')->getClientOriginalName();
         $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
         $pub["img_url"] = '/storage/'.$path;
@@ -148,6 +149,7 @@ class PublicitesController extends AppBaseController
         if($request->file('img_url') != null){
 
             $publicites->libelle = $request->libelle;
+            
             $fileName = time().$request->file('img_url')->getClientOriginalName();
             $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
 
@@ -190,5 +192,14 @@ class PublicitesController extends AppBaseController
         Flash::success('Publicité supprimée.');
 
         return redirect(route('publicites.index'));
+    }
+    public function upload($request){
+        $image_parts = explode(";base64,", $request['image']);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+        $file = $folderPath . uniqid() . '.png';
+        file_put_contents($file, $image_base64);
+        echo json_encode(["image uploaded successfully."]);
     }
 }

@@ -76,11 +76,9 @@
     </div>
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0.5
-        </div>
-        <strong>Copyright &copy; 2014-2022 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <footer class="main-footer text-right">
+       
+        <strong>Copyright &copy; 2022 <a href="http://www.innovgroup.tech/" target="_blank">DIGITAL INNOV GROUP</a>.</strong> All rights
         reserved.
     </footer>
 </div>
@@ -90,11 +88,13 @@
     function readProfil(e) {
             let reader = new FileReader();
             reader.onload = function (e) {
+                console.log(e)
                 sessionStorage.setItem("profileImg", e.target.result)
                 document.getElementById("imageMotivation").setAttribute("src", e.target.result);
                 document.getElementById('imageMotivationIframe').style.display = 'none'
             };
             reader.readAsDataURL(document.getElementById('motivationImages').files[0]);
+            return document.getElementById("imageMotivation");
         }
  </script>
 

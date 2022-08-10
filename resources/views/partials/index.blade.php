@@ -122,7 +122,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/3-1.png')}}" />
-                                                                    <h5>Garder <br> des souvenirs</h5>
+                                                                    <h5>Gardez <br> des souvenirs</h5>
                                                                     <p>A chaque événement, des gadgets souvenirs vous sont proposés.
                                                                         C’est à vous de choisir et d’en profiter…</p>
                                                                 </div>

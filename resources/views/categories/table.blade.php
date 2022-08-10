@@ -15,7 +15,12 @@
             <tr>
                 <td class="p-4">{{ $categories->id }}</td>
                 <td class="p-4">{{ $categories->lib }}</td>
-            <td class="p-4">{{ $categories->desc }}</td>
+            <td class="p-4">
+            {{ substr($categories->desc, 0, 300)}}
+                @if(strlen($categories->desc) > 300)
+                    ...
+                @endif
+            </td>
 {{--            <td class="p-4"><img src="{{ $categories->img_url }}"></td>--}}
             <td class="p-4">{{ optional($categories->user)->name}}</td>
                 <td width="120">
@@ -95,6 +100,8 @@
         @endforeach
         </tbody>
     </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script type="text/javascript">
 

@@ -69,7 +69,7 @@ class Categories extends Model
      */
     public static $rules = [
         'lib' => 'required|min:3',
-        'desc' => 'required|min:5'
+        // 'desc' => 'required|min:5'
     ];
 
 

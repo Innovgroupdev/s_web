@@ -93,7 +93,7 @@ class CategoriesController extends AppBaseController
        // $input = $request->all();
         $request->validate([
             'lib' => 'string|min:3',
-            'desc' => 'string|min:5',
+            // 'desc' => 'string|min:5',
 
         ]);
         $user = auth()->user();
@@ -171,8 +171,8 @@ class CategoriesController extends AppBaseController
     {
         //$categories = $this->categoriesRepository->find($id);
         $request->validate([
-            'lib'=>'required|string|min:3',
-            'desc'=>'required|string|min:10'
+            'lib'=>'required|string|min:3'
+          
         ]);
 
         $categories = Categories::find($id);

@@ -62,3 +62,4 @@ Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireControlle
 // Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/state{id}", [App\Http\Controllers\ArticlesController::class, 'desactiver']);
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
+Route::post("/upload", [App\Http\Controllers\PublicitesController::class, 'upload']);

@@ -5,6 +5,7 @@
             <th class="p-4">ID</th>
         <th class="p-4">Auteur</th>
         <th class="p-4">Email</th>
+        <th class="p-4">Commentaire</th>
 
             <!-- <th class="p-4">Statut</th> -->
             <th colspan="3" class="p-4">Actions</th>
@@ -13,22 +14,31 @@
         <tbody>
         @foreach($commentaires as $commentaire)
             <tr>
-                <td>{{ $commentaire->id }}</td>
+                <td class="p-4">{{ $commentaire->id }}</td>
 
 
-            <td>{{ $commentaire->name }}</td>
-            <td>{{ $commentaire->email }}</td>
-{{--                <td>{{ $commentaire->description }}</td>--}}
+            <td class="p-4">{{ $commentaire->name }}</td>
+            <td class="p-4">{{ $commentaire->email }}</td>
+               <td class="p-4 caseComment" width="700">
+                <!-- {{ $commentaire->description }} -->
+                {{ substr($commentaire->description, 0, 150)}}
+                    @if(strlen($commentaire->description) > 150)
+                        ...
+                @endif
+                <div class="p-3 taxt-light bg-dark toolComment small" style="">
+                {{$commentaire->description}}
+                </div>
+            </td>
 
-{{--                <td>{{ optional($commentaire->article)->libelle}}</td>--}}
+{{--                <td class="p-4">{{ optional($commentaire->article)->libelle}}</td>--}}
                 <!-- @if($commentaire->is_valid == 0)
-                <td>
+                <td class="p-4">
                         <span style="color: red">
                             En cours
                         </span>
                 </td>
                     @else
-                    <td>
+                    <td class="p-4">
                         <span style="color: #0b2e13">
                              Traité
                         </span>
@@ -146,6 +156,25 @@
         </tbody>
     </table>
 </div>
+<style>
+    .toolComment{
+        position:absolute;border-radius:10px;margin-top:1rem;z-index:10;max-width:370px;opacity:0;visibility:hidden;transition:0.3s ease-in;
+    }
+    .toolComment:before{
+        content : "";
+        position : absolute;
+        width : 1rem;
+        height : .7rem;
+        margin-top : -1.6rem;
+        background-color : #212529;
+        /* background-color : lime; */
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        z-index:11;
+    }
+    .caseComment:hover  .toolComment{
+        opacity:1;visibility:visible
+    }
+</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
        function submitComment(idComment){

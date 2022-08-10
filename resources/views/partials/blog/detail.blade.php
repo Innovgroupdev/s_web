@@ -4,6 +4,7 @@
 @extends('partials.model')
 @section('content')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <section class="iq-breadcrumb overview-block-pb"
             style="">
             <div class="container">
@@ -170,10 +171,7 @@
                                                         </span> ( Les champs requis sont indiqués <span class="required">*</span>)
                                                         </p>
                                                     <p class="comment-form-comment"><label for="comment">Commentaire</label>
-                                                        <textarea id="desc" name="desc" cols="45" rows="8"
-                                                            maxlength="65525" required="required">
-
-                                                        </textarea>
+                                                        <textarea id="desc" name="desc" cols="45" rows="8" maxlength="65525" required="required"></textarea>
                                                     </p>
                                                     <p class="comment-form-author w-50 mx-0 pr-2">
                                                         <label for="author">Nom & prénoms <span
@@ -213,7 +211,12 @@
                 </div><!-- .container -->
             </div><!-- #content -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script>
+          
+        <script>
+             setTimeout(() => {
+               setCookieValueToInput('nom','name');
+               setCookieValueToInput('email','email');
+           }, 4000);
                 const formComment = document.querySelector("#formComment");
 
                 if(formComment){
@@ -263,10 +266,15 @@
                                         console.log('I was closed by the timer')
                                     }
                                     })
+
+                                    setCookie('nom',name,30);
+                                    setCookie('email',email,30);
+                                    
                             },
                             success:function (response) {
                                 if (response){
-                                    $('#formComment')[0].reset();
+                                    // $('#formComment')[0].reset();
+                                    $("#desc").val("");
 
                                     Swal.fire({
                                     icon: 'success',
@@ -325,4 +333,9 @@
                 {{--    });--}}
                 {{--});--}}
             </script>
+
+        <script>
+           
+          
+          </script>
 @endsection
