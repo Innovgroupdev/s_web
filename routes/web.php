@@ -57,7 +57,6 @@ Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->n
 Route::get('blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('category/{id}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
-Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');
 Route::post('/storeFaqs/', [App\Http\Controllers\FaqController::class, 'storeFaqs'])->name('storeFaqs');
 //
 
