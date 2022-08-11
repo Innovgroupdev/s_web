@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3>Categories</h1>
+                    <h3>Catégories</h3>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
@@ -29,7 +29,7 @@
 
                 <!-- <div class="card-footer clearfix">
                     <div class="float-right">
-                        
+
                     </div>
                 </div> -->
             </div>

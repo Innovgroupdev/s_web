@@ -67,9 +67,8 @@ class EssayerController extends AppBaseController
     public function enregistre(Request $request)
     {
         $request->validate([
-            'numero' => 'required|min:5|unique:informers',
-            'email' => 'required|unique:informers',
-
+            'numero' => 'required|min:5|unique:essayers',
+            'email' => 'required|unique:essayers',
         ]);
         $essayer = new Essayer();
         $essayer->nom = $request->nom;

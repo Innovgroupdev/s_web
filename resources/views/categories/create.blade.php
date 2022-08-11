@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h3>Create Categories</h1>
+                    <h3>Création de la Catégorie</h1>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="card-footer py-4">
             <a href="{{ route('categories.index') }}" class="btn btn-secondary py-3 px-4">Annuler</a>
                 {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary py-3 px-4']) !!}
-                
+
             </div>
 
             {!! Form::close() !!}

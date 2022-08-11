@@ -114,7 +114,7 @@ class CategoriesController extends AppBaseController
 
       //  $categories = $this->categoriesRepository->create($input);
 
-        Flash::success('Categories saved successfully.');
+        Flash::success('Catégorie créée avec succès.');
 
         return redirect(route('categories.index'));
     }
@@ -172,7 +172,7 @@ class CategoriesController extends AppBaseController
         //$categories = $this->categoriesRepository->find($id);
         $request->validate([
             'lib'=>'required|string|min:3'
-          
+
         ]);
 
         $categories = Categories::find($id);
