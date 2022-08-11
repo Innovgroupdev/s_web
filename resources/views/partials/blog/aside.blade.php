@@ -3,11 +3,11 @@
 
 
 
-        <form method="get" class="search-form" action="/search">
+        <form method="get" class="search-form" action="">
             <label for="search-form-62d674f53a6e7">
                 <span class="screen-reader-text">Recherche pour:</span>
             </label>
-            <input type="search" id="search-form-62d674f53a6e7" class="search-field" placeholder="Rechercher" value="" name="s" />
+            <input type="search" id="search-form-62d674f53a6e7" class="search-field" placeholder="Rechercher" value="" name="q" />
             <button type="submit" class="search-submit"><i class="fa fa-search"></i><span class="screen-reader-text">Rechercher</span></button>
         </form>
     </div>

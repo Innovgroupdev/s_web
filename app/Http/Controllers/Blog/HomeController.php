@@ -21,9 +21,26 @@ class HomeController extends Controller
     {
         return view('partials.index');
     }
-    public function blog()
+    public function blog(Request $request)
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(12);
+
+        $search =  $request->input('q');
+        if($search!=""){
+            $articles = Article::where(function ($query) use ($search){
+                $query->where('libelle', 'like', '%'.$search.'%')
+                    ->orWhere('contenu', 'like', '%'.$search.'%');
+            })
+                ->paginate(2);
+            $articles->appends(['q' => $search]);
+        }
+        else{
+            $articles = Article::orderBy('created_at', 'desc')->paginate(12);
+        }
+
+
+
+
+        //$articles = Article::orderBy('created_at', 'desc')->paginate(12);
         //dd($articles);
         $articleRecentFive = Article::orderBy('created_at', 'desc')->take(5)->get();
         $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
@@ -36,7 +53,7 @@ class HomeController extends Controller
                 $getCollections = $getCollections->push($cat);
             }
         }
-        $data =  Article::orderBy('created_at', 'desc')->paginate(2);
+        //$data =  Article::orderBy('created_at', 'desc')->paginate(2);
         $categories = $getCollections;
 
 //        $getCollections = collect([]);
@@ -50,7 +67,7 @@ class HomeController extends Controller
 
 
         $publicites = Publicites::all();
-        return view('partials.blog.index', compact(['data','articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
 
     public function search(Request $request){
