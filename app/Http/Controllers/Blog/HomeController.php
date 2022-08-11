@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Arr;
+use Laracasts\Flash\Flash;
 
 class HomeController extends Controller
 {
@@ -21,25 +22,8 @@ class HomeController extends Controller
     {
         return view('partials.index');
     }
-    public function blog(Request $request)
+    public function blog()
     {
-
-        $search =  $request->input('q');
-        if($search!=""){
-            $articles = Article::where(function ($query) use ($search){
-                $query->where('libelle', 'like', '%'.$search.'%')
-                    ->orWhere('contenu', 'like', '%'.$search.'%')
-                    ->orWhere('created_at', 'like', '%'.$search.'%');
-            })
-                ->paginate(2);
-            $articles->appends(['q' => $search]);
-        }
-        else{
-            $articles = Article::orderBy('created_at', 'desc')->paginate(12);
-        }
-
-
-
 
         //$articles = Article::orderBy('created_at', 'desc')->paginate(12);
         //dd($articles);
@@ -54,7 +38,7 @@ class HomeController extends Controller
                 $getCollections = $getCollections->push($cat);
             }
         }
-        //$data =  Article::orderBy('created_at', 'desc')->paginate(2);
+        $articles =  Article::orderBy('created_at', 'desc')->paginate(12);
         $categories = $getCollections;
 
 //        $getCollections = collect([]);
@@ -70,6 +54,34 @@ class HomeController extends Controller
         $publicites = Publicites::all();
         return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
+
+    public function search(Request $request)
+    {
+        $search =  $request->input('q');
+        if($search!=""){
+            $articles = Article::where(function ($query) use ($search){
+                $query->where('libelle', 'like', '%'.$search.'%')
+                    ->orWhere('contenu', 'like', '%'.$search.'%')
+                    ->orWhere('created_at', 'like', '%'.$search.'%');
+            })
+                ->paginate(12);
+            $articles->appends(['q' => $search]);
+
+//            if ($articles->count() == 0) {
+//                $error = "Résu"
+//
+//                return view('partials.search', compact(['articles','search']));
+//            }
+           // dd($articles);
+        }
+        else{
+            $articles = Article::orderBy('created_at', 'desc')->paginate(12);
+            Flash::error('Article non trouvé');
+        }
+
+        return view('partials.search', compact(['articles','search']));
+    }
+
 
     public function article($id)
     {

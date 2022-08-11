@@ -54,6 +54,7 @@ Route::resource('faqs', App\Http\Controllers\FaqController::class);
 
 ///Route::get('home', 'Blog\HomeController@index')->name('home');
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
+Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');
 Route::get('blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('category/{id}', [App\Http\Controllers\Blog\HomeController::class, 'category']);

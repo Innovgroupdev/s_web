@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateArticlesRequest;
 use App\Models\Articles;
 use App\Models\Article;
 use App\Models\Categories;
+use App\Models\Commentaire;
 use App\Repositories\ArticlesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -226,8 +227,18 @@ class ArticlesController extends AppBaseController
             return redirect(route('articles.index'));
         }
 
-        //$this->articlesRepository->delete($id);
-        $article = Articles::where('id',$id)->forceDelete();
+
+        if(Commentaire::where('article_id',$id)->exists()){
+           // Articles::where('id',$id)->forceDelete();
+            $commentaires = Commentaire::all()->get();
+            foreach ($commentaires as $comment){
+                if($comment->article_id == $id){
+                    $comment->forceDelete();
+                }
+            }
+           // Commentaire::where('id',$id)->forceDelete();
+        }
+         Articles::where('id',$id)->forceDelete();
 
         Flash::success('Article supprimé avec succès.');
 
@@ -243,11 +254,7 @@ class ArticlesController extends AppBaseController
     }
     public function articleCommentaires($id)
     {
-
-
         $articleCommentaires = Article::find($id)->commentaires;
-
         return  $articleCommentaires;
     }
-    
 }
