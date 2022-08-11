@@ -28,7 +28,8 @@ class HomeController extends Controller
         if($search!=""){
             $articles = Article::where(function ($query) use ($search){
                 $query->where('libelle', 'like', '%'.$search.'%')
-                    ->orWhere('contenu', 'like', '%'.$search.'%');
+                    ->orWhere('contenu', 'like', '%'.$search.'%')
+                    ->orWhere('created_at', 'like', '%'.$search.'%');
             })
                 ->paginate(2);
             $articles->appends(['q' => $search]);
@@ -68,37 +69,6 @@ class HomeController extends Controller
 
         $publicites = Publicites::all();
         return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
-    }
-
-    public function search(Request $request){
-        $articles = Article::orderBy('created_at', 'desc')->paginate(12);
-        $articleRecentFive = Article::orderBy('created_at', 'desc')->take(5)->get();
-        $articleCommentes= Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
-        $articlePopFives = Articles::orderBy('nbvue', 'desc')->take(5)->get();
-
-
-
-        $cats = Categorie::all();
-        $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id);
-            if ($art->count()>0){
-                $getCollections = $getCollections->push($cat);
-            }
-        }
-        $categories = $getCollections;
-
-        $publicites = Publicites::all();
-
-        //$data =  Article::where('libelle','LIKE',"$search%")->orWhere('contenu','LIKE',"$search%")->get();
-        $search = $request->input('search');
-        $data = DB::table('articles');
-        if( $request->input('search')){
-            $data = $data->where('libelle', 'LIKE', "%" . $request->search . "%");
-        }
-        $data = $data->paginate('2');
-        return view('partials.blog.index',compact(['data','categories','publicites','articles','articleRecentFive','articleCommentes','articlePopFives']));
-
     }
 
     public function article($id)
