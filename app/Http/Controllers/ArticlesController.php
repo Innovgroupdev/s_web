@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateArticlesRequest;
 use App\Models\Articles;
 use App\Models\Article;
 use App\Models\Categories;
+use App\Models\Commentaire;
 use App\Repositories\ArticlesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -37,6 +38,8 @@ class ArticlesController extends AppBaseController
     public function index(ArticlesRepository $request)
     {
         $articles = $this->articlesRepository->all();
+        $article1 = $this->articlesRepository->all()->where('etat', 1);
+        $article2 = $this->articlesRepository->all()->where('etat', 0);
 
         // $articles = DB::table('articles')
         //     ->join('categories', 'articles.categorie_id', '=', 'categories.id')
@@ -44,8 +47,9 @@ class ArticlesController extends AppBaseController
         //     ->get();
            // dd($categories);
 
-        return view('articles.index')
-            ->with('articles', $articles);
+        // return view('articles.index')
+        //     ->with('articles', $articles);
+            return  view('articles.index',compact(['articles', 'article1', 'article2']));
     }
 
     /**
@@ -85,6 +89,7 @@ class ArticlesController extends AppBaseController
         $article->contenu = $request->contenu;
         $article->tags = $request->tags;
         $article->categorie_id = $request->categorie_id;
+        $article->etat = $request->etat;
         $article->user_id = $user->id;
         $fileName = time().$request->file('img')->getClientOriginalName();
         $path = $request->file('img')->storeAs('images', $fileName, 'public');
@@ -174,6 +179,7 @@ class ArticlesController extends AppBaseController
             $articles->libelle = $request->libelle;
             $articles->desc = $request->desc;
             $articles->tags = $request->tags;
+            $articles->etat = $request->etat;
             $fileName = time().$request->file('img')->getClientOriginalName();
             $path = $request->file('img')->storeAs('images', $fileName, 'public');
 
@@ -216,6 +222,23 @@ class ArticlesController extends AppBaseController
      *
      * @return Response
      */
+    // public function destroy($id)
+    // {
+    //     $articles = $this->articlesRepository->find($id);
+
+    //     if (empty($articles)) {
+    //         Flash::error('Articles non trouvé');
+
+    //         return redirect(route('articles.index'));
+    //     }
+        
+    //     //$this->articlesRepository->delete($id);
+    //     $article = Articles::where('id',$id)->forceDelete();
+
+    //     Flash::success('Article supprimé avec succès.');
+
+    //     return redirect(route('articles.index'));
+    // }
     public function destroy($id)
     {
         $articles = $this->articlesRepository->find($id);
@@ -225,22 +248,40 @@ class ArticlesController extends AppBaseController
 
             return redirect(route('articles.index'));
         }
+        
 
-        //$this->articlesRepository->delete($id);
-        $article = Articles::where('id',$id)->forceDelete();
+        if(Commentaire::where('article_id',$id)->exists()){
+           // Articles::where('id',$id)->forceDelete();
+            $commentaires = Commentaire::all();
+            foreach ($commentaires as $comment){
+                if($comment->article_id == $id){
+                    $comment->forceDelete();
+                }
+            }
+           // Commentaire::where('id',$id)->forceDelete();
+        }
+         Articles::where('id',$id)->forceDelete();
 
         Flash::success('Article supprimé avec succès.');
 
+        return redirect(route('articles.index')); 
+    }
+
+    public function etat($id,Request $request){
+        DB::table('articles')
+            ->where('id', $id)
+            ->update(['etat' => $request->etat]);
+        if($request->etat == 0){
+            Flash::success('Article désactivé avec succès !');
+        }
+        else{
+            Flash::success('Article activé avec succès !');
+        }
+       
         return redirect(route('articles.index'));
     }
 
-    public function desactiver($id){
-        DB::table('articles')
-            ->where('id', $id)
-            ->update(['state' => 1]);
-        Flash::success('Article désactiver avec succès.');
-        return redirect(route('articles.index'));
-    }
+
     public function articleCommentaires($id)
     {
 

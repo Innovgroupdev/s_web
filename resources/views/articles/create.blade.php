@@ -90,9 +90,12 @@
                 </div>
             </div>
 
-            <div class="card-footer">
+            <div class="card-footer text-center justify-content-center">
+            <input name="etat" id="etat" type="hidden" value="0">
             <a href="{{ route('articles.index') }}" class="btn btn-secondary p-4 ">Annuler</a>
-                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4']) !!}
+                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4','onclick' => 'save()']) !!}
+
+                {!! Form::submit('Publier', ['class' => 'btn btn-success px-5 py-4', 'onclick' => 'publish()']) !!}
 
             </div>
 
@@ -232,6 +235,11 @@
 		$("#content").empty();
 	});
 })();
-
+  function save(){
+    document.getElementById('etat').value = 0
+  }
+  function publish(){
+    document.getElementById('etat').value = 1
+  }
 </script>
 @endsection

@@ -26,9 +26,15 @@
                 </div>
             </div>
 
-            <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('articles.index') }}" class="btn btn-default">Cancel</a>
+            <div class="card-footer text-center justify-content-center">
+                <!-- {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('articles.index') }}" class="btn btn-default">Cancel</a> -->
+                <input name="etat" id="etat" type="hidden" value="{{$articles->etat}}">
+                <a href="{{ route('articles.index') }}" class="btn btn-secondary p-4 ">Annuler</a>
+                @if($articles->etat == 0)
+                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary p-4','onclick' => 'save()']) !!}
+                @endif
+                {!! Form::submit('Publier', ['class' => 'btn btn-success px-5 py-4', 'onclick' => 'publish()']) !!}
             </div>
 
             {!! Form::close() !!}
@@ -164,6 +170,11 @@
 		$("#content").empty();
 	});
 })();
-
+function save(){
+    document.getElementById('etat').value = 0
+  }
+  function publish(){
+    document.getElementById('etat').value = 1
+  }
 </script>
 @endsection
