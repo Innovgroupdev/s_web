@@ -22,6 +22,21 @@ Route::get('/', function () {
     return view('partials.index',compact('countries','articleRecentFive'));
 });
 
+//Route::any('/search',function (){
+//    $q = Input::get('q');
+//    if ($q !=''){
+//        $data = \App\Models\Article::where('lib','LIKE','%'.$q.'%q')->orWhere('contenu','LIKE','%'.$q.'%q')->paginate(5)->setpath('');
+//        $data->appends(
+//            array(
+//                'q'=>Input::get('q'),
+//            )
+//        );
+//        if (count($data)>0){
+//            return view('partials.blog.index')->with('data', $data);
+//        }
+//        return view('partials.blog.index')->withMessage('Pas article trouvé');
+//    }
+//});
 
 Auth::routes();
 
@@ -35,13 +50,16 @@ Route::resource('publicites', App\Http\Controllers\PublicitesController::class);
 
 
 Route::resource('articles', App\Http\Controllers\ArticlesController::class);
+Route::resource('faqs', App\Http\Controllers\FaqController::class);
 
 ///Route::get('home', 'Blog\HomeController@index')->name('home');
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('blog/{id}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('category/{id}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
-
+Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');
+Route::post('/storeFaqs/', [App\Http\Controllers\FaqController::class, 'storeFaqs'])->name('storeFaqs');
+//
 
 Route::resource('informers', App\Http\Controllers\InformerController::class);
 
@@ -62,4 +80,3 @@ Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireControlle
 // Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/state{id}", [App\Http\Controllers\ArticlesController::class, 'desactiver']);
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
-Route::post("/upload", [App\Http\Controllers\PublicitesController::class, 'upload']);

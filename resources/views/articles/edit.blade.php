@@ -19,7 +19,7 @@
         <div class="card">
 
             {!! Form::model($articles, ['route' => ['articles.update', $articles->id], 'method' => 'patch', 'files' => true,'enctype'=>'multipart/form-data']) !!}
-
+                @csrf
             <div class="card-body">
                 <div class="row">
                     @include('articles.fields')

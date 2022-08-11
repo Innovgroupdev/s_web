@@ -300,38 +300,6 @@
                         });
                     })
                 }
-
-                {{--$('#formComment').submit(function(e){--}}
-                {{--    e.preventDefault();--}}
-                {{--    let nom = $("#nom").val();--}}
-                {{--    let email = $("#email").val();--}}
-                {{--    let desc = $("#desc").val();--}}
-                {{--    let _token = $("input[name=_token]").val();--}}
-                {{--    alert(nom,desc,email)--}}
-
-                {{--    $.ajax({--}}
-                {{--        url: "{{route('commentaire-enregistre')}}",--}}
-                {{--        type: "POST",--}}
-                {{--        data:{--}}
-                {{--            email:email,--}}
-                {{--            nom:nom,--}}
-                {{--            desc:desc,--}}
-                {{--            _token:_token--}}
-                {{--        },--}}
-                {{--        success:function (response) {--}}
-                {{--            if (response){--}}
-                {{--                $('#formComment')[0].reset();--}}
-                {{--                $('#error_comment').hide();--}}
-                {{--                $('#formComment')[0].hide();--}}
-                {{--                $('#saveSuccess').html('<label> Commentaire enregistré avec succès</label>')--}}
-                {{--            }--}}
-                {{--        },--}}
-                {{--        error:function () {--}}
-                {{--            $('#error_comment').html('<label> Veuillez revoir les données saisies</label>')--}}
-                {{--        }--}}
-
-                {{--    });--}}
-                {{--});--}}
             </script>
 
         <script>

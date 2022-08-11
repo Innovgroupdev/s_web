@@ -1005,17 +1005,18 @@
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout….</p>
-                                                                                           
-                                                                                        </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
 
                                                                                         </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1030,17 +1031,19 @@
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Vous méritez le beau ;<br>
                                                                                                 je vous offrirai toujours le plus beau.</p>
-                                                                                           
-                                                                                        </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
+
 
                                                                                         </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1054,17 +1057,19 @@
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</p>
-                                                                                           
-                                                                                        </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
+
 
                                                                                         </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1075,7 +1080,7 @@
                                                                                         <h5 class="mt-3">Zeus</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication</p>
                                                                                         <p class="team-post text-secondary mt-0">
-                                                                                       
+
                                                                                             <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Mon Job ? Vous rendre fiers <br> d’appartenir à la famille CIBLE</p>
@@ -1083,15 +1088,17 @@
                                                                                                 "
                                                                                             </span> -->
                                                                                         </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
 
-                                                                                        </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1102,20 +1109,22 @@
                                                                                         <h5 class="mt-3">El Professor </h5>
                                                                                         <p class="team-post text-secondary">Chargé de la Relation Client </p>
                                                                                         <p class="team-post text-secondary mt-0">
-                                                                                       
+
                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                        <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                        Pour votre satisfaction, chaque minute <br>  compte ;  chaque effort est nécessaire.</p>
                                                                                         </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
 
-                                                                                        </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1129,17 +1138,18 @@
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                        <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                        Vous surprendre ; toujours vous surprendre <br>  avec de nouvelles fonctionnalités</p>
-                                                                                            
-                                                                                        </p>
-                                                                                        <p class="mt-3">
-                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-instagram  text-dark"></i>
-                                                                                            </a>
-                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">
-                                                                                                <i class="fa fa-linkedin  text-dark"></i>
-                                                                                            </a>
 
                                                                                         </p>
+{{--                                                                                        <p class="mt-3">--}}
+{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
+{{--                                                                                            </a>--}}
+
+{{--                                                                                        </p>--}}
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1383,7 +1393,9 @@
                                                                                     Que vous soyez particulier ou entreprise, téléchargez CIBLE sur Play store ou App
                                                                                     Store, inscrivez-vous en renseignant les informations demandées à chaque étape
                                                                                     puis valider à la fin. Si vous voulez faire partie des premiers utilisateurs de
-                                                                                    CIBLE,<a href=""  data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a> 
+
+                                                                                    CIBLE,<a href=""  data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1444,7 +1456,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center">
-                                                                    <a data-target="#exampleModalCenter" data-toggle="modal" class="button  button-icon " href="#">
+                                                                    <a data-toggle="modal" data-target="#exampleModalCenterHeader" class="button  button-icon " href="#">
                                                                         M’informer au lancement </a>
                                                                 </div>
                                                             </div>
@@ -1621,11 +1633,12 @@
                                                                                                 <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
                                                                                             <input type="submit" class="sub_button bg-dark" style="margin-left:-15%;background:#343a40!important" value="Soumettre">
-                                                                                           
+
+
                                                                                         </div>
                                                                                         <div class="email-subscribe">
                                                                                         <span id="error_email" style="color:#fff!important"></span>
-                                                                                           
+
                                                                                         </div>
                                                                                         <div class="subscribe">
                                                                                             <input type="hidden" name="action" value="subscribe" />
@@ -1761,7 +1774,7 @@
                                      <strong> <span id="error_informH"  style="color:red!important" ></span></strong>
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                   
+
                                     <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                 </div>
                             </div>
@@ -1799,30 +1812,36 @@
                             Votre adresse email ne sera pas publiée.
 
                         </p>
-                        <form id="informHeader" class="comment-form text-left">
+
+                        <form id="poserQestion" class="comment-form text-left">
+
                             @csrf
                             <div class="row my-4">
                                 <div class="col-4 mb-3 pr-0 mr-0">
                                     <select class="" required>
                                         @foreach ($countries as $country)
-                                            <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
+
+                                            <option value="{{$country->name}}" id="paysQ">{{$country->name}} - {{$country->code}}</option>
+
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-8 mb-3">
-                                    <input id="numberH" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+
+                                    <input id="telQ" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
-                                    <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
                                 </div>
                                 <div class="col-12 my-3 ">
-                                <textarea id="raisonE" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
+                                <textarea id="question" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
                                 </div>
                                 <div class="col-12 text-center text-danger mt-3">
-                                     <strong> <span id="error_informHFAQ"  style="color:red!important" ></span></strong>
+                                     <strong> <span id="errorQ"  style="color:red!important" ></span></strong>
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                   
+
+
                                     <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                 </div>
                             </div>
@@ -2003,7 +2022,7 @@
                                     <span id="error_informE" class="text-danger"></span>
                                     </div>
                                     <div class="col-12 mt-4 d-flex justify-content-center">
-                                        
+
                                         <input name="submit" type="submit"  class="submit w-50 mx-auto" value="Envoyer" />
                                     </div>
                                 </div>
@@ -2070,11 +2089,19 @@
         }
     </style>
     <script>
+
          setTimeout(() => {
+            setCookieValueToInput('email','email');
+            setCookieValueToInput('nom','nomE');
                setCookieValueToInput('numero','numberH');
                setCookieValueToInput('email','emailH');
-               console.log(document.cookie)
-           }, 15000);
+               setCookieValueToInput('numero','numeroE');
+               setCookieValueToInput('email','emailE');
+               setCookieValueToInput('numero','telQ');
+               setCookieValueToInput('email','emailQ');
+            //    console.log(document.cookie)
+           }, 10000);
+
         function viewParticulier(element) {
             console.log(element.classList)
             jQuery("#" + element.id).removeClass("active");
@@ -2120,8 +2147,10 @@
                        $('#appino_subscription')[0].reset();
                        $('#error_email').hide();
                    }
+
                 //    setCookie('nom',name,30);
                                     setCookie('email',email,30);
+
                },
                error:function () {
                    $('#error_email').html('<label> Email existe déjà</label>')
@@ -2208,13 +2237,14 @@
                                         console.log('I was closed by the timer')
                                     }
                                 })
+
                                 setCookie('numero',numero,30);
                                     setCookie('email',email,30);
+
                             },
                success:function (response) {
                    if (response){
 
-                    
                     Swal.fire({
                                     icon: 'success',
                                     title: 'Envoyé avec succès',
@@ -2350,8 +2380,10 @@
                                         console.log('I was closed by the timer')
                                     }
                                 })
+                                setCookie('nom',nom,30);
                                 setCookie('numero',numero,30);
                                     setCookie('email',email,30);
+
                             },
                success:function (response) {
                    if (response){
@@ -2377,6 +2409,83 @@
 
            });
         });
+    </script>
+
+    <script>
+        const formQues = document.querySelector("#poserQestion");
+        if(formQues){
+            formQues.addEventListener('submit', function (e) {
+                e.preventDefault();
+               // const formData =  new FormData(e.target)
+                //console.log(formData.entries())
+                //    e.preventDefault();
+                let pays = $("#paysQ").val();
+                let email = $("#emailQ").val();
+                let telQ = $("#telQ").val();
+                let question = $("#question").val();
+                let _token = $("input[name=_token]").val();
+
+                $.ajax({
+                    url: "{{route('storeFaqs')}}",
+                    type: "POST",
+                    data:{
+                        email:email,
+                        pays:pays,
+                        tel:telQ,
+                        question:question,
+                        _token:_token
+                    },
+                    beforeSend : function () {
+                        let timerInterval;
+                        Swal.fire({
+                            title: 'Envoie en cours ...',
+                            html: 'Chargement dans <b></b> milliseconds.',
+                            timer: 1000000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                //console.log('I was closed by the timer')
+                            }
+                        })
+                    },
+                    success:function (response) {
+                        if (response){
+
+
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Envoyé avec succès',
+                                text : "Vos informations ont été prise en compte avec succès",
+                                showConfirmButton: true,
+                            })
+                            $('#poserQestion')[0].reset();
+                            $('#errorQ').hide();
+                            $('#poserQestion')[0].hide();
+                        }
+                    },
+                    error:function () {
+                        $('#errorQ').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erreur !',
+                            text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                        })
+                    }
+
+                });
+            });
+        }
     </script>
 
     @endsection

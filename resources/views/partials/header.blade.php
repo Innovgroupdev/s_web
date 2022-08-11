@@ -4,7 +4,6 @@
 <body>
 <script>
     function setCookie(nom,valeur,jour){
-       
         if(jour){
             var date = new Date()
             date.setTime(date.getTime()+(jour*24*60*60*1000));
@@ -13,7 +12,9 @@
         else{
             var exp = '';
         }
+
         document.cookie = nom+'='+valeur+exp+'domain=/;path=/';
+
     }
     function getCookie(nom){
         nomEtValeur = nom + "=";
@@ -40,7 +41,7 @@
         document.getElementById(id).value = cookieValue
        
      }
-    //  console.log(document.cookie)
+
     }
         </script>
 <header id="main-header" class="head default">

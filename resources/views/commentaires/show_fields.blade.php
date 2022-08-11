@@ -1,3 +1,4 @@
+
 <!-- Description Field -->
 <div class="col-sm-12">
     {!! Form::label('description', 'Description:') !!}
@@ -14,6 +15,11 @@
 <div class="col-sm-12">
     {!! Form::label('email', 'Email:') !!}
     <p>{{ $commentaire->email }}</p>
+</div>
+<!-- Article Field -->
+<div class="col-sm-12">
+    {!! Form::label('article_id', 'Article:') !!}
+    <p>{{ optional($commentaire->article)->libelle }}</p>
 </div>
 
 <!-- Is Valid Field -->

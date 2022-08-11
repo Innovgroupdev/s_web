@@ -1,6 +1,9 @@
 <aside id="secondary" class="widget-area" aria-label="Blog Sidebar">
     <div id="search-2" class="widget widget_search">
-        <form method="get" class="search-form" action="https://wordpress.iqonic.design/appino/particles-3/">
+
+
+
+        <form method="get" class="search-form" action="/search">
             <label for="search-form-62d674f53a6e7">
                 <span class="screen-reader-text">Recherche pour:</span>
             </label>
@@ -14,7 +17,12 @@
         <ul>
 
             <li>
-                <a href="/blog/{{$articleRecentFive->id}}">{{$articleRecentFive->libelle}}</a>
+                <a href="/blog/{{$articleRecentFive->id}}">
+                    {{ substr($articleRecentFive->libelle, 0, 35)}}
+                    @if(strlen($articleRecentFive->libelle) > 35)
+                        ...
+                    @endif
+                </a>
             </li>
         </ul>
         @endforeach
@@ -24,7 +32,12 @@
         <ul>
             @foreach($articlePopFives as $articlePopFive)
             <li>
-                <a href="/blog/{{$articlePopFive->id}}">{{$articlePopFive->libelle}}</a>
+                <a href="/blog/{{$articlePopFive->id}}">
+                    {{ substr($articlePopFive->libelle, 0, 35)}}
+                    @if(strlen($articlePopFive->libelle) > 35)
+                        ...
+                    @endif
+                </a>
             </li>
             @endforeach
         </ul>
@@ -36,7 +49,12 @@
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
                     <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> --</span>
-                <a href="/blog/{{$articleCommente->article_id}}#c{{$articleCommente->id}}">{{$articleCommente->description}}</a>
+                <a href="/blog/{{$articleCommente->article_id}}#c{{$articleCommente->id}}">
+                    {{ substr($articleCommente->description, 0, 35)}}
+                    @if(strlen($articleCommente->description) > 35)
+                        ...
+                    @endif
+                </a>
             </li>
             @endforeach
         </ul>
@@ -53,12 +71,19 @@
 
 
         <ul>
+            @if($categories->count() > 0)
+
             @foreach($categories as $categorie)
-            <li class="cat-item cat-item-21"><a href="/category/{{$categorie->id}}">
-                    {{$categorie->lib}}
+            <li class="cat-item cat-item-21">
+                <a href="/category/{{$categorie->id}}">
+                    {{ substr($categorie->lib, 0, 35)}}
+                    @if(strlen($categorie->lib) > 35)
+                        ...
+                    @endif
                 </a>
             </li>
             @endforeach
+            @endif
         </ul>
 
     </div>

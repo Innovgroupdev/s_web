@@ -8,7 +8,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="heading-title iq-breadcrumb-title iq-mtb-100">
-							<h2 class="title iq-tw-8 iq-font-white">Catégorie name</h2>
+							<h2 class="title iq-tw-8 iq-font-white">{{$categorie->lib}}</h2>
 							<div class="white"></div>
 						</div>
 
@@ -20,7 +20,7 @@
 							<li class="breadcrumb-item active">
                                 <a href="{{route('blog')}}">BLOG</a></li>
                             <li class="breadcrumb-item active">
-                            Catégorie name
+                                {{$categorie->lib}}
                                </li>
 
 						</ul>
@@ -98,13 +98,14 @@
                                                             @endforeach
 														</div>
 													</div>
-													<ul class='page-numbers'>
-														<li><span aria-current="page"
-																class="page-numbers current">1</span></li>
-														<li><a class="page-numbers" href="page/2/index.html">2</a></li>
-														<li><a class="next page-numbers" href="page/2/index.html">Next
-																page</a></li>
-													</ul>
+                                                    {{$catArticles->links()}}
+{{--													<ul class='page-numbers'>--}}
+{{--														<li><span aria-current="page"--}}
+{{--																class="page-numbers current">1</span></li>--}}
+{{--														<li><a class="page-numbers" href="page/2/index.html">2</a></li>--}}
+{{--														<li><a class="next page-numbers" href="page/2/index.html">Next--}}
+{{--																page</a></li>--}}
+{{--													</ul>--}}
 												</div>
 											</div>
 										</div>

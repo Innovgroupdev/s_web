@@ -1,3 +1,6 @@
+
+
+
 @extends('partials.model')
 @section('content')
 
@@ -85,7 +88,10 @@
                                     </div>
                                 </div>
                                 @endforeach
+
                             </article><!-- #post-## -->
+                            {{$articles->links()}}
+
                         </div>
 
                         <div class="col-lg-4 col-md-5 col-sm-12">

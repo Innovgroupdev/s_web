@@ -56,3 +56,10 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('faqs.index') }}" class="nav-link {{ Request::is('faqs*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Faqs</p>
+    </a>
+</li>
+
