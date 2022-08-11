@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     //$news = News::all();
-    $articleRecentFive = Articles::orderBy('created_at', 'desc')->take(5)->get();
+    $articleRecentFive = Articles::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     return view('partials.index',compact('countries','articleRecentFive'));
 });

@@ -267,8 +267,8 @@
                                     }
                                     })
 
-                                    setCookie('nom',name,30);
-                                    setCookie('email',email,30);
+                                    setCookie('nom',name,180);
+                                    setCookie('email',email,180);
                                     
                             },
                             success:function (response) {

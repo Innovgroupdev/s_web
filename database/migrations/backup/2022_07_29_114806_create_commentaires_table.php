@@ -18,7 +18,7 @@ class CreateCommentairesTable extends Migration
             $table->id('id');
             $table->string('description');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->boolean('is_valid');
             $table->integer('article_id')->unsigned();
             $table->softDeletes();

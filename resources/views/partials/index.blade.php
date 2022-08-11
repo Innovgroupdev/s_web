@@ -1016,7 +1016,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1032,7 +1031,6 @@
                                                                                             Vous méritez le beau ;<br>
                                                                                                 je vous offrirai toujours le plus beau.</p>
 
-
                                                                                         </p>
 {{--                                                                                        <p class="mt-3">--}}
 {{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
@@ -1043,7 +1041,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1058,7 +1055,6 @@
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</p>
 
-
                                                                                         </p>
 {{--                                                                                        <p class="mt-3">--}}
 {{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
@@ -1069,7 +1065,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1088,7 +1083,6 @@
                                                                                                 "
                                                                                             </span> -->
                                                                                         </p>
-
 {{--                                                                                        <p class="mt-3">--}}
 {{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
 {{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
@@ -1098,7 +1092,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1114,7 +1107,6 @@
                                                                                        <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                        Pour votre satisfaction, chaque minute <br>  compte ;  chaque effort est nécessaire.</p>
                                                                                         </p>
-
 {{--                                                                                        <p class="mt-3">--}}
 {{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
 {{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
@@ -1124,7 +1116,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1149,7 +1140,6 @@
 {{--                                                                                            </a>--}}
 
 {{--                                                                                        </p>--}}
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1393,9 +1383,7 @@
                                                                                     Que vous soyez particulier ou entreprise, téléchargez CIBLE sur Play store ou App
                                                                                     Store, inscrivez-vous en renseignant les informations demandées à chaque étape
                                                                                     puis valider à la fin. Si vous voulez faire partie des premiers utilisateurs de
-
                                                                                     CIBLE,<a href=""  data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a>
-
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1456,7 +1444,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center">
-                                                                    <a data-toggle="modal" data-target="#exampleModalCenterHeader" class="button  button-icon " href="#">
+                                                                    <a data-target="#exampleModalCenterHeader" data-toggle="modal" class="button  button-icon " href="#">
                                                                         M’informer au lancement </a>
                                                                 </div>
                                                             </div>
@@ -1633,7 +1621,6 @@
                                                                                                 <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
                                                                                             <input type="submit" class="sub_button bg-dark" style="margin-left:-15%;background:#343a40!important" value="Soumettre">
-
 
                                                                                         </div>
                                                                                         <div class="email-subscribe">
@@ -1812,22 +1799,17 @@
                             Votre adresse email ne sera pas publiée.
 
                         </p>
-
                         <form id="poserQestion" class="comment-form text-left">
-
                             @csrf
                             <div class="row my-4">
                                 <div class="col-4 mb-3 pr-0 mr-0">
-                                    <select class="" required>
+                                    <select class="" id="select_id" required>
                                         @foreach ($countries as $country)
-
                                             <option value="{{$country->name}}" id="paysQ">{{$country->name}} - {{$country->code}}</option>
-
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-8 mb-3">
-
                                     <input id="telQ" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
@@ -1840,7 +1822,6 @@
                                      <strong> <span id="errorQ"  style="color:red!important" ></span></strong>
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-
 
                                     <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                 </div>
@@ -2009,7 +1990,7 @@
                                         <textarea id="raisonE" placeholder="Vos motivations" name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
                                     </div>
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
-                                        <select class="" required id="select_id_e">
+                                        <select class="" required>
                                             @foreach ($countries as $country)
                                                 <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
@@ -2089,7 +2070,6 @@
         }
     </style>
     <script>
-
          setTimeout(() => {
             setCookieValueToInput('email','email');
             setCookieValueToInput('nom','nomE');
@@ -2101,7 +2081,6 @@
                setCookieValueToInput('email','emailQ');
             //    console.log(document.cookie)
            }, 10000);
-
         function viewParticulier(element) {
             console.log(element.classList)
             jQuery("#" + element.id).removeClass("active");
@@ -2123,339 +2102,309 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function viewParticulier(element) {
-            console.log(element.classList)
-            jQuery("#" + element.id).removeClass("active");
-            if (element.id == "cp-par") {
-
-                jQuery("#cp-par-view").show()
-                jQuery("#cp-entre-view").hide()
-                jQuery("#cp-par").addClass("active");
-                jQuery("#cp-entre").removeClass("active");
-            }
-            if (element.id == "cp-entre") {
-                jQuery("#cp-entre-view").show()
-                jQuery("#cp-par-view").hide()
-                jQuery("#cp-par").removeClass("active");
-                jQuery("#cp-entre").addClass("active");
-            }
-            console.log(element.classList)
-        }
-    </script>
-    <script>
         $('#appino_subscription').submit(function(e){
-            e.preventDefault();
-            let email = $("#email").val();
-            let _token = $("input[name=_token]").val();
-            let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+           e.preventDefault();
+           let email = $("#email").val();
+           let _token = $("input[name=_token]").val();
+           let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-            $.ajax({
-                url: "{{route('enregistre')}}",
-                type: "POST",
-                data:{
-                    email:email,
-                    _token:_token
-                },
-                success:function (response) {
-                    if (response){
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Envoyé avec succès',
-                            text : "Vos informations ont été prise en compte avec succès",
-                            showConfirmButton: true,
-                        })
-                        $('#appino_subscription')[0].reset();
-                        $('#error_email').hide();
-                    }
-                },
-                error:function () {
-                    $('#error_email').html('<label> Email existe déjà</label>')
-                }
+           $.ajax({
+               url: "{{route('enregistre')}}",
+               type: "POST",
+               data:{
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
+                       $('#appino_subscription')[0].reset();
+                       $('#error_email').hide();
+                   }
+                   setCookie('email',email,180);
+               },
+               error:function () {
+                   $('#error_email').html('<label> Email existe déjà</label>')
+               }
 
-            });
+           });
         });
     </script>
     <script>
-        let pays_ = "";
-        $('#select_id').on('change', function()
-        {
-            pays_ = this.value;
-            //alert(this.value); //or alert($(this).val());
-        });
         $('#inform').submit(function(e){
-            e.preventDefault();
-            let pays = pays_;
-            let email = $("#emailI").val();
-            let numero = $("#numberI").val();
-            let _token = $("input[name=_token]").val();
-            console.log(pays,email,numero)
+           e.preventDefault();
+           let pays = $("#pays").val();
+           let email = $("#emailI").val();
+           let numero = $("#numberI").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
 
-            $.ajax({
-                url: "{{route('informer-enregistre')}}",
-                type: "POST",
-                data:{
-                    pays:pays,
-                    numero:numero,
-                    email:email,
-                    _token:_token
-                },
-                success:function (response) {
-                    if (response){
-                        $('#inform')[0].reset();
-                        $('#error_inform').hide();
-                        $('#inform')[0].hide();
-                    }
-                },
-                error:function () {
-                    $('#error_inform').html('<label> Numéro ou Email existe déjà</label>')
-                }
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#inform')[0].reset();
+                       $('#error_inform').hide();
+                       $('#inform')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_inform').html('<label> Numéro ou Email existe déjà</label>')
+               }
 
-            });
+           });
         });
     </script>
     <script>
-        const formComment = document.querySelector("#informHeader");
-        if(formComment){
-            formComment.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData =  new FormData(e.target)
-                console.log(formData.entries())
-                //    e.preventDefault();
-                let pays = $("#paysH").val();
-                let email = $("#emailH").val();
-                let numero = $("#numberH").val();
-                let _token = $("input[name=_token]").val();
-                console.log(pays,$("#emailH").val(),numero)
-                //debugger
-                $.ajax({
-                    url: "{{route('informer-enregistre')}}",
-                    type: "POST",
-                    data:{
-                        email:email,
-                        pays:pays,
-                        numero:numero,
-                        _token:_token
-                    },
-                    beforeSend : function () {
-                        let timerInterval;
-                        Swal.fire({
-                            title: 'Envoie en cours ...',
-                            html: 'Chargement dans <b></b> milliseconds.',
-                            timer: 1000000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading()
-                                const b = Swal.getHtmlContainer().querySelector('b')
-                                timerInterval = setInterval(() => {
-                                    b.textContent = Swal.getTimerLeft()
-                                }, 100)
+         const formComment = document.querySelector("#informHeader");
+         if(formComment){
+                    formComment.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData =  new FormData(e.target)
+                        console.log(formData.entries())
+        //    e.preventDefault();
+           let pays = $("#paysH").val();
+           let email = $("#emailH").val();
+           let numero = $("#numberH").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,$("#emailH").val(),numero)
+            //debugger
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   email:email,
+                   pays:pays,
+                   numero:numero,
+                   _token:_token
+               },
+               beforeSend : function () {
+                                let timerInterval;
+                                    Swal.fire({
+                                    title: 'Envoie en cours ...',
+                                    html: 'Chargement dans <b></b> milliseconds.',
+                                    timer: 1000000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                    }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                })
+                                setCookie('numero',numero,180);
+                                    setCookie('email',email,180);
                             },
-                            willClose: () => {
-                                clearInterval(timerInterval)
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log('I was closed by the timer')
-                            }
-                        })
-                    },
-                    success:function (response) {
-                        if (response){
+               success:function (response) {
+                   if (response){
 
 
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Envoyé avec succès',
-                                text : "Vos informations ont été prise en compte avec succès",
-                                showConfirmButton: true,
-                            })
-                            $('#informHeader')[0].reset();
-                            $('#error_informH').hide();
-                            $('#informHeader')[0].hide();
-                        }
-                    },
-                    error:function () {
-                        $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Erreur !',
-                            text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                        })
-                    }
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
+                       $('#informHeader')[0].reset();
+                       $('#error_informH').hide();
+                       $('#informHeader')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                   Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                                })
+               }
 
-                });
-            });
-        }
+           });
+        });
+    }
     </script>
     <script>
         $('#informBilleterie').submit(function(e){
-            e.preventDefault();
-            let pays = $("#paysB").val();
-            let email = $("#emailB").val();
-            let numero = $("#numberB").val();
-            let _token = $("input[name=_token]").val();
-            console.log(pays,email,numero)
+           e.preventDefault();
+           let pays = $("#paysB").val();
+           let email = $("#emailB").val();
+           let numero = $("#numberB").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
 
-            $.ajax({
-                url: "{{route('informer-enregistre')}}",
-                type: "POST",
-                data:{
-                    pays:pays,
-                    numero:numero,
-                    email:email,
-                    _token:_token
-                },
-                success:function (response) {
-                    if (response){
-                        $('#informBilleterie')[0].reset();
-                        $('#error_informB').hide();
-                        $('#informBilleterie')[0].hide();
-                    }
-                },
-                error:function () {
-                    $('#error_informB').html('<label> Numéro ou Email existe déjà</label>')
-                }
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#informBilleterie')[0].reset();
+                       $('#error_informB').hide();
+                       $('#informBilleterie')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informB').html('<label> Numéro ou Email existe déjà</label>')
+               }
 
-            });
+           });
         });
     </script>
     <script>
         $('#informRaison').submit(function(e){
-            e.preventDefault();
-            let pays = $("#paysR").val();
-            let email = $("#emailR").val();
-            let numero = $("#numberR").val();
-            let _token = $("input[name=_token]").val();
-            console.log(pays,email,numero)
+           e.preventDefault();
+           let pays = $("#paysR").val();
+           let email = $("#emailR").val();
+           let numero = $("#numberR").val();
+           let _token = $("input[name=_token]").val();
+           console.log(pays,email,numero)
 
-            $.ajax({
-                url: "{{route('informer-enregistre')}}",
-                type: "POST",
-                data:{
-                    pays:pays,
-                    numero:numero,
-                    email:email,
-                    _token:_token
-                },
-                success:function (response) {
-                    if (response){
-                        $('#informRaison')[0].reset();
-                        $('#error_informR').hide();
-                        $('#informRaison')[0].hide();
-                    }
-                },
-                error:function () {
-                    $('#error_informR').html('<label> Numéro ou Email existe déjà</label>')
-                }
+           $.ajax({
+               url: "{{route('informer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   _token:_token
+               },
+               success:function (response) {
+                   if (response){
+                       $('#informRaison')[0].reset();
+                       $('#error_informR').hide();
+                       $('#informRaison')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informR').html('<label> Numéro ou Email existe déjà</label>')
+               }
 
-            });
+           });
         });
     </script>
     <script>
+        $('#Soyerform').submit(function(e){
+           e.preventDefault();
+           let nom = $("#nomE").val();
+           let email = $("#emailE").val();
+           let numero = $("#numeroE").val();
+           let pays = $("#paysE").val();
+           let profession = $("#professionE").val();
+           let raison = $("#raisonE").val();
+           let _token = $("input[name=_token]").val();
+           console.log(nom,pays,email,numero,profession,raison)
 
-        const formQues = document.querySelector("#Soyerform");
-        if(formQues){
-
-            let pays_ = ""
-            $('#select_id_e').on('change', function()
-            {
-                // alert('test'); //or alert($(this).val());
-                pays_ = this.value;
-                console.log(pays_)
-            });
-
-
-            formQues.addEventListener('submit', function (e) {
-                e.preventDefault();
-                let nom = $("#nomE").val();
-                let email = $("#emailE").val();
-                let numero = $("#numeroE").val();
-                let pays = pays_;
-                let profession = $("#professionE").val();
-                let raison = $("#raisonE").val();
-                let _token = $("input[name=_token]").val();
-                console.log(nom,pays,email,numero,profession,raison)
-                debugger
-                $.ajax({
-                    url: "{{route('essayer-enregistre')}}",
-                    type: "POST",
-                    data: {
-                        pays: pays,
-                        numero: numero,
-                        email: email,
-                        profession: profession,
-                        raison: raison,
-                        nom: nom,
-                        _token: _token
-                    },
-                    beforeSend: function () {
-                        let timerInterval;
-                        Swal.fire({
-                            title: 'Envoie en cours ...',
-                            html: 'Chargement dans <b></b> milliseconds.',
-                            timer: 1000000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading()
-                                const b = Swal.getHtmlContainer().querySelector('b')
-                                timerInterval = setInterval(() => {
-                                    b.textContent = Swal.getTimerLeft()
-                                }, 100)
+           $.ajax({
+               url: "{{route('essayer-enregistre')}}",
+               type: "POST",
+               data:{
+                   pays:pays,
+                   numero:numero,
+                   email:email,
+                   profession:profession,
+                   raison:raison,
+                   nom:nom,
+                   _token:_token
+               },
+               beforeSend : function () {
+                                let timerInterval;
+                                    Swal.fire({
+                                    title: 'Envoie en cours ...',
+                                    html: 'Chargement dans <b></b> milliseconds.',
+                                    timer: 1000000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                        }, 100)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                    }).then((result) => {
+                                    /* Read more about handling dismissals below */
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                        console.log('I was closed by the timer')
+                                    }
+                                })
+                                setCookie('nom',nom,30);
+                                setCookie('numero',numero,30);
+                                    setCookie('email',email,30);
                             },
-                            willClose: () => {
-                                clearInterval(timerInterval)
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log('I was closed by the timer')
-                            }
-                        })
-                    },
-                    success: function (response) {
-                        if (response) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Envoyé avec succès',
-                                text: "Vos informations ont été prise en compte avec succès",
-                                showConfirmButton: true,
-                            })
-                            $('#Soyerform')[0].reset();
-                            $('#error_informE').hide();
-                        }
-                    },
-                    error: function () {
-                        $('#error_informE').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Erreur !',
-                            text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                        })
-                    }
+               success:function (response) {
+                   if (response){
+                    Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text : "Vos informations ont été prise en compte avec succès",
+                                    showConfirmButton: true,
+                                    })
+                       $('#Soyerform')[0].reset();
+                       $('#error_informE').hide();
+                       $('#Soyerform')[0].hide();
+                   }
+               },
+               error:function () {
+                   $('#error_informE').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                   Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                                })
+               }
 
-                });
-            });
-        };
+           });
+        });
     </script>
+
     <script>
         const formQues = document.querySelector("#poserQestion");
 
         if(formQues){
-            let pays_ = "";
-            $('#select_id_').on('change', function()
-            {
-                pays_ = this.value; //or alert($(this).val());
-            });
-
+                let pays_ = "";
+                $('#select_id').on('change', function()
+                {
+                    pays_ = this.value;
+                    //alert(this.value); //or alert($(this).val());
+        });
             formQues.addEventListener('submit', function (e) {
                 e.preventDefault();
+               // const formData =  new FormData(e.target)
+                //console.log(formData.entries())
+                //    e.preventDefault();
                 let pays = pays_;
                 let email = $("#emailQ").val();
                 let telQ = $("#telQ").val();
                 let question = $("#question").val();
                 let _token = $("input[name=_token]").val();
-
 
                 $.ajax({
                     url: "{{route('storeFaqs')}}",
