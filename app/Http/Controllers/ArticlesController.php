@@ -91,6 +91,8 @@ class ArticlesController extends AppBaseController
         $article->categorie_id = $request->categorie_id;
         $article->etat = $request->etat;
         $article->user_id = $user->id;
+        $article->nbvue = 0;
+        $article->etat = 0;
         $fileName = time().$request->file('img')->getClientOriginalName();
         $path = $request->file('img')->storeAs('images', $fileName, 'public');
         $article["img"] = '/storage/'.$path;
@@ -250,9 +252,11 @@ class ArticlesController extends AppBaseController
         }
         
 
+
         if(Commentaire::where('article_id',$id)->exists()){
            // Articles::where('id',$id)->forceDelete();
             $commentaires = Commentaire::all();
+
             foreach ($commentaires as $comment){
                 if($comment->article_id == $id){
                     $comment->forceDelete();
@@ -284,11 +288,7 @@ class ArticlesController extends AppBaseController
 
     public function articleCommentaires($id)
     {
-
-
         $articleCommentaires = Article::find($id)->commentaires;
-
         return  $articleCommentaires;
     }
-    
 }

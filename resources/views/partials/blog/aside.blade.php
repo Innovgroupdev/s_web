@@ -3,11 +3,11 @@
 
 
 
-        <form method="get" class="search-form" action="">
+        <form method="get" class="search-form" action="{{url('/search/')}}">
             <label for="search-form-62d674f53a6e7">
                 <span class="screen-reader-text">Recherche pour:</span>
             </label>
-            <input type="search" id="search-form-62d674f53a6e7" class="search-field" placeholder="Rechercher" value="" name="q" />
+            <input type="search" id="search-form-62d674f53a6e7" required="required" class="search-field" placeholder="Rechercher" value="" name="q" />
             <button type="submit" class="search-submit"><i class="fa fa-search"></i><span class="screen-reader-text">Rechercher</span></button>
         </form>
     </div>
@@ -59,13 +59,7 @@
             @endforeach
         </ul>
     </div>
-    <!-- <div id="archives-2" class="widget widget_archive">
-                                <h2 class="widget-title">Archives</h2>
-                                <ul>
-                                    <li><a href='../2018/12/index.html'>December 2018</a></li>
-                                </ul>
 
-                            </div> -->
     <div id="categories-2" class="widget widget_categories">
         <h2 class="widget-title">Catégories</h2>
 
@@ -87,17 +81,7 @@
         </ul>
 
     </div>
-    <!-- <div id="meta-2" class="widget widget_meta">
-                                <h2 class="widget-title">Meta</h2>
-                                <ul>
-                                    <li><a href="../wp-login.html">Log in</a></li>
-                                    <li><a href="../feed/index.html">Entries feed</a></li>
-                                    <li><a href="../comments/feed/index.html">Comments feed</a></li>
 
-                                    <li><a href="https://wordpress.org/">WordPress.org</a></li>
-                                </ul>
-
-                            </div> -->
     <div id="tag_cloud-1" style="padding: 20px;" class="widget widget_tag_cloud">
         <!-- <h2 class="widget-title">Public</h2> -->
         <div class="tagcloud">
