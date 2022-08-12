@@ -80,7 +80,7 @@
             <div class="col-12 mb-3 d-flex justify-content-center">
 
                     <label class="h6 w-50 text-center mx-auto" for="motivationImages" style="cursor: pointer !important; display: block !important">
-                        <img id="imageMotivation" class="w-100 mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
+                        <img id="imageMotivation" class="mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                         </iframe>
                         <p class="text-center mt-3">  Format recommandé : A4 (888 x 459 Pixels) | Taille maximale recommandé :  2MO</p>
@@ -178,6 +178,12 @@
 
 
 <script>
+     function save(){
+    document.getElementById('etat').value = 0
+  }
+  function publish(){
+    document.getElementById('etat').value = 1
+  }
     (function() {
 	var content =
 		"<p><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzC_Ho_08G0m7PyxJOPLpPujM9UTLxvaE-5nXewscnqa3GMWjGwg' alt='Image result for summernote.js'></p><h1>Summernote</h1>";
@@ -235,11 +241,6 @@
 		$("#content").empty();
 	});
 })();
-  function save(){
-    document.getElementById('etat').value = 0
-  }
-  function publish(){
-    document.getElementById('etat').value = 1
-  }
+ 
 </script>
 @endsection

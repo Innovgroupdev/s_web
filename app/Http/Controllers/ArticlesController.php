@@ -82,17 +82,20 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
+        $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
+        // dd($urlTitre);
         $user = auth()->user();
         $article = new Articles();
         $article->libelle = $request->libelle;
         $article->desc = $request->desc;
-        $article->contenu = $request->contenu;
+        $article->contenu = $request->contenu;  
         $article->tags = $request->tags;
         $article->categorie_id = $request->categorie_id;
         $article->etat = $request->etat;
         $article->user_id = $user->id;
         $article->nbvue = 0;
-        $article->etat = 0;
+        // $article->etat = $request->etat;
+        $article->urlTitre =  $urlTitre;
         $fileName = time().$request->file('img')->getClientOriginalName();
         $path = $request->file('img')->storeAs('images', $fileName, 'public');
         $article["img"] = '/storage/'.$path;

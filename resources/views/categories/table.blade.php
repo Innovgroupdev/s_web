@@ -1,3 +1,10 @@
+
+<div class="d-flex justify-content-end w-100 mb-3">
+   
+  <div>
+  <input type="text" placeholder="Rechercher" oninput="searchItem(this.value,{{$categories}})">
+  </div>
+</div>
 <div class="table-responsive">
     <table class="table" id="categories-table">
         <thead>
@@ -12,7 +19,7 @@
         </thead>
         <tbody>
         @foreach($categories as $categories)
-            <tr>
+            <tr class="categorie{{ $categories->id }}">
                 <td class="p-4">{{ $categories->id }}</td>
                 <td class="p-4">{{ $categories->lib }}</td>
             <td class="p-4">
@@ -122,6 +129,16 @@
                     }
                 });
         });
-
+        function searchItem(value,list){
+            for(let i = 0; i<list.length; i++){
+                let temp = list[i].lib+list[i].desc
+                if(temp.toLowerCase().search(value.toLowerCase()) == -1){
+                    $(".categorie"+list[i].id).hide()
+                }
+                else{
+                    $(".categorie"+list[i].id).show()
+                }
+            }
+        }
     </script>
 </div>

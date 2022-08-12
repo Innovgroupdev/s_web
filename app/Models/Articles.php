@@ -57,6 +57,26 @@ class Articles extends Model
         return $this->hasMany(Commentaire::class);
     }
 
+    /**
+     * Get the comments for the blog article.
+     */
+    public function getCommentairesValidCount()
+    {
+        $j = 0;
+        $tab = $this->commentaires();
+    //    dd($tab);
+        foreach($tab as $articleCommentaire)
+        {
+            if($articleCommentaire->is_valid)
+                {
+                    $j ++;
+                }
+        }
+       
+        return $j;
+  
+    }
+
 
 //    public function category()
 //    {

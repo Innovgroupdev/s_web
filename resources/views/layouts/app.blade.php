@@ -110,5 +110,8 @@
   background-color: orangered!important;
   color: #fff!;
 }
+.swal-footer {
+    text-align: center;
+}
 </style>
 </html>

@@ -74,7 +74,7 @@
                                                                             </ul>
                                                                         </div>
                                                                         <div class="blog-title">
-                                                                            <a href="/blog/{{$article->id}}">
+                                                                            <a href="/blog/{{$article->urlTitre}}">
                                                                                 <h6>
                                                                                     {{ substr($article->libelle, 0, 29)}}
                                                                                     @if(strlen($article->libelle) >= 29)
@@ -93,7 +93,7 @@
                                                                             </p>
                                                                         </div>
                                                                         <div class="blog-button">
-                                                                            <a class="button" href="/blog/{{$article->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                            <a class="button" href="/blog/{{$article->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

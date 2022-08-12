@@ -1,3 +1,10 @@
+<div class="d-flex justify-content-end w-100 my-3 pr-4">
+   
+   <div>
+   <input type="text" placeholder="Rechercher" oninput="searchItem(this.value,{{$commentaires}})">
+   </div>
+ </div>
+
 <div class="table-responsive">
     <table class="table" id="commentaires-table">
         <thead>
@@ -13,7 +20,7 @@
         </thead>
         <tbody>
         @foreach($commentaires as $commentaire)
-            <tr>
+            <tr class="commentaire{{ $commentaire->id }}">
                 <td class="p-4">{{ $commentaire->id }}</td>
 
 
@@ -233,4 +240,16 @@
            });
         });
        }
+       function searchItem(value,list){
+            for(let i = 0; i<list.length; i++){
+                let temp = list[i].name+list[i].email+list[i].description
+                
+                if(temp.toLowerCase().search(value.toLowerCase()) == -1){
+                    $(".commentaire"+list[i].id).hide()
+                }
+                else{
+                    $(".commentaire"+list[i].id).show()
+                }
+            }
+        }
     </script>

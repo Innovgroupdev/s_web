@@ -17,9 +17,9 @@
         <ul>
 
             <li>
-                <a href="/blog/{{$articleRecentFive->id}}">
-                    {{ substr($articleRecentFive->libelle, 0, 35)}}
-                    @if(strlen($articleRecentFive->libelle) > 35)
+                <a href="/blog/{{$articleRecentFive->urlTitre}}">
+                    {{ substr($articleRecentFive->libelle, 0, 32)}}
+                    @if(strlen($articleRecentFive->libelle) > 32)
                         ...
                     @endif
                 </a>
@@ -32,9 +32,9 @@
         <ul>
             @foreach($articlePopFives as $articlePopFive)
             <li>
-                <a href="/blog/{{$articlePopFive->id}}">
-                    {{ substr($articlePopFive->libelle, 0, 35)}}
-                    @if(strlen($articlePopFive->libelle) > 35)
+                <a href="/blog/{{$articlePopFive->urlTitre}}">
+                    {{ substr($articlePopFive->libelle, 0, 32)}}
+                    @if(strlen($articlePopFive->libelle) > 32)
                         ...
                     @endif
                 </a>
@@ -49,9 +49,9 @@
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
                     <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> --</span>
-                <a href="/blog/{{$articleCommente->article_id}}#c{{$articleCommente->id}}">
-                    {{ substr($articleCommente->description, 0, 35)}}
-                    @if(strlen($articleCommente->description) > 35)
+                <a href="/blog/{{$articleCommente->article->urlTitre}}#c{{$articleCommente->id}}">
+                    {{ substr($articleCommente->description, 0, 45)}}
+                    @if(strlen($articleCommente->description) > 45)
                         ...
                     @endif
                 </a>
@@ -69,9 +69,9 @@
 
             @foreach($categories as $categorie)
             <li class="cat-item cat-item-21">
-                <a href="/category/{{$categorie->id}}">
-                    {{ substr($categorie->lib, 0, 35)}}
-                    @if(strlen($categorie->lib) > 35)
+                <a href="/categorie/{{$categorie->urlTitre}}">
+                    {{ substr($categorie->lib, 0, 32)}}
+                    @if(strlen($categorie->lib) > 32)
                         ...
                     @endif
                 </a>

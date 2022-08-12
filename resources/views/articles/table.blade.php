@@ -1,18 +1,22 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tous <span class="badge badge-light text-primary ml-3">{{$articles->count()}}</span></button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Articles publiés</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Articles enregistrés </button>
-  </li>
-</ul>
-
+<div class="d-flex justify-content-between">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tous <span class="badge badge-light text-primary ml-3">{{$articles->count()}}</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Articles publiés</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Articles enregistrés </button>
+    </li>
+    </ul>
+  <div>
+  <input type="text" placeholder="Rechercher" oninput="searchItem(this.value,{{$articles}})">
+  </div>
+</div>
        
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -34,15 +38,15 @@
         </thead>
         <tbody>
   @foreach($articles as $articles)
-            <tr>
+            <tr class="article{{$articles->id}}">
                 <td class="p-3">{{ $articles->id }}</td>
-                <td class="p-3"><img src="{{ asset($articles->img) }}" width= '100' height='60' class="img img-responsive" /></td>
-                <td class="p-3">{{ $articles->libelle }}</td>
+                <td class="p-3"><img src="{{ asset($articles->img)}}" width= '100' height='60' class="img img-responsive" /></td>
+                <td class="p-3 ">{{ $articles->libelle }}</td>
             <!-- <td class="p-3">{{ $articles->desc }}</td> -->
 
-            <td class="p-3">{{ $articles->tags }}</td>
+            <td class="p-3 ">{{ $articles->tags }}</td>
 
-            <td class="p-3">{{ optional($articles->categorie)->lib }}</td>
+            <td class="p-3 ">{{ optional($articles->categorie)->lib }}</td>
                 <td class="p-3">{{optional($articles->user)->name }}</td>
                 <td width="120">
                    
@@ -115,7 +119,7 @@
         </thead>
         <tbody>
   @foreach($article1 as $article)
-            <tr>
+            <tr class="article{{$article->id}}">
                 <td class="p-3">{{ $article->id }}</td>
                 <td class="p-3"><img src="{{ asset($article->img) }}" width= '100' height='60' class="img img-responsive" /></td>
                 <td class="p-3">{{ $article->libelle }}</td>
@@ -182,7 +186,7 @@
         </thead>
         <tbody>
   @foreach($article2 as $articles)
-            <tr>
+            <tr class="article{{$articles->id}}">
                 <td class="p-3">{{ $articles->id }}</td>
                 <td class="p-3"><img src="{{ asset($articles->img) }}" width= '100' height='60' class="img img-responsive" /></td>
                 <td class="p-3">{{ $articles->libelle }}</td>
@@ -277,6 +281,16 @@
                     }
                 });
         });
-
+        function searchItem(value,list){
+            for(let i = 0; i<list.length; i++){
+                let temp = list[i].libelle+list[i].desc+list[i].tags
+                if(temp.toLowerCase().search(value.toLowerCase()) == -1){
+                    $(".article"+list[i].id).hide()
+                }
+                else{
+                    $(".article"+list[i].id).show()
+                }
+            }
+        }
     </script>
 </div>

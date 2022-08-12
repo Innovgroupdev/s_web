@@ -98,10 +98,12 @@ class CategoriesController extends AppBaseController
         ]);
         $user = auth()->user();
         //dd($user);
+        $urlTitre = str_replace(' ', '-', strtolower($request->lib));
         $categories = new Categories();
         $categories->lib = $request->lib;
         $categories->desc = $request->desc;
         $categories->user_id = $user->id;
+        $categories->urlTitre = $urlTitre;
         if(!empty($categories)){
             $categories->save();
         }

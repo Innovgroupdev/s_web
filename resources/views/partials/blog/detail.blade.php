@@ -24,7 +24,7 @@
 							<li class="breadcrumb-item active">
                                 <a href="{{route('blog')}}">BLOG</a></li>
                             <li class="breadcrumb-item active">
-                                Categorie </li>
+                            {{$articles->categorie->lib}} </li>
 						</ul>
                     </div>
                 </div>
@@ -98,9 +98,9 @@
 														</ul>
                                                     </div>
 
-                                                    <div class="blog-content mt-4">
+                                                    <!-- <div class="blog-content mt-4">
                                                         <strong>{{$articles->desc}}</strong>
-                                                    </div>
+                                                    </div> -->
 
                                                     <div class="blog-content mt-4" style="overflow:auto">
                                                     {!!$articles->contenu  !!}

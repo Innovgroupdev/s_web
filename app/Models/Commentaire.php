@@ -34,7 +34,7 @@ class Commentaire extends Model
      */
     public function article()
     {
-        return $this->belongsTo(Articles::class, 'article_id');
+        return $this->belongsTo(Article::class, 'article_id');
     }
 
     public $fillable = [

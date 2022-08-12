@@ -3,7 +3,9 @@
 
 @extends('partials.model')
 @section('content')
-
+<!-- <script>
+    location.assign("https://www.w3schools.com");
+</script> -->
 <section class="iq-breadcrumb overview-block-pb" style="">
     <div class="container">
 
@@ -55,7 +57,11 @@
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                        {{$article->commentaires()->count()}}</a>
+
+                                                                    
+                                                                      
+                                                                        {{ $article->getCommentairesValidCount() }}
+                                                        </a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
@@ -65,7 +71,7 @@
                                             </div>
                                             <div class="blog-title">
                                                 <h5 class="entry-title">
-                                                    <a href="/blog/{{$article->id}}">
+                                                    <a href="/blog/{{$article->urlTitre}}">
                                                         {{$article->libelle}} </a>
                                                 </h5>
                                             </div>
@@ -80,7 +86,7 @@
                                             </div>
 
                                             <div class="blog-button">
-                                                <a class="button pull-left" href="/blog/{{$article->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                <a class="button pull-left" href="/blog/{{$article->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                             </div>
 
 

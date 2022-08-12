@@ -43,6 +43,25 @@ class Article extends Model
         return $this->hasMany(Commentaire::class);
     }
 
+  
+    public function getCommentairesValidCount()
+    {
+        $j = 0;
+        $tab = $this->commentaires;
+    
+        foreach($tab as $articleCommentaire)
+        {
+            // dd($articleCommentaire);
+            if($articleCommentaire->is_valid)
+                {
+                    $j ++;
+                    // dd($j);
+                }
+        }
+      
+        return $j;
+  
+    }
 
     public $fillable = [
         'libelle',
