@@ -78,7 +78,7 @@
                                                                         @php
                                                                         $j = 0;
                                                                         @endphp
-                                        
+
                                                                         @foreach($articleCommentaires as $articleCommentaire)
                                                                          @if($articleCommentaire->is_valid)
                                                                          @php
@@ -117,13 +117,13 @@
                                           @php
                                           $i = 0;
                                           @endphp
-                                        
+
                                           @foreach($articleCommentaires as $articleCommentaire)
-                                          
+
                                           @if( $i != 0)
                                           <hr>
                                           @endif
-                                         
+
 
                                           @php
                                           $i ++;
@@ -142,11 +142,11 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                              
+
                                                 </div>
                                                 </div>
                                                 <div class="comment-text">
-                                                <p class="text-secondary mt-3 " > 
+                                                <p class="text-secondary mt-3 " >
                                                 <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
                                                 {{$articleCommentaire->description}}
                                                 </p>
@@ -193,13 +193,13 @@
                                                 </form>
                                             </div><!-- #respond -->
                                         </div><!-- #comments -->
-                                       
+
                                     </article><!-- #post-## -->
                                     <!-- Button trigger modal -->
 
 
                                         <!-- Modal -->
-                                   
+
                                 </div>
 
                                 <div class="col-md-4 col-sm-12">
@@ -211,7 +211,7 @@
                 </div><!-- .container -->
             </div><!-- #content -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-          
+
         <script>
              setTimeout(() => {
                setCookieValueToInput('nom','name');
@@ -269,7 +269,7 @@
 
                                     setCookie('nom',name,180);
                                     setCookie('email',email,180);
-                                    
+
                             },
                             success:function (response) {
                                 if (response){
@@ -303,7 +303,7 @@
             </script>
 
         <script>
-           
-          
+
+
           </script>
 @endsection

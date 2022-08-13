@@ -19,7 +19,12 @@ Route::get('/', function () {
     //$news = News::all();
     $articleRecentFive = Articles::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
-    return view('partials.index',compact('countries','articleRecentFive'));
+    $essayers = \App\Models\Essayer::all();
+    return view('partials.index',compact('countries','articleRecentFive','essayers'));
+});
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
 });
 
 //Route::any('/search',function (){
@@ -37,8 +42,9 @@ Route::get('/', function () {
 //        return view('partials.blog.index')->withMessage('Pas article trouvé');
 //    }
 //});
+Auth::routes(['register' => false]);
+//Auth::routes();
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -80,3 +86,4 @@ Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireControlle
 // Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/etat/{id}", [App\Http\Controllers\ArticlesController::class, 'etat'])->name('etat');
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
+

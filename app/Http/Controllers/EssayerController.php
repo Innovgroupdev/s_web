@@ -81,6 +81,7 @@ class EssayerController extends AppBaseController
         return response()->json($essayer);
 
     }
+
     /**
      * Display the specified Essayer.
      *

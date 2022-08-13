@@ -718,62 +718,28 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="col-sm-12">
+
                                                                     <div class="owl-carousel" data-dots="true" data-nav="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
+                                                                        @foreach($essayers as $essayer)
                                                                         <div class="item">
                                                                             <div class="iq-client white-bg">
                                                                                 <div class="client-img">
-                                                                                    <img alt="#" class="img-fluid rounded-circle" src="{{ asset('wp-content/uploads/sites/9/2019/01/test2-1.jpg')}}">
+                                                                                    <img alt="#" class="img-fluid rounded-circle" src="{{ asset('images/cible-app-avatar.png')}}">
                                                                                 </div>
                                                                                 <div class="client-name">
-                                                                                    <h6>Amy</h6><span class="sub-title">CEO,Appino</span>
+                                                                                    <h6>{{$essayer->nom}}</h6><span class="sub-title">{{$essayer->profession}}</span>
                                                                                 </div>
                                                                                 <div class="client-info">
 
-                                                                                    <p>There are many variations
-                                                                                        of passages of Lorem
-                                                                                        Ipsum available suffered
-                                                                                        alteration in some form.
+                                                                                    <p>
+                                                                                        {{$essayer->raison}}
                                                                                     </p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-client white-bg">
-                                                                                <div class="client-img">
-                                                                                    <img alt="#" class="img-fluid rounded-circle" src="{{ asset('wp-content/uploads/sites/9/2019/01/test1-1.jpg')}}">
-                                                                                </div>
-                                                                                <div class="client-name">
-                                                                                    <h6>John Deo</h6><span class="sub-title">CEO,Appino</span>
-                                                                                </div>
-                                                                                <div class="client-info">
-
-                                                                                    <p>There are many variations
-                                                                                        of passages of Lorem
-                                                                                        Ipsum available suffered
-                                                                                        alteration in some form.
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="item">
-                                                                            <div class="iq-client white-bg">
-                                                                                <div class="client-img">
-                                                                                    <img alt="#" class="img-fluid rounded-circle" src="{{ asset('wp-content/uploads/sites/9/2019/01/test3-1.jpg')}}">
-                                                                                </div>
-                                                                                <div class="client-name">
-                                                                                    <h6>Jason</h6><span class="sub-title">CEO,Appino</span>
-                                                                                </div>
-                                                                                <div class="client-info">
-
-                                                                                    <p>There are many variations
-                                                                                        of passages of Lorem
-                                                                                        Ipsum available suffered
-                                                                                        alteration in some form.
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                        @endforeach
                                                                     </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1990,7 +1956,7 @@
                                         <textarea id="raisonE" placeholder="Vos motivations" name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
                                     </div>
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
-                                        <select class="" required>
+                                        <select class="" required id="select_id_e">
                                             @foreach ($countries as $country)
                                                 <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach

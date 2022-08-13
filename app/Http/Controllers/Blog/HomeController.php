@@ -60,7 +60,7 @@ class HomeController extends Controller
         //$catArticleCollections = $getCollections;
        // dd($catArticleCollections);
 
-        
+
         $publicites = Publicites::all();
         return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
@@ -96,14 +96,14 @@ class HomeController extends Controller
     public function article($titre)
     {
 
-        
-        
+
+
         $articles = Articles::firstWhere('urlTitre', $titre);
         // $articles  =  $articles->find($id);
         // dd($articles);
         $nb = 0;
 
-       
+
         if (empty($articles)) {
             Flash::error('Articles not found');
 
@@ -123,7 +123,7 @@ class HomeController extends Controller
                 $getCollections = $getCollections->push($cat);
             }
         }
-       
+
 
         $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
         $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
@@ -187,7 +187,7 @@ class HomeController extends Controller
             }
         }
         $categories = $getCollections;
-        
+
         return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
 
