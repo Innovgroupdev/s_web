@@ -57,22 +57,22 @@
                                                                                             <li class="list-inline-item">
                                                                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                                                                                 <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="blog/{{$catArticle->id}}" rel="bookmark"><time class="entry-date published updated" datetime="{{$catArticle->created_at}}">
+                                                                                                    on</span> <a href="blog/{{$catArticle->urlTitre}}" rel="bookmark"><time class="entry-date published updated" datetime="{{$catArticle->created_at}}">
                                                                                                         {{$catArticle->created_at}}
                                                                                                     </time></a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
-                                                                                                <a href="{{route('detail')}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
+                                                                                                <a href="/blog/{{$catArticle->urlTitre}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                                                                {{ $catArticle->getCommentairesValidCount() }}</a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
                                                                                                 <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
+                                                                                                {{$catArticle->nbvue}} </a>
                                                                                             </li>
                                                                                         </ul>
                                                                                     </div>
                                                                                     <div class="blog-title">
-                                                                                        <a href="{{route('detail')}}">
+                                                                                        <a href="/blog/{{$catArticle->urlTitre}}">
                                                                                             <h6>
                                                                                             {{ substr($catArticle->libelle, 0, 29)}}
                                                                                            @if(strlen($catArticle->libelle) >= 29)
@@ -90,7 +90,7 @@
                                                                                            @endif
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$catArticle->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$catArticle->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

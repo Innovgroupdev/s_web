@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Articles;
+use App\Models\Article;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     //$news = News::all();
-    $articleRecentFive = Articles::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
+    $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
     return view('partials.index',compact('countries','articleRecentFive','essayers'));

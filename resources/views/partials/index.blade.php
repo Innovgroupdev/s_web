@@ -721,18 +721,35 @@
 
                                                                     <div class="owl-carousel" data-dots="true" data-nav="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
                                                                         @foreach($essayers as $essayer)
-                                                                        <div class="item">
-                                                                            <div class="iq-client white-bg">
-                                                                                <div class="client-img">
-                                                                                    <img alt="#" class="img-fluid rounded-circle" src="{{ asset('images/cible-app-avatar.png')}}">
+                                                                        <div class="item" >
+                                                                            <div class="iq-client white-bg" >
+                                                                               <div class="d-flex align-items-center">
+                                                                               <div class="client-img my-auto">
+                                                                                    <img alt="#" class="img-fluid rounded-circle mt-2" style="width: 4rem;height:4rem;white-space : nowrap" src="{{ asset('images/cible-app-avatar.png')}}">
                                                                                 </div>
-                                                                                <div class="client-name">
-                                                                                    <h6>{{$essayer->nom}}</h6><span class="sub-title">{{$essayer->profession}}</span>
-                                                                                </div>
+                                                                                <div class="client-name my-auto ml-0" >
+                                                                                    <h6 style="white-space : nowrap">
+                                                                                        {{ substr($essayer->nom, 0, 20)}}
+                                                                                           @if(strlen($essayer->nom) > 20)
+                                                                                             ...
+                                                                                           @endif
+                                                                                    </h6>
+                                                                                    <span class="sub-title" style="white-space : nowrap">
+                                                                                        <!-- {{$essayer->profession}} -->
+                                                                                        {{ substr($essayer->profession, 0, 25)}}
+                                                                                           @if(strlen($essayer->profession) > 25)
+                                                                                             ...
+                                                                                           @endif
+                                                                                    </span>
+                                                                                </div>  
+                                                                               </div>
                                                                                 <div class="client-info">
 
-                                                                                    <p>
-                                                                                        {{$essayer->raison}}
+                                                                                    <p style="height: 96px;">
+                                                                                        {{ substr($essayer->raison, 0, 100)}}
+                                                                                           @if(strlen($essayer->raison) > 100)
+                                                                                             ...
+                                                                                           @endif
                                                                                     </p>
                                                                                 </div>
                                                                             </div>
@@ -1470,16 +1487,16 @@
                                                                                             </li>
                                                                                             <li class="list-inline-item">
                                                                                                 <a href="/blog/{{$articleRecentFive->id}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                    0</a>
+                                                                                                {{ $articleRecentFive->getCommentairesValidCount() }}</a>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
                                                                                                 <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                    0 </a>
+                                                                                                {{$articleRecentFive->nbvue}} </a>
                                                                                             </li>
                                                                                         </ul>
                                                                                     </div>
                                                                                     <div class="blog-title">
-                                                                                        <a href="/blog/{{$articleRecentFive->id}}">
+                                                                                        <a href="/blog/{{$articleRecentFive->urlTitre}}">
                                                                                             <h6>
                                                                                                 <!-- {{$articleRecentFive->libelle}} -->
                                                                                                 {{ substr($articleRecentFive->libelle, 0, 29)}}
@@ -1498,7 +1515,7 @@
                                                                                            @endif
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$articleRecentFive->id}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$articleRecentFive->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1582,7 +1599,7 @@
                                                                                     @csrf
                                                                                     <div class="email-form">
                                                                                         <div class="newsletter-email d-flex" style="position:relative">
-                                                                                            <input placeholder="Entez votre Addresse mail *" style="border-radius : 50px 0 0 50px" type="email" name="sub_email" class="news_text" id="email" required />
+                                                                                            <input placeholder="Entrez votre Adresse mail *" style="border-radius : 50px 0 0 50px" type="email" name="sub_email" class="news_text" id="email" required />
                                                                                             <div class="alax-loader" style="position:absolute;left : 485px;top:10%">
                                                                                                 <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
@@ -1942,14 +1959,14 @@
 
                                 <div class="row my-4">
                                     <div class="col-12 mb-3">
-                                        <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="100" aria-describedby="nom-notes" required='required'  />
+                                        <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="20" aria-describedby="nom-notes" required='required'  />
                                     </div>
                                     <div class="col-12 mb-3">
                                         <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required/>
                                     </div>
                                     <div class="col-12 mb-3 ">
 
-                                        <input id="professionE" placeholder="Profession" name="profession" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required />
+                                        <input id="professionE" placeholder="Profession" name="profession" type="text" value="" size="30" maxlength="25" aria-describedby="profession-notes" required />
                                     </div>
                                     <div class="col-12 mb-3 ">
 

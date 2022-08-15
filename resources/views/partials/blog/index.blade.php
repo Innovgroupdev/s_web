@@ -58,9 +58,7 @@
                                                     <li class="list-inline-item">
                                                         <a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>
 
-                                                                    
-                                                                      
-                                                                        {{ $article->getCommentairesValidCount() }}
+                                                            {{ $article->getCommentairesValidCount() }}
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item">

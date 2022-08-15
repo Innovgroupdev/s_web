@@ -63,16 +63,18 @@ class Articles extends Model
     public function getCommentairesValidCount()
     {
         $j = 0;
-        $tab = $this->commentaires();
-    //    dd($tab);
+        $tab = $this->commentaires;
+    
         foreach($tab as $articleCommentaire)
         {
+            // dd($articleCommentaire);
             if($articleCommentaire->is_valid)
                 {
                     $j ++;
+                    // dd($j);
                 }
         }
-       
+      
         return $j;
   
     }
