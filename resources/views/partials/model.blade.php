@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="{{ asset('https://gmpg.org/xfn/11')}}">
-    <link rel="shortcut icon" href="{{ asset('wp-content/themes/appino/assets/images/logo.svg')}}" />
+    <link rel="shortcut icon" href="{{ asset('/logo.svg')}}" />
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
     <script>(function (html) { html.className = html.className.replace(/\bno-js\b/, 'js') })(document.documentElement);</script>
 {{--    <title>CIBLE APP &#8211;</title>--}}

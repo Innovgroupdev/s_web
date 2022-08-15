@@ -50,8 +50,8 @@
             <div class="col-sm-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img class="img-fluid" src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}"
-                             alt="appino">
+                        <img class="img-fluid" src="{{ asset("/logo.png")}}"
+                             alt="cible-app-logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

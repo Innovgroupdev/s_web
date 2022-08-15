@@ -13,7 +13,7 @@
                     <div class="panel-content">
                         <div class="container">
                             <div class="sf-content">
-                                <div id="home" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" data-vc-parallax="1" data-vc-parallax-image="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549710885163 vc_row-has-fill vc_row-no-padding vc_general vc_parallax vc_parallax-content-moving">
+                                <div id="home" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" data-vc-parallax="1" data-vc-parallax-image="{{ asset('/clible_app.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549710885163 vc_row-has-fill vc_row-no-padding vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -24,7 +24,7 @@
                                                             <div class="row flex-row-reverse">
                                                                 <div class="col-sm-5 col-lg-5 col-md-5 hidden-xs">
                                                                     <div class="img-one">
-                                                                        <img class="iq-mobile-img" src="{{ asset('wp-content/uploads/sites/9/2019/02/banner-2-1.png')}}" alt="#">
+                                                                        <img class="iq-mobile-img" src="{{ asset('/Billeterie_en_ligne.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-7 col-lg-7 col-md-7 align-self-center">
@@ -63,11 +63,11 @@
                                                 </section>
                                                 <div class="iq-background-overlay overlay3" id="overlay_96900610"></div>
                                                 <div class="layer_wrap iq-objects-style-1 " id="object_2103496286"><span class="iq-objects-01" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/w-1-1.png')}}" alt="drive02">
+                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/w-1-1.png')}}" alt="drive02">
+                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span><span class="iq-objects-03" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/w-1-1.png')}}" alt="drive02">
+                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span></div>
                                             </div>
                                         </div>
@@ -96,7 +96,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/1-1.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Dépenser moins pour chaque événement" src="{{ asset('/événementiel_moins_cher.png')}}" />
                                                                     <h5>Dépensez <br> toujours moins</h5>
                                                                     <p>
                                                                         Achetez vos tickets sur CIBLE sans dépenser votre propre argent.
@@ -109,7 +109,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/2-1.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Gagnez plus d’argent pour chaque événement" src="{{ asset('/gagner_argent_événement.png')}}" />
                                                                     <h5>Gagnez <br> encore plus</h5>
                                                                     <p>
                                                                         Augmentez la visibilité de votre événement pour vendre plus de tickets et avoir des
@@ -121,7 +121,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/3-1.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Des gadgets personnalisés pour chaque concert, formation, séminaires, spectacles…" src="{{ asset('/gadgets_événements.png')}}" />
                                                                     <h5>Gardez <br> des souvenirs</h5>
                                                                     <p>A chaque événement, des gadgets souvenirs vous sont proposés.
                                                                         C’est à vous de choisir et d’en profiter…</p>
@@ -132,7 +132,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/clible-app-usage-icone.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Des événements en live, des tchats, avec de fortes sensations pour plus de plaisir" src="{{ asset('/meilleurs_événements_chaque_année.png')}}" />
                                                                     <h5>Simplifiez-vous <br> la vie</h5>
                                                                     <p>
                                                                         Facilitez-vous la vie avec une application pour les entreprises
@@ -145,7 +145,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/clible-app-plus-event-icone.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="publiez, vendez et encaissez en 48h l’argent de vos tickets pour tous vos événements" src="{{ asset('/application_mobile_événementielle.png')}}" />
                                                                     <h5>Vivez <br> plus qu'un événement</h5>
                                                                     <p>Des fonctionnalités sont développées mois après mois pour
                                                                         vous donner la meilleure expérience </p>
@@ -156,7 +156,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="fancy" src="{{ asset('wp-content/uploads/sites/9/2019/02/clible-app-a-propos-icone.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="une équipe formidable pilote CIBLE, l’application mobile des acteurs de l’événementiel" src="{{ asset('/équipe_cible_tickets_évéments.png')}}" />
                                                                     <h5>Exigez <br> Le meilleur de nous</h5>
                                                                     <p>Demandez-nous encore plus de fonctionnalités...
                                                                         Nous tâcherons de toujours réaliser vos meilleures idées. </p>
@@ -187,15 +187,15 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="604" height="615" src="{{ asset('wp-content/uploads/sites/9/2019/02/sc-1-1.png')}}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/sc-1-1.png')}} 604w, {{ asset('wp-content/uploads/sites/9/2019/02/sc-1-1-295x300.png')}} 295w, {{ asset('wp-content/uploads/sites/9/2019/02/sc-1-1-600x611.png')}} 600w" sizes="100vw" />
+                                                                            <img width="604" height="615" src="{{ asset('/application_de_vente_de_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Vendre les tickets de tout type d’événements en ligne" loading="lazy"  sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
                                                                 <div class="layer_wrap iq-objects-style-2 " id="object_1959149622"><span class="iq-objects-01" data-bottom="transform:translatey(200px)" data-top="transform:translatex(0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b3-1.png"
+                                                                        <!-- <img src="/b3-1.png"
 																					alt="drive02"> -->
                                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(-200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b1-1.png"
+                                                                        <!-- <img src="/b1-1.png"
 																					alt="drive02"> -->
                                                                     </span></div>
                                                             </div>
@@ -270,15 +270,15 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="543" height="680" src="{{ asset('wp-content/uploads/sites/9/2019/02/sc-2-1.png')}}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/sc-2-1.png')}} 543w, {{ asset('wp-content/uploads/sites/9/2019/02/sc-2-1-240x300.png')}} 240w" sizes="100vw" />
+                                                                            <img width="543" height="680" src="{{ asset('/application_achat_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Acheter les tickets d’événements en ligne" loading="lazy" srcset="{{ asset('/application_achat_tickets.png')}} 543w, {{ asset('/application_achat_tickets-240x300.png')}} 240w" sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
                                                                 <div class="layer_wrap iq-objects-style-3 " id="object_443663318"><span class="iq-objects-01" data-bottom="transform:translatey(-200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b3-1.png"
+                                                                        <!-- <img src="/b3-1.png"
 																					alt="drive02"> -->
                                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b1-1.png"
+                                                                        <!-- <img src="/b1-1.png"
 																					alt="drive02"> -->
                                                                     </span></div>
                                                             </div>
@@ -290,7 +290,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('wp-content/uploads/sites/9/2019/02/bg-2-1.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -314,7 +314,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-bg about-img popup-gallery play-video">
-                                                                    <img class="img-fluid center-block img-fluid center-block " style="border-radius:10px" src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-3-1.jpg')}}" alt="#">
+                                                                    <img class="img-fluid center-block img-fluid center-block " style="border-radius:10px" src="{{ asset('/Présentation_application_événementielle.jpg')}}" alt="publier vos événements en ligne et gagner en visibilité pour chaque événement">
                                                                     <a  class="iq-video popup-youtube text-light"><i class="ion-ios-play-outline"></i></a>
                                                                     <div class="iq-waves">
                                                                         <div class="waves wave-1"></div>
@@ -401,22 +401,22 @@
                                                                             <div class="tab-content" id="myTabContent">
 
 
-                                                                                <div class="tab-pane fade show active" id="tab11"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-1-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show active" id="tab11"><img src="{{ asset('/application_pour_publier_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab22"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-4-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show " id="tab22"><img src="{{ asset('/facture_ticket_événement.png')}}" class="img-fluid center-block img-fluid center-block " alt="Obtenez une facture à chaque achat de ticket pour tout événement"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab13"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-2-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show " id="tab13"><img src="{{ asset('/ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Vos tickets pour tout type d’événement avec un code QR"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab24"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-5-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show " id="tab24"><img src="{{ asset('/application_mobile_pour_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab15"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-3-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show " id="tab15"><img src="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Scanner gratuitement les tickets d’événements avec CIBLE"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab26"><img src="{{ asset('wp-content/uploads/sites/9/2019/02/s-6-1.png')}}" class="img-fluid center-block img-fluid center-block " alt="#"></div>
+                                                                                <div class="tab-pane fade show " id="tab26"><img src="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" class="img-fluid center-block img-fluid center-block " alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></div>
 
 
                                                                             </div>
@@ -493,12 +493,12 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="home-screen-slide">
                                                                     <div class="owl-carousel popup-gallery" data-dots="false" data-nav="true" data-items="4" data-items-laptop="3" data-items-tab="3" data-items-mobile="2" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-4-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-4-1.png')}}" alt="#"></a></div>
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-6-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-6-1.png')}}" alt="#"></a></div>
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-5-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-5-1.png')}}" alt="#"></a></div>
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-3-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-3-1.png')}}" alt="#"></a></div>
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-2-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-2-1.png')}}" alt="#"></a></div>
-                                                                        <div class="item"><a href="{{ asset('wp-content/uploads/sites/9/2019/02/s-1-1.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('wp-content/uploads/sites/9/2019/02/s-1-1.png')}}" alt="#"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/facture_ticket_événement.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/facture_ticket_événement.png')}}" alt="Obtenez une facture à chaque achat de ticket pour tout événement"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/application_mobile_pour_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/application_mobile_pour_vos_événements.png')}}" alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" alt="Scanner gratuitement les tickets d’événements avec CIBLE"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/ticket_événementiel_CIBLE.png')}}" alt="Vos tickets pour tout type d’événement avec un code QR"></a></div>
+                                                                        <div class="item"><a href="{{ asset('/application_pour_publier_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/application_pour_publier_vos_événements.png')}}" alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></a></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -981,7 +981,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">La Diva</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication digitale </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1005,7 +1005,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Geek</h5>
                                                                                         <p class="team-post text-secondary">Développeur Front-End</p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1030,7 +1030,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Saint </h5>
                                                                                         <p class="team-post text-secondary"> Développeur Back-End </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1054,7 +1054,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Zeus</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication</p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1081,7 +1081,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">El Professor </h5>
                                                                                         <p class="team-post text-secondary">Chargé de la Relation Client </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1105,7 +1105,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/cible-app-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">L’aigle </h5>
                                                                                         <p class="team-post text-secondary">Product Owner, Chargé de la stratégie </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1222,7 +1222,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('wp-content/uploads/sites/9/2019/02/bg-3-1.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1233,7 +1233,7 @@
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-folder-outline " aria-hidden="true"></i>
                                                                         <span class="timer" data-to="0" data-speed="10000">0</span>
-                                                                        <label style='color:#ffffff;'>EVENEMENTS PUBLIE</label>
+                                                                        <label style='color:#ffffff;'>EVENEMENTS PUBLIES</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1245,7 +1245,7 @@
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-paper-outline " aria-hidden="true"></i>
                                                                         <span class="timer" data-to="0" data-speed="10000">0</span>
-                                                                        <label style='color:#ffffff;'>TICKETS VENDU</label>
+                                                                        <label style='color:#ffffff;'>TICKETS VENDUS</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1257,7 +1257,7 @@
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-person-outline " aria-hidden="true"></i>
                                                                         <span class="timer" data-to="0" data-speed="10000">0</span>
-                                                                        <label style='color:#ffffff;'>UTILISATEUR</label>
+                                                                        <label style='color:#ffffff;'>UTILISATEURS</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1269,7 +1269,7 @@
                                                                 <div class="text-center" style='color:#ffffff;'>
                                                                     <div class="counter"> <i class="  ion ion-ios-star " aria-hidden="true"></i>
                                                                         <span class="timer" data-to="0" data-speed="10000">0</span>
-                                                                        <label style='color:#ffffff;'>RECOMMANDATION</label>
+                                                                        <label style='color:#ffffff;'>RECOMMANDATIONS</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1308,15 +1308,15 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="553" height="600" src="{{ asset('wp-content/uploads/sites/9/2019/02/faq-1-1.png')}}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/faq-1-1.png')}} 553w, {{ asset('wp-content/uploads/sites/9/2019/02/faq-1-1-277x300.png')}} 277w" sizes="100vw" />
+                                                                            <img width="553" height="600" src="{{ asset('/faq-1-1.png')}}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{{ asset('/faq-1-1.png')}} 553w, {{ asset('/faq-1-1-277x300.png')}} 277w" sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
                                                                 <div class="layer_wrap iq-objects-style-3 " id="object_51857065"><span class="iq-objects-01" data-bottom="transform:translatey(-200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b3-1.png"
+                                                                        <!-- <img src="/b3-1.png"
 																					alt="drive02"> -->
                                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="wp-content/uploads/sites/9/2019/02/b1-1.png"
+                                                                        <!-- <img src="/b1-1.png"
 																					alt="drive02"> -->
                                                                     </span></div>
                                                             </div>
@@ -1332,7 +1332,7 @@
                                                                                 <!-- <div class="col-sm-3">
 																							<img alt="#"
 																								class="img-fluid"
-																								src="{{ asset('wp-content/uploads/sites/9/2019/02/faq-1-150x150.jpg')}}" />
+																								src="{{ asset('/faq-1-150x150.jpg')}}" />
 
 																						</div> -->
                                                                                 <div class="col-sm-12">CIBLE est une application mobile avec une version web qui
@@ -1359,7 +1359,7 @@
                                                                                 <!-- <div class="col-sm-3">
 																							<img alt="#"
 																								class="img-fluid"
-																								src="{{ asset('wp-content/uploads/sites/9/2019/02/faq-1-150x150.jpg')}}" />
+																								src="{{ asset('/faq-1-150x150.jpg')}}" />
 
 																						</div> -->
                                                                                 <div class="col-sm-12">
@@ -1404,7 +1404,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('wp-content/uploads/sites/9/2019/02/bg-2-1.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1544,16 +1544,16 @@
                                                                 <div class="col-lg-12 col-md-12">
                                                                     <div class="owl-carousel" data-dots="false" data-nav="true" data-items="4" data-items-laptop="3" data-items-tab="3" data-items-mobile="2" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-innov-is.jpg')}}" alt="client0">
+                                                                            <img class="item partenaire" src="{{ asset('/cible-app-innov-is.jpg')}}" alt="client0">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-procomdigit.png')}}" alt="client1">
+                                                                            <img class="item partenaire" src="{{ asset('/cible-app-procomdigit.png')}}" alt="client1">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-asta.jpg')}}" alt="client2">
+                                                                            <img class="item partenaire" src="{{ asset('/cible-app-asta.jpg')}}" alt="client2">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-africa-visual-art.jpg')}}" alt="client3">
+                                                                            <img class="item partenaire" src="{{ asset('/cible-app-africa-visual-art.jpg')}}" alt="client3">
                                                                         </div>
 
                                                                     </div>
@@ -1567,7 +1567,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div id="contact" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('wp-content/uploads/sites/9/2019/02/bg-3-1.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div id="contact" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1658,9 +1658,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1714,9 +1714,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1772,9 +1772,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/FAQ.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/FAQ.jpg')}}">
+                        <img src="{{ asset('/FAQ.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/FAQ.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="">
+                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Posez votre question !</h5>
@@ -1833,9 +1833,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1890,9 +1890,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('wp-content/uploads/sites/9/2019/02/bg-1-1.jpg')}}">
+                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1946,9 +1946,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-modale-info.png')}}" class="container-fluid p-0 m-0" alt="">
+                        <img src="{{ asset('/cible-app-modale-info.png')}}" class="container-fluid p-0 m-0" alt="">
                         <!-- <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100" ></div>
-                                                        <img src="{{ asset("/wp-content/themes/appino/assets/images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="">
+                                                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                                                     </div> -->
                         <div class="p-3">
                             <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
