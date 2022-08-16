@@ -981,7 +981,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">La Diva</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication digitale </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1005,7 +1005,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Geek</h5>
                                                                                         <p class="team-post text-secondary">Développeur Front-End</p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1030,7 +1030,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Le Saint </h5>
                                                                                         <p class="team-post text-secondary"> Développeur Back-End </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1054,7 +1054,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">Zeus</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication</p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1081,7 +1081,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">El Professor </h5>
                                                                                         <p class="team-post text-secondary">Chargé de la Relation Client </p>
                                                                                         <p class="team-post text-secondary mt-0">
@@ -1105,7 +1105,7 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/cible-app-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
+                                                                                        <img src="{{ asset('/equipe-cible-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
                                                                                         <h5 class="mt-3">L’aigle </h5>
                                                                                         <p class="team-post text-secondary">Product Owner, Chargé de la stratégie </p>
                                                                                         <p class="team-post text-secondary mt-0">
