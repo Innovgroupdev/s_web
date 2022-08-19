@@ -1,12 +1,45 @@
-
-
-
 @extends('partials.model')
+
+@section('ref')
+<title> Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils</title>
+<meta name="description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<link rel="canonical" href="{{url('/blog')}}" />
+<meta name="keywords" content="l’événementiel,cible,cible-app,fêtes,Concerts,festivals,formations,séminaires,cinéma,conférences,salons,foires,congrès,concours,affaires,comédie,Opportunités,Annonces,Conseils">
+<meta name="author" content="DIGITAL INNOV GROUP">
+<meta property="og:title" content="Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils">
+<meta property="og:site_name" content="CIBLE">
+<meta property="og:url" content="{{url('/blog')}}">
+<meta property="og:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ asset("images/logo.png")}}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CIBLE">
+<meta name="twitter:title" content="Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils">
+<meta name="twitter:image" content="{{ asset("images/logo.png")}}">
+<meta name="twitter:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "CIBLE",
+        "alternateName": "CIBLE-APP",
+        "url": "{{url('/blog')}}",
+        "logo": "{{ asset("
+        images / logo.png ")}}",
+        "sameAs": [
+            "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
+            "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",
+            "https://www.instagram.com/invites/contact/?i=1g3q0tntwd7bs&utm_content=p0pxx73",
+            "https://www.linkedin.com/company/cible-app/",
+            "https://www.tiktok.com/@cible_app?is_from_webapp=1&sender_device=pc",
+            "https://www.facebook.com/cibleapp"
+        ]
+    }
+</script>
+@endsection
 @section('content')
-<!-- <script>
-    location.assign("https://www.w3schools.com");
-</script> -->
-<section class="iq-breadcrumb overview-block-pb" style="">
+
+<section class="iq-breadcrumb overview-block-pb">
     <div class="container">
 
         <div class="row">
@@ -20,7 +53,7 @@
             </div>
             <div class="col-md-6 align-self-center">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>CIBLE</a></li>
+                    <li class="breadcrumb-item"><a href="{{url('/')}}" title="Page d'acceuil  de CIBLE"><i class="fa fa-home" aria-hidden="true"></i>CIBLE</a></li>
                     <li class="breadcrumb-item active">BLOG</li>
                 </ul>
             </div>
@@ -42,10 +75,14 @@
                                 <div class="iq-page-blog">
                                     <div class="iq-blog-box">
 
-                                        <div class="iq-blog-image">
+                                        <!-- <div class="iq-blog-image">
                                             <img width="1200" height="550" style="max-height:600px" src="{{asset($article->img)}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
-                                        </div>
+                                        </div> -->
 
+                                        <div class="iq-blog-image clearfix mb-3" style="position : relative;height:400px;overflow:hidden">
+                                            <img src="{{ asset($article->img)}}" style="position : absolute;filter: blur(3px);top:0;left:0;z-index:0;transform:scale(1.2)" class=" center-block w-100 " alt="{{$article->libelle}}">
+                                            <img src="{{ asset($article->img)}}" class="center-block h-100 mx-auto" style="width: auto;z-index:1;position:relative" alt="{{$article->libelle}}">
+                                        </div>
                                         <div class="iq-blog-detail">
 
                                             <div class="iq-blog-meta">
@@ -53,38 +90,38 @@
                                                     <li class="list-inline-item">
 
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                        <span class="screen-reader-text">Posted on</span> <a href="../2018/12/31/construction-industry-3/index.html" rel="bookmark"><time class="entry-date published updated" datetime="{{$article->created_at}}">{{$article->created_at}}</time></a>
+                                                        <span class="screen-reader-text">Posted on</span> <span><time class="entry-date published updated" datetime="{{$article->created_at}}">{{$article->created_at}}</time></span>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <a href="javascript:void(0)"><i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                        <span><i class="fa fa-comment-o" aria-hidden="true"></i>
 
                                                             {{ $article->getCommentairesValidCount() }}
-                                                        </a>
+                                                        </span>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                            {{$article->nbvue}}</a>
+                                                        <span><i class="fa fa-eye" aria-hidden="true"></i>
+                                                            {{$article->nbvue}}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="blog-title">
                                                 <h5 class="entry-title">
-                                                    <a href="/blog/{{$article->urlTitre}}">
+                                                    <a href="/blog/{{$article->urlTitre}}" title="{{$article->libelle}}">
                                                         {{$article->libelle}} </a>
                                                 </h5>
                                             </div>
 
                                             <div class="blog-content">
-                                            <p>
-                                                {{ substr($article->desc, 0, 250)}}
-                                                @if(strlen($article->desc) > 250)
+                                                <p>
+                                                    {{ substr($article->desc, 0, 250)}}
+                                                    @if(strlen($article->desc) > 250)
                                                     ...
-                                                @endif
-                                            </p>
+                                                    @endif
+                                                </p>
                                             </div>
 
                                             <div class="blog-button">
-                                                <a class="button pull-left" href="/blog/{{$article->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                <a class="button pull-left" title="{{$article->libelle}}" href="/blog/{{$article->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                             </div>
 
 
@@ -111,11 +148,5 @@
 
 </div><!-- .site-content-contain -->
 </div><!-- #page -->
-<!-- === back-to-top === -->
-<div id="back-to-top">
-    <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
-</div>
-<!-- === back-to-top End === -->
-
 
 @endsection

@@ -8,7 +8,7 @@
                 <span class="screen-reader-text">Recherche pour:</span>
             </label>
             <input type="search" id="search-form-62d674f53a6e7" required="required" class="search-field" placeholder="Rechercher" value="" name="q" />
-            <button type="submit" class="search-submit"><i class="fa fa-search"></i><span class="screen-reader-text">Rechercher</span></button>
+            <button type="submit" title="rechercher" class="search-submit"><i class="fa fa-search"></i><span class="screen-reader-text">Rechercher</span></button>
         </form>
     </div>
     <div id="recent-posts-2" class="widget widget_recent_entries">
@@ -17,10 +17,10 @@
         <ul>
 
             <li>
-                <a href="/blog/{{$articleRecentFive->urlTitre}}">
+                <a href="/blog/{{$articleRecentFive->urlTitre}}" title="{{$articleRecentFive->libelle}}">
                     {{ substr($articleRecentFive->libelle, 0, 32)}}
                     @if(strlen($articleRecentFive->libelle) > 32)
-                        ...
+                    ...
                     @endif
                 </a>
             </li>
@@ -32,10 +32,10 @@
         <ul>
             @foreach($articlePopFives as $articlePopFive)
             <li>
-                <a href="/blog/{{$articlePopFive->urlTitre}}">
+                <a href="/blog/{{$articlePopFive->urlTitre}}" title="{{$articlePopFive->libelle}}">
                     {{ substr($articlePopFive->libelle, 0, 32)}}
                     @if(strlen($articlePopFive->libelle) > 32)
-                        ...
+                    ...
                     @endif
                 </a>
             </li>
@@ -48,11 +48,11 @@
         <ul id="recentcomments">
             @foreach($articleCommentes as $articleCommente)
             <li class="recentcomments"><span class="comment-author-link">
-                    <a rel='external nofollow ugc' class='url'>{{$articleCommente->name}}</a> --</span>
-                <a href="/blog/{{$articleCommente->article->urlTitre}}#c{{$articleCommente->id}}">
+                    {{$articleCommente->name}} --</span>
+                <a href="/blog/{{$articleCommente->article->urlTitre}}#c{{$articleCommente->id}}" title="{{$articleCommente->name}}">
                     {{ substr($articleCommente->description, 0, 45)}}
                     @if(strlen($articleCommente->description) > 45)
-                        ...
+                    ...
                     @endif
                 </a>
             </li>
@@ -69,10 +69,10 @@
 
             @foreach($categories as $categorie)
             <li class="cat-item cat-item-21">
-                <a href="/categorie/{{$categorie->urlTitre}}">
+                <a href="/categorie/{{$categorie->urlTitre}}" title="{{$categorie->lib}}">
                     {{ substr($categorie->lib, 0, 32)}}
                     @if(strlen($categorie->lib) > 32)
-                        ...
+                    ...
                     @endif
                 </a>
             </li>
@@ -89,26 +89,26 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
                 <div class="carousel-inner">
-                        @php
-                         $i = 0;
-                        @endphp
+                    @php
+                    $i = 0;
+                    @endphp
                     @foreach($publicites as $publicites)
-                      @php
-                       $i++;
-                      @endphp
+                    @php
+                    $i++;
+                    @endphp
                     <div class="carousel-item @if($i == 1) active @endif">
-                        <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer">
-                        <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="First slide">
+                        <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer" title="{{$categorie->lib}}">
+                            <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="{{$categorie->lib}}">
                         </a>
 
                     </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" title="précédent">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" title="Suivant">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>

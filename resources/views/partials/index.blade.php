@@ -1,6 +1,43 @@
 @extends('partials.model')
+@section('ref')
+<title> Evénementiel : billetterie en ligne – Sponsors – Recrutement | CIBLE</title>
+<meta name="description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
+<link rel="canonical" href="{{url('/')}}" />
+<meta name="keywords" content="l’événementiel,cible,cible-app,fêtes,Concerts,festivals,formations,séminaires,cinéma,conférences,salons,foires,congrès,concours,affaires,comédie,Opportunités,Annonces,Conseils">
+<meta name="author" content="DIGITAL INNOV GROUP">
+<meta property="og:title" content="Evénementiel : billetterie en ligne – Sponsors – Recrutement | CIBLE">
+<meta property="og:site_name" content="CIBLE">
+<meta property="og:url" content="{{url('/')}}">
+<meta property="og:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ asset("images/logo.png")}}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CIBLE">
+<meta name="twitter:title" content="Evénementiel : billetterie en ligne – Sponsors – Recrutement | CIBLE">
+<meta name="twitter:image" content="{{ asset("images/logo.png")}}">
+<meta name="twitter:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "CIBLE",
+        "alternateName": "CIBLE-APP",
+        "url": "{{url('/')}}",
+        "logo": "{{ asset("
+        images / logo.png ")}}",
+        "sameAs": [
+            "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
+            "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",
+            "https://www.instagram.com/invites/contact/?i=1g3q0tntwd7bs&utm_content=p0pxx73",
+            "https://www.linkedin.com/company/cible-app/",
+            "https://www.tiktok.com/@cible_app?is_from_webapp=1&sender_device=pc",
+            "https://www.facebook.com/cibleapp"
+        ]
+    }
+</script>
+@endsection
 @section('content')
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <div class="site-content-contain">
     <div id="content" class="site-content">
 
@@ -13,7 +50,7 @@
                     <div class="panel-content">
                         <div class="container">
                             <div class="sf-content">
-                                <div id="home" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" data-vc-parallax="1" data-vc-parallax-image="{{ asset('/clible_app.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549710885163 vc_row-has-fill vc_row-no-padding vc_general vc_parallax vc_parallax-content-moving">
+                                <div id="home" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" data-vc-parallax="1" data-vc-parallax-image="{{ asset('images/clible_app.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549710885163 vc_row-has-fill vc_row-no-padding vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -24,7 +61,7 @@
                                                             <div class="row flex-row-reverse">
                                                                 <div class="col-sm-5 col-lg-5 col-md-5 hidden-xs">
                                                                     <div class="img-one">
-                                                                        <img class="iq-mobile-img" src="{{ asset('/Billeterie_en_ligne.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
+                                                                        <img class="iq-mobile-img" src="{{ asset('images/Billeterie_en_ligne.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-7 col-lg-7 col-md-7 align-self-center">
@@ -38,22 +75,9 @@
 
 
 
-                                                                        <a data-target="#exampleModalCenterHeader" data-toggle="modal" class="button  button-icon " href="#">
+                                                                        <a data-target="#exampleModalCenterHeader" data-toggle="modal" title="Modal Soyez informé au lancement de cible" class="button  button-icon " href="#">
                                                                             Soyez informé au lancement </a>
-                                                                        <!-- <h5
-																					data-animation="animated fadeInLeft">
-																					Télécharger l'application mobile</h5>
-																				<ul class="list-inline"
-																					data-animation="animated fadeInUp">
-																					<li class="list-inline-item"><a
-																							href="#"><i
-																								class="ion ion-social-android"></i></a>
-																					</li>
-																					<li class="list-inline-item"><a
-																							href="#"><i
-																								class="ion ion-social-apple"></i></a>
-																					</li>
-																				</ul> -->
+
 
                                                                     </div>
                                                                 </div>
@@ -63,11 +87,11 @@
                                                 </section>
                                                 <div class="iq-background-overlay overlay3" id="overlay_96900610"></div>
                                                 <div class="layer_wrap iq-objects-style-1 " id="object_2103496286"><span class="iq-objects-01" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
+                                                        <img src="{{ asset('images/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
+                                                        <img src="{{ asset('images/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span><span class="iq-objects-03" data-bottom="transform:translatey(100px)" data-top="transform:translatex(0);">
-                                                        <img src="{{ asset('/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
+                                                        <img src="{{ asset('images/clibe-app-w-1-1.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                     </span></div>
                                             </div>
                                         </div>
@@ -96,7 +120,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="Dépenser moins pour chaque événement" src="{{ asset('/événementiel_moins_cher.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Dépenser moins pour chaque événement" src="{{ asset('images/événementiel_moins_cher.png')}}" />
                                                                     <h5>Dépensez <br> toujours moins</h5>
                                                                     <p>
                                                                         Achetez vos tickets sur CIBLE sans dépenser votre propre argent.
@@ -109,7 +133,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="Gagnez plus d’argent pour chaque événement" src="{{ asset('/gagner_argent_événement.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Gagnez plus d’argent pour chaque événement" src="{{ asset('images/gagner_argent_événement.png')}}" />
                                                                     <h5>Gagnez <br> encore plus</h5>
                                                                     <p>
                                                                         Augmentez la visibilité de votre événement pour vendre plus de tickets et avoir des
@@ -121,7 +145,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="Des gadgets personnalisés pour chaque concert, formation, séminaires, spectacles…" src="{{ asset('/gadgets_événements.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Des gadgets personnalisés pour chaque concert, formation, séminaires, spectacles…" src="{{ asset('images/gadgets_événements.png')}}" />
                                                                     <h5>Gardez <br> des souvenirs</h5>
                                                                     <p>A chaque événement, des gadgets souvenirs vous sont proposés.
                                                                         C’est à vous de choisir et d’en profiter…</p>
@@ -132,7 +156,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="Des événements en live, des tchats, avec de fortes sensations pour plus de plaisir" src="{{ asset('/meilleurs_événements_chaque_année.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="Des événements en live, des tchats, avec de fortes sensations pour plus de plaisir" src="{{ asset('images/application_mobile_événementielle.png')}}" />
                                                                     <h5>Simplifiez-vous <br> la vie</h5>
                                                                     <p>
                                                                         Facilitez-vous la vie avec une application pour les entreprises
@@ -145,7 +169,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-0 vc_col-lg-4 vc_col-md-offset-0 vc_col-md-4 vc_col-sm-offset-0 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="publiez, vendez et encaissez en 48h l’argent de vos tickets pour tous vos événements" src="{{ asset('/application_mobile_événementielle.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="publiez, vendez et encaissez en 48h l’argent de vos tickets pour tous vos événements" src="{{ asset('images/clible-app-plus-event-icone.png')}}" />
                                                                     <h5>Vivez <br> plus qu'un événement</h5>
                                                                     <p>Des fonctionnalités sont développées mois après mois pour
                                                                         vous donner la meilleure expérience </p>
@@ -156,7 +180,7 @@
                                                     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
-                                                                <div class="iq-fancy-box text-"><img alt="une équipe formidable pilote CIBLE, l’application mobile des acteurs de l’événementiel" src="{{ asset('/équipe_cible_tickets_évéments.png')}}" />
+                                                                <div class="iq-fancy-box text-"><img alt="une équipe formidable pilote CIBLE, l’application mobile des acteurs de l’événementiel" src="{{ asset('images/équipe_cible_tickets_évéments.png')}}" />
                                                                     <h5>Exigez <br> Le meilleur de nous</h5>
                                                                     <p>Demandez-nous encore plus de fonctionnalités...
                                                                         Nous tâcherons de toujours réaliser vos meilleures idées. </p>
@@ -187,7 +211,7 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="604" height="615" src="{{ asset('/application_de_vente_de_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Vendre les tickets de tout type d’événements en ligne" loading="lazy"  sizes="100vw" />
+                                                                            <img width="604" height="615" src="{{ asset('images/application_de_vente_de_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Vendre les tickets de tout type d’événements en ligne" loading="lazy" sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
@@ -219,7 +243,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="button-position text-left">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a title="Modal Soyez informé au lancement de cible" class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -247,18 +271,18 @@
                                                                     </p>
                                                                 </div>
                                                                 <ul class="iq-list">
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>La possibilité d’acheter vos tickets sans dépenser votre argent</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Des cadeaux (gadgets) personnalisés à chaque événement
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>La possibilité d’acheter vos tickets sans dépenser votre argent</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Des cadeaux (gadgets) personnalisés à chaque événement
                                                                         </span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span> Minimisez vos charges organisationnelles et gagnez plus</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Bénéficiez des enquêtes de satisfaction</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Gagnez du temps et minimisez vos déplacements</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Un système de vérification de tickets simple et gratuit</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Vivez vos évènements en présentiel et en ligne…</span></li>
-                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all" style=''></i> <span>Recrutez les acteurs de l’évènementiel en quelques minutes</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span> Minimisez vos charges organisationnelles et gagnez plus</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Bénéficiez des enquêtes de satisfaction</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Gagnez du temps et minimisez vos déplacements</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un système de vérification de tickets simple et gratuit</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Vivez vos évènements en présentiel et en ligne…</span></li>
+                                                                    <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Recrutez les acteurs de l’évènementiel en quelques minutes</span></li>
                                                                 </ul>
                                                                 <div class="button-position text-left mt-4">
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
+                                                                    <a title="Modal Soyez informé au lancement de cible" class="button " data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">Soyez informé au lancement </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -270,16 +294,14 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="543" height="680" src="{{ asset('/application_achat_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Acheter les tickets d’événements en ligne" loading="lazy" srcset="{{ asset('/application_achat_tickets.png')}} 543w, {{ asset('/application_achat_tickets-240x300.png')}} 240w" sizes="100vw" />
+                                                                            <img width="543" height="680" src="{{ asset('images/application_achat_tickets.png')}}" class="vc_single_image-img attachment-full" alt="Acheter les tickets d’événements en ligne" loading="lazy" srcset="{{ asset('images/application_achat_tickets.png')}} 543w, {{ asset('images/application_achat_tickets-240x300.png')}} 240w" sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
                                                                 <div class="layer_wrap iq-objects-style-3 " id="object_443663318"><span class="iq-objects-01" data-bottom="transform:translatey(-200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="/b3-1.png"
-																					alt="drive02"> -->
+
                                                                     </span><span class="iq-objects-02" data-bottom="transform:translatey(200px)" data-top="transform:translatex(-0);">
-                                                                        <!-- <img src="/b1-1.png"
-																					alt="drive02"> -->
+
                                                                     </span></div>
                                                             </div>
                                                         </div>
@@ -290,7 +312,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -301,9 +323,9 @@
                                                                 <div class="heading-title title-white text-center" style="color:#fff">
                                                                     <h2 class="title">Découvrez bientôt CIBLE en vidéo</h2>
                                                                     <p>
-                                                                    Un design soigné, des Fonctionnalités complètes et des
-                                                                    processus optimisés pour <br> vous offrir la meilleure expérience utilisateur.
-                                                                   </p>
+                                                                        Un design soigné, des Fonctionnalités complètes et des
+                                                                        processus optimisés pour <br> vous offrir la meilleure expérience utilisateur.
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -314,8 +336,8 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-bg about-img popup-gallery play-video">
-                                                                    <img class="img-fluid center-block img-fluid center-block " style="border-radius:10px" src="{{ asset('/Présentation_application_événementielle.jpg')}}" alt="publier vos événements en ligne et gagner en visibilité pour chaque événement">
-                                                                    <a  class="iq-video popup-youtube text-light"><i class="ion-ios-play-outline"></i></a>
+                                                                    <img class="img-fluid center-block img-fluid center-block " style="border-radius:10px" src="{{ asset('images/Présentation_application_événementielle.jpg')}}" alt="publier vos événements en ligne et gagner en visibilité pour chaque événement">
+                                                                    <span class="iq-video popup-youtube text-light"><i class="ion-ios-play-outline"></i></span>
                                                                     <div class="iq-waves">
                                                                         <div class="waves wave-1"></div>
                                                                         <div class="waves wave-2"></div>
@@ -361,7 +383,7 @@
                                                                             <!-- Nav tabs -->
                                                                             <ul class="nav nav-tabs" role="tablist">
                                                                                 <li class="nav-item wow fadeInLeft" data-wow-duration="1s">
-                                                                                    <a class="active round-right nav-link" href="#tab11" aria-controls="tab11" role="tab" data-toggle="tab" aria-selected="true">
+                                                                                    <a class="active round-right nav-link" href="#tab11" title="Informez des millions d’utilisateurs de vos évènements en 02 clics" aria-controls="tab11" role="tab" data-toggle="tab" aria-selected="true">
                                                                                         <div class="iq-fancy-box-01 text-right">
                                                                                             <i aria-hidden="true" class="ion ion-ios-checkmark-outline"></i>
                                                                                             <h5>Créer et publier</h5>
@@ -372,7 +394,7 @@
                                                                                     </a>
                                                                                 </li>
                                                                                 <li class="nav-item wow fadeInLeft" data-wow-duration="1s">
-                                                                                    <a class=" round-right nav-link" href="#tab13" aria-controls="tab13" role="tab" data-toggle="tab" aria-selected="false">
+                                                                                    <a class=" round-right nav-link" href="#tab13" title="Suivez en temps réel vos ventes depuis votre téléphone" aria-controls="tab13" role="tab" data-toggle="tab" aria-selected="false">
                                                                                         <div class="iq-fancy-box-01 text-right">
                                                                                             <i aria-hidden="true" class="ion ion-ios-color-wand-outline"></i>
                                                                                             <h5>Vendre des tickets</h5>
@@ -383,7 +405,7 @@
                                                                                     </a>
                                                                                 </li>
                                                                                 <li class="nav-item wow fadeInLeft" data-wow-duration="1s">
-                                                                                    <a class=" round-right nav-link" href="#tab15" aria-controls="tab15" role="tab" data-toggle="tab" aria-selected="false">
+                                                                                    <a class=" round-right nav-link" href="#tab15" title="Contrôlez les tickets et l’accès au lieu avec votre smartphone" aria-controls="tab15" role="tab" data-toggle="tab" aria-selected="false">
                                                                                         <div class="iq-fancy-box-01 text-right">
                                                                                             <i aria-hidden="true" class="ion ion-ios-copy-outline"></i>
                                                                                             <h5>Scanner des tickets
@@ -401,22 +423,22 @@
                                                                             <div class="tab-content" id="myTabContent">
 
 
-                                                                                <div class="tab-pane fade show active" id="tab11"><img src="{{ asset('/application_pour_publier_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></div>
+                                                                                <div class="tab-pane fade show active" id="tab11"><img src="{{ asset('images/application_pour_publier_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab22"><img src="{{ asset('/facture_ticket_événement.png')}}" class="img-fluid center-block img-fluid center-block " alt="Obtenez une facture à chaque achat de ticket pour tout événement"></div>
+                                                                                <div class="tab-pane fade show " id="tab22"><img src="{{ asset('images/facture_ticket_événement.png')}}" class="img-fluid center-block img-fluid center-block " alt="Obtenez une facture à chaque achat de ticket pour tout événement"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab13"><img src="{{ asset('/ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Vos tickets pour tout type d’événement avec un code QR"></div>
+                                                                                <div class="tab-pane fade show " id="tab13"><img src="{{ asset('images/ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Vos tickets pour tout type d’événement avec un code QR"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab24"><img src="{{ asset('/application_mobile_pour_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></div>
+                                                                                <div class="tab-pane fade show " id="tab24"><img src="{{ asset('images/application_mobile_pour_vos_événements.png')}}" class="img-fluid center-block img-fluid center-block " alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab15"><img src="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Scanner gratuitement les tickets d’événements avec CIBLE"></div>
+                                                                                <div class="tab-pane fade show " id="tab15"><img src="{{ asset('images/scanner_ticket_événementiel_CIBLE.png')}}" class="img-fluid center-block img-fluid center-block " alt="Scanner gratuitement les tickets d’événements avec CIBLE"></div>
 
 
-                                                                                <div class="tab-pane fade show " id="tab26"><img src="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" class="img-fluid center-block img-fluid center-block " alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></div>
+                                                                                <div class="tab-pane fade show " id="tab26"><img src="{{ asset('images/enquête_de_satisfaction_événementiel.png')}}" class="img-fluid center-block img-fluid center-block " alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></div>
 
 
                                                                             </div>
@@ -424,7 +446,7 @@
                                                                         <div class="col-md-6 col-lg-4 align-self-xl-center">
                                                                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                                                                 <li class=" nav-item wow fadeInRight" data-wow-duration="1s">
-                                                                                    <a href="#tab22" aria-controls="tab22" role="tab" data-toggle="tab">
+                                                                                    <a href="#tab22" aria-controls="tab22" title="Acheter des tickets" role="tab" data-toggle="tab">
                                                                                         <div class="iq-fancy-box-01">
                                                                                             <i aria-hidden="true" class="ion ion-ios-photos-outline"></i>
                                                                                             <h5>Acheter des tickets
@@ -436,7 +458,7 @@
                                                                                     </a>
                                                                                 </li>
                                                                                 <li class=" nav-item wow fadeInRight" data-wow-duration="1s">
-                                                                                    <a href="#tab24" aria-controls="tab24" role="tab" data-toggle="tab">
+                                                                                    <a href="#tab24" aria-controls="tab24" title="Partagez avec vos contacts l’application et gagnez de l’argent" role="tab" data-toggle="tab">
                                                                                         <div class="iq-fancy-box-01">
                                                                                             <i aria-hidden="true" class="ion ion-ios-heart-outline"></i>
                                                                                             <h5>Recommander</h5>
@@ -447,7 +469,7 @@
                                                                                     </a>
                                                                                 </li>
                                                                                 <li class=" nav-item wow fadeInRight" data-wow-duration="1s">
-                                                                                    <a href="#tab26" aria-controls="tab26" role="tab" data-toggle="tab">
+                                                                                    <a href="#tab26" aria-controls="tab26" role="tab" data-toggle="tab" title="Obtenez l’avis de vos participants à chaque événement">
                                                                                         <div class="iq-fancy-box-01">
                                                                                             <i aria-hidden="true" class="ion ion-ios-plus-outline"></i>
                                                                                             <h5>Enquête de satisfaction
@@ -493,12 +515,12 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="home-screen-slide">
                                                                     <div class="owl-carousel popup-gallery" data-dots="false" data-nav="true" data-items="4" data-items-laptop="3" data-items-tab="3" data-items-mobile="2" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
-                                                                        <div class="item"><a href="{{ asset('/facture_ticket_événement.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/facture_ticket_événement.png')}}" alt="Obtenez une facture à chaque achat de ticket pour tout événement"></a></div>
-                                                                        <div class="item"><a href="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/enquête_de_satisfaction_événementiel.png')}}" alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></a></div>
-                                                                        <div class="item"><a href="{{ asset('/application_mobile_pour_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/application_mobile_pour_vos_événements.png')}}" alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></a></div>
-                                                                        <div class="item"><a href="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/scanner_ticket_événementiel_CIBLE.png')}}" alt="Scanner gratuitement les tickets d’événements avec CIBLE"></a></div>
-                                                                        <div class="item"><a href="{{ asset('/ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/ticket_événementiel_CIBLE.png')}}" alt="Vos tickets pour tout type d’événement avec un code QR"></a></div>
-                                                                        <div class="item"><a href="{{ asset('/application_pour_publier_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('/application_pour_publier_vos_événements.png')}}" alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></a></div>
+                                                                        <div class="item"><a title="Obtenez une facture à chaque achat de ticket pour tout événement" href="{{ asset('images/facture_ticket_événement.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/facture_ticket_événement.png')}}" alt="Obtenez une facture à chaque achat de ticket pour tout événement"></a></div>
+                                                                        <div class="item"><a title="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction" href="{{ asset('images/enquête_de_satisfaction_événementiel.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/enquête_de_satisfaction_événementiel.png')}}" alt="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction"></a></div>
+                                                                        <div class="item"><a title="Publiez vos événements, vendez vos tickets et obtenez les résultats de sondages de satisfaction" href="{{ asset('images/application_mobile_pour_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/application_mobile_pour_vos_événements.png')}}" alt="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent"></a></div>
+                                                                        <div class="item"><a title="utilisez l’application de vente et achat de tickets en ligne et gagnez l’argent" href="{{ asset('images/scanner_ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/scanner_ticket_événementiel_CIBLE.png')}}" alt="Scanner gratuitement les tickets d’événements avec CIBLE"></a></div>
+                                                                        <div class="item"><a title="Vos tickets pour tout type d’événement avec un code QR" href="{{ asset('images/ticket_événementiel_CIBLE.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/ticket_événementiel_CIBLE.png')}}" alt="Vos tickets pour tout type d’événement avec un code QR"></a></div>
+                                                                        <div class="item"><a title="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt" href="{{ asset('images/application_pour_publier_vos_événements.png')}}" class="popup-img"><img class="img-fluid" src="{{ asset('images/application_pour_publier_vos_événements.png')}}" alt="Concerts-formations-spectables-foire-séminaire-conférence-cinéma-sport-concourt"></a></div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -721,35 +743,35 @@
 
                                                                     <div class="owl-carousel" data-dots="true" data-nav="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
                                                                         @foreach($essayers as $essayer)
-                                                                        <div class="item" >
-                                                                            <div class="iq-client white-bg" >
-                                                                               <div class="d-flex align-items-center">
-                                                                               <div class="client-img my-auto">
-                                                                                    <img alt="#" class="img-fluid rounded-circle mt-2" style="width: 4rem;height:4rem;white-space : nowrap" src="{{ asset('images/cible-app-avatar.png')}}">
+                                                                        <div class="item">
+                                                                            <div class="iq-client white-bg">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="client-img my-auto">
+                                                                                        <img alt="#" class="rounded-circle mt-2" style="width: 4rem!important;height:4rem!important;white-space : nowrap" src="{{ asset('images/cible-app-avatar.png')}}">
+                                                                                    </div>
+                                                                                    <div class="client-name my-auto ml-0">
+                                                                                        <h6 style="white-space : nowrap">
+                                                                                            {{ substr($essayer->nom, 0, 20)}}
+                                                                                            @if(strlen($essayer->nom) > 20)
+                                                                                            ...
+                                                                                            @endif
+                                                                                        </h6>
+                                                                                        <span class="sub-title" style="white-space : nowrap">
+                                                                                            <!-- {{$essayer->profession}} -->
+                                                                                            {{ substr($essayer->profession, 0, 25)}}
+                                                                                            @if(strlen($essayer->profession) > 25)
+                                                                                            ...
+                                                                                            @endif
+                                                                                        </span>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="client-name my-auto ml-0" >
-                                                                                    <h6 style="white-space : nowrap">
-                                                                                        {{ substr($essayer->nom, 0, 20)}}
-                                                                                           @if(strlen($essayer->nom) > 20)
-                                                                                             ...
-                                                                                           @endif
-                                                                                    </h6>
-                                                                                    <span class="sub-title" style="white-space : nowrap">
-                                                                                        <!-- {{$essayer->profession}} -->
-                                                                                        {{ substr($essayer->profession, 0, 25)}}
-                                                                                           @if(strlen($essayer->profession) > 25)
-                                                                                             ...
-                                                                                           @endif
-                                                                                    </span>
-                                                                                </div>  
-                                                                               </div>
                                                                                 <div class="client-info">
 
                                                                                     <p style="height: 96px;">
                                                                                         {{ substr($essayer->raison, 0, 100)}}
-                                                                                           @if(strlen($essayer->raison) > 100)
-                                                                                             ...
-                                                                                           @endif
+                                                                                        @if(strlen($essayer->raison) > 100)
+                                                                                        ...
+                                                                                        @endif
                                                                                     </p>
                                                                                 </div>
                                                                             </div>
@@ -763,7 +785,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="container d-flex justify-content-center pt-4 pt-lg-5">
-                                                    <a class="button text-light" style="cursor:pointer" data-toggle="modal" data-target="#exampleModalCenter1">
+                                                    <a class="button text-light" href="#" title="Modal J’essayerai CIBLE" style="cursor:pointer" data-toggle="modal" data-target="#exampleModalCenter1">
                                                         J’essayerai CIBLE
                                                     </a>
                                                 </div>
@@ -790,186 +812,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="vc_row wpb_row vc_inner vc_row-fluid">
-															<div class="wpb_column vc_column_container vc_col-sm-12">
-																<div class="vc_column-inner">
-																	<div class="wpb_wrapper">
-																		<div class="row">
-																			<div class="col-sm-12">
-																				<div class="owl-carousel"
-																					data-dots="false" data-nav="false"
-																					data-autoplay="true"
-																					data-loop="true" data-items="4"
-																					data-items-laptop="3"
-																					data-items-tab="3"
-																					data-items-mobile="2"
-																					data-items-mobile-sm="1"
-																					data-margin="30">
-																					<div class="item">
-																						<div class="iq-team"><img
-																								src="{{ asset('wp-content/uploads/sites/9/2018/12/t5-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block "
-																								alt="#0">
-																							<div
-																								class="iq-team-info text-center">
-																								<h5>BATANDEO BAOURA</h5>
-																								<span
-																									class="team-post">Back end
-																									Developer</span>
-																								<p class="px-3" style="font-style:italic;line-height:1.2rem">
-																									" Lorem ipsum dolor sit amet consectetur adipisicing elit. A modi aliquid eligendi fugiat "
-																								</p>
-																								<div class="share">
-																									<span> <i
-																											class="fa fa-share-alt iq-mr-10"
-																											aria-hidden="true"></i>
-																										Share
-																										With</span>
-																									<nav>
-																										<a href="#"><i
-																												class="fa fa-twitter"></i></a>
-																										<a href="#"><i
-																												class="fa fa-facebook"></i></a>
-																										<a href="#"><i
-																												class="fa fa-google"></i></a>
-																										<a href="#"><i
-																												class="fa fa-github"></i></a>
-																									</nav>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="item">
-																						<div class="iq-team"><img
-																								src="{{ asset('wp-content/uploads/sites/9/2018/12/t4-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block "
-																								alt="#1">
-																							<div
-																								class="iq-team-info text-center">
-																								<h5>Amy Adams</h5>
-																								<span
-																									class="team-post">Ui/UX
-																									Developer</span>
-																								<div class="share">
-																									<span> <i
-																											class="fa fa-share-alt iq-mr-10"
-																											aria-hidden="true"></i>
-																										Share
-																										With</span>
-																									<nav>
-																										<a href="#"><i
-																												class="fa fa-twitter"></i></a>
-																										<a href="#"><i
-																												class="fa fa-facebook"></i></a>
-																										<a href="#"><i
-																												class="fa fa-google"></i></a>
-																										<a href="#"><i
-																												class="fa fa-github"></i></a>
-																									</nav>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="item">
-																						<div class="iq-team"><img
-																								src="{{ asset('wp-content/uploads/sites/9/2018/12/t3-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block "
-																								alt="#2">
-																							<div
-																								class="iq-team-info text-center">
-																								<h5>John Deo</h5>
-																								<span
-																									class="team-post">Ui/UX
-																									Developer</span>
-																								<div class="share">
-																									<span> <i
-																											class="fa fa-share-alt iq-mr-10"
-																											aria-hidden="true"></i>
-																										Share
-																										With</span>
-																									<nav>
-																										<a href="#"><i
-																												class="fa fa-twitter"></i></a>
-																										<a href="#"><i
-																												class="fa fa-facebook"></i></a>
-																										<a href="#"><i
-																												class="fa fa-google"></i></a>
-																										<a href="#"><i
-																												class="fa fa-github"></i></a>
-																									</nav>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="item">
-																						<div class="iq-team"><img
-																								src="{{ asset('wp-content/uploads/sites/9/2018/12/t2-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block "
-																								alt="#3">
-																							<div
-																								class="iq-team-info text-center">
-																								<h5>James Clayton</h5>
-																								<span
-																									class="team-post">Ui/UX
-																									Developer</span>
-																								<div class="share">
-																									<span> <i
-																											class="fa fa-share-alt iq-mr-10"
-																											aria-hidden="true"></i>
-																										Share
-																										With</span>
-																									<nav>
-																										<a href="#"><i
-																												class="fa fa-twitter"></i></a>
-																										<a href="#"><i
-																												class="fa fa-facebook"></i></a>
-																										<a href="#"><i
-																												class="fa fa-google"></i></a>
-																										<a href="#"><i
-																												class="fa fa-github"></i></a>
-																									</nav>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="item">
-																						<div class="iq-team"><img
-																								src="{{ asset('wp-content/uploads/sites/9/2019/01/t1-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block "
-																								alt="#4">
-																							<div
-																								class="iq-team-info text-center">
-																								<h5>Cooper</h5>
-																								<span
-																									class="team-post">Ui/UX
-																									Developer</span>
-																								<div class="share">
-																									<span> <i
-																											class="fa fa-share-alt iq-mr-10"
-																											aria-hidden="true"></i>
-																										Share
-																										With</span>
-																									<nav>
-																										<a href="#"><i
-																												class="fa fa-twitter"></i></a>
-																										<a href="#"><i
-																												class="fa fa-facebook"></i></a>
-																										<a href="#"><i
-																												class="fa fa-google"></i></a>
-																										<a href="#"><i
-																												class="fa fa-github"></i></a>
-																									</nav>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div> -->
+
 
                                                 <div class="vc_row wpb_row vc_inner vc_row-fluid">
                                                     <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -981,148 +824,154 @@
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la communication digitale">
+                                                                                        <img src="{{ asset('images/equipe-cible-la-diva.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la communication digitale">
                                                                                         <h5 class="mt-3">La Diva</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication digitale </p>
                                                                                         <p class="team-post text-secondary mt-0">
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
-                                                                                            Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout….</p>
+                                                                                            Je serai votre meilleure amie chez CIBLE. <br> Je vous raconterai tout….
+                                                                                        </p>
 
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Développeur Front-End">
+                                                                                        <img src="{{ asset('images/equipe-cible-le-geek.png')}}" class="img-fluid center-block img-fluid center-block bg-secondary  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Développeur Front-End">
                                                                                         <h5 class="mt-3">Le Geek</h5>
                                                                                         <p class="team-post text-secondary">Développeur Front-End</p>
                                                                                         <p class="team-post text-secondary mt-0">
-                                                                                            <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
                                                                                             Vous méritez le beau ;<br>
-                                                                                                je vous offrirai toujours le plus beau.</p>
+                                                                                            je vous offrirai toujours le plus beau.
+                                                                                        </p>
 
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Développeur Back-End">
+                                                                                        <img src="{{ asset('images/equipe-cible-le-saint.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Développeur Back-End">
                                                                                         <h5 class="mt-3">Le Saint </h5>
                                                                                         <p class="team-post text-secondary"> Développeur Back-End </p>
                                                                                         <p class="team-post text-secondary mt-0">
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
-                                                                                            Je ne trahirai jamais le design ; <br>  je vous garantis zéro bug.</p>
+                                                                                            Je ne trahirai jamais le design ; <br> je vous garantis zéro bug.
+                                                                                        </p>
 
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la communication">
+                                                                                        <img src="{{ asset('images/equipe-cible-zeus.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la communication">
                                                                                         <h5 class="mt-3">Zeus</h5>
                                                                                         <p class="team-post text-secondary">Chargé de la communication</p>
                                                                                         <p class="team-post text-secondary mt-0">
 
-                                                                                            <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
                                                                                             <span class="m-0 mr-2 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
-                                                                                            Mon Job ? Vous rendre fiers <br> d’appartenir à la famille CIBLE</p>
-                                                                                            <!-- <span class="font-bold text-dark h2">
+                                                                                            Mon Job ? Vous rendre fiers <br> d’appartenir à la famille CIBLE
+                                                                                        </p>
+                                                                                        <!-- <span class="font-bold text-dark h2">
                                                                                                 "
                                                                                             </span> -->
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la Relation Client">
+                                                                                        <img src="{{ asset('images/equipe-cible-el-professor.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Chargé de la Relation Client">
                                                                                         <h5 class="mt-3">El Professor </h5>
                                                                                         <p class="team-post text-secondary">Chargé de la Relation Client </p>
                                                                                         <p class="team-post text-secondary mt-0">
 
-                                                                                       <p class="m-0" style="font-weight: 400;line-height:1.75rem">
-                                                                                       <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
-                                                                                       Pour votre satisfaction, chaque minute <br>  compte ;  chaque effort est nécessaire.</p>
+                                                                                        <p class="m-0" style="font-weight: 400;line-height:1.75rem">
+                                                                                            <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Pour votre satisfaction, chaque minute <br> compte ; chaque effort est nécessaire.
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        </p>
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="item text-center">
                                                                                 <div class="team" style="border-right:1px solid #e3e3e3;">
                                                                                     <div class="image mx-auto">
-                                                                                        <img src="{{ asset('/equipe-cible-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Product Owner, Chargé de la stratégie">
+                                                                                        <img src="{{ asset('images/equipe-cible-aigle.png')}}" class="img-fluid center-block img-fluid center-block  mx-auto" style="aspect-ratio:1;width:14rem;border-radius:50%" alt="Product Owner, Chargé de la stratégie">
                                                                                         <h5 class="mt-3">L’aigle </h5>
                                                                                         <p class="team-post text-secondary">Product Owner, Chargé de la stratégie </p>
                                                                                         <p class="team-post text-secondary mt-0">
                                                                                         <p class="m-0" style="font-weight: 400;line-height:1.75rem">
-                                                                                       <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
-                                                                                       Vous surprendre ; toujours vous surprendre <br>  avec de nouvelles fonctionnalités</p>
+                                                                                            <span class="m-0 mr-1 mt-n3 text-dark" style="font-size:1.75rem;"> &#128630;</span>
+                                                                                            Vous surprendre ; toujours vous surprendre <br> avec de nouvelles fonctionnalités
+                                                                                        </p>
 
                                                                                         </p>
-{{--                                                                                        <p class="mt-3">--}}
-{{--                                                                                            <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-instagram  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
-{{--                                                                                            <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
-{{--                                                                                                <i class="fa fa-linkedin  text-dark"></i>--}}
-{{--                                                                                            </a>--}}
+                                                                                        {{-- <p class="mt-3">--}}
+                                                                                        {{-- <a href="http://instagram.com" class="h4" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-instagram  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
+                                                                                        {{-- <a href="http://" class="h4 ml-3" target="_blank" rel="noopener noreferrer">--}}
+                                                                                        {{-- <i class="fa fa-linkedin  text-dark"></i>--}}
+                                                                                        {{-- </a>--}}
 
-{{--                                                                                        </p>--}}
+                                                                                        {{-- </p>--}}
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1136,93 +985,13 @@
                                                 </div>
 
 
-                                                <!-- <div class="row text-center">
-															<div class="col-4 team" style="border-right:1px solid #e3e3e3;">
-																<div class="image mx-auto">
-																	<img src="{{ asset('wp-content/uploads/sites/9/2018/12/t5-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block " style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
-																	<h5 class="mt-3">BATANDEO BAOURA</h5>
-																	<p
-																		class="team-post text-secondary" >Back end
-																		Developer</p>
-																		<p
-																		class="team-post text-secondary" >
 
-																		<span style="font-weight: 400;">Lorem ipsum dolor,
-																		 sit amet consectetur adipisicing elit. Similique ipsam libero unde atque? Aut, quidem.</span>
-
-																	</p>
-																	<p class="mt-3">
-																		<a href="http://instagram.com" class="h4" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-instagram  text-dark"></i>
-																		</a>
-																		<a href="http://" class="h4 ml-3" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-linkedin  text-dark"></i>
-																		</a>
-
-																	</p>
-																</div>
-															</div>
-															<div class="col-4 team" style="border-right:1px solid #e3e3e3;">
-																<div class="image mx-auto">
-																	<img src="{{ asset('wp-content/uploads/sites/9/2018/12/t3-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block " style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
-																	<h5 class="mt-3">BATANDEO BAOURA</h5>
-																	<p
-																		class="team-post text-secondary" >Back end
-																		Developer</p>
-																		<p
-																		class="team-post text-secondary" >
-
-																		<span style="font-weight: 400;">Lorem ipsum dolor,
-																		 sit amet consectetur adipisicing elit. Similique ipsam libero unde atque? Aut, quidem.</span>
-
-																	</p>
-																	<p class="mt-3">
-																		<a href="http://instagram.com" class="h4" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-instagram  text-dark"></i>
-																		</a>
-																		<a href="http://" class="h4 ml-3" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-linkedin  text-dark"></i>
-																		</a>
-
-																	</p>
-																</div>
-															</div>
-															<div class="col-4 team" style="border-right:1px solid #e3e3e3;">
-																<div class="image mx-auto">
-																	<img src="{{ asset('wp-content/uploads/sites/9/2018/12/t4-1.jpg')}}"
-																								class="img-fluid center-block img-fluid center-block " style="aspect-ratio:1;width:14rem;border-radius:50%" alt="">
-																	<h5 class="mt-3">BATANDEO BAOURA</h5>
-																	<p
-																		class="team-post text-secondary" >Back end
-																		Developer</p>
-																		<p
-																		class="team-post text-secondary" >
-
-																		<span style="font-weight: 400;">Lorem ipsum dolor,
-																		 sit amet consectetur adipisicing elit. Similique ipsam libero unde atque? Aut, quidem.</span>
-
-																	</p>
-																	<p class="mt-3">
-																		<a href="http://instagram.com" class="h4" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-instagram  text-dark"></i>
-																		</a>
-																		<a href="http://" class="h4 ml-3" target="_blank"  rel="noopener noreferrer">
-																		  <i class="fa fa-linkedin  text-dark"></i>
-																		</a>
-
-																	</p>
-																</div>
-															</div>
-
-														</div> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1308,7 +1077,7 @@
 
                                                                     <figure class="wpb_wrapper vc_figure">
                                                                         <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                            <img width="553" height="600" src="{{ asset('/faq-1-1.png')}}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{{ asset('/faq-1-1.png')}} 553w, {{ asset('/faq-1-1-277x300.png')}} 277w" sizes="100vw" />
+                                                                            <img width="553" height="600" src="{{ asset('images/faq-1-1.png')}}" class="vc_single_image-img attachment-full" alt="Foire aux question cible" loading="lazy" srcset="{{ asset('images/faq-1-1.png')}} 553w, {{ asset('images/faq-1-1-277x300.png')}} 277w" sizes="100vw" />
                                                                         </div>
                                                                     </figure>
                                                                 </div>
@@ -1326,13 +1095,13 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="iq-accordion">
-                                                                    <div class="iq-ad-block iq-ad-active"> <a href="javascript:void(0)" class="iq-ad-title">CIBLE est-elle une application web ou mobile ? </a>
+                                                                    <div class="iq-ad-block iq-ad-active"> <span class="iq-ad-title">CIBLE est-elle une application web ou mobile ? </span>
                                                                         <div class="iq-ad-details show" style=display:block>
                                                                             <div class="row">
                                                                                 <!-- <div class="col-sm-3">
 																							<img alt="#"
 																								class="img-fluid"
-																								src="{{ asset('/faq-1-150x150.jpg')}}" />
+																								src="{{ asset('images/faq-1-150x150.jpg')}}" />
 
 																						</div> -->
                                                                                 <div class="col-sm-12">CIBLE est une application mobile avec une version web qui
@@ -1343,7 +1112,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="iq-ad-block "> <a href="javascript:void(0)" class="iq-ad-title">CIBLE est-elle gratuite ?</a>
+                                                                    <div class="iq-ad-block "> <span class="iq-ad-title">CIBLE est-elle gratuite ?</span>
                                                                         <div class="iq-ad-details ">
                                                                             <div class="row">
                                                                                 <div class="col-sm-12">Oui. Téléchargez et inscrivez-vous gratuitement et profitez
@@ -1353,25 +1122,25 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="iq-ad-block "> <a href="javascript:void(0)" class="iq-ad-title">Comment avoir un compte CIBLE ? </a>
+                                                                    <div class="iq-ad-block "> <span class="iq-ad-title">Comment avoir un compte CIBLE ? </span>
                                                                         <div class="iq-ad-details ">
                                                                             <div class="row">
                                                                                 <!-- <div class="col-sm-3">
 																							<img alt="#"
 																								class="img-fluid"
-																								src="{{ asset('/faq-1-150x150.jpg')}}" />
+																								src="{{ asset('images/faq-1-150x150.jpg')}}" />
 
 																						</div> -->
                                                                                 <div class="col-sm-12">
                                                                                     Que vous soyez particulier ou entreprise, téléchargez CIBLE sur Play store ou App
                                                                                     Store, inscrivez-vous en renseignant les informations demandées à chaque étape
                                                                                     puis valider à la fin. Si vous voulez faire partie des premiers utilisateurs de
-                                                                                    CIBLE,<a href=""  data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a>
+                                                                                    CIBLE,<a href="#" title="Modal m'informer au lancement de CIBLE" data-toggle="modal" data-target="#exampleModalCenterHeader" href="#screenshots">enregistrez-vous ici.</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="iq-ad-block "> <a href="javascript:void(0)" class="iq-ad-title">Dans quels pays peut-on utiliser CIBLE ? </a>
+                                                                    <div class="iq-ad-block "> <span class="iq-ad-title">Dans quels pays peut-on utiliser CIBLE ? </span>
                                                                         <div class="iq-ad-details ">
                                                                             <div class="row">
                                                                                 <div class="col-sm-12">CIBLE sera disponible en Cote d’Ivoire, au Togo, au Sénégal,
@@ -1381,7 +1150,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="iq-ad-block "> <a href="javascript:void(0)" class="iq-ad-title">Peut-on gagner de l’argent en tant que particulier ? </a>
+                                                                    <div class="iq-ad-block "> <span class="iq-ad-title">Peut-on gagner de l’argent en tant que particulier ? </span>
                                                                         <div class="iq-ad-details ">
                                                                             <div class="row">
                                                                                 <div class="col-sm-12">
@@ -1393,7 +1162,7 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <a style='' class="button " data-toggle="modal" data-target="#FAQModalCenterHeader" href="#screenshots">Posez votre question </a>
+                                                                    <a class="button" data-toggle="modal" data-target="#FAQModalCenterHeader" title="Posez une question à l'équipe cible" href="#">Posez votre question </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1404,7 +1173,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1427,7 +1196,7 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="text-center">
-                                                                    <a data-target="#exampleModalCenterHeader" data-toggle="modal" class="button  button-icon " href="#">
+                                                                    <a data-target="#exampleModalCenterHeader" title=" M’informer au lancement de CIBLE" data-toggle="modal" class="button  button-icon " href="#">
                                                                         M’informer au lancement </a>
                                                                 </div>
                                                             </div>
@@ -1468,11 +1237,12 @@
                                                             <div class="wpb_wrapper">
                                                                 <div class="appino-recentblog v1">
                                                                     <div class="owl-carousel" data-dots="false" data-nav="false" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
-                                                                       @foreach($articleRecentFive as $articleRecentFive)
+                                                                        @foreach($articleRecentFive as $articleRecentFive)
                                                                         <div class="item">
                                                                             <div class="iq-blog-box">
-                                                                                <div class="iq-blog-image clearfix">
-                                                                                    <img src="{{ asset($articleRecentFive->img)}}" class="img-fluid center-block imgBlog" alt="blogimage0">
+                                                                                <div class="iq-blog-image clearfix mb-3" style="position : relative;height:238px;overflow:hidden">
+                                                                                    <img src="{{ asset($articleRecentFive->img)}}" style="position : absolute;filter: blur(3px);top:0;left:0;transform:scale(1.2)" class="center-block h-100" alt="{{$articleRecentFive->libelle}}">
+                                                                                    <img src="{{ asset($articleRecentFive->img)}}" class="center-block h-100 mx-auto" style="width: auto;" alt="{{$articleRecentFive->libelle}}">
                                                                                 </div>
                                                                                 <div class="iq-blog-detail">
                                                                                     <div class="iq-blog-meta">
@@ -1481,41 +1251,41 @@
                                                                                             <li class="list-inline-item">
                                                                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                                                                                 <span class="screen-reader-text">Posted
-                                                                                                    on</span> <a href="blog/{{$articleRecentFive->id}}" rel="bookmark"><time class="entry-date published updated" datetime="{{$articleRecentFive->created_at}}">
+                                                                                                    on</span> <span><time class="entry-date published updated" datetime="{{$articleRecentFive->created_at}}">
                                                                                                         {{$articleRecentFive->created_at}}
-                                                                                                    </time></a>
+                                                                                                    </time></span>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
-                                                                                                <a href="/blog/{{$articleRecentFive->id}}"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                                                                {{ $articleRecentFive->getCommentairesValidCount() }}</a>
+                                                                                                <span><i class="fa fa-comment-o" aria-hidden="true"></i>
+                                                                                                    {{ $articleRecentFive->getCommentairesValidCount() }}</span>
                                                                                             </li>
                                                                                             <li class="list-inline-item">
-                                                                                                <a href=""><i class="fa fa-eye" aria-hidden="true"></i>
-                                                                                                {{$articleRecentFive->nbvue}} </a>
+                                                                                                <span><i class="fa fa-eye" aria-hidden="true"></i>
+                                                                                                    {{$articleRecentFive->nbvue}} </span>
                                                                                             </li>
                                                                                         </ul>
                                                                                     </div>
                                                                                     <div class="blog-title">
-                                                                                        <a href="/blog/{{$articleRecentFive->urlTitre}}">
+                                                                                        <a href="/blog/{{$articleRecentFive->urlTitre}}" title="{{$articleRecentFive->libelle}}">
                                                                                             <h6>
                                                                                                 <!-- {{$articleRecentFive->libelle}} -->
                                                                                                 {{ substr($articleRecentFive->libelle, 0, 29)}}
-                                                                                           @if(strlen($articleRecentFive->libelle) >= 29)
-                                                                                             ...
-                                                                                           @endif
+                                                                                                @if(strlen($articleRecentFive->libelle) >= 29)
+                                                                                                ...
+                                                                                                @endif
                                                                                             </h6>
                                                                                         </a>
                                                                                     </div>
                                                                                     <div class="blog-content">
                                                                                         <p style="height: 65px;">
                                                                                             <!-- {{$articleRecentFive->desc}}. -->
-                                                                                           {{ substr($articleRecentFive->desc, 0, 70)}}
-                                                                                           @if(strlen($articleRecentFive->desc) > 70)
-                                                                                             ...
-                                                                                           @endif
+                                                                                            {{ substr($articleRecentFive->desc, 0, 70)}}
+                                                                                            @if(strlen($articleRecentFive->desc) > 70)
+                                                                                            ...
+                                                                                            @endif
                                                                                         </p>
                                                                                     </div>
-                                                                                    <div class="blog-button"><a class="button" href="/blog/{{$articleRecentFive->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                                                    <div class="blog-button"><a title="{{$articleRecentFive->libelle}}" class="button" href="/blog/{{$articleRecentFive->urlTitre}}">Voir plus<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -1544,16 +1314,16 @@
                                                                 <div class="col-lg-12 col-md-12">
                                                                     <div class="owl-carousel" data-dots="false" data-nav="true" data-items="4" data-items-laptop="3" data-items-tab="3" data-items-mobile="2" data-items-mobile-sm="1" data-autoplay="true" data-loop="true" data-margin="30">
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('/cible-app-innov-is.jpg')}}" alt="client0">
+                                                                            <img class="item partenaire" src="{{ asset('images/cible-app-innov-is.jpg')}}" alt="client0">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('/cible-app-procomdigit.png')}}" alt="client1">
+                                                                            <img class="item partenaire" src="{{ asset('images/cible-app-procomdigit.png')}}" alt="client1">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('/cible-app-asta.jpg')}}" alt="client2">
+                                                                            <img class="item partenaire" src="{{ asset('images/cible-app-asta.jpg')}}" alt="client2">
                                                                         </div>
                                                                         <div class="item">
-                                                                            <img class="item partenaire" src="{{ asset('/cible-app-africa-visual-art.jpg')}}" alt="client3">
+                                                                            <img class="item partenaire" src="{{ asset('images/cible-app-africa-visual-art.jpg')}}" alt="client3">
                                                                         </div>
 
                                                                     </div>
@@ -1567,7 +1337,7 @@
                                     </div>
                                 </div>
                                 <div class="vc_row-full-width vc_clearfix"></div>
-                                <div id="contact" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                <div id="contact" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
                                     <div class="wpb_column vc_column_container vc_col-sm-12">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
@@ -1601,13 +1371,13 @@
                                                                                         <div class="newsletter-email d-flex" style="position:relative">
                                                                                             <input placeholder="Entrez votre Adresse mail *" style="border-radius : 50px 0 0 50px" type="email" name="sub_email" class="news_text" id="email" required />
                                                                                             <div class="alax-loader" style="position:absolute;left : 485px;top:10%">
-                                                                                                <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
+                                                                                                <img alt="" src="{{ asset('images/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
                                                                                             </div>
                                                                                             <input type="submit" class="sub_button bg-dark" style="margin-left:-15%;background:#343a40!important" value="Soumettre">
 
                                                                                         </div>
                                                                                         <div class="email-subscribe">
-                                                                                        <span id="error_email" style="color:#fff!important"></span>
+                                                                                            <span id="error_email" style="color:#fff!important"></span>
 
                                                                                         </div>
                                                                                         <div class="subscribe">
@@ -1658,39 +1428,39 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
+                        <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
-                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
-                        <p class="mb-0 pb-0">
-                            Votre adresse email ne sera pas publiée.
+                        <h3 class="modal-title mt-4 h5" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
+                            <p class="mb-0 pb-0">
+                                Votre adresse email ne sera pas publiée.
 
-                        </p>
-                        <form id="inform" class="comment-form text-left">
-                            @csrf
-                            <div class="row my-4">
-                                <div class="col-4 mb-3 pr-0 mr-0">
-                                    <select class="" required>
-                                        @foreach ($countries as $country)
+                            </p>
+                            <form id="inform" class="comment-form text-left">
+                                @csrf
+                                <div class="row my-4">
+                                    <div class="col-4 mb-3 pr-0 mr-0">
+                                        <select class="" required>
+                                            @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="pays">{{$country->name}} - {{$country->code}}</option>
-                                        @endforeach
-                                    </select>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-8 mb-3">
+                                        <input id="numberI" placeholder="Numéro de téléphone" id="numero" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    </div>
+                                    <div class="col-12">
+                                        <input id="emailI" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    </div>
+                                    <div class="col-12 mt-4 d-flex justify-content-center">
+                                        <span id="error_inform"></span>
+                                        <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                    </div>
                                 </div>
-                                <div class="col-8 mb-3">
-                                    <input id="numberI" placeholder="Numéro de téléphone" id="numero" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                </div>
-                                <div class="col-12">
-                                    <input id="emailI" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
-                                </div>
-                                <div class="col-12 mt-4 d-flex justify-content-center">
-                                    <span id="error_inform"></span>
-                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
-                                </div>
-                            </div>
 
-                        </form>
+                            </form>
                     </div>
 
                 </div>
@@ -1714,42 +1484,42 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
+                        <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
-                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
-                        <p class="mb-0 pb-0">
-                            Votre adresse email ne sera pas publiée.
+                        <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:900">Soyez informé au lancement !</h5>
+                            <p class="mb-0 pb-0">
+                                Votre adresse email ne sera pas publiée.
 
-                        </p>
-                        <form id="informHeader" class="comment-form text-left">
-                            @csrf
-                            <div class="row my-4">
-                                <div class="col-4 mb-3 pr-0 mr-0">
-                                    <select class="" required>
-                                        @foreach ($countries as $country)
+                            </p>
+                            <form id="informHeader" class="comment-form text-left">
+                                @csrf
+                                <div class="row my-4">
+                                    <div class="col-4 mb-3 pr-0 mr-0">
+                                        <select class="" required>
+                                            @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-8 mb-3">
-                                    <input id="numberH" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                </div>
-                                <div class="col-12">
-                                    <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
-                                </div>
-                                <div class="col-12 text-center text-danger mt-3">
-                                     <strong> <span id="error_informH"  style="color:red!important" ></span></strong>
-                                </div>
-                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-8 mb-3">
+                                        <input id="numberH" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    </div>
+                                    <div class="col-12">
+                                        <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    </div>
+                                    <div class="col-12 text-center text-danger mt-3">
+                                        <strong> <span id="error_informH" style="color:red!important"></span></strong>
+                                    </div>
+                                    <div class="col-12 mt-4 d-flex justify-content-center">
 
-                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                        <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                    </div>
                                 </div>
-                            </div>
 
-                        </form>
+                            </form>
                     </div>
 
                 </div>
@@ -1760,8 +1530,8 @@
             </div>
         </div>
     </div>
-   <!-- =========================================Header================================================================================= -->
-   <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <!-- =========================================Header================================================================================= -->
+    <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content pt-0">
                 <!-- <div class="modal-header" style="border: none;">
@@ -1772,45 +1542,45 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/FAQ.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/FAQ.jpg')}}">
+                        <img src="{{ asset('images/FAQ.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('images/FAQ.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
-                        <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Posez votre question !</h5>
-                        <p class="mb-0 pb-0">
-                            Votre adresse email ne sera pas publiée.
+                        <h4 class="modal-title mt-4 h5" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight : 900">Posez votre question !</h5>
+                            <p class="mb-0 pb-0">
+                                Votre adresse email ne sera pas publiée.
 
-                        </p>
-                        <form id="poserQestion" class="comment-form text-left">
-                            @csrf
-                            <div class="row my-4">
-                                <div class="col-4 mb-3 pr-0 mr-0">
-                                    <select class="" id="select_id" required>
-                                        @foreach ($countries as $country)
+                            </p>
+                            <form id="poserQestion" class="comment-form text-left">
+                                @csrf
+                                <div class="row my-4">
+                                    <div class="col-4 mb-3 pr-0 mr-0">
+                                        <select class="" id="select_id" required>
+                                            @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="paysQ">{{$country->name}} - {{$country->code}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-8 mb-3">
-                                    <input id="telQ" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                </div>
-                                <div class="col-12">
-                                    <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
-                                </div>
-                                <div class="col-12 my-3 ">
-                                <textarea id="question" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
-                                </div>
-                                <div class="col-12 text-center text-danger mt-3">
-                                     <strong> <span id="errorQ"  style="color:red!important" ></span></strong>
-                                </div>
-                                <div class="col-12 mt-4 d-flex justify-content-center">
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-8 mb-3">
+                                        <input id="telQ" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    </div>
+                                    <div class="col-12">
+                                        <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    </div>
+                                    <div class="col-12 my-3 ">
+                                        <textarea id="question" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
+                                    </div>
+                                    <div class="col-12 text-center text-danger mt-3">
+                                        <strong> <span id="errorQ" style="color:red!important"></span></strong>
+                                    </div>
+                                    <div class="col-12 mt-4 d-flex justify-content-center">
 
-                                    <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                        <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                    </div>
                                 </div>
-                            </div>
 
-                        </form>
+                            </form>
                     </div>
 
                 </div>
@@ -1821,7 +1591,7 @@
             </div>
         </div>
     </div>
-<!-- =========================================Plus qu’une billetterie en ligne================================================================================= -->
+    <!-- =========================================Plus qu’une billetterie en ligne================================================================================= -->
     <div class="modal fade" id="exampleModalCenterBilleterie" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content pt-0">
@@ -1833,9 +1603,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
+                        <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1849,12 +1619,12 @@
                                 <div class="col-4 mb-3 pr-0 mr-0">
                                     <select class="" required>
                                         @foreach ($countries as $country)
-                                            <option value="{{$country->name}}" id="paysB">{{$country->name}} - {{$country->code}}</option>
+                                        <option value="{{$country->name}}" id="paysB">{{$country->name}} - {{$country->code}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-8 mb-3">
-                                    <input id="numberB" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    <input id="numberB" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
                                     <input id="emailB" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
@@ -1878,7 +1648,7 @@
     </div>
 
 
-<!-- =========================================Pourquoi opter pour CIBLE ================================================================================= -->
+    <!-- =========================================Pourquoi opter pour CIBLE ================================================================================= -->
     <div class="modal fade" id="exampleModalCenterRaison" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content pt-0">
@@ -1890,9 +1660,9 @@
                                                 </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('/clible_app.jpg')}}">
+                        <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1906,12 +1676,12 @@
                                 <div class="col-4 mb-3 pr-0 mr-0">
                                     <select class="" required>
                                         @foreach ($countries as $country)
-                                            <option value="{{$country->name}}" id="paysR">{{$country->name}} - {{$country->code}}</option>
+                                        <option value="{{$country->name}}" id="paysR">{{$country->name}} - {{$country->code}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col-8 mb-3">
-                                    <input id="numberR" placeholder="Numéro de téléphone"  type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                    <input id="numberR" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
                                     <input id="emailR" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
@@ -1926,10 +1696,7 @@
                     </div>
 
                 </div>
-                <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">D'accord</button>
-                                                </div> -->
+
             </div>
         </div>
     </div>
@@ -1938,31 +1705,24 @@
     <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter1Title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content pt-0">
-                <!-- <div class="modal-header" style="border: none;">
 
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div> -->
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
-                        <img src="{{ asset('/cible-app-modale-info.png')}}" class="container-fluid p-0 m-0" alt="">
-                        <!-- <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100" ></div>
-                                                        <img src="{{ asset("/logo.png")}}" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
-                                                    </div> -->
+                        <img src="{{ asset('images/cible-app-modale-info.png')}}" class="container-fluid p-0 m-0" alt="">
+
                         <div class="p-3">
                             <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
                             <p class="mb-0 pb-0">
                                 Votre adresse email ne sera pas publiée.
                             </p>
-                            <form id="Soyerform" class="comment-form text-left" >
+                            <form id="Soyerform" class="comment-form text-left">
 
                                 <div class="row my-4">
                                     <div class="col-12 mb-3">
-                                        <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="20" aria-describedby="nom-notes" required='required'  />
+                                        <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="20" aria-describedby="nom-notes" required='required' />
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required/>
+                                        <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />
                                     </div>
                                     <div class="col-12 mb-3 ">
 
@@ -1975,7 +1735,7 @@
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
                                         <select class="" required id="select_id_e">
                                             @foreach ($countries as $country)
-                                                <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
+                                            <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -1983,11 +1743,11 @@
                                         <input id="numeroE" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required />
                                     </div>
                                     <div class="col-12 text-center">
-                                    <span id="error_informE" class="text-danger"></span>
+                                        <span id="error_informE" class="text-danger"></span>
                                     </div>
                                     <div class="col-12 mt-4 d-flex justify-content-center">
 
-                                        <input name="submit" type="submit"  class="submit w-50 mx-auto" value="Envoyer" />
+                                        <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
                                     </div>
                                 </div>
 
@@ -1995,10 +1755,6 @@
                         </div>
 
                     </div>
-                    <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">D'accord</button>
-                                                </div> -->
 
                 </div>
             </div>
@@ -2052,18 +1808,20 @@
     filter: grayscale(100%) */
         }
     </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-         setTimeout(() => {
-            setCookieValueToInput('email','email');
-            setCookieValueToInput('nom','nomE');
-               setCookieValueToInput('numero','numberH');
-               setCookieValueToInput('email','emailH');
-               setCookieValueToInput('numero','numeroE');
-               setCookieValueToInput('email','emailE');
-               setCookieValueToInput('numero','telQ');
-               setCookieValueToInput('email','emailQ');
+        setTimeout(() => {
+            setCookieValueToInput('email', 'email');
+            setCookieValueToInput('nom', 'nomE');
+            setCookieValueToInput('numero', 'numberH');
+            setCookieValueToInput('email', 'emailH');
+            setCookieValueToInput('numero', 'numeroE');
+            setCookieValueToInput('email', 'emailE');
+            setCookieValueToInput('numero', 'telQ');
+            setCookieValueToInput('email', 'emailQ');
             //    console.log(document.cookie)
-           }, 10000);
+        }, 10000);
+
         function viewParticulier(element) {
             console.log(element.classList)
             jQuery("#" + element.id).removeClass("active");
@@ -2085,302 +1843,301 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        $('#appino_subscription').submit(function(e){
-           e.preventDefault();
-           let email = $("#email").val();
-           let _token = $("input[name=_token]").val();
-           let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        $('#appino_subscription').submit(function(e) {
+            e.preventDefault();
+            let email = $("#email").val();
+            let _token = $("input[name=_token]").val();
+            let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-           $.ajax({
-               url: "{{route('enregistre')}}",
-               type: "POST",
-               data:{
-                   email:email,
-                   _token:_token
-               },
-               success:function (response) {
-                   if (response){
-                    Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text : "Vos informations ont été prise en compte avec succès",
-                                    showConfirmButton: true,
-                                    })
-                       $('#appino_subscription')[0].reset();
-                       $('#error_email').hide();
-                   }
-                   setCookie('email',email,180);
-               },
-               error:function () {
-                   $('#error_email').html('<label> Email existe déjà</label>')
-               }
+            $.ajax({
+                url: "{{route('enregistre')}}",
+                type: "POST",
+                data: {
+                    email: email,
+                    _token: _token
+                },
+                success: function(response) {
+                    if (response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Envoyé avec succès',
+                            text: "Vos informations ont été prise en compte avec succès",
+                            showConfirmButton: true,
+                        })
+                        $('#appino_subscription')[0].reset();
+                        $('#error_email').hide();
+                    }
+                    setCookie('email', email, 180);
+                },
+                error: function() {
+                    $('#error_email').html('<label> Email existe déjà</label>')
+                }
 
-           });
+            });
         });
     </script>
     <script>
-        $('#inform').submit(function(e){
-           e.preventDefault();
-           let pays = $("#pays").val();
-           let email = $("#emailI").val();
-           let numero = $("#numberI").val();
-           let _token = $("input[name=_token]").val();
-           console.log(pays,email,numero)
+        $('#inform').submit(function(e) {
+            e.preventDefault();
+            let pays = $("#pays").val();
+            let email = $("#emailI").val();
+            let numero = $("#numberI").val();
+            let _token = $("input[name=_token]").val();
+            console.log(pays, email, numero)
 
-           $.ajax({
-               url: "{{route('informer-enregistre')}}",
-               type: "POST",
-               data:{
-                   pays:pays,
-                   numero:numero,
-                   email:email,
-                   _token:_token
-               },
-               success:function (response) {
-                   if (response){
-                       $('#inform')[0].reset();
-                       $('#error_inform').hide();
-                       $('#inform')[0].hide();
-                   }
-               },
-               error:function () {
-                   $('#error_inform').html('<label> Numéro ou Email existe déjà</label>')
-               }
+            $.ajax({
+                url: "{{route('informer-enregistre')}}",
+                type: "POST",
+                data: {
+                    pays: pays,
+                    numero: numero,
+                    email: email,
+                    _token: _token
+                },
+                success: function(response) {
+                    if (response) {
+                        $('#inform')[0].reset();
+                        $('#error_inform').hide();
+                        $('#inform')[0].hide();
+                    }
+                },
+                error: function() {
+                    $('#error_inform').html('<label> Numéro ou Email existe déjà</label>')
+                }
 
-           });
+            });
         });
     </script>
     <script>
-         const formComment = document.querySelector("#informHeader");
-         if(formComment){
-                    formComment.addEventListener('submit', function (e) {
-                        e.preventDefault();
-                        const formData =  new FormData(e.target)
-                        console.log(formData.entries())
-        //    e.preventDefault();
-           let pays = $("#paysH").val();
-           let email = $("#emailH").val();
-           let numero = $("#numberH").val();
-           let _token = $("input[name=_token]").val();
-           console.log(pays,$("#emailH").val(),numero)
-            //debugger
-           $.ajax({
-               url: "{{route('informer-enregistre')}}",
-               type: "POST",
-               data:{
-                   email:email,
-                   pays:pays,
-                   numero:numero,
-                   _token:_token
-               },
-               beforeSend : function () {
-                                let timerInterval;
-                                    Swal.fire({
-                                    title: 'Envoie en cours ...',
-                                    html: 'Chargement dans <b></b> milliseconds.',
-                                    timer: 1000000,
-                                    timerProgressBar: true,
-                                    didOpen: () => {
-                                        Swal.showLoading()
-                                        const b = Swal.getHtmlContainer().querySelector('b')
-                                        timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                        }, 100)
-                                    },
-                                    willClose: () => {
-                                        clearInterval(timerInterval)
-                                    }
-                                    }).then((result) => {
-                                    /* Read more about handling dismissals below */
-                                    if (result.dismiss === Swal.DismissReason.timer) {
-                                        console.log('I was closed by the timer')
-                                    }
-                                })
-                                setCookie('numero',numero,180);
-                                    setCookie('email',email,180);
+        const formComment = document.querySelector("#informHeader");
+        if (formComment) {
+            formComment.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(e.target)
+                console.log(formData.entries())
+                //    e.preventDefault();
+                let pays = $("#paysH").val();
+                let email = $("#emailH").val();
+                let numero = $("#numberH").val();
+                let _token = $("input[name=_token]").val();
+                console.log(pays, $("#emailH").val(), numero)
+                //debugger
+                $.ajax({
+                    url: "{{route('informer-enregistre')}}",
+                    type: "POST",
+                    data: {
+                        email: email,
+                        pays: pays,
+                        numero: numero,
+                        _token: _token
+                    },
+                    beforeSend: function() {
+                        let timerInterval;
+                        Swal.fire({
+                            title: 'Envoie en cours ...',
+                            html: 'Chargement dans <b></b> milliseconds.',
+                            timer: 1000000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                }, 100)
                             },
-               success:function (response) {
-                   if (response){
+                            willClose: () => {
+                                clearInterval(timerInterval)
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log('I was closed by the timer')
+                            }
+                        })
+                        setCookie('numero', numero, 180);
+                        setCookie('email', email, 180);
+                    },
+                    success: function(response) {
+                        if (response) {
 
 
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Envoyé avec succès',
+                                text: "Vos informations ont été prise en compte avec succès",
+                                showConfirmButton: true,
+                            })
+                            $('#informHeader')[0].reset();
+                            $('#error_informH').hide();
+                            $('#informHeader')[0].hide();
+                        }
+                    },
+                    error: function() {
+                        $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erreur !',
+                            text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                        })
+                    }
+
+                });
+            });
+        }
+    </script>
+    <script>
+        $('#informBilleterie').submit(function(e) {
+            e.preventDefault();
+            let pays = $("#paysB").val();
+            let email = $("#emailB").val();
+            let numero = $("#numberB").val();
+            let _token = $("input[name=_token]").val();
+            console.log(pays, email, numero)
+
+            $.ajax({
+                url: "{{route('informer-enregistre')}}",
+                type: "POST",
+                data: {
+                    pays: pays,
+                    numero: numero,
+                    email: email,
+                    _token: _token
+                },
+                success: function(response) {
+                    if (response) {
+                        $('#informBilleterie')[0].reset();
+                        $('#error_informB').hide();
+                        $('#informBilleterie')[0].hide();
+                    }
+                },
+                error: function() {
+                    $('#error_informB').html('<label> Numéro ou Email existe déjà</label>')
+                }
+
+            });
+        });
+    </script>
+    <script>
+        $('#informRaison').submit(function(e) {
+            e.preventDefault();
+            let pays = $("#paysR").val();
+            let email = $("#emailR").val();
+            let numero = $("#numberR").val();
+            let _token = $("input[name=_token]").val();
+            console.log(pays, email, numero)
+
+            $.ajax({
+                url: "{{route('informer-enregistre')}}",
+                type: "POST",
+                data: {
+                    pays: pays,
+                    numero: numero,
+                    email: email,
+                    _token: _token
+                },
+                success: function(response) {
+                    if (response) {
+                        $('#informRaison')[0].reset();
+                        $('#error_informR').hide();
+                        $('#informRaison')[0].hide();
+                    }
+                },
+                error: function() {
+                    $('#error_informR').html('<label> Numéro ou Email existe déjà</label>')
+                }
+
+            });
+        });
+    </script>
+    <script>
+        $('#Soyerform').submit(function(e) {
+            e.preventDefault();
+            let nom = $("#nomE").val();
+            let email = $("#emailE").val();
+            let numero = $("#numeroE").val();
+            let pays = $("#paysE").val();
+            let profession = $("#professionE").val();
+            let raison = $("#raisonE").val();
+            let _token = $("input[name=_token]").val();
+            console.log(nom, pays, email, numero, profession, raison)
+
+            $.ajax({
+                url: "{{route('essayer-enregistre')}}",
+                type: "POST",
+                data: {
+                    pays: pays,
+                    numero: numero,
+                    email: email,
+                    profession: profession,
+                    raison: raison,
+                    nom: nom,
+                    _token: _token
+                },
+                beforeSend: function() {
+                    let timerInterval;
                     Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text : "Vos informations ont été prise en compte avec succès",
-                                    showConfirmButton: true,
-                                    })
-                       $('#informHeader')[0].reset();
-                       $('#error_informH').hide();
-                       $('#informHeader')[0].hide();
-                   }
-               },
-               error:function () {
-                   $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                   Swal.fire({
-                                icon: 'error',
-                                title: 'Erreur !',
-                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                                })
-               }
-
-           });
-        });
-    }
-    </script>
-    <script>
-        $('#informBilleterie').submit(function(e){
-           e.preventDefault();
-           let pays = $("#paysB").val();
-           let email = $("#emailB").val();
-           let numero = $("#numberB").val();
-           let _token = $("input[name=_token]").val();
-           console.log(pays,email,numero)
-
-           $.ajax({
-               url: "{{route('informer-enregistre')}}",
-               type: "POST",
-               data:{
-                   pays:pays,
-                   numero:numero,
-                   email:email,
-                   _token:_token
-               },
-               success:function (response) {
-                   if (response){
-                       $('#informBilleterie')[0].reset();
-                       $('#error_informB').hide();
-                       $('#informBilleterie')[0].hide();
-                   }
-               },
-               error:function () {
-                   $('#error_informB').html('<label> Numéro ou Email existe déjà</label>')
-               }
-
-           });
-        });
-    </script>
-    <script>
-        $('#informRaison').submit(function(e){
-           e.preventDefault();
-           let pays = $("#paysR").val();
-           let email = $("#emailR").val();
-           let numero = $("#numberR").val();
-           let _token = $("input[name=_token]").val();
-           console.log(pays,email,numero)
-
-           $.ajax({
-               url: "{{route('informer-enregistre')}}",
-               type: "POST",
-               data:{
-                   pays:pays,
-                   numero:numero,
-                   email:email,
-                   _token:_token
-               },
-               success:function (response) {
-                   if (response){
-                       $('#informRaison')[0].reset();
-                       $('#error_informR').hide();
-                       $('#informRaison')[0].hide();
-                   }
-               },
-               error:function () {
-                   $('#error_informR').html('<label> Numéro ou Email existe déjà</label>')
-               }
-
-           });
-        });
-    </script>
-    <script>
-        $('#Soyerform').submit(function(e){
-           e.preventDefault();
-           let nom = $("#nomE").val();
-           let email = $("#emailE").val();
-           let numero = $("#numeroE").val();
-           let pays = $("#paysE").val();
-           let profession = $("#professionE").val();
-           let raison = $("#raisonE").val();
-           let _token = $("input[name=_token]").val();
-           console.log(nom,pays,email,numero,profession,raison)
-
-           $.ajax({
-               url: "{{route('essayer-enregistre')}}",
-               type: "POST",
-               data:{
-                   pays:pays,
-                   numero:numero,
-                   email:email,
-                   profession:profession,
-                   raison:raison,
-                   nom:nom,
-                   _token:_token
-               },
-               beforeSend : function () {
-                                let timerInterval;
-                                    Swal.fire({
-                                    title: 'Envoie en cours ...',
-                                    html: 'Chargement dans <b></b> milliseconds.',
-                                    timer: 1000000,
-                                    timerProgressBar: true,
-                                    didOpen: () => {
-                                        Swal.showLoading()
-                                        const b = Swal.getHtmlContainer().querySelector('b')
-                                        timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                        }, 100)
-                                    },
-                                    willClose: () => {
-                                        clearInterval(timerInterval)
-                                    }
-                                    }).then((result) => {
-                                    /* Read more about handling dismissals below */
-                                    if (result.dismiss === Swal.DismissReason.timer) {
-                                        console.log('I was closed by the timer')
-                                    }
-                                })
-                                setCookie('nom',nom,30);
-                                setCookie('numero',numero,30);
-                                    setCookie('email',email,30);
-                            },
-               success:function (response) {
-                   if (response){
+                        title: 'Envoie en cours ...',
+                        html: 'Chargement dans <b></b> milliseconds.',
+                        timer: 1000000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
+                    })
+                    setCookie('nom', nom, 30);
+                    setCookie('numero', numero, 30);
+                    setCookie('email', email, 30);
+                },
+                success: function(response) {
+                    if (response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Envoyé avec succès',
+                            text: "Vos informations ont été prise en compte avec succès",
+                            showConfirmButton: true,
+                        })
+                        $('#Soyerform')[0].reset();
+                        $('#error_informE').hide();
+                        $('#Soyerform')[0].hide();
+                    }
+                },
+                error: function() {
+                    $('#error_informE').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
                     Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text : "Vos informations ont été prise en compte avec succès",
-                                    showConfirmButton: true,
-                                    })
-                       $('#Soyerform')[0].reset();
-                       $('#error_informE').hide();
-                       $('#Soyerform')[0].hide();
-                   }
-               },
-               error:function () {
-                   $('#error_informE').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                   Swal.fire({
-                                icon: 'error',
-                                title: 'Erreur !',
-                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                                })
-               }
+                        icon: 'error',
+                        title: 'Erreur !',
+                        text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                    })
+                }
 
-           });
+            });
         });
     </script>
 
     <script>
         const formQues = document.querySelector("#poserQestion");
 
-        if(formQues){
-                let pays_ = "";
-                $('#select_id').on('change', function()
-                {
-                    pays_ = this.value;
-                    //alert(this.value); //or alert($(this).val());
-        });
-            formQues.addEventListener('submit', function (e) {
+        if (formQues) {
+            let pays_ = "";
+            $('#select_id').on('change', function() {
+                pays_ = this.value;
+                //alert(this.value); //or alert($(this).val());
+            });
+            formQues.addEventListener('submit', function(e) {
                 e.preventDefault();
-               // const formData =  new FormData(e.target)
+                // const formData =  new FormData(e.target)
                 //console.log(formData.entries())
                 //    e.preventDefault();
                 let pays = pays_;
@@ -2392,14 +2149,14 @@
                 $.ajax({
                     url: "{{route('storeFaqs')}}",
                     type: "POST",
-                    data:{
-                        email:email,
-                        pays:pays,
-                        tel:telQ,
-                        question:question,
-                        _token:_token
+                    data: {
+                        email: email,
+                        pays: pays,
+                        tel: telQ,
+                        question: question,
+                        _token: _token
                     },
-                    beforeSend : function () {
+                    beforeSend: function() {
                         let timerInterval;
                         Swal.fire({
                             title: 'Envoie en cours ...',
@@ -2423,14 +2180,14 @@
                             }
                         })
                     },
-                    success:function (response) {
-                        if (response){
+                    success: function(response) {
+                        if (response) {
 
 
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Envoyé avec succès',
-                                text : "Vos informations ont été prise en compte avec succès",
+                                text: "Vos informations ont été prise en compte avec succès",
                                 showConfirmButton: true,
                             })
                             $('#poserQestion')[0].reset();
@@ -2438,7 +2195,7 @@
                             $('#poserQestion')[0].hide();
                         }
                     },
-                    error:function () {
+                    error: function() {
                         $('#errorQ').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
                         Swal.fire({
                             icon: 'error',

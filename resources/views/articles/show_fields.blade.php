@@ -153,7 +153,7 @@
                                                   <button  type="submit" class="btn btn-primary py-2 px-3 d-flex" id="btn{{ $articleCommentaire->id}}" onclick="submitComment({{ $articleCommentaire->id}})" style="cursor:pointer">
                                                   Valider
                                                   <div class="alax-loader ml-2" >
-                                                    <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $articleCommentaire->id}}" class="loading" />
+                                                    <img alt="" src="{{ asset('images/ajax-loader.gif')}}" style="display:none" id="loader{{ $articleCommentaire->id}}" class="loading" />
                                                   </div>
                                                 </button>
                                                   @else
@@ -163,7 +163,7 @@
                                                   <button   type="submit" class="btn btn-warning py-2 px-3 d-flex" id="btn{{ $articleCommentaire->id}}" onclick="submitComment({{ $articleCommentaire->id}})" style="cursor:pointer">
                                                   Désactiver
                                                   <div class="alax-loader ml-2" >
-                                                    <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $articleCommentaire->id}}" class="loading" />
+                                                    <img alt="" src="{{ asset('images/ajax-loader.gif')}}" style="display:none" id="loader{{ $articleCommentaire->id}}" class="loading" />
                                                   </div>
                                                 </button>
                                                  

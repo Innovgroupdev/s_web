@@ -2,20 +2,25 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
     RewriteEngine On
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
-
-    # Send Requests To Front Controller...
+    # Remove trailing slash from non-filepath urls
+    RewriteCond %{REQUEST_URI} /(.+)/$
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteRule ^ https://www.%1%{REQUEST_URI}/%1 [R=301,L]
+    
+    ## Force HTTPS
+    RewriteCond %{HTTPS} !on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Include trailing slash on directory 
+    RewriteCond %{REQUEST_URI} !(.+)/$
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+)$ https://www.%1%{REQUEST_URI}/$1/ [R=301,L]
+    
+    # Force HTTPS and remove WWW
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR,NC]
+    RewriteCond %{HTTPS} off  
+    RewriteRule ^(.*)$ https://www.%1%{REQUEST_URI}/$1 [R=301,L]
 </IfModule>

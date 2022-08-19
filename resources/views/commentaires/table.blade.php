@@ -32,7 +32,7 @@
                     @if(strlen($commentaire->description) > 150)
                         ...
                 @endif
-                <div class="p-3 taxt-light bg-dark toolComment small" style="">
+                <div class="p-3 taxt-light bg-dark toolComment small">
                 {{$commentaire->description}}
                 </div>
             </td>
@@ -85,7 +85,7 @@
                                                   <button  type="submit" class="btn btn-primary py-2 px-3 d-flex justify-content-center" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer;width:115px">
                                                   Valider
                                                   <div class="alax-loader ml-2" >
-                                                    <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
+                                                    <img alt="" src="{{ asset('images/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
                                                   </div>
                                                 </button>
                                                   @else
@@ -95,7 +95,7 @@
                                                   <button   type="submit" class="btn btn-warning py-2 px-3 d-flex justify-content-center" id="btn{{ $commentaire->id}}" onclick="submitComment({{ $commentaire->id}})" style="cursor:pointer;width:115px">
                                                   Désactiver
                                                   <div class="alax-loader ml-2" >
-                                                    <img alt="" src="{{ asset('wp-content/plugins/appino-extensions/subscribers/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
+                                                    <img alt="" src="{{ asset('images/ajax-loader.gif')}}" style="display:none" id="loader{{ $commentaire->id}}" class="loading" />
                                                   </div>
                                                 </button>
                                                  
