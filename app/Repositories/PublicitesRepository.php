@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Publicites;
+use App\Models\Publicite;
 use App\Repositories\BaseRepository;
 
 /**
@@ -37,6 +37,6 @@ class PublicitesRepository extends BaseRepository
      **/
     public function model()
     {
-        return Publicites::class;
+        return Publicite::class;
     }
 }

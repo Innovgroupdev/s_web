@@ -25,12 +25,12 @@ class Essayer extends Model
     use HasFactory;
 
     public $table = 'essayers';
-    
 
     protected $dates = ['deleted_at'];
 
-
-
+    /**
+    attributes for class Essayer
+     */
     public $fillable = [
         'nom',
         'numero',
@@ -68,5 +68,4 @@ class Essayer extends Model
         'raison' => 'required'
     ];
 
-    
 }

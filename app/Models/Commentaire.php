@@ -30,7 +30,7 @@ class Commentaire extends Model
 
 
     /**
-     * Get the post that owns the comment.
+     * Get the article that owns the comment.
      */
     public function article()
     {
@@ -64,10 +64,9 @@ class Commentaire extends Model
      * @var array
      */
     public static $rules = [
-//        'description' => 'required',
-//        'name' => 'required',
-//        'email' => 'required'
+//       'description' => 'required',
+//       'name' => 'required',
+//       'email' => 'required'
     ];
-
 
 }

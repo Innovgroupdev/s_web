@@ -4,23 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCategoriesRequest;
 use App\Http\Requests\UpdateCategoriesRequest;
-use App\Models\Articles;
-use App\Models\Categories;
-use App\Models\User;
-use App\Repositories\CategoriesRepository;
-use App\Http\Controllers\AppBaseController;
+use App\Models\Article;
+use App\Models\Categorie;
+use App\Repositories\CategorieRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Flash;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Routing\Redirector;
 use Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CategoriesController extends AppBaseController
 {
-    /** @var CategoriesRepository $categoriesRepository*/
+    /** @var CategorieRepository $categoriesRepository*/
     private $categoriesRepository;
 
-    public function __construct(CategoriesRepository $categoriesRepo)
+    public function __construct(CategorieRepository $categoriesRepo)
     {
         $this->categoriesRepository = $categoriesRepo;
     }
@@ -30,51 +31,18 @@ class CategoriesController extends AppBaseController
      *
      * @param Request $request
      *
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index()
     {
         $categories = $this->categoriesRepository->all();
-
-        //$categories = Categories::all();
-
         return view('categories.index')->with('categories', $categories);
     }
-
-//    /**
-//     * Display a listing of the Categories.
-//     *
-//     * @param Request $request
-//     *
-//     * @return JsonResponse
-//     */
-//    public function index(Request $request)
-//    {
-//        $categories = Articles::with("category")->get();
-//        dd($categories);
-//        return (new JsonResponse($categories, 200));
-////        $categories = Categories::all();
-////        $articles = Articles::all();
-////        $items= collect();
-////        foreach ($categories as $category){
-////            foreach ($articles as $article){
-////                if($category->id == $article->categorie_id){
-////                    $items->push($article) ;
-////                }
-////            }
-////        }
-////        dd($items);
-//       // $category = Categories::find(3)->articles();
-//
-//        //$articles=$category->fresh('articles');
-//        //dd($category);
-//    }
-
 
     /**
      * Show the form for creating a new Categories.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -86,38 +54,27 @@ class CategoriesController extends AppBaseController
      *
      * @param CreateCategoriesRequest $request
      *
-     * @return Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function store(Request $request)
     {
-       // $input = $request->all();
         $request->validate([
-            'lib' => 'string|min:3',
-            // 'desc' => 'string|min:5',
-
+            'lib' => 'string|required|min:3'
         ]);
         $user = auth()->user();
-        //dd($user);
         $urlTitre = str_replace(' ', '-', strtolower($request->lib));
-        $categories = new Categories();
-        $categories->lib = $request->lib;
-        $categories->desc = $request->desc;
-        $categories->user_id = $user->id;
-        $categories->urlTitre = $urlTitre;
-        if(!empty($categories)){
-            $categories->save();
+        $categorie = new Categorie();
+        $categorie->lib = $request->lib;
+        $categorie->desc = $request->desc;
+        $categorie->user_id = $user->id;
+        $categorie->urlTitre = $urlTitre;
+        if(!empty($categorie)){
+            $categorie->save();
         }
         else{
             Flash::error('Categories empty');
         }
-
-
-        //dd($categorie);
-
-      //  $categories = $this->categoriesRepository->create($input);
-
         Flash::success('Catégorie créée avec succès.');
-
         return redirect(route('categories.index'));
     }
 
@@ -126,7 +83,7 @@ class CategoriesController extends AppBaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function show($id)
     {
@@ -146,7 +103,7 @@ class CategoriesController extends AppBaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
     public function edit($id)
     {
@@ -167,31 +124,26 @@ class CategoriesController extends AppBaseController
      * @param int $id
      * @param UpdateCategoriesRequest $request
      *
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
     public function update($id, Request $request)
     {
-        //$categories = $this->categoriesRepository->find($id);
         $request->validate([
             'lib'=>'required|string|min:3'
-
         ]);
 
-        $categories = Categories::find($id);
+        $categorie = Categorie::find($id);
 
-        if (empty($categories)) {
+        if (empty($categorie)) {
             Flash::error('Categories not found');
 
             return redirect(route('categories.index'));
         }
-        $categories->lib = $request->lib;
-        $categories->desc =$request->desc;
-        //dd($categories);
-        $categories->save();
+        $categorie->lib = $request->lib;
+        $categorie->desc =$request->desc;
+        $categorie->save();
 
-       // $categories = $this->categoriesRepository->update($request->all(), $id);
-
-        Flash::success('Catégories modifiée avec succès.');
+        Flash::success('Catégorie modifiée avec succès.');
 
         return redirect(route('categories.index'));
     }
@@ -201,26 +153,24 @@ class CategoriesController extends AppBaseController
      *
      * @param int $id
      *
+     * @return Application|Redirector|RedirectResponse
      * @throws \Exception
      *
-     * @return Response
      */
     public function destroy($id)
     {
-        $categories = $this->categoriesRepository->find($id);
+        $categorie = $this->categoriesRepository->find($id);
 
-        if (empty($categories)) {
+        if (empty($categorie)) {
             Flash::error('Catégorie non trouvée');
 
             return redirect(route('categories.index'));
         }
 
-       // $this->categoriesRepository->delete($id);
-
-        if(Articles::where('categorie_id',$id)->exists()){
+        if(Article::where('categorie_id',$id)->exists()){
             Flash::error('Cette action ne peut pas être effectuée; il existe déjà une catégorie dans un article');
         }else{
-            $article = Categories::where('id',$id)->forceDelete();
+             Categorie::where('id',$id)->forceDelete();
             Flash::success('Catégorie supprimée avec succès.');
         }
         return redirect(route('categories.index'));

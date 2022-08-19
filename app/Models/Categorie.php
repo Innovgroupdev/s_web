@@ -23,7 +23,6 @@ class Categorie extends Model
         return $this->hasMany(Article::class);
     }
 
-
     /**
      * Get the post that owns the comment.
      */
@@ -32,16 +31,17 @@ class Categorie extends Model
         return $this->belongsTo(User::class);
     }
 
-
+    /**
+     * date attribute
+     */
     protected $dates = ['deleted_at'];
 
-//   public function getArticleAttribute(){
-//       return $this->article->where('id', 'categorie_id')->get;
-//   }
-
+    /**
+    attributes for class Category
+     */
     public $fillable = [
         'lib',
-        'des'
+        'desc'
     ];
 
     /**
@@ -60,7 +60,7 @@ class Categorie extends Model
      * @var array
      */
     public static $rules = [
-        'lib' => 'required|min:3',
-        'desc' => 'required|min:5'
+        'lib' => 'required|min:3'
     ];
+
 }

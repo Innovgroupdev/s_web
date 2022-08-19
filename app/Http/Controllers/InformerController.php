@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateInformerRequest;
-use App\Http\Requests\UpdateInformerRequest;
 use App\Models\Informer;
 use App\Repositories\InformerRepository;
-use App\Http\Controllers\AppBaseController;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -26,9 +26,9 @@ class InformerController extends AppBaseController
      *
      * @param Request $request
      *
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index()
     {
         $informers = $this->informerRepository->all();
 
@@ -36,33 +36,9 @@ class InformerController extends AppBaseController
             ->with('informers', $informers);
     }
 
-    /**
-     * Show the form for creating a new Informer.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        return view('informers.create');
-    }
-
-    /**
-     * Store a newly created Informer in storage.
-     *
-     * @param CreateInformerRequest $request
-     *
-     * @return Response
-     */
-    public function store(CreateInformerRequest $request)
-    {
-        $input = $request->all();
-
-        $informer = $this->informerRepository->create($input);
-
-        Flash::success('Informer saved successfully.');
-
-        return redirect(route('informers.index'));
-    }
+    /*
+     * Store a newly created Informer
+    */
     public function enregistre(Request $request)
     {
         $request->validate([
@@ -76,96 +52,6 @@ class InformerController extends AppBaseController
             $informer->email = $request->email;
             $informer->save();
             return response()->json($informer);
-
-    }
-    /**
-     * Display the specified Informer.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function show($id)
-    {
-        $informer = $this->informerRepository->find($id);
-
-        if (empty($informer)) {
-            Flash::error('Informer not found');
-
-            return redirect(route('informers.index'));
-        }
-
-        return view('informers.show')->with('informer', $informer);
     }
 
-    /**
-     * Show the form for editing the specified Informer.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $informer = $this->informerRepository->find($id);
-
-        if (empty($informer)) {
-            Flash::error('Informer not found');
-
-            return redirect(route('informers.index'));
-        }
-
-        return view('informers.edit')->with('informer', $informer);
-    }
-
-    /**
-     * Update the specified Informer in storage.
-     *
-     * @param int $id
-     * @param UpdateInformerRequest $request
-     *
-     * @return Response
-     */
-    public function update($id, UpdateInformerRequest $request)
-    {
-        $informer = $this->informerRepository->find($id);
-
-        if (empty($informer)) {
-            Flash::error('Informer not found');
-
-            return redirect(route('informers.index'));
-        }
-
-        $informer = $this->informerRepository->update($request->all(), $id);
-
-        Flash::success('Informer updated successfully.');
-
-        return redirect(route('informers.index'));
-    }
-
-    /**
-     * Remove the specified Informer from storage.
-     *
-     * @param int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $informer = $this->informerRepository->find($id);
-
-        if (empty($informer)) {
-            Flash::error('Informer not found');
-
-            return redirect(route('informers.index'));
-        }
-
-        $this->informerRepository->delete($id);
-
-        Flash::success('Informer deleted successfully.');
-
-        return redirect(route('informers.index'));
-    }
 }
