@@ -35,7 +35,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle text-center" data-toggle="dropdown">
-                    <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-la-diva.png')}}"
+                    <img src="{{ asset('images/equipe-cible-la-diva.png')}}"
                          class="user-image img-circle elevation-2" alt="User Image">
                          <!-- <br>
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span> -->
@@ -43,7 +43,7 @@
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-secondary">
-                        <img src="{{ asset('wp-content/uploads/sites/9/2019/02/cible-app-la-diva.png')}}"
+                        <img src="{{ asset('images/equipe-cible-la-diva.png')}}"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>

@@ -19,7 +19,7 @@
 <div class="col-12 mb-3 d-flex justify-content-center">
 
                     <label class="h6 w-50 text-center mx-auto" for="motivationImages" id="labelMotivation" style="cursor: pointer !important; display: block !important">
-                        <img id="imageMotivation" required="" class=" mx-auto bg-secondary" src="{{asset('wp-content/uploads/sites/9/2019/02/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
+                        <img id="imageMotivation" required="" class=" mx-auto bg-secondary" src="{{asset('images/imgPlaceholder.png')}}" alt="avatar" style="max-height: 500px;border-radius:10px">
                         <iframe id="imageMotivationIframe" class="w-50 mx-auto d-none"  style="max-height: 100%; transform:translate(-100%)">
                         </iframe>
                         <p class="text-center mt-3">  Format recommandé : A4 (496 x 701 Pixels) | Taille maximale recommandé :  2MO</p>
