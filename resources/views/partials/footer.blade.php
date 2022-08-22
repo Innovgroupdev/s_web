@@ -95,18 +95,18 @@
         -moz-osx-font-smoothing: grayscale !important;
     }
 </style>
-<script src="{{ asset('js/js_composer_front.min31dc.js?ver=6.6.0')}}" id='wpb_composer_front_js-js'></script>
-<script src="{{ asset('js/bootstrap.min5152.js?ver=1.0')}}" id='bootstrap-js'></script>
-<script src="{{ asset('js/owl.carousel.min5152.js?ver=1.0')}}" id='carousel-js'></script>
-<script src="{{ asset('js/counter/jquery.countTo5152.js?ver=1.0')}}" id='jquery-counter-js'></script>
-<script src="{{ asset('js/jquery.appear5152.js?ver=1.0')}}" id='jquery-appear-js'></script>
-<script src="{{ asset('js/magnific-popup/jquery.magnific-popup.min5152.js?ver=1.0')}}" id='jquery-magnific-js'></script>
-<script src="{{ asset('js/skrollr5152.js?ver=1.0')}}" id='skrollr-js'></script>
-<script src="{{ asset('js/wow.min5152.js?ver=1.0')}}" id='wow-js'></script>
-<script src="{{ asset('js/jquery.countdown.min5152.js?ver=1.0')}}" id='jquery-countdown-js'></script>
-<script src="{{ asset('js/appino-custom5152.js?ver=1.0')}}" id='appino-custom-js'></script>
-<script src="{{ asset('js/particles/particles.min5152.js?ver=1.0')}}" id='jquery-particles-js'></script>
-<script src="{{ asset('js/particles/app5152.js?ver=1.0')}}" id='jquery-app-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/js_composer_front.min31dc.js?ver=6.6.0')}}" id='wpb_composer_front_js-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/bootstrap.min5152.js?ver=1.0')}}" id='bootstrap-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/owl.carousel.min5152.js?ver=1.0')}}" id='carousel-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/counter/jquery.countTo5152.js?ver=1.0')}}" id='jquery-counter-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/jquery.appear5152.js?ver=1.0')}}" id='jquery-appear-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/magnific-popup/jquery.magnific-popup.min5152.js?ver=1.0')}}" id='jquery-magnific-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/skrollr5152.js?ver=1.0')}}" id='skrollr-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/wow.min5152.js?ver=1.0')}}" id='wow-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/jquery.countdown.min5152.js?ver=1.0')}}" id='jquery-countdown-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/appino-custom5152.js?ver=1.0')}}" id='appino-custom-js'></script>
+<script rel="preconnect" src="{{ asset('/js/particles/particles.min5152.js?ver=1.0')}}" id='jquery-particles-js'></script>
+<script async rel="preconnect" src="{{ asset('/js/particles/app5152.js?ver=1.0')}}" id='jquery-app-js'></script>
 <script>
     jQuery(document).ready(function() {
         jQuery(document).on('submit', 'form#appino_subscription', function(e) {

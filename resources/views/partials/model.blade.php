@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js no-svg">
-
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-
 <head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <!-- Section référencement ! -->
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('images/logo.svg')}}" sizes="32x32"/>
-    <link rel="shortcut icon" href="{{ asset('images/logo.svg')}}" sizes="16x16"/>
-    <link rel="mask-icon" href="{{ asset('images/logo.svg')}}" color="#5bbad5">
+    <link rel="shortcut icon" href="{{ asset('/images/logo.svg')}}" sizes="32x32"/>
+    <link rel="shortcut icon" href="{{ asset('/images/logo.svg')}}" sizes="16x16"/>
+    <link rel="mask-icon" href="{{ asset('/images/logo.svg')}}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo.svg')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/images/logo.svg')}}">
 
 
     @yield('ref')
@@ -32,7 +29,7 @@
         })(document.documentElement);
     </script>
     <meta name='robots' content='max-image-preview:large' />
-
+    <link rel="preload" as="font">
 
     <script>
         window._wpemojiSettings = {
@@ -81,12 +78,12 @@
             })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)))
         }(window, document, window._wpemojiSettings);
     </script>
-    <link rel="stylesheet" href="{{ asset('css/styles.pure.css')}}">
-    <link rel='stylesheet' id='appino-style-css' href="{{ asset('css/appino-style5152.css')}}" media='all' />
-    <link rel='stylesheet' id='ionicons-css' href="{{ asset('css/ionicons.min5152.css')}}" media='all' />
-    <link rel='stylesheet' id='appino-responsive-css' href="{{ asset('css/responsive5152.css')}}" media='all' />
-    <link rel='stylesheet' id='owl-carousel-css' href="{{ asset('css/owl-carousel/owl.carousel5152.css')}}" media='all' />
-    <link rel='stylesheet' id='font-awesomefont-css' href="{{ asset('css/font-awesome5152.css')}}" media='all' />
+    <link async rel="stylesheet" rel="preconnect" href="{{ asset('/css/styles.pure.css')}}" media='all'>
+    <link async rel='stylesheet' rel="preconnect" id='appino-style-css' href="{{ asset('/css/appino-style5152.css')}}" media='all' />
+    <link async rel='stylesheet' rel="preconnect" id='ionicons-css' href="{{ asset('/css/ionicons.min5152.css')}}" media='all' />
+    <link async rel='stylesheet' rel="preconnect" id='appino-responsive-css' href="{{ asset('/css/responsive5152.css')}}" media='all' />
+    <link async rel='stylesheet' rel="preconnect" id='owl-carousel-css' href="{{ asset('/css/owl-carousel/owl.carousel5152.css')}}" media='all' />
+    <link async rel='stylesheet' rel="preconnect" id='font-awesomefont-css' href="{{ asset('/css/font-awesome5152.css')}}" media='all' />
 </head>
 
 <body data-spy="scroll" data-offset="80" class="home page-template-default page page-id-543 theme-appino woocommerce-no-js appino-front-page has-header-image page-two-column colors-light wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
@@ -126,7 +123,10 @@
     select {
         border: none !important
     }
+    @font-face {
+    font-display: swap;
+    }
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script rel="preconnect"  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </html>
