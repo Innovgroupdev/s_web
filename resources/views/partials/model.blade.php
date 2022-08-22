@@ -10,11 +10,19 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ asset('images/logo.svg')}}" sizes="32x32"/>
+    <link rel="shortcut icon" href="{{ asset('images/logo.svg')}}" sizes="16x16"/>
+    <link rel="mask-icon" href="{{ asset('images/logo.svg')}}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/logo.svg')}}">
+
+
     @yield('ref')
     <!-- End section référencement ! -->
 
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="{{ asset('image/logo.svg')}}" />
+   
     <script>
         document.documentElement.className = document.documentElement.className + ' yes-js js_active js'
     </script>
@@ -32,9 +40,9 @@
             "ext": ".png",
             "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/",
             "svgExt": ".svg",
-            "source": {
-                "concatemoji": "https:\/\/wordpress.iqonic.design\/appino\/particles-3\wpincludes\/js\wpemoji-release.min.js?ver=5.7.6"
-            }
+            // "source": {
+            //     "concatemoji": "https:\/\/wordpress.iqonic.design\/appino\/particles-3\wpincludes\/js\wpemoji-release.min.js?ver=5.7.6"
+            // }
         };
         ! function(e, a, t) {
             var n, r, o, i = a.createElement("canvas"),

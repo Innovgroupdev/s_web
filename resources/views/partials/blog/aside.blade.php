@@ -125,38 +125,38 @@
     }
 </style>
 <script>
-    jQuery(document).ready(function() {
-        jQuery(document).on('submit', 'form#appino_subscription', function(e) {
-            e.preventDefault();
-            var sub_name = jQuery('#subnewsname').val();
-            var sub_email = jQuery('#subnewsemail').val();
-            //alert(sub_email);
-            jQuery.ajax({
-                url: "https://wordpress.iqonic.design/appino/particles-3/wp-admin/admin-ajax.php",
-                type: 'POST',
-                data: {
-                    sub_email: sub_email,
-                    action: 'check_info_details'
-                },
-                success: function(results) {
-                    jQuery('.epic_results').html(results);
-                    jQuery('#subnewsemail').val('');
-                },
-                complete: function() {
-                    jQuery('.loading').hide();
-                    jQuery(".news_text").show();
-                    jQuery("#sidebar_button").show();
-                    jQuery('.epic_results').show();
-                },
-                beforeSend: function() {
-                    jQuery('.loading').show();
-                    jQuery(".news_text").show();
-                    jQuery("#sidebar_button").show();
-                    jQuery('.epic_results').hide();
-                }
-            });
+    // jQuery(document).ready(function() {
+    //     jQuery(document).on('submit', 'form#appino_subscription', function(e) {
+    //         e.preventDefault();
+    //         var sub_name = jQuery('#subnewsname').val();
+    //         var sub_email = jQuery('#subnewsemail').val();
+    //         //alert(sub_email);
+    //         jQuery.ajax({
+    //             url: "https://wordpress.iqonic.design/appino/particles-3/wp-admin/admin-ajax.php",
+    //             type: 'POST',
+    //             data: {
+    //                 sub_email: sub_email,
+    //                 action: 'check_info_details'
+    //             },
+    //             success: function(results) {
+    //                 jQuery('.epic_results').html(results);
+    //                 jQuery('#subnewsemail').val('');
+    //             },
+    //             complete: function() {
+    //                 jQuery('.loading').hide();
+    //                 jQuery(".news_text").show();
+    //                 jQuery("#sidebar_button").show();
+    //                 jQuery('.epic_results').show();
+    //             },
+    //             beforeSend: function() {
+    //                 jQuery('.loading').show();
+    //                 jQuery(".news_text").show();
+    //                 jQuery("#sidebar_button").show();
+    //                 jQuery('.epic_results').hide();
+    //             }
+    //         });
 
-        });
+    //     });
 
-    });
+    // });
 </script>
