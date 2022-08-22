@@ -23,4 +23,7 @@
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR,NC]
     RewriteCond %{HTTPS} off  
     RewriteRule ^(.*)$ https://www.%1%{REQUEST_URI}/$1 [R=301,L]
+
+    Header set Access-Control-Allow-Origin: *
+
 </IfModule>
