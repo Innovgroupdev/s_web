@@ -47,5 +47,28 @@ class NewsController extends AppBaseController
             return response()->json($news);
         }
     }
+    /**
+     * @author Charles
+     * @return int
+     * This function returns the total of souscriptions received
+     */
+
+     public function totalNewsSouscription()
+     {
+        $totalOfSouscriptions = DB::table('news')->count();
+
+        return $totalOfSouscriptions;
+     }
+
+    /**
+     * @author Charles
+     * @return int
+     * This function returns the total of souscriptions group by Country
+     */
+
+     public function TotalSouscriptionsperCountry()
+     {
+        
+     }
 
 }

@@ -248,4 +248,16 @@ class ArticlesController extends AppBaseController
         $articleCommentaires = Article::find($id)->commentaires;
         return  $articleCommentaires;
     }
+    /**
+     * @author Charles
+     * This method returns The tottal of vues for an article
+     * @return int
+     * @param $id to know the article for witch we want the numberofvues
+     */
+    public function NumberofVues($id)
+    {
+        $numberofvues = DB::table('articles')->select('nbvue')->where('id', $id)->get();
+
+        return $numberofvues;
+    }
 }

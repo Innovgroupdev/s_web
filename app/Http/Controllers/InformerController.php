@@ -54,4 +54,29 @@ class InformerController extends AppBaseController
             return response()->json($informer);
     }
 
+    /**
+     * @author Charles
+     * @return int
+     * This function will return the number of Total Informers
+     */
+    public function TotalInformers()
+    {
+        $totalofInformers = BD::table('informers')->count();
+
+        return $TotalofInformers;
+    }
+
+    /**
+     * @author Charles
+     * @return int
+     * This function will return the number of Informers Group by Country
+     */
+
+     public function TotalInformersPerCountry()
+     {
+        $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
+        ->groupBy('pays')
+        ->get();
+     }
+
 }
