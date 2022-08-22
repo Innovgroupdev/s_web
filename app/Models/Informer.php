@@ -22,12 +22,12 @@ class Informer extends Model
     use HasFactory;
 
     public $table = 'informers';
-    
 
     protected $dates = ['deleted_at'];
 
-
-
+    /**
+    attributes for class Informer
+     */
     public $fillable = [
         'email',
         'pays',
@@ -56,5 +56,4 @@ class Informer extends Model
         'numero' => 'required'
     ];
 
-    
 }

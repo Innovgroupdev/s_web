@@ -17,23 +17,21 @@ class Article extends Model
 
     /**
      * @return BelongsTo
-     * @description get the category for the blog post.
+     * @description get the category.
      */
     public function categorie()
     {
         return $this->belongsTo(Categorie::class);
     }
 
-
     /**
      * @return BelongsTo
-     * @description get the category for the blog post.
+     * @description get the user.
      */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
 
     /**
      * Get the comments for the blog article.
@@ -43,26 +41,27 @@ class Article extends Model
         return $this->hasMany(Commentaire::class);
     }
 
-  
+    /**
+    get the total number for the valid comment
+     */
     public function getCommentairesValidCount()
     {
         $j = 0;
         $tab = $this->commentaires;
-    
+
         foreach($tab as $articleCommentaire)
         {
-            // dd($articleCommentaire);
             if($articleCommentaire->is_valid)
                 {
                     $j ++;
-                    // dd($j);
                 }
         }
-      
         return $j;
-  
     }
 
+  /**
+   attributes for class Article
+  */
     public $fillable = [
         'libelle',
         'desc',
@@ -104,4 +103,5 @@ class Article extends Model
         'contenu' => 'required',
         'categorie_id' => 'required'
     ];
+
 }

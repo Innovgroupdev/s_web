@@ -77,7 +77,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer text-right">
-       
+
         <strong>Copyright &copy; 2022 <a href="http://www.innovgroup.tech/" target="_blank">DIGITAL INNOV GROUP</a>.</strong> All rights
         reserved.
     </footer>

@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePublicitesRequest;
 use App\Http\Requests\UpdatePublicitesRequest;
-use App\Models\Categories;
-use App\Models\Publicites;
+use App\Models\Publicite;
 use App\Repositories\PublicitesRepository;
-use App\Http\Controllers\AppBaseController;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Flash;
-use phpDocumentor\Reflection\Types\Null_;
+use Illuminate\Routing\Redirector;
 use Response;
 
 class PublicitesController extends AppBaseController
@@ -24,13 +26,12 @@ class PublicitesController extends AppBaseController
     }
 
     /**
-     * Display a listing of the Publicites.
+     * Display a listing of the advertising.
      *
-     * @param Request $request
      *
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index()
     {
         $publicites = $this->publicitesRepository->all();
 
@@ -39,9 +40,9 @@ class PublicitesController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new Publicites.
+     * Show the form for creating a new advertising.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -49,56 +50,50 @@ class PublicitesController extends AppBaseController
     }
 
     /**
-     * Store a newly created Publicites in storage.
+     * Store a newly created advertising in storage.
      *
      * @param CreatePublicitesRequest $request
      *
-     * @return Response
+     * @return Application|RedirectResponse|Redirector
      */
     public function store(Request $request)
     {
-       // $input = $request->all();
         $request->validate([
             'libelle'=>'required|string|min:3',
             'img_url'=>'required'
         ]);
         $user = auth()->user();
-        $pub = new Publicites();
+        $pub = new Publicite();
         $pub->libelle = $request->libelle;
         $pub->user_id = $user->id;
-        // dd(time().$request->file('required'));
         $fileName = time().$request->file('img_url')->getClientOriginalName();
         $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
         $pub["img_url"] = '/storage/'.$path;
-        //dd($pub);
-
         $pub->save();
 
-        //$publicites = $this->publicitesRepository->create($input);
-
-        Flash::success('Publicites saved successfully.');
+        Flash::success('Publicité enregistrée avec succès.');
 
         return redirect(route('publicites.index'));
     }
 
     /**
-     * Display the specified Publicites.
+     * Display the specified Publicite.
      *
      * @param int $id
      *
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
     public function show($id)
     {
-        $publicites = $this->publicitesRepository->find($id);
+        $publicite = $this->publicitesRepository->find($id);
 
-        if (empty($publicites)) {
-            Flash::error('Publicites not found');
+        if (empty($publicite)) {
+            Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
 
-        return view('publicites.show')->with('publicites', $publicites);
+        return view('publicites.show')->with('publicites', $publicite);
     }
 
     /**
@@ -106,100 +101,84 @@ class PublicitesController extends AppBaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
     public function edit($id)
     {
-        $publicites = $this->publicitesRepository->find($id);
-        if (empty($publicites)) {
+        $publicite = $this->publicitesRepository->find($id);
+        if (empty($publicite)) {
             Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
 
-        return view('publicites.edit')->with('publicites', $publicites);
+        return view('publicites.edit')->with('publicites', $publicite);
     }
 
     /**
-     * Update the specified Publicites in storage.
+     * Update the specified Publicite in storage.
      *
      * @param int $id
      * @param UpdatePublicitesRequest $request
      *
-     * @return Response
+     * @return Application|Redirector|RedirectResponse
      */
     public function update($id, Request $request)
     {
         $request->validate([
             'libelle'=>'required'
         ]);
-        //$publicites = $this->publicitesRepository->find($id);
-        $publicites = Publicites::find($id);
+        $publicite = Publicite::find($id);
 
-        if (empty($publicites)) {
+        if (empty($publicite)) {
             Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
 
-        //$fileName = time().$request->file('img_url')->getClientOriginalName();
-        // dd($fileName);
-        //$path = $request->file('img_url')->storeAs('images', $fileName, 'public');
         $user = auth()->user();
         if($request->file('img_url') != null){
 
-            $publicites->libelle = $request->libelle;
-            
+            $publicite->libelle = $request->libelle;
+
             $fileName = time().$request->file('img_url')->getClientOriginalName();
             $path = $request->file('img_url')->storeAs('images', $fileName, 'public');
-
-
-            $publicites->img_url = '/storage/'.$path;
-            $publicites->user_id = $user->id;
+            $publicite->img_url = '/storage/'.$path;
+            $publicite->user_id = $user->id;
             Flash::success('Publicités modifiée avec succès.');
-            $publicites->save();
+            $publicite->save();
         }
         else{
-            $publicites->libelle = $request->libelle;
+            $publicite->libelle = $request->libelle;
             Flash::success('Publicités modifiée avec succès.');
-            $publicites->save();
+            $publicite->save();
         }
         return redirect(route('publicites.index'));
     }
 
     /**
-     * Remove the specified Publicites from storage.
+     * Remove the specified advertising from storage.
      *
      * @param int $id
      *
+     * @return Application|Redirector|RedirectResponse
      * @throws \Exception
      *
-     * @return Response
      */
     public function destroy($id)
     {
-        $publicites = $this->publicitesRepository->find($id);
+        $publicite = $this->publicitesRepository->find($id);
 
-        if (empty($publicites)) {
+        if (empty($publicite)) {
             Flash::error('Publicité non trouvée');
 
             return redirect(route('publicites.index'));
         }
-
-       // $this->publicitesRepository->delete($id);
-        $publicites->forceDelete();
+        $publicite->forceDelete();
 
         Flash::success('Publicité supprimée.');
 
         return redirect(route('publicites.index'));
     }
-    public function upload($request){
-        $image_parts = explode(";base64,", $request['image']);
-        $image_type_aux = explode("image/", $image_parts[0]);
-        $image_type = $image_type_aux[1];
-        $image_base64 = base64_decode($image_parts[1]);
-        $file = $folderPath . uniqid() . '.png';
-        file_put_contents($file, $image_base64);
-        echo json_encode(["image uploaded successfully."]);
-    }
+
 }

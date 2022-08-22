@@ -24,11 +24,11 @@ class Faq extends Model
 
     public $table = 'faqs';
 
-
     protected $dates = ['deleted_at'];
 
-
-
+    /**
+    attributes for class Faq
+     */
     public $fillable = [
         'pays',
         'email',
@@ -59,6 +59,5 @@ class Faq extends Model
         'tel' => 'required|integer',
         'question' => 'required'
     ];
-
 
 }

@@ -24,7 +24,6 @@ class User extends Authenticatable
         'password',
     ];
 
-
     /**
      * @return HasMany
      * @description get all articles for the category
@@ -52,4 +51,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

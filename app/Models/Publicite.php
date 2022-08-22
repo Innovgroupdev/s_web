@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Publicites
+ * Class Publicite
  * @package App\Models
  * @version July 27, 2022, 11:31 am UTC
  *
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $img_url
  * @property integer $user_id
  */
-class Publicites extends Model
+class Publicite extends Model
 {
     use SoftDeletes;
 
@@ -23,11 +23,11 @@ class Publicites extends Model
 
     public $table = 'publicites';
 
-
     protected $dates = ['deleted_at'];
 
-
-
+    /**
+    attributes for class advertising
+     */
     public $fillable = [
         'libelle',
         'img_url',
@@ -56,5 +56,5 @@ class Publicites extends Model
         'user_id' => 'required'
     ];
 
-
 }
+
