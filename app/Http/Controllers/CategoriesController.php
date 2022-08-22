@@ -59,7 +59,7 @@ class CategoriesController extends AppBaseController
     public function store(Request $request)
     {
         $request->validate([
-            'lib' => 'string|required|min:3'
+            'lib' => 'string|required|min:3|unique:categories'
         ]);
         $user = auth()->user();
         $urlTitre = str_replace(' ', '-', strtolower($request->lib));
