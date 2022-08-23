@@ -8,7 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use App\Http\HomeController;
+use App\Http\VisitLogController;
 use Flash;
 use Response;
 
@@ -64,7 +64,7 @@ class InformerController extends AppBaseController
     {
         $totalofInformers = BD::table('informers')->count();
 
-        $totalVisits = HomeController::getVisitorsNumber();
+        $totalVisits = VisitLogController::NumberofVisitors();
 
         $percentage = (($totalInformers * $totalVisits) / 100);
 
