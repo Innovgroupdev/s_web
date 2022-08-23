@@ -254,9 +254,11 @@ class ArticlesController extends AppBaseController
      * @return int
      * @param $id to know the article for witch we want the numberofvues
      */
-    public function NumberofVues($id)
+    public static function NumberofVues()
     {
-        $numberofvues = DB::table('articles')->select('nbvue')->where('id', $id)->get();
+        $numberofvues = DB::table('articles')
+        ->select('libelle', 'nbvue')
+        ->get();
 
         return $numberofvues;
     }

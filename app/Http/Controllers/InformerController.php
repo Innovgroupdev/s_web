@@ -7,8 +7,9 @@ use App\Repositories\InformerRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Http\VisitLogController;
+use App\Http\Controllers\VisitLogController;
 use Flash;
 use Response;
 
@@ -60,9 +61,9 @@ class InformerController extends AppBaseController
      * @return int
      * This function will return the number of Total Informers
      */
-    public function TotalInformers()
+    public static function TotalInformers()
     {
-        $totalofInformers = BD::table('informers')->count();
+        $totalInformers = DB::table('informers')->count();
 
         $totalVisits = VisitLogController::NumberofVisitors();
 
@@ -77,12 +78,12 @@ class InformerController extends AppBaseController
      * This function will return the number of Informers Group by Country
      */
 
-     public function TotalInformersPerCountry()
+     public static function TotalInformersPerCountry()
      {
         $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
         ->groupBy('pays')
         ->get();
-        return $informerspercountry;
+        return dd($informerspercountry);
      }
 
 }

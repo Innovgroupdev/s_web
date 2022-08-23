@@ -7,6 +7,7 @@ use App\Repositories\NewsRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -53,11 +54,11 @@ class NewsController extends AppBaseController
      * This function returns the total of souscriptions received
      */
 
-     public function totalNewsSouscription()
+     public static function totalNewsSouscription()
      {
         $totalOfSouscriptions = DB::table('news')->count();
 
-        return $totalOfSouscriptions;
+        return dd($totalOfSouscriptions);
      }
 
     /**

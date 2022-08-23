@@ -37,7 +37,7 @@ class VisitLogController extends Controller
      * Cette fonction va compter le nombre de visiteurs dans la table Visistslog et va retourner le nombre
      * @return int
      */
-    public function NumberofVisitors()
+    public static function NumberofVisitors()
     {
         $nombreVisiteurs = DB::table('visitslog')->count();
 

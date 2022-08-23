@@ -38,6 +38,7 @@
 
 <?php
 use App\Http\Controllers\VisitLogController;
+
 VisitLogController::CompterVisiteurs();
 ?>
 @endsection
