@@ -1,3 +1,4 @@
+<link async rel='stylesheet' rel="preconnect" id='font-awesomefont-css' href="{{ asset('/css/font-awesome5152.css')}}" media='all' />
 <!-- Libelle Field -->
 <div class="col-sm-12 text-center">
     <!-- {!! Form::label('libelle', 'Libelle:') !!}  -->
@@ -39,6 +40,31 @@
     <!-- {{ $articles->contenu }} -->
     {!!$articles->contenu  !!}
 </div>
+<div class="d-flex  justify-content-end pt-4 pb-3">
+                          
+                          <div class="px-3 py-2  mr-3 my-auto share1" style="border-radius:50%;background-color:#1E83C7;width:max-content">
+                              <a href="https://twitter.com/intent/tweet?url={{url('/')}}/blog/{{$articles->urlTitre}}" target="blank" title=" Partager sur Twitter">
+                                  <i class="fa fa-twitter my-auto" style="color:#fff;font-size:1.2em"></i>
+                              </a>
+                          </div>
+                          <div class="px-3 py-2 mr-3 my-auto share1" style="border-radius:50%;background-color:#06047E;width:max-content">
+                              <a href="https://www.facebook.com/sharer/sharer.php?u={{url('/')}}/blog/{{$articles->urlTitre}}"  target="blank" title=" Partager sur Facebook">
+                                  <i class="fa fa-facebook-f my-auto " style="color:#fff;font-size:1.2em"></i>
+                              </a>
+                          </div>
+                          <div class="px-3 py-2  mr-3 my-auto share1" style="border-radius:50%;background-color:#068317;width:max-content">
+                              <a href="https://api.whatsapp.com/send?text={{url('/')}}/blog/{{$articles->urlTitre}} " data-action="share/whatsapp/share" target="blank" title="Partager sur Whatsapp">
+                                  <i class="fa fa-whatsapp my-auto " style="color:#fff;font-size:1.2em"></i>
+                              </a>
+                          </div>
+                          <div class="px-3 py-2 mr-3 my-auto share1" style="border-radius:50%;background-color:#0D5D92;width:max-content">
+
+                              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url('/')}}/blog/{{$articles->urlTitre}}" target="blank" title=" Partager sur Linkedin">
+                                  <i class="fa fa-linkedin my-auto " style="color:#fff;font-size:1.2em"></i>
+                              </a>
+                          </div>
+
+                      </div>
 <!-- Tags Field -->
 <div class="col-sm-12">
     {!! Form::label('tags', 'Tags:') !!}
