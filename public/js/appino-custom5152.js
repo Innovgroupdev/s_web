@@ -35,37 +35,81 @@ Design and Developed by: iqonicthemes.in
 
     "use strict";
     jQuery(window).on('load', function () {
+           /*************************
+             Owl-carousel 
+        *************************/
+             jQuery('.owl-carousel').each(function () {
+                var $carousel = jQuery(this);
+                $carousel.owlCarousel({
+                    items: $carousel.data("items"),
+                    loop: $carousel.data("loop"),
+                    margin: $carousel.data("margin"),
+                    nav: $carousel.data("nav"),
+                    dots: $carousel.data("dots"),
+                    autoplay: $carousel.data("autoplay"),
+                    autoplayTimeout: $carousel.data("autoplay-timeout"),
+                    navText: ["<i class='fa fa-angle-left fa-2x'></i>", "<i class='fa fa-angle-right fa-2x'></i>"],
+                    responsiveClass: true,
+                    responsive: {
+                        // breakpoint from 0 up
+                        0: {
+                            items: $carousel.data("items-mobile-sm"),
+                            nav: false,
+                            dots: true
+                        },
+                        // breakpoint from 480 up
+                        480: {
+                            items: $carousel.data("items-mobile"),
+                            nav: false,
+                            dots: true
+                        },
+                        // breakpoint from 786 up
+                        786: {
+                            items: $carousel.data("items-tab")
+                        },
+                        // breakpoint from 1023 up
+                        1023: {
+                            items: $carousel.data("items-laptop")
+                        },
+                        1199: {
+                            items: $carousel.data("items")
+                        }
+                    }
+                });
+            });
+    
+    });
 
         /*************************
             Loader
         *************************/
-        jQuery("#load").fadeOut();
-        jQuery("#loading").delay(0).fadeOut("slow");
-        jQuery('ul.page-numbers').removeClass('page-numbers').addClass('pagination justify-content-center');
+        // jQuery("#load").fadeOut();
+        // jQuery("#loading").delay(0).fadeOut("slow");
+        // jQuery('ul.page-numbers').removeClass('page-numbers').addClass('pagination justify-content-center');
 
 
 
-        if (!jQuery("body").hasClass("home")) {
+        // if (!jQuery("body").hasClass("home")) {
 
-            if (jQuery("body").hasClass("page-id-542")) {
-                $href = jQuery('a.navbar-brand').attr('href') + "home-2/";
-            } else if (jQuery("body").hasClass("page-id-543")) {
-                $href = jQuery('a.navbar-brand').attr('href') + "home-3/";
-            } else {
-                var $href = jQuery('a.navbar-brand').attr('href');
-            }
-            jQuery('.navbar ul li a, .widget ul.menu li a').each(function () {
-                var $ahref = jQuery(this).attr('href');
-                if (!$ahref) {
-                    return;
-                } // If data is undefined return.
-                if ($ahref.indexOf("#") != -1) {
-                    var $finalurl = $href + $ahref;
-                    jQuery(this).attr("href", $finalurl)
-                }
-            });
-        }
-        jQuery('.page-id-542, .page-id-543').addClass('home');
+        //     if (jQuery("body").hasClass("page-id-542")) {
+        //         $href = jQuery('a.navbar-brand').attr('href') + "home-2/";
+        //     } else if (jQuery("body").hasClass("page-id-543")) {
+        //         $href = jQuery('a.navbar-brand').attr('href') + "home-3/";
+        //     } else {
+        //         var $href = jQuery('a.navbar-brand').attr('href');
+        //     }
+        //     jQuery('.navbar ul li a, .widget ul.menu li a').each(function () {
+        //         var $ahref = jQuery(this).attr('href');
+        //         if (!$ahref) {
+        //             return;
+        //         } // If data is undefined return.
+        //         if ($ahref.indexOf("#") != -1) {
+        //             var $finalurl = $href + $ahref;
+        //             jQuery(this).attr("href", $finalurl)
+        //         }
+        //     });
+        // }
+        // jQuery('.page-id-542, .page-id-543').addClass('home');
 
 
         /*************************
@@ -219,49 +263,7 @@ Design and Developed by: iqonicthemes.in
         });
 
 
-        /*************************
-             Owl-carousel 
-        *************************/
-        jQuery('.owl-carousel').each(function () {
-            var $carousel = jQuery(this);
-            $carousel.owlCarousel({
-                items: $carousel.data("items"),
-                loop: $carousel.data("loop"),
-                margin: $carousel.data("margin"),
-                nav: $carousel.data("nav"),
-                dots: $carousel.data("dots"),
-                autoplay: $carousel.data("autoplay"),
-                autoplayTimeout: $carousel.data("autoplay-timeout"),
-                navText: ["<i class='fa fa-angle-left fa-2x'></i>", "<i class='fa fa-angle-right fa-2x'></i>"],
-                responsiveClass: true,
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: $carousel.data("items-mobile-sm"),
-                        nav: false,
-                        dots: true
-                    },
-                    // breakpoint from 480 up
-                    480: {
-                        items: $carousel.data("items-mobile"),
-                        nav: false,
-                        dots: true
-                    },
-                    // breakpoint from 786 up
-                    786: {
-                        items: $carousel.data("items-tab")
-                    },
-                    // breakpoint from 1023 up
-                    1023: {
-                        items: $carousel.data("items-laptop")
-                    },
-                    1199: {
-                        items: $carousel.data("items")
-                    }
-                }
-            });
-        });
-
+     
 
         /*************************
             Tab Features
@@ -408,7 +410,7 @@ Design and Developed by: iqonicthemes.in
                 jQuery(this).next('.children, .sub-menu').slideToggle();
             });
         }
-    });
+    
     jQuery(document).ready(function () {
 
         jQuery(window).on('resize', function () {
