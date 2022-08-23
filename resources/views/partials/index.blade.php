@@ -35,9 +35,13 @@
         ]
     }
 </script>
+
+<?php
+use App\Http\Controllers\VisitLogController;
+VisitLogController::CompterVisiteurs();
+?>
 @endsection
 @section('content')
-
 <div class="site-content-contain">
     <div id="content" class="site-content">
 
@@ -1759,7 +1763,6 @@
                 </div>
             </div>
         </div>
-
     </div><!-- .site-content-contain -->
     <style>
         .tab-content::before {

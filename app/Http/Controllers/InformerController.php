@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Http\HomeController;
 use Flash;
 use Response;
 
@@ -63,7 +64,11 @@ class InformerController extends AppBaseController
     {
         $totalofInformers = BD::table('informers')->count();
 
-        return $TotalofInformers;
+        $totalVisits = HomeController::getVisitorsNumber();
+
+        $percentage = (($totalInformers * $totalVisits) / 100);
+
+        return $percentage;
     }
 
     /**
@@ -77,6 +82,7 @@ class InformerController extends AppBaseController
         $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
         ->groupBy('pays')
         ->get();
+        return $informerspercountry;
      }
 
 }
