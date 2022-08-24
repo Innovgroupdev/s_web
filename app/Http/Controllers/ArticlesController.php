@@ -255,11 +255,11 @@ class ArticlesController extends AppBaseController
      */
     public static function NumberofVues()
     {
-        $numberofvues = Article::select('id', 'nbvue')->get();
+        $numberofvues = Article::select('libelle','id', 'nbvue')->get();
 
-        return dd(response()->json([
+        return response()->json([
             "message" => 'Data retrieved successfully',
             "data" => $numberofvues
-        ],200));
+        ],200);
     }
 }
