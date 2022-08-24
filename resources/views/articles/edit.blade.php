@@ -87,6 +87,9 @@
         .note-editable {
             background-color: #fff;
         }
+        .fade:not(.show) {
+          opacity: 1;
+        }
     </style>
 
 

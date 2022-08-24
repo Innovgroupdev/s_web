@@ -81,6 +81,9 @@ class HomeController extends Controller
     public function article($titre)
     {
         $articles = Article::firstWhere('urlTitre', $titre);
+        if(!$articles->etat){
+            return abort('503');
+        }
         $nb = 0;
         if (empty($articles)) {
             Flash::error('Article non trouvé');
