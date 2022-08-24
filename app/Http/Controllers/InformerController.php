@@ -43,7 +43,7 @@ class InformerController extends AppBaseController
     {
         $request->validate([
             'numero' => 'required|min:5|unique:informers',
-            'email' => 'required|unique:informers',
+            'email' => 'unique:informers',
 
         ]);
             $informer = new Informer();

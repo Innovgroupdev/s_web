@@ -62,7 +62,7 @@ class Essayer extends Model
     public static $rules = [
         'nom' => 'required',
         'numero' => 'required',
-        'email' => 'required',
+//        'email' => 'required',
         'pays' => 'required',
         'profession' => 'required',
         'raison' => 'required'

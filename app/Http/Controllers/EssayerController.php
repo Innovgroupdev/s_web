@@ -43,7 +43,7 @@ class EssayerController extends AppBaseController
     {
         $request->validate([
             'numero' => 'required|min:5|unique:essayers',
-            'email' => 'required|unique:essayers',
+            'email' => 'unique:essayers',
         ]);
         $essayer = new Essayer();
         $essayer->nom = $request->nom;

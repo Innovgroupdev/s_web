@@ -138,13 +138,13 @@
                                                 {!!$articles->contenu !!}
                                             </div>
 
-                                           
+
 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex  justify-content-end pt-3 pb-3">
-                          
+
                             <div class="px-3 py-2  mr-3 my-auto share1" style="border-radius:50%;background-color:#1E83C7;width:max-content">
                                 <a href="https://twitter.com/intent/tweet?url={{url('/')}}/blog/{{$articles->urlTitre}}" target="blank" title=" Partager sur Twitter">
                                     <i class="fa fa-twitter my-auto" style="color:#fff;font-size:1.2em"></i>
