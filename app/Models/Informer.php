@@ -51,7 +51,7 @@ class Informer extends Model
      * @var array
      */
     public static $rules = [
-        'email' => 'required',
+//        'email' => 'required',
         'pays' => 'required',
         'numero' => 'required'
     ];

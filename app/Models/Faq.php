@@ -55,7 +55,7 @@ class Faq extends Model
      */
     public static $rules = [
         'pays' => 'required',
-        'email' => 'required|',
+//        'email' => 'required|',
         'tel' => 'required|integer',
         'question' => 'required'
     ];
