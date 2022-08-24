@@ -129,6 +129,28 @@
     #loading{
         display : none;
     }
+    @media(max-width : 1200px){
+        .iq-blog-image{
+            height : 350px !important
+        }
+    }
+    @media(max-width : 993px){
+        .iq-blog-image{
+            height : 250px !important
+        }
+    }
+    @media(max-width : 767px){
+        .iq-blog-image{
+            height : 300px !important
+        }
+    }
+    @media(max-width : 450px){
+        .iq-blog-image{
+            height : 250px !important
+        }
+    }
+    
+   
 </style>
 <script rel="preconnect"  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 

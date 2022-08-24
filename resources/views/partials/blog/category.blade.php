@@ -2,21 +2,21 @@
 
 @section('ref')
 <title> les Meilleurs Articles Tendances sur {{$categorie->lib}}</title>
-<meta name="description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<meta name="description" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
 <link rel="canonical" href="{{url('/')}}/categorie/{{$categorie->urlTitre}}" />
-<meta name="keywords" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
+<meta name="keywords" content="{{$categorie->lib}},{{$categorie->desc}}">
 <meta name="author" content="DIGITAL INNOV GROUP">
 <meta property="og:title" content="les Meilleurs Articles Tendances sur {{$categorie->lib}}">
 <meta property="og:site_name" content="CIBLE">
 <meta property="og:url" content="{{url('/')}}/categorie/{{$categorie->urlTitre}}">
-<meta property="og:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<meta property="og:description" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ asset($categorie->img)}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
 <meta name="twitter:title" content="les Meilleurs Articles Tendances sur {{$categorie->lib}}">
 <meta name="twitter:image" content="{{ asset($categorie->img)}}">
-<meta name="twitter:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
+<meta name="twitter:description" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",

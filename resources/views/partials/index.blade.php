@@ -1452,7 +1452,7 @@
                                         <input id="numberI" placeholder="Numéro de téléphone" id="numero" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                     </div>
                                     <div class="col-12">
-                                        <input id="emailI" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                        <input id="emailI" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                     </div>
                                     <div class="col-12 mt-4 d-flex justify-content-center">
                                         <span id="error_inform"></span>
@@ -1498,7 +1498,8 @@
                                 @csrf
                                 <div class="row my-4">
                                     <div class="col-4 mb-3 pr-0 mr-0">
-                                        <select class="" required>
+                                        <select class="" required >
+                                            <option value="" disabled hidden selected>Choix du pays</option>
                                             @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
@@ -1508,7 +1509,7 @@
                                         <input id="numberH" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                     </div>
                                     <div class="col-12">
-                                        <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                        <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                     </div>
                                     <div class="col-12 text-center text-danger mt-3">
                                         <strong> <span id="error_informH" style="color:red!important"></span></strong>
@@ -1557,6 +1558,7 @@
                                 <div class="row my-4">
                                     <div class="col-4 mb-3 pr-0 mr-0">
                                         <select class="" id="select_id" required>
+                                        <option value="" disabled hidden selected>Choix du pays</option>
                                             @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="paysQ">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
@@ -1566,7 +1568,7 @@
                                         <input id="telQ" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                     </div>
                                     <div class="col-12">
-                                        <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                        <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" />
                                     </div>
                                     <div class="col-12 my-3 ">
                                         <textarea id="question" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
@@ -1627,7 +1629,7 @@
                                     <input id="numberB" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
-                                    <input id="emailB" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    <input id="emailB" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" />
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
                                     <span id="error_informB"></span>
@@ -1684,7 +1686,7 @@
                                     <input id="numberR" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
                                 </div>
                                 <div class="col-12">
-                                    <input id="emailR" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' />
+                                    <input id="emailR" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                 </div>
                                 <div class="col-12 mt-4 d-flex justify-content-center">
                                     <span id="error_informR"></span>
@@ -1722,7 +1724,7 @@
                                         <input id="nomE" placeholder="Nom & prénom(s)" type="text" value="" size="30" maxlength="20" aria-describedby="nom-notes" required='required' />
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required />
+                                        <input id="emailE" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                     </div>
                                     <div class="col-12 mb-3 ">
 
@@ -1734,6 +1736,7 @@
                                     </div>
                                     <div class="col-sm-4  mb-3 pr-sm-0 mr-sm-0">
                                         <select class="" required id="select_id_e">
+                                        <option value="" disabled hidden selected>Choix du pays</option>
                                             @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="paysE">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
@@ -1861,7 +1864,7 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Envoyé avec succès',
-                            text: "Vos informations ont été prise en compte avec succès",
+                            text: "Vos informations ont été prises en compte avec succès",
                             showConfirmButton: true,
                         })
                         $('#appino_subscription')[0].reset();
@@ -1964,7 +1967,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Envoyé avec succès',
-                                text: "Vos informations ont été prise en compte avec succès",
+                                text: "Vos informations ont été prises en compte avec succès",
                                 showConfirmButton: true,
                             })
                             $('#informHeader')[0].reset();
@@ -2105,7 +2108,7 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Envoyé avec succès',
-                            text: "Vos informations ont été prise en compte avec succès",
+                            text: "Vos informations ont été prises en compte avec succès",
                             showConfirmButton: true,
                         })
                         $('#Soyerform')[0].reset();
@@ -2187,7 +2190,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Envoyé avec succès',
-                                text: "Vos informations ont été prise en compte avec succès",
+                                text: "Vos informations ont été prises en compte avec succès",
                                 showConfirmButton: true,
                             })
                             $('#poserQestion')[0].reset();

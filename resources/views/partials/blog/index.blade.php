@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="heading-title iq-breadcrumb-title iq-mtb-100">
-                    <h2 class="title iq-tw-8 iq-font-white">Blog</h2>
+                    <h1 class="title iq-tw-8 iq-font-white">Blog</h1>
                     <div class="white"></div>
 
                 </div>
@@ -80,7 +80,7 @@
                                         </div> -->
 
                                         <div class="iq-blog-image clearfix mb-3" style="position : relative;height:400px;overflow:hidden">
-                                            <img src="{{ asset($article->img)}}" style="position : absolute;filter: blur(3px);top:0;left:0;z-index:0;transform:scale(1.2)" class=" center-block w-100 " alt="{{$article->libelle}}">
+                                            <img src="{{ asset($article->img)}}" style="position : absolute;filter: blur(3px);top:0;left:0;z-index:0;transform:scale(1.2);min-height : 100%" class="center-block w-100" alt="{{$article->libelle}}">
                                             <img src="{{ asset($article->img)}}" class="center-block h-100 mx-auto" style="width: auto;z-index:1;position:relative" alt="{{$article->libelle}}">
                                         </div>
                                         <div class="iq-blog-detail">
