@@ -41,9 +41,13 @@ class NewsController extends AppBaseController
      **/
     public function enregistre(Request $request)
     {
-        if($request->get('email')){
+        if($request->get('email')){ 
+            $ip = request()->ip();  
+            $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
+            $country = $geoinformations->geoplugin_countryName;
             $news = new News();
             $news->email = $request->email;
+            $news->pays = $country;
             $news->save();
             return response()->json($news);
         }
@@ -69,7 +73,9 @@ class NewsController extends AppBaseController
 
      public function TotalSouscriptionsperCountry()
      {
-        
+        $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
+        ->groupBy('pays')
+        ->get();
+        return response()->json($souscrivantnewssparpays); 
      }
-
 }
