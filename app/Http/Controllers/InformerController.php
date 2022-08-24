@@ -41,11 +41,15 @@ class InformerController extends AppBaseController
     */
     public function enregistre(Request $request)
     {
+         if($request->email != ''){
+            $request->validate([
+                'email' => 'unique:informers',
+            ]);
+        }
         $request->validate([
             'numero' => 'required|min:5|unique:informers',
-            'email' => 'unique:informers',
-
         ]);
+        
             $informer = new Informer();
             $informer->pays = $request->pays;
             $informer->numero = $request->numero;

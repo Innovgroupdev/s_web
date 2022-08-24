@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateFaqRequest;
+use App\Models\Faq;
 use App\Repositories\FaqRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -44,10 +45,25 @@ class FaqController extends AppBaseController
      *
      * @return JsonResponse
      */
-    public function storeFaqs(CreateFaqRequest $request)
+    public function storeFaqs(Request $request)
     {
-        $input = $request->all();
-        $faq = $this->faqRepository->create($input);
+
+        if($request->email != ''){
+            $request->validate([
+                'email' => 'unique:faqs',
+            ]);
+        }
+      
+        $request->validate([
+            'tel' => 'required|min:5|unique:faqs',
+        ]);
+        // dd($request->all()); 
+        $faq = new Faq();
+        $faq->pays = $request->pays;  
+        $faq->tel = $request->tel; 
+        $faq->email = $request->email; 
+        $faq->question = $request->question; 
+        $faq->save();
 
         return response()->json($faq);
     }
