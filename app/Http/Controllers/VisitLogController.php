@@ -43,7 +43,7 @@ class VisitLogController extends Controller
      */
     public static function NumberofVisitors()
     {
-        $nombreVisiteurs = DB::table('visitslog')->count();
+        $nombreVisiteurs = Visitor::count();
 
         return $nombreVisiteurs;
     }

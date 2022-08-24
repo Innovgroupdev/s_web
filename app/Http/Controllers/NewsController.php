@@ -61,7 +61,7 @@ class NewsController extends AppBaseController
 
      public static function totalNewsSouscription()
      {
-        $totalOfSouscriptions = DB::table('news')->count();
+        $totalOfSouscriptions = News::count();
 
         return $totalOfSouscriptions;
      }

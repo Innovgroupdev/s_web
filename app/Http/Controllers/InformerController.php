@@ -63,7 +63,7 @@ class InformerController extends AppBaseController
      */
     public static function TotalInformers()
     {
-        $totalInformers = DB::table('informers')->count();
+        $totalInformers = Informer::count();
 
         $totalVisits = VisitLogController::NumberofVisitors();
 
