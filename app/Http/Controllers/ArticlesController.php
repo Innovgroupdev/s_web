@@ -72,7 +72,11 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
-        $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
+       
+        $urlTitre = str_replace(' ', '-', strtolower($request->libelle)); 
+        $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
+        $urlTitre = str_replace('--', '-', strtolower($urlTitre));
+        
         $user = auth()->user();
         $article = new Article();
         $article->libelle = $request->libelle;
@@ -158,13 +162,17 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
-
+        $urlTitre = str_replace(' ', '-', strtolower($request->libelle)); 
+        $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
+        $urlTitre = str_replace('--', '-', strtolower($urlTitre));
+       
         $user = auth()->user();
         if($request->file('img') !== null){
             $article->libelle = $request->libelle;
             $article->desc = $request->desc;
             $article->tags = $request->tags;
             $article->etat = $request->etat;
+            $article->urlTitre =  $urlTitre;
             $fileName = time().$request->file('img')->getClientOriginalName();
             $path = $request->file('img')->storeAs('images', $fileName, 'public');
             $article->img = '/storage/'.$path;
@@ -180,6 +188,7 @@ class ArticlesController extends AppBaseController
             $article->desc = $request->desc;
             $article->tags = $request->tags;
             $article->user_id = $user->id;
+            $article->urlTitre =  $urlTitre;
             $article->categorie_id = $request->categorie_id;
             $article->contenu = $request->contenu;
             Flash::success('Article modifié avec succès.');

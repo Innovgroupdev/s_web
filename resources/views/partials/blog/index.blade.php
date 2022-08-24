@@ -11,11 +11,11 @@
 <meta property="og:url" content="{{url('/blog')}}">
 <meta property="og:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ asset("images/logo.png")}}">
+<meta property="og:image" content="{{ asset("images/logo.svg")}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
 <meta name="twitter:title" content="Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils">
-<meta name="twitter:image" content="{{ asset("images/logo.png")}}">
+<meta name="twitter:image" content="{{ asset("images/logo.svg")}}">
 <meta name="twitter:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
 <script type="application/ld+json">
     {
@@ -25,7 +25,7 @@
         "alternateName": "CIBLE-APP",
         "url": "{{url('/blog')}}",
         "logo": "{{ asset("
-        images / logo.png ")}}",
+        images / logo.svg ")}}",
         "sameAs": [
             "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
             "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",

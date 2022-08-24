@@ -2,26 +2,29 @@
     <!-- Address -->
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-lg-3">
                 <div class="iq-fancy-box-04">
-                    <div class="iq-icon">
+                    <!-- <div class="iq-icon">
                         <i aria-hidden="true" class="ion-ios-location-outline"></i>
                     </div>
                     <div class="fancy-content">
                         <h5>Siège social</h5>
                         <span>
                             Immeuble FADEL, Agbalépédogan, Lomé-TOGO</span>
-                    </div>
+                    </div> -->
+                    <img src="{{asset('images/slogan-cible-app.png')}}" style="max-height : 173px" alt="Slogan cible">
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-5">
                 <div class="iq-fancy-box-04">
                     <div class="iq-icon">
                         <i aria-hidden="true" class="ion-ios-telephone-outline"></i>
                     </div>
                     <div class="fancy-content">
-                        <h5>Contactez-nous</h5>
-                        <span class="lead"><a href="tel:+22899328853">+228 99 32 88 53</a></span>
+                        <h5>Notre présence</h5>
+                        <!-- <span class="lead"><a href="tel:+22899328853">+228 99 32 88 53</a></span> -->
+                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO</span> 
+                        
                         <p>Lundi – Vendredi : 09h 00 – 18h 00</p>
                     </div>
                 </div>

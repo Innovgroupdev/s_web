@@ -18,8 +18,8 @@
 
             <li>
                 <a href="/blog/{{$articleRecentFive->urlTitre}}" title="{{$articleRecentFive->libelle}}">
-                    {{ substr($articleRecentFive->libelle, 0, 32)}}
-                    @if(strlen($articleRecentFive->libelle) > 32)
+                    {{ substr($articleRecentFive->libelle, 0, 30)}}
+                    @if(strlen($articleRecentFive->libelle) > 30)
                     ...
                     @endif
                 </a>
@@ -33,8 +33,8 @@
             @foreach($articlePopFives as $articlePopFive)
             <li>
                 <a href="/blog/{{$articlePopFive->urlTitre}}" title="{{$articlePopFive->libelle}}">
-                    {{ substr($articlePopFive->libelle, 0, 32)}}
-                    @if(strlen($articlePopFive->libelle) > 32)
+                    {{ substr($articlePopFive->libelle, 0, 30)}}
+                    @if(strlen($articlePopFive->libelle) > 30)
                     ...
                     @endif
                 </a>
@@ -70,8 +70,8 @@
             @foreach($categories as $categorie)
             <li class="cat-item cat-item-21">
                 <a href="/categorie/{{$categorie->urlTitre}}" title="{{$categorie->lib}}">
-                    {{ substr($categorie->lib, 0, 32)}}
-                    @if(strlen($categorie->lib) > 32)
+                    {{ substr($categorie->lib, 0, 30)}}
+                    @if(strlen($categorie->lib) > 30)
                     ...
                     @endif
                 </a>
