@@ -40,7 +40,6 @@
 use App\Http\Controllers\VisitLogController;
 
 VisitLogController::CompterVisiteurs();
-VisitLogController::NumberOfVisitorsPerCountry()
 ?>
 @endsection
 @section('content')

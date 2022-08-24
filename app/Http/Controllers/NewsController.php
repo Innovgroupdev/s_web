@@ -71,7 +71,7 @@ class NewsController extends AppBaseController
      * This function returns the total of souscriptions group by Country
      */
 
-     public function TotalSouscriptionsperCountry()
+     public static function TotalSouscriptionsperCountry()
      {
         $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
         ->groupBy('pays')
