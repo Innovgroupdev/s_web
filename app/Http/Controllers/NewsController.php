@@ -42,7 +42,8 @@ class NewsController extends AppBaseController
     public function enregistre(Request $request)
     {
         if($request->get('email')){ 
-            $ip = request()->ip();  
+            $ip = request()->ip(); 
+            // Cette Api fournis 120 requêtes par minute 
             $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
             $country = $geoinformations->geoplugin_countryName;
             $news = new News();
