@@ -83,7 +83,8 @@ class InformerController extends AppBaseController
         $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
         ->groupBy('pays')
         ->get();
-        return dd($informerspercountry);
+        return response()->json([
+            "data" => $informerspercountry
+        ], 200);
      }
-
 }

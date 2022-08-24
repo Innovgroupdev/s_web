@@ -58,7 +58,7 @@ class NewsController extends AppBaseController
      {
         $totalOfSouscriptions = DB::table('news')->count();
 
-        return dd($totalOfSouscriptions);
+        return $totalOfSouscriptions;
      }
 
     /**

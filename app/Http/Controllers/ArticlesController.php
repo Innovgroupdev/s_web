@@ -251,15 +251,17 @@ class ArticlesController extends AppBaseController
     /**
      * @author Charles
      * This method returns The tottal of vues for an article
-     * @return int
-     * @param $id to know the article for witch we want the numberofvues
+     * @return json
      */
     public static function NumberofVues()
     {
         $numberofvues = DB::table('articles')
-        ->select('libelle', 'nbvue')
+        ->select('id', 'nbvue')
         ->get();
 
-        return $numberofvues;
+        return response()->json([
+            "message" => 'Data retrieved successfully',
+            "data" => $numberofvues
+        ],200);
     }
 }

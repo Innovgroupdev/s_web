@@ -19,18 +19,20 @@ class VisitLogController extends Controller
         $visitor = new Visitor;
 
         $ip = request()->ip();
+        $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip_address}'));
+        $country = $geoinformations->geoplugin_countryName;
         $visitor->ip_address = $ip;
         $visitor->visit_date = date('D-M-Y');
         $visitor->visit_time = date('H:i:s');
+        $visitor->pays = $country;
         if(DB::table('visitslog')
         ->where('ip_address',$ip)
-        ->OrWhere('visit_date', date('D-M-Y'))
+        ->where('visit_date', date('D-M-Y'))
         ->exists()) {
             return ;
           }else{
             $visitor->save();
           }
-        $visitor->save();
     }
     /**
      * @author Charles
@@ -47,9 +49,16 @@ class VisitLogController extends Controller
     /**
      * @author Charles
      * Cette fonction va retourner le nombre de visiteurs par pays
+     * @return json
      */
-    public function NumberOfVisitorsPerCountry()
+    public static function NumberOfVisitorsPerCountry()
     {
-        //
+        $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_date'))
+        ->groupBy('pays', 'visit_date')
+        ->get();
+
+        return response()->json([
+            "data" => $nombrevisiteursparpays
+        ]);
     }
 }
