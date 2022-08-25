@@ -69,7 +69,7 @@ class InformerController extends AppBaseController
 
         $percentage = (($totalInformers * $totalVisits) / 100);
 
-        return $percentage;
+        return $totalInformers.'/'.$percentage.'%';
     }
 
     /**
