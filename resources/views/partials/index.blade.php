@@ -10,11 +10,11 @@
 <meta property="og:url" content="{{url('/')}}">
 <meta property="og:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ asset("images/logo.svg")}}">
+<meta property="og:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
 <meta name="twitter:title" content="Billetterie en ligne – Sponsors – Recrutement | CIBLE">
-<meta name="twitter:image" content="{{ asset("images/logo.svg")}}">
+<meta name="twitter:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
 <script type="application/ld+json">
     {
@@ -24,7 +24,7 @@
         "alternateName": "CIBLE-APP",
         "url": "{{url('/')}}",
         "logo": "{{ asset("
-        images / logo.svg ")}}",
+        images / logo-cible.jpg ")}}",
         "sameAs": [
             "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
             "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",
@@ -723,7 +723,9 @@
                                                         <div class="vc_column-inner">
                                                             <div class="wpb_wrapper">
                                                                 <div class="heading-title text-center">
-                                                                    <h2 class="title">Nos futurs clients en mode témoignage
+                                                                    <h2 class="title">
+                                                                        <!-- Nos futurs clients en mode témoignage -->
+                                                                        Dites-nous ce qui vous <br> ferait essayer CIBLE
                                                                     </h2>
                                                                     <p>
                                                                         Il n'y a rien de plus gratifiant pour nous qu'un client satisfait.
@@ -1269,8 +1271,8 @@
                                                                                         <a href="/blog/{{$articleRecentFive->urlTitre}}" title="{{$articleRecentFive->libelle}}">
                                                                                             <h6>
                                                                                                 <!-- {{$articleRecentFive->libelle}} -->
-                                                                                                {{ substr($articleRecentFive->libelle, 0, 29)}}
-                                                                                                @if(strlen($articleRecentFive->libelle) >= 29)
+                                                                                                {{ substr($articleRecentFive->libelle, 0, 25)}}
+                                                                                                @if(strlen($articleRecentFive->libelle) >= 25)
                                                                                                 ...
                                                                                                 @endif
                                                                                             </h6>
@@ -1431,6 +1433,9 @@
                         <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" alt="" loading="lazy" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                         <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                                                        </button>
                     </div>
                     <div class="p-3">
                         <h3 class="modal-title mt-4 h5" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1487,6 +1492,9 @@
                         <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                         <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                                                        </button>
                     </div>
                     <div class="p-3">
                         <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:900">Soyez informé au lancement !</h5>
@@ -1545,7 +1553,10 @@
                     <div class="container-fluid p-0 m-0" style="position:relative">
                         <img src="{{ asset('images/FAQ.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/FAQ.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                        <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:3rem;right:0rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
+                        <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:3rem;left:3rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
+                            <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                          </button>
                     </div>
                     <div class="p-3">
                         <h4 class="modal-title mt-4 h5" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight : 900">Posez votre question !</h5>
@@ -1608,6 +1619,9 @@
                         <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                         <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                                                        </button>
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1665,6 +1679,9 @@
                         <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                         <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                         <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                        <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                                                        </button>
                     </div>
                     <div class="p-3">
                         <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
@@ -1711,7 +1728,9 @@
                 <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                     <div class="container-fluid p-0 m-0" style="position:relative">
                         <img loading="lazy" src="{{ asset('images/cible-app-modale-info.png')}}" class="container-fluid p-0 m-0" alt="">
-
+                        <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true" style="color:#fff">&times;</span>
+                                                        </button>
                         <div class="p-3">
                             <h5 class="modal-title mt-4" id="exampleModalLongTitle" style="font-size: 1.5rem;">Soyez informé au lancement !</h5>
                             <p class="mb-0 pb-0">

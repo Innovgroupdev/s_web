@@ -11,11 +11,11 @@
 <meta property="og:url" content="{{url('/')}}/categorie/{{$categorie->urlTitre}}">
 <meta property="og:description" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ asset("images/logo.svg")}}">
+<meta property="og:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
 <meta name="twitter:title" content="les Meilleurs Articles Tendances sur {{$categorie->lib}}">
-<meta name="twitter:image" content="{{ asset("images/logo.svg")}}">
+<meta name="twitter:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:description" content="Vous voulez tout savoir sur {{$categorie->lib}} ? Visitez cette page et retrouvez plusieurs articles qui vont vous intéresser. Des articles écrits avec humour, faciles à lire, et riches en informations pertinentes vous attendent.">
 <script type="application/ld+json">
     {
@@ -24,7 +24,7 @@
         "name": "CIBLE",
         "alternateName": "CIBLE-APP",
         "url": "{{url('/')}}/categorie/{{$categorie->urlTitre}}",
-        "logo": "{{ asset("images/logo.svg")}}",
+        "logo": "{{ asset("images/logo-cible.jpg")}}",
         "sameAs": [
             "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
             "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",

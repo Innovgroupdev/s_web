@@ -17,23 +17,23 @@
             </div>
             <div class="col-md-6 col-lg-5">
                 <div class="iq-fancy-box-04">
-                    <div class="iq-icon">
+                    <!-- <div class="iq-icon">
                         <i aria-hidden="true" class="ion-ios-telephone-outline"></i>
-                    </div>
+                    </div> -->
                     <div class="fancy-content">
                         <h5>Notre présence</h5>
                         <!-- <span class="lead"><a href="tel:+22899328853">+228 99 32 88 53</a></span> -->
-                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO</span> 
+                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO | Benin | Burkina Faso </span> 
                         
-                        <p>Lundi – Vendredi : 09h 00 – 18h 00</p>
+                        <!-- <p>Lundi – Vendredi : 09h 00 – 18h 00</p> -->
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="iq-fancy-box-04">
-                    <div class="iq-icon">
+                    <!-- <div class="iq-icon">
                         <i aria-hidden="true" class="ion-ios-email-outline"></i>
-                    </div>
+                    </div> -->
                     <div class="fancy-content">
                         <h5>Email</h5>
                         <span><a href="mailto:Support@cible-app.com">Support@cible-app.com </a></span>
@@ -52,7 +52,8 @@
                 <div class="col-lg-6">
                     <ul class="info-share">
                         <li><a href="https://www.linkedin.com/company/cible-app/" title="Page Linkedin de CIBLE" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://www.instagram.com/invites/contact/?i=1g3q0tntwd7bs&utm_content=p0pxx73" title="Page Instagram de CIBLE" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+                        <li class="d-none d-md-inline-block"><a href="https://www.instagram.com/cible_app/"  title="Page Instagram de CIBLE" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+                        <li  class="d-md-none" ><a href="https://www.instagram.com/invites/contact/?i=1g3q0tntwd7bs&utm_content=p0pxx73"  title="Page Instagram de CIBLE" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw" title="Page Youtube de CIBLE" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
                         <li><a href="https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09" target="_blank" title="Page Twitter de CIBLE" rel="noopener noreferrer"><i class="fa fa-twitter "></i></a></li>
                         <li><a href="https://www.tiktok.com/@cible_app?is_from_webapp=1&sender_device=pc" title="Page Tiktok de CIBLE" target="_blank" rel="noopener noreferrer">
