@@ -38,8 +38,9 @@
 
 <?php
 use App\Http\Controllers\VisitLogController;
-
+use App\Http\Controllers\ArticlesController;
 VisitLogController::CompterVisiteurs();
+ArticlesController::NumberofVues();
 ?>
 @endsection
 @section('content')

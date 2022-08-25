@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use IlluminateSupportCarbon;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,12 +26,14 @@ class VisitLogController extends Controller
         // ----------------| API pour avoir le Pays a partir de L'IP ---------------------
         $country = $geoinformations->geoplugin_countryName;
         $visitor->ip_address = $ip;
-        $visitor->visit_date = date('D-M-Y');
+        $visitor->visit_date = date('D');
+        $visitor->visit_month = date('M');
+        $visitor->visit_year = date('Y');
         $visitor->visit_time = date('H:i:s');
         $visitor->pays = $country;
         if(DB::table('visitslog')
         ->where('ip_address',$ip)
-        ->where('visit_date', date('D-M-Y'))
+        ->where('visit_date', date('D'))
         ->exists()) {
             return ;
           }else{
@@ -55,12 +59,9 @@ class VisitLogController extends Controller
      */
     public static function NumberOfVisitorsPerCountry()
     {
-        $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_date'))
-        ->groupBy('pays', 'visit_date')
+        $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_month, visit_year'))
+        ->groupBy('pays', 'visit_month', 'visit_year')
         ->get();
-
-        return response()->json([
-            "data" => $nombrevisiteursparpays
-        ]);
+        return response()->json($nombrevisiteursparpays);
     }
 }
