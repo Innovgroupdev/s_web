@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- <div class="sidebar"></div>
+    <div class="navbar">
+      <div class="nav">qs</div>
+      <div class="nav">sa</div>
+      <div class="nav">ss</div>
+    </div> -->
+
+    <!-- Comptage -->
+    <div class="container count">
+      <div class="box one">
+        <div class="icone">
+          <img src="https://img.icons8.com/small/96/FFFFFF/user--v1.png" />
+        </div>
+        <div class="info">
+          <h3>NOMBRE DE VISITEURS</h3>
+          <div class="nombre">823</div>
+        </div>
+      </div>
+      <div class="box two">
+        <div class="icone">
+          <img
+            src="https://img.icons8.com/small/96/FFFFFF/about-us-male.png"
+          />
+        </div>
+        <div class="info">
+          <h3>NOMBRE DE VISITEURS A INFORMER</h3>
+          <div class="nombre">267</div>
+        </div>
+      </div>
+      <div class="box three">
+        <div class="icone">
+          <img src="https://img.icons8.com/windows/96/FFFFFF/mailing.png" />
+        </div>
+        <div class="info">
+          <h3>NOMBRE D'INSCRITS A LA NEWSLETTER</h3>
+          <div class="nombre">145</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graphes1 -->
+    <div class="container graphes">
+      <div class="graph-1">
+        <div class="box one">
+          
+          <canvas id="one"></canvas>
+        </div>
+        <div class="box two">
+          <h3>NOMBRE DE VISITEURS A INFORMER PAR PAYS</h3>
+          <canvas id="two"></canvas>
+        </div>
+      </div>
+
+      <div class="graph-2">
+        <div class="box three">
+          <!-- <div class="custom-select">
+            <select>
+              <option value="0">Togo</option>
+              <option value="1">Benin</option>
+              <option value="2">USA</option>
+            </select>
+            <select>
+              <option value="0">2020</option>
+              <option value="1">2021</option>
+              <option value="2">2022</option>
+            </select>
+          </div> -->
+          <canvas id="three"></canvas>
+        </div>
+        <div class="box four">
+          <table id="articles">
+            <tr>
+              <th>ARTICLES</th>
+              <th>VUES</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+            </tr>
+            <tr>
+              <td>Berglunds snabbköp</td>
+              <td>Christina Berglund</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Königlich Essen</td>
+              <td>Philip Cramer</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Italy</td>
+            </tr>
+            <tr>
+              <td>North/South</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Paris spécialités</td>
+              <td>Marie Bertrand</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const myChart1 = new Chart(document.getElementById("one"), config1);
+    const myChart2 = new Chart(document.getElementById("two"), config2);
+    const myChart3 = new Chart(document.getElementById("three"), config4);
+    const myChart4 = new Chart(document.getElementById("four"), config1);
+  </script>
+</html>
