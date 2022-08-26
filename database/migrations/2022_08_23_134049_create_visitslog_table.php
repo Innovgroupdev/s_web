@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('Articles', function (Blueprint $table) {
-            //
+        Schema::create('visitslog', function (Blueprint $table) {
+            $table->id();
+            $table->string('ip_address');
+            $table->string('visit_date');
+            $table->string('visit_time');
+            $table->string('pays')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,9 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('Articles', function (Blueprint $table) {
-            //
-            $table->string('urlTitre');
-        });
+        Schema::dropIfExists('visitslog');
     }
 };

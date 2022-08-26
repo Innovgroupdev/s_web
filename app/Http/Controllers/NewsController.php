@@ -7,6 +7,7 @@ use App\Repositories\NewsRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -40,12 +41,45 @@ class NewsController extends AppBaseController
      **/
     public function enregistre(Request $request)
     {
-        if($request->get('email')){
+        if($request->get('email')){ 
+            $ip = request()->ip(); 
+            // Cette Api fournis 120 requêtes par minute 
+            $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
+            $country = $geoinformations->geoplugin_countryName;
             $news = new News();
             $news->email = $request->email;
+            $news->pays = $country;
             $news->save();
             return response()->json($news);
         }
     }
+    /**
+     * @author Charles
+     * @return int
+     * This function returns the total of souscriptions received
+     */
 
+     public static function totalNewsSouscription()
+     {
+        $totalOfSouscriptions = News::count();
+
+        return $totalOfSouscriptions;
+     }
+
+    /**
+     * @author Charles
+     * @return int
+     * This function returns the total of souscriptions group by Country
+     */
+
+     public static function TotalSouscriptionsperCountry()
+     {
+        $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
+        ->groupBy('pays')
+        ->get();
+        return response()->json([
+            "message"=>"Données recupérer avec Succès",
+            "data"=>$souscrivantnewssparpays
+        ]); 
+     }
 }

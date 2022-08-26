@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('Articles', function (Blueprint $table) {
-            //
+        //
+        Schema::table('visitslog', function (Blueprint $table) {
+            $table->string('visit_month');
+            $table->string('visit_year');
         });
     }
 
@@ -25,9 +27,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('Articles', function (Blueprint $table) {
-            //
-            $table->string('urlTitre');
+        //
+        Schema::table('visitslog', function (Blueprint $table) {
+            $table->dropColumn('visit_month');
+            $table->dropColumn('visit_year');
         });
     }
 };
