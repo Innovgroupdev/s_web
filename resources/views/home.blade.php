@@ -41,10 +41,10 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
 @extends('layouts.app')
 
 @section('content')
- <div class="container-fluid">
+ <div class="container-fluid py-5 px-5">
         <!-- <h1 class="text-black-50">DASHBOARD!</h1> -->
         <!-- Comptage -->
-        <div class="container count">
+        <div class="container-fluid count">
             <div class="box one">
                 <div class="icone">
                     <img
@@ -53,7 +53,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 </div>
                 <div class="info">
                     <h3>Nombre de visteurs</h3>
-                    <div class="nombre">{{ $numbervisitors }}</div>
+                    <div class="nombre">{{ $numbervisitors }} <span>| </span> <span class="pourecentage">  13 %</span></div>
                 </div>
             </div>
             <div class="box two">
@@ -64,7 +64,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 </div>
                 <div class="info">
                     <h3>Nombre de visiteurs à informer</h3>
-                    <div class="nombre">{{ $numberofInformers }}</div>
+                    <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage">  40 %</span></div>
                 </div>
             </div>
             <div class="box three">
@@ -75,27 +75,128 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 </div>
                 <div class="info">
                     <h3>Nombre d'inscrits à la newsletter</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }}</div>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage">  98 %</span></div>
                 </div>
             </div>
         </div>
 
         <!-- GraphesBox1 -->
-        <div class="container graphes">
-            <div class="graph-1">
-                <div class="box one">
-                    <canvas id="one"></canvas>
+        <div class="container-fluid graphes">
+            <div class="row graph-1 ">
+                <div class="col-8">
+                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
+                    <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
+                    
+                        <canvas id="one" class="container-fluid"></canvas>
+                    </div>
                 </div>
-                <div class="box two">
-                    <h3>Nombre de visiteurs à informer par pays</h3>
-                    <canvas id="two"></canvas>
+            
+                <div class="col-4">
+                <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs à informer par pays</h6> 
+                    <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100">
+                        <canvas id="two"></canvas>
+                    </div>
                 </div>
             </div>
-            <!-- GraphesBox2 -->
-            <div class="graph-2">
-                <div class="box three">
-                    <canvas id="three"></canvas>
+            <div class="row graph-1 mt-5 pt-4">
+                <div class="col-8">
+                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
+                    <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
+                    
+                        <canvas id="three" class="container-fluid"></canvas>
+                    </div>
                 </div>
+            
+                <div class="col-4">
+                <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs à informer par pays</h6> 
+                    <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">
+                        @php
+                        $totalCountriesVisites = 0;
+                        @endphp
+                        @foreach($numberofInformerspercountry->getData()->data as $country)
+                            @php
+                            $totalCountriesVisites += $country->totalinformers;
+                            @endphp
+                        @endforeach
+
+                        @foreach($numberofInformerspercountry->getData()->data as $country)
+                      
+                       <div class="country mb-4">
+                         <div class="d-flex justify-content-between align-items-center">
+                                <h6>{{$country->pays}}</h6>
+                                <div class="nombre ">
+                                <strong>{{ $country->totalinformers }} </strong> <span>| </span> 
+                                <span class="pourecentage"> 
+                                {{ round($country->totalinformers * 100 / $totalCountriesVisites,0) }} %
+                                    </span>
+                                </div>
+                               
+                         </div>
+                         <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
+                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites }}%;" ></div>
+                        </div>
+                        </div>
+                        @endforeach
+                </div>
+            </div>
+            <div class="container-fluid mt-5 py-5">
+            <div class="d-flex justify-content-between align-items-center">
+            <h6 class="text-secondary mb-3 text-uppercase ml-3">Articles les plus populaires</h6> 
+            <a href="{{ route('articles.index') }}" class="btn btn-primary py-2 px-3 h6" >Tous les articles</a>
+            </div>
+                <div class="row">
+                @if($articlewithnumbervues->count())
+                @foreach($articlewithnumbervues as $article)
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                      <a href="{{ route('articles.show', [$article->id]) }}" class="container-fluid" style="text-decoration: none;">
+                      <div class="br container-fluid bg-white shadow-sm p-3 h-100">
+                      <div class="iq-blog-image clearfix mb-3 br text-center" style="position : relative;height:238px;overflow:hidden">
+                      <div class="btn btn-warning br px-2 py-1 " style="position: absolute;top: .7rem;right:.5rem;z-index:2;font-size:.7rem;">{{$article->categorie->lib}}</div>
+                        <img src="{{ asset($article->img)}}" loading="lazy" style="position : absolute;filter: blur(3px);top:0;left:0;transform:scale(1.2);z-index:0" class="center-block h-100 w-100" alt="{{$article->libelle}}">
+                        <img src="{{ asset($article->img)}}" loading="lazy" class="center-block h-100 mx-auto text-center" style="width: auto;position:relative;;z-index:1" alt="{{$article->libelle}}">
+                    </div>
+                      <div class="row px-1">
+                         <div class=" col-6">
+                           <div class="container-fluid d-flex justify-content-center align-items-center h6 bg-light p-3 br text-secondary">
+                           <i class="fa fa-eye"></i>  
+                            <span class="small ml-2">{{ $article->getCommentairesValidCount() }}</span>
+                           </div>
+                         </div>
+                         <div class=" col-6">
+                           <div class="container-fluid d-flex justify-content-center align-items-center h6 bg-light p-3 br text-secondary">
+                           <i class="fa fa-comment"></i>  
+                            <span class="small ml-2">{{ $article->getCommentairesValidCount() }}</span>
+                           </div>
+                         </div>
+                       
+                      </div>
+
+                      <div class="px-2">
+                      <h6 class="my-2 " style="font-weight:600;">
+                            {{ substr($article->libelle, 0, 34)}}
+                            @if(strlen($article->libelle) >= 34)
+                            ...
+                            @endif
+                        </h6>
+                        <small class="small text-secondary ">
+                        {{ substr($article->desc, 0, 70)}}
+                            @if(strlen($article->desc) > 70)
+                            ...
+                        @endif
+                        </small>
+                      </div>
+
+                      </div>
+                      </a>
+                    </div>
+                @endforeach
+                @endif
+                </div>
+               
+            </div>
+            <!-- GraphesBox2 -->
+            <!-- <div class="graph-2 mt-5 pt-5">
+                
                 <div class="box four">
                     <table id="articles">
                         <tr>
@@ -110,7 +211,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                         @endforeach
                     </table>
                 </div>
-            </div>
+            </div> -->
         </div>
 </div>
 <script type="text/javascript">
