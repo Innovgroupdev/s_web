@@ -255,7 +255,7 @@ class ArticlesController extends AppBaseController
      */
     public static function NumberofVues()
     {
-        $numberofvues = Article::select('libelle','id','nbvue')->orderBy('nbvue', 'DESC')->take(5)->get();
+        $numberofvues = Article::orderBy('nbvue', 'DESC')->where('etat', 1)->take(5)->get();
 
         return $numberofvues;
     }

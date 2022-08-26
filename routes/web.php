@@ -46,3 +46,5 @@ Route::post("essayer-enregistre", [App\Http\Controllers\EssayerController::class
 Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/etat/{id}", [App\Http\Controllers\ArticlesController::class, 'etat'])->name('etat');
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
+
+

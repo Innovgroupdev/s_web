@@ -7,6 +7,7 @@ use App\Repositories\NewsRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Flash;
@@ -41,9 +42,9 @@ class NewsController extends AppBaseController
      **/
     public function enregistre(Request $request)
     {
-        if($request->get('email')){ 
-            $ip = request()->ip(); 
-            // Cette Api fournis 120 requêtes par minute 
+        if($request->get('email')){
+            $ip = request()->ip();
+            // Cette Api fournis 120 requêtes par minute
             $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
             $country = $geoinformations->geoplugin_countryName;
             $news = new News();
@@ -67,9 +68,9 @@ class NewsController extends AppBaseController
      }
 
     /**
-     * @author Charles
-     * @return int
+     * @return JsonResponse
      * This function returns the total of souscriptions group by Country
+     *@author Charles
      */
 
      public static function TotalSouscriptionsperCountry()
@@ -80,6 +81,6 @@ class NewsController extends AppBaseController
         return response()->json([
             "message"=>"Données recupérer avec Succès",
             "data"=>$souscrivantnewssparpays
-        ]); 
+        ]);
      }
 }
