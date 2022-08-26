@@ -23,8 +23,7 @@
         "name": "CIBLE",
         "alternateName": "CIBLE-APP",
         "url": "{{url('/')}}",
-        "logo": "{{ asset("
-        images / logo-cible.jpg ")}}",
+        "logo": "{{ asset("images/logo-cible.jpg")}}",
         "sameAs": [
             "https://youtube.com/channel/UC84ld5phXpktjk8eE75rEIw",
             "https://twitter.com/CibleApp?t=fZnzC21urJJ_-SolfBcocw&s=09",
