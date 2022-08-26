@@ -77,6 +77,9 @@ class NewsController extends AppBaseController
         $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
         ->groupBy('pays')
         ->get();
-        return response()->json($souscrivantnewssparpays); 
+        return response()->json([
+            "message"=>"Données recupérer avec Succès",
+            "data"=>$souscrivantnewssparpays
+        ]); 
      }
 }

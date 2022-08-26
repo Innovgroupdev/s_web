@@ -67,9 +67,9 @@ class InformerController extends AppBaseController
 
         $totalVisits = VisitLogController::NumberofVisitors();
 
-        $percentage = (($totalInformers * $totalVisits) / 100);
-
-        return $totalInformers.'/'.$percentage.'%';
+        $percentage = (($totalInformers * 100) / $totalVisits);
+        //.'/'.$percentage.'%'
+        return $totalInformers;
     }
 
     /**
@@ -84,7 +84,8 @@ class InformerController extends AppBaseController
         ->groupBy('pays')
         ->get();
         return response()->json([
-            "data" => $informerspercountry
+            "message" =>"Donnees reçus avec succes",
+            "data" =>$informerspercountry
         ], 200);
      }
 }

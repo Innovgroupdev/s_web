@@ -62,6 +62,9 @@ class VisitLogController extends Controller
         $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_month, visit_year'))
         ->groupBy('pays', 'visit_month', 'visit_year')
         ->get();
-        return response()->json($nombrevisiteursparpays);
+        return response()->json([
+            "mesage" => "Donnees reçus avec succès",
+            "data"=> $nombrevisiteursparpays
+        ], 200);
     }
 }
