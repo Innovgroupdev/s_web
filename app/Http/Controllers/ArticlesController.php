@@ -264,6 +264,7 @@ class ArticlesController extends AppBaseController
      */
     public static function NumberofVues()
     {
+
         $numberofvues = Article::orderBy('nbvue', 'DESC')->take(4)->get();
 
         return $numberofvues;

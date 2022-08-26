@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use IlluminateSupportCarbon;
 
 use Illuminate\Http\Request;
@@ -41,30 +45,33 @@ class VisitLogController extends Controller
           }
     }
     /**
-     * @author Charles
+     * @return Application|Factory|View
+     *@author Charles
      * Cette fonction va compter le nombre de visiteurs dans la table Visistslog et va retourner le nombre
-     * @return int
      */
     public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
-
-        return $nombreVisiteurs;
+        if(!empty($nombreVisiteurs)){
+            return $nombreVisiteurs;
+        }
     }
 
     /**
-     * @author Charles
+     * @return JsonResponse
+     *@author Charles
      * Cette fonction va retourner le nombre de visiteurs par pays
-     * @return json
      */
     public static function NumberOfVisitorsPerCountry()
     {
         $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_month, visit_year'))
         ->groupBy('pays', 'visit_month', 'visit_year')
         ->get();
-        return response()->json([
-            "mesage" => "Donnees reçus avec succès",
-            "data"=> $nombrevisiteursparpays
-        ], 200);
+        if(!empty($nombrevisiteursparpays)){
+            return response()->json([
+                "mesage" => "Donnees reçus avec succès",
+                "data"=> $nombrevisiteursparpays
+            ], 200);
+        }
     }
 }
