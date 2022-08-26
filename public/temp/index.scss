@@ -1,12 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 $col1: #e56930;
-$col2: #fff1eb;
-$colbox1: #fb8650;
-$colbox2: #55c3f5;
-$colbox3: rgb(47, 72, 88);
+$col2: #f74949;
+$colbox1: #fcdfd2;
+$colbox2: #d9f2fd;
+$colbox3: #fdd0fa;
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -16,26 +19,27 @@ $colbox3: rgb(47, 72, 88);
 }
 
 .count {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 70px;
+  grid-row-gap: 0px;
   .one {
     background-color: $colbox1;
-    .info {
-      h3 {
-        height: 10px !important;
-      }
-    }
+    color: #9f4c26 !important ;
   }
   .two {
     background-color: $colbox2;
+    color: #1e4e64 !important;
   }
   .three {
     background-color: $colbox3;
+    color: #42183f !important;
   }
   .box {
+    padding: 15px;
     display: flex;
     flex-direction: row;
-    flex: 1;
-    margin: 30px;
-    margin-left: 0px;
     border-radius: 20px;
     color: white;
     transition: 0.4s ease-in-out;
@@ -47,25 +51,20 @@ $colbox3: rgb(47, 72, 88);
       flex: 3;
       text-align: center;
       h3 {
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: normal;
         opacity: 1;
       }
       .nombre {
         margin: 0;
-        font-size: 3.5em;
+        font-size: 3em;
       }
     }
     .icone {
-      padding-left: 15px;
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      img {
-        width: 75px;
-        height: 75px;
-      }
     }
   }
 }
@@ -78,17 +77,9 @@ $colbox3: rgb(47, 72, 88);
 }
 
 .graph-1 {
-  display: grid;
-  grid-template-columns: 1.5fr 0.5fr;
-  grid-template-rows: 1fr;
-  gap: 10px 10px;
-  grid-template-areas: ". .";
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
   .box {
-    border-radius: 20px;
     h3 {
       margin-top: 15px;
       margin-bottom: 10px;
@@ -97,21 +88,15 @@ $colbox3: rgb(47, 72, 88);
       opacity: 0.7;
       color: #2f4858;
     }
-    .custom-select {
-      position: absolute;
-      right: 0px;
-      background-color: #e56930;
-      width: fit-content;
-    }
   }
   .one {
-    width: 100%;
+    width: 70vw;
     position: relative;
   }
   .two {
-    width: 100%;
     position: relative;
     text-align: center;
+    width: 30vw;
   }
 }
 
@@ -151,4 +136,24 @@ $colbox3: rgb(47, 72, 88);
   text-align: left;
   background-color: #2f4858;
   color: white;
+}
+
+@media (max-width: 1024px) {
+  .count {
+    grid-column-gap: 10px;
+  }
+  .graph-1 {
+    .one {
+      width: 70vw;
+      position: relative;
+    }
+    .two {
+      position: relative;
+      text-align: center;
+      width: 30vw;
+      h3{
+        font-size: 0.7em;
+      }
+    }
+  }
 }

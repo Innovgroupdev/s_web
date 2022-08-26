@@ -10,76 +10,57 @@
         <title>Dashboard</title>
     </head>
     <body>
-        <!-- <div class="sidebar"></div>
-    <div class="navbar">
-      <div class="nav">qs</div>
-      <div class="nav">sa</div>
-      <div class="nav">ss</div>
-    </div> -->
-
         <!-- Comptage -->
         <div class="container count">
             <div class="box one">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/small/96/FFFFFF/user--v1.png"
+                        src="https://img.icons8.com/small/40/9f4c26/user--v1.png"
                     />
                 </div>
                 <div class="info">
-                    <h3>NOMBRE DE VISITEURS</h3>
+                    <h3>Nombre de visteurs</h3>
                     <div class="nombre">823</div>
                 </div>
             </div>
             <div class="box two">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/small/96/FFFFFF/about-us-male.png"
+                        src="https://img.icons8.com/small/40/1e4e64/about-us-male.png"
                     />
                 </div>
                 <div class="info">
-                    <h3>NOMBRE DE VISITEURS A INFORMER</h3>
+                    <h3>Nombre de visiteurs à informer</h3>
                     <div class="nombre">267</div>
                 </div>
             </div>
             <div class="box three">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/windows/96/FFFFFF/mailing.png"
+                        src="https://img.icons8.com/windows/40/42183f/mailing.png"
                     />
                 </div>
                 <div class="info">
-                    <h3>NOMBRE D'INSCRITS A LA NEWSLETTER</h3>
+                    <h3>Nombre d'inscrits à la newsletter</h3>
                     <div class="nombre">145</div>
                 </div>
             </div>
         </div>
 
-        <!-- Graphes1 -->
+        <!-- GraphesBox1 -->
         <div class="container graphes">
             <div class="graph-1">
                 <div class="box one">
                     <canvas id="one"></canvas>
                 </div>
                 <div class="box two">
-                    <h3>NOMBRE DE VISITEURS A INFORMER PAR PAYS</h3>
+                    <h3>Nombre de visiteurs à informer par pays</h3>
                     <canvas id="two"></canvas>
                 </div>
             </div>
-
+            <!-- GraphesBox2 -->
             <div class="graph-2">
                 <div class="box three">
-                    <!-- <div class="custom-select">
-            <select>
-              <option value="0">Togo</option>
-              <option value="1">Benin</option>
-              <option value="2">USA</option>
-            </select>
-            <select>
-              <option value="0">2020</option>
-              <option value="1">2021</option>
-              <option value="2">2022</option>
-            </select>
-          </div> -->
                     <canvas id="three"></canvas>
                 </div>
                 <div class="box four">
@@ -112,15 +93,51 @@
                             <td>Königlich Essen</td>
                             <td>Philip Cramer</td>
                         </tr>
+                        <tr>
+                            <td>Laughing Bacchus Winecellars</td>
+                            <td>Canada</td>
+                        </tr>
+                        <tr>
+                            <td>Magazzini Alimentari Riuniti</td>
+                            <td>Italy</td>
+                        </tr>
+                        <tr>
+                            <td>North/South</td>
+                            <td>UK</td>
+                        </tr>
+                        <tr>
+                            <td>Paris spécialités</td>
+                            <td>Marie Bertrand</td>
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
     </body>
     <script>
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: "Nombre d'inscrits à la newsletter par pays",
+                    backgroundColor: "rgba(251, 134, 80, 0.4)",
+                    hoverBackgroundColor: "rgb(251, 134, 80)",
+                    borderWidth: 2,
+                    borderColor: "rgb(251, 134, 80)",
+                    data: [300, 252, 40, 2, 50, 175],
+                },
+            ],
+        };
+        const config1 = {
+            type: "bar",
+            data: data,
+            options: {
+                scales: {},
+                plugins: {},
+            },
+        };
         const myChart1 = new Chart(document.getElementById("one"), config1);
         const myChart2 = new Chart(document.getElementById("two"), config2);
-        const myChart3 = new Chart(document.getElementById("three"), config4);
-        const myChart4 = new Chart(document.getElementById("four"), config1);
+        const myChart3 = new Chart(document.getElementById("three"), config3);
     </script>
 </html>
