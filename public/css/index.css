@@ -169,6 +169,20 @@
     background-color: #2f4858;
     color: #fff
 }
+@media(min-width:993px) and (max-width : 1500px){
+    .count .box .icone {
+        height: 3rem;
+    }
+    .count .box .icone img{
+        height :  20px;
+    }
+    .count .box .info .nombre {
+        font-size: 1.2em;
+    }
+    .count .box .info .nombre span.pourecentage{
+        font-size: 1rem;
+    }
+}
 
 @media(max-width: 1024px) {
     .count {

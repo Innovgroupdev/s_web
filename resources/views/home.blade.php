@@ -52,8 +52,8 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     />
                 </div>
                 <div class="info">
-                    <h3>Nombre de visteurs</h3>
-                    <div class="nombre">{{ $numbervisitors }} <span>| </span> <span class="pourecentage">  13 %</span></div>
+                    <h3>Visteurs</h3>
+                    <div class="nombre">{{ $numbervisitors }} </div>
                 </div>
             </div>
             <div class="box two">
@@ -63,7 +63,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     />
                 </div>
                 <div class="info">
-                    <h3>Nombre de visiteurs à informer</h3>
+                    <h3>Visiteurs à informer</h3>
                     <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage">  40 %</span></div>
                 </div>
             </div>
@@ -74,8 +74,8 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     />
                 </div>
                 <div class="info">
-                    <h3>Nombre d'inscrits à la newsletter</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage">  98 %</span></div>
+                    <h3>Inscrits à la newsletter</h3>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage">  60 %</span></div>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
         <!-- GraphesBox1 -->
         <div class="container-fluid graphes">
             <div class="row graph-1 ">
-                <div class="col-8">
+                <div class="col-8 box-1">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
                     <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
                     
@@ -91,15 +91,50 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     </div>
                 </div>
             
-                <div class="col-4">
+                <div class="col-4 box-2">
                 <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs à informer par pays</h6> 
                     <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100">
                         <canvas id="two"></canvas>
                     </div>
                 </div>
+
+                <div class="col-6 mt-5 box-22 d-none">
+                <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs à informer par pays</h6> 
+                    <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">
+                        @php
+                        $totalCountriesVisites = 0;
+                        @endphp
+                        @foreach($numberofInformerspercountry->getData()->data as $country)
+                            @php
+                            $totalCountriesVisites += $country->totalinformers;
+                            @endphp
+                        @endforeach
+
+                        @foreach($numberofInformerspercountry->getData()->data as $country)
+                      
+                       <div class="country mb-4">
+                         <div class="d-flex justify-content-between align-items-center">
+                                <h6>{{$country->pays}}</h6>
+                                <div class="nombre ">
+                                <strong>{{ $country->totalinformers }} </strong> <span>| </span> 
+                                <span class="pourecentage"> 
+                                {{ round($country->totalinformers * 100 / $totalCountriesVisites,0) }} %
+                                    </span>
+                                </div>
+                               
+                         </div>
+                         <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
+                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites }}%;" ></div>
+                        </div>
+                        </div>
+                        @endforeach
+                </div>
+
+
+
             </div>
             <div class="row graph-1 mt-5 pt-4">
-                <div class="col-8">
+                <div class="col-8 box-3">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
                     <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
                     
@@ -107,7 +142,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     </div>
                 </div>
             
-                <div class="col-4">
+                <div class="col-4 box-4">
                 <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs à informer par pays</h6> 
                     <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">
                         @php
@@ -147,7 +182,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 <div class="row">
                 @if($articlewithnumbervues->count())
                 @foreach($articlewithnumbervues as $article)
-                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3 article-box">
                       <a href="{{ route('articles.show', [$article->id]) }}" class="container-fluid" style="text-decoration: none;">
                       <div class="br container-fluid bg-white shadow-sm p-3 h-100">
                       <div class="iq-blog-image clearfix mb-3 br text-center" style="position : relative;height:238px;overflow:hidden">
@@ -195,25 +230,44 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                
             </div>
             <!-- GraphesBox2 -->
-            <!-- <div class="graph-2 mt-5 pt-5">
-                
-                <div class="box four">
-                    <table id="articles">
-                        <tr>
-                            <th>ARTICLES</th>
-                            <th>VUES</th>
-                        </tr>
-                        @foreach($articlewithnumbervues as $stats)
-                            <tr>
-                                <td>{{ $stats['libelle'] }}</td>
-                                <td>{{ $stats['nbvue'] }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
-                </div>
-            </div> -->
+            </div> 
+            </div> 
         </div>
 </div>
+<script>
+    var box1 = document.querySelector('.box-1');
+    var box2 = document.querySelector('.box-2');
+    var box22 = document.querySelector('.box-22');
+    var box3 = document.querySelector('.box-3');
+    var box4 = document.querySelector('.box-4');
+    var articleBoxs = document.getElementsByClassName('article-box')
+
+     function responsive(){
+        if(screen.width < 1500){
+        box1.classList.remove('col-8');
+        box1.classList.add('col-12'); 
+        box1.classList.add('mb-3'); 
+        box2.classList.remove('col-4');
+        box2.classList.add('col-6'); 
+        box2.classList.add('mt-5');  
+        box22.classList.remove('d-none'); 
+        box3.classList.add('col-12'); 
+        box3.classList.add('mb-3'); 
+        box4.classList.add('d-none'); 
+        console.log(articleBoxs)
+        for(let i = 0; i < articleBoxs.length ; i++){
+            articleBoxs[i].classList.remove('col-xl-3')
+            if(screen.width < 1350){
+                articleBoxs[i].classList.remove('col-lg-4')
+            }
+        }
+        }
+     }
+     responsive();
+     window.addEventListener('resize', function(event) {
+        responsive();
+        }, true);
+ </script>  
 <script type="text/javascript">
 
     var js_variable  = <?php echo json_encode($numbervisitorspercountry);?>;
@@ -326,6 +380,7 @@ const config3 = {
         const myChart1 = new Chart(document.getElementById("one"), config1);
         const myChart2 = new Chart(document.getElementById("two"), config2);
         const myChart3 = new Chart(document.getElementById("three"), config3);
-    </script>
 
+    </script>
+ 
 @endsection
