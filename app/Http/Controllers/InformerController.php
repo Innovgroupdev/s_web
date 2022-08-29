@@ -7,6 +7,7 @@ use App\Repositories\InformerRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\VisitLogController;
@@ -51,7 +52,7 @@ class InformerController extends AppBaseController
         $request->validate([
             'numero' => 'required|min:5|unique:informers',
         ]);
-        
+
             $informer = new Informer();
             $informer->pays = $request->pays;
             $informer->numero = $request->numero;
@@ -77,9 +78,9 @@ class InformerController extends AppBaseController
     }
 
     /**
-     * @author Charles
-     * @return int
+     * @return JsonResponse
      * This function will return the number of Informers Group by Country
+     *@author Charles
      */
 
      public static function TotalInformersPerCountry()

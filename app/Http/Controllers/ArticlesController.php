@@ -72,11 +72,11 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
-       
-        $urlTitre = str_replace(' ', '-', strtolower($request->libelle)); 
+
+        $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
         $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
         $urlTitre = str_replace('--', '-', strtolower($urlTitre));
-        
+
         $user = auth()->user();
         $article = new Article();
         $article->libelle = $request->libelle;
@@ -162,10 +162,10 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
-        $urlTitre = str_replace(' ', '-', strtolower($request->libelle)); 
+        $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
         $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
         $urlTitre = str_replace('--', '-', strtolower($urlTitre));
-       
+
         $user = auth()->user();
         if($request->file('img') !== null){
             $article->libelle = $request->libelle;
@@ -265,7 +265,7 @@ class ArticlesController extends AppBaseController
     public static function NumberofVues()
     {
 
-        $numberofvues = Article::orderBy('nbvue', 'DESC')->take(4)->get();
+        $numberofvues = Article::orderBy('nbvue', 'DESC')->where('etat', 1)->take(4)->get();
 
         return $numberofvues;
     }
