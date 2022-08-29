@@ -135,7 +135,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
             </div>
             <div class="row graph-1 mt-5 pt-4">
                 <div class="col-8 box-3">
-                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
+                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre de visiteurs par pays</h6> 
                     <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
                     
                         <canvas id="three" class="container-fluid"></canvas>
