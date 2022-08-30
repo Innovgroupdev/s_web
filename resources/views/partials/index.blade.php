@@ -34,11 +34,6 @@
         ]
     }
 </script>
-
-<?php
-use App\Http\Controllers\VisitLogController;
-VisitLogController::CompterVisiteurs();
-?>
 @endsection
 @section('content')
 <div class="site-content-contain">
@@ -47,8 +42,6 @@ VisitLogController::CompterVisiteurs();
             <main id="main" class="site-main">
 
                 <article id="post-543" class="appino-panel  post-543 page type-page status-publish hentry">
-
-
                     <div class="panel-content">
                         <div class="container">
                             <div class="sf-content">

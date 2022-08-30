@@ -1,45 +1,4 @@
-<?php
-// Récupération des Données
-
-// |----------------- Controllers a utilisés --------|
-use App\Http\Controllers\VisitLogController;
-use App\Http\Controllers\InformerController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ArticlesController;
-// |--------------------------------------------------|
-
-//-----------------------------------------------------
-$numbervisitors = VisitLogController::NumberofVisitors();
-//-----------------------------------------------------
-
-//-----------------------------------------------------
-$numbervisitorspercountry = VisitLogController::NumberOfVisitorsPerCountry();
-//-----------------------------------------------------
-
-//-------------------------------------------------------
-$numberofInformers = InformerController::TotalInformers();
-//-------------------------------------------------------
-
-//-------------------------------------------------------
-$numberofInformerspercountry = InformerController::TotalInformersPerCountry();
-//-------------------------------------------------------
-
-
-//-----------------------------------------------------------------
-$numberofNewsSouscription = NewsController::totalNewsSouscription();
-//------------------------------------------------------------------
-
-//-----------------------------------------------------------------
-$articlewithnumbervues = ArticlesController::NumberofVues();
-//------------------------------------------------------------------
-
-//-----------------------------------------------------------------------
-$souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
-//------------------------------------------------------------------------
-
-?>
 @extends('layouts.app')
-
 @section('content')
  <div class="container-fluid py-5 px-5">
         <!-- <h1 class="text-black-50">DASHBOARD!</h1> -->
@@ -52,7 +11,18 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                     />
                 </div>
                 <div class="info">
-                    <h3>Visteurs</h3>
+                    <h3>Nombre de visiteurs</h3>
+                    <div class="nombre">{{ $nombretotalvisiteurs }} </div>
+                </div>
+            </div>
+            <div class="box one">
+                <div class="icone">
+                    <img
+                        src="https://img.icons8.com/small/40/9f4c26/user--v1.png"
+                    />
+                </div>
+                <div class="info">
+                    <h3>Nombre de visites</h3>
                     <div class="nombre">{{ $numbervisitors }} </div>
                 </div>
             </div>
@@ -64,7 +34,7 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 </div>
                 <div class="info">
                     <h3>Visiteurs à informer</h3>
-                    <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage">  40 %</span></div>
+                    <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage"> {{ round(($numberofInformers * 100 / $nombretotalvisiteurs),0)}} %</span></div>
                 </div>
             </div>
             <div class="box three">
@@ -75,11 +45,10 @@ $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
                 </div>
                 <div class="info">
                     <h3>Inscrits à la newsletter</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage">  60 %</span></div>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs),0)}} %</span></div>
                 </div>
             </div>
         </div>
-
         <!-- GraphesBox1 -->
         <div class="container-fluid graphes">
             <div class="row graph-1 ">
