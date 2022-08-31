@@ -26,7 +26,8 @@ class VisitLogController extends Controller
     {
         $visitor = new Visitor;
 
-        $ip = request()->ip();
+        //$ip = request()->ip();
+        $ip=\Request::ip();
         // --------------------------------------| Cette Api fournis 120 requêtes par minute |-------------
         $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
         // ----------------| API pour avoir le Pays a partir de L'IP ---------------------
