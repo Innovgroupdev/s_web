@@ -62,9 +62,7 @@ class VisitLogController extends Controller
     {
         $nombretotalvisiteurs = Oneinstancevisitor::count();
 
-        if($nombretotalvisiteurs !== 0){
-            return $nombretotalvisiteurs;
-        }
+        return $nombretotalvisiteurs;
     }
     /**
      * @return Application|Factory|View
@@ -74,9 +72,7 @@ class VisitLogController extends Controller
     public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
-        if($nombreVisiteurs !== 0){
-            return $nombreVisiteurs;
-        }
+        return $nombreVisiteurs;
     }
 
     /**

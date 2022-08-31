@@ -7,9 +7,10 @@
     padding: 0
 }
 
-.br{
+.br {
     border-radius: 10px;
 }
+
 .container {
     width: 100%;
     display: flex;
@@ -18,7 +19,7 @@
 
 .count {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 0px
@@ -39,6 +40,11 @@
     color: #42183f !important
 }
 
+.count .four {
+    background-color: #d9fdd0;
+    color: #284d1f !important
+}
+
 .count .box {
     padding: 25px 15px;
     display: flex;
@@ -47,7 +53,7 @@
     align-items: center;
     color: #fff;
     transition: .4s ease-in-out;
-   
+
 }
 
 .count .box .info {
@@ -69,34 +75,39 @@
 .count .box .info .nombre {
     margin: 0;
     font-size: 1.7em;
-    font-weight : bold
+    font-weight: bold
 }
+
 .count .box .info .nombre span {
-    font-weight : 400;
+    font-weight: 400;
 }
-.count .box .info .nombre span.pourecentage{
+
+.count .box .info .nombre span.pourecentage {
     font-size: 1.3rem;
 }
+
 .count .box .icone {
     /* flex: 1; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border  : 1px solid white;
+    border: 1px solid white;
     opacity: .7;
     border-radius: 50%;
-    aspect-ratio: 1!important;
-    height : 5rem;
+    aspect-ratio: 1 !important;
+    height: 5rem;
     background-color: rgba(255, 255, 255, 0.822);
 }
+
 .count .box .icone:hover {
- transition:  .3s;
- opacity: 1;
- background-color: #fff;
+    transition: .3s;
+    opacity: 1;
+    background-color: #fff;
 
 }
-.count .box .icone img{
-    height :  27px;
+
+.count .box .icone img {
+    height: 27px;
     aspect-ratio: 1;
 }
 
@@ -169,26 +180,36 @@
     background-color: #2f4858;
     color: #fff
 }
-@media(min-width:993px) and (max-width : 1500px){
+
+@media(min-width:993px) and (max-width : 1545px) {
     .count .box .icone {
         height: 3rem;
     }
-    .count .box .icone img{
-        height :  20px;
+
+    .count .box .icone img {
+        height: 20px;
     }
+
     .count .box .info .nombre {
         font-size: 1.2em;
     }
-    .count .box .info .nombre span.pourecentage{
+
+    .count .box .info .nombre span.pourecentage {
         font-size: 1rem;
     }
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 1350px) {
     .count {
-        grid-column-gap: 10px
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px
     }
+}
 
+@media(max-width: 1024px) {
     .graph-1 .one {
         width: 70vw;
         position: relative
@@ -203,7 +224,7 @@
     .graph-1 .two h3 {
         font-size: .7em
     }
-   
+
 }
 
 /*# sourceMappingURL=index.css.map */

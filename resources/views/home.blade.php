@@ -15,10 +15,10 @@
                     <div class="nombre">{{ $nombretotalvisiteurs }} </div>
                 </div>
             </div>
-            <div class="box one">
+            <div class="box two">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/small/40/9f4c26/user--v1.png"
+                        src="https://img.icons8.com/windows/40/1e4e64/application-window.png"
                     />
                 </div>
                 <div class="info">
@@ -26,26 +26,38 @@
                     <div class="nombre">{{ $numbervisitors }} </div>
                 </div>
             </div>
-            <div class="box two">
+            <div class="box three">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/small/40/1e4e64/about-us-male.png"
+                        src="https://img.icons8.com/small/40/42183f/about-us-male.png"
                     />
                 </div>
                 <div class="info">
                     <h3>Visiteurs à informer</h3>
-                    <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage"> {{ round(($numberofInformers * 100 / $nombretotalvisiteurs),0)}} %</span></div>
+                    <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage">
+                        @if( $nombretotalvisiteurs < 1)
+                         {{ $numberofInformers * 100 }} %
+                         @else
+                         {{ round(($numberofInformers * 100 / $nombretotalvisiteurs ),0)}} %
+                         @endif
+                        </span></div>
                 </div>
             </div>
-            <div class="box three">
+            <div class="box four">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/windows/40/42183f/mailing.png"
+                        src="https://img.icons8.com/windows/40/284d1f/mailing.png"
                     />
                 </div>
                 <div class="info">
                     <h3>Inscrits à la newsletter</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs),0)}} %</span></div>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
+                        @if( $nombretotalvisiteurs < 1)
+                         {{ $numberofNewsSouscription * 100 }} %
+                         @else
+                         {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
+                         @endif
+                    </span></div>
                 </div>
             </div>
         </div>
@@ -87,13 +99,13 @@
                                 <div class="nombre ">
                                 <strong>{{ $country->totalinformers }} </strong> <span>| </span> 
                                 <span class="pourecentage"> 
-                                {{ round($country->totalinformers * 100 / $totalCountriesVisites,0) }} %
+                                {{ round($country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites,0) }} %
                                     </span>
                                 </div>
                                
                          </div>
                          <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites }}%;" ></div>
+                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites }}%;" ></div>
                         </div>
                         </div>
                         @endforeach
@@ -131,13 +143,13 @@
                                 <div class="nombre ">
                                 <strong>{{ $country->totalinformers }} </strong> <span>| </span> 
                                 <span class="pourecentage"> 
-                                {{ round($country->totalinformers * 100 / $totalCountriesVisites,0) }} %
+                                {{ round($country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites,0) }} %
                                     </span>
                                 </div>
                                
                          </div>
                          <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites }}%;" ></div>
+                                    <div class="slideV bg-primary br h-100 p-0" style="width:  {{ $country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites }}%;" ></div>
                         </div>
                         </div>
                         @endforeach
@@ -223,7 +235,7 @@
         box3.classList.add('col-12'); 
         box3.classList.add('mb-3'); 
         box4.classList.add('d-none'); 
-        console.log(articleBoxs)
+        // console.log(articleBoxs)
         for(let i = 0; i < articleBoxs.length ; i++){
             articleBoxs[i].classList.remove('col-xl-3')
             if(screen.width < 1350){
