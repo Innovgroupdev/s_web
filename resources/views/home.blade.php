@@ -36,7 +36,7 @@
                     <h3>Visiteurs à informer</h3>
                     <div class="nombre">{{ $numberofInformers }} <span>| </span> <span class="pourecentage">
                         @if( $nombretotalvisiteurs < 1)
-                         {{ $numberofInformers * 100 }} %
+                        0 %
                          @else
                          {{ round(($numberofInformers * 100 / $nombretotalvisiteurs ),0)}} %
                          @endif
@@ -51,11 +51,11 @@
                 </div>
                 <div class="info">
                     <h3>Futurs utilisateurs</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
+                    <div class="nombre">{{ $essayers }} <span>| </span> <span class="pourecentage"> 
                         @if( $nombretotalvisiteurs < 1)
-                         {{ $numberofNewsSouscription * 100 }} %
+                         0 %
                          @else
-                         {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
+                         {{ round(($essayers * 100 / $nombretotalvisiteurs ),0)}} %
                          @endif
                     </span></div>
                 </div>
@@ -68,12 +68,7 @@
                 </div>
                 <div class="info">
                     <h3>Questions posées</h3>
-                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
-                        @if( $nombretotalvisiteurs < 1)
-                         {{ $numberofNewsSouscription * 100 }} %
-                         @else
-                         {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
-                         @endif
+                    <div class="nombre">{{ $questionsPoses }}
                     </span></div>
                 </div>
             </div>
@@ -87,7 +82,7 @@
                     <h3>Inscrits à la newsletter</h3>
                     <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
                         @if( $nombretotalvisiteurs < 1)
-                         {{ $numberofNewsSouscription * 100 }} %
+                        0 %
                          @else
                          {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
                          @endif
