@@ -54,14 +54,15 @@ class VisitLogController extends Controller
                 $visiteur->save();
             }
         }
-            
+
     }
     /**
      */
     public static function NumberVisiteurs()
     {
         $nombretotalvisiteurs = Oneinstancevisitor::count();
-        if(!empty($nombretotalvisiteurs)){
+
+        if($nombretotalvisiteurs !== 0){
             return $nombretotalvisiteurs;
         }
     }
@@ -73,7 +74,7 @@ class VisitLogController extends Controller
     public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
-        if(!empty($nombreVisiteurs)){
+        if($nombreVisiteurs !== 0){
             return $nombreVisiteurs;
         }
     }

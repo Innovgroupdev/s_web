@@ -68,8 +68,10 @@ class InformerController extends AppBaseController
      */
     public static function TotalInformers()
     {
+
         $totalInformers = Informer::count();
-        return $totalInformers;
+        if(!empty($totalInformers))
+             return $totalInformers;
     }
 
     /**
