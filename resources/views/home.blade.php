@@ -46,7 +46,7 @@
             <div class="box four">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/windows/40/284d1f/mailing.png"
+                        src="https://img.icons8.com/windows/40/284d1f/check-male.png"
                     />
                 </div>
                 <div class="info">
@@ -63,7 +63,7 @@
             <div class="box five">
                 <div class="icone">
                     <img
-                        src="https://img.icons8.com/windows/40/284d1f/mailing.png"
+                        src="https://img.icons8.com/windows/40/284d1f/ask-question.png"
                     />
                 </div>
                 <div class="info">
