@@ -37,14 +37,12 @@
 
 <?php
 use App\Http\Controllers\VisitLogController;
-
 VisitLogController::CompterVisiteurs();
 ?>
 @endsection
 @section('content')
 <div class="site-content-contain">
     <div id="content" class="site-content">
-
         <div id="primary" class="content-area">
             <main id="main" class="site-main">
 
