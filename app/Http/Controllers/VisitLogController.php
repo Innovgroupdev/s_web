@@ -9,9 +9,11 @@ use Illuminate\Http\JsonResponse;
 use IlluminateSupportCarbon;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Visitor;
+use App\Models\Oneinstancevisitor;
 
 class VisitLogController extends Controller
 {
@@ -24,25 +26,45 @@ class VisitLogController extends Controller
     {
         $visitor = new Visitor;
 
-        $ip = request()->ip();
+        //$ip = request()->ip();
+        $ip = $_SERVER['REMOTE_ADDR'];
         // --------------------------------------| Cette Api fournis 120 requêtes par minute |-------------
         $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip_address}'));
         // ----------------| API pour avoir le Pays a partir de L'IP ---------------------
-        $country = $geoinformations->geoplugin_countryName;
-        $visitor->ip_address = $ip;
-        $visitor->visit_date = date('D');
-        $visitor->visit_month = date('M');
-        $visitor->visit_year = date('Y');
-        $visitor->visit_time = date('H:i:s');
-        $visitor->pays = $country;
-        if(DB::table('visitslog')
-        ->where('ip_address',$ip)
-        ->where('visit_date', date('D'))
-        ->exists()) {
-            return ;
-          }else{
-            $visitor->save();
-          }
+        if($geoinformations){
+            $country = $geoinformations->geoplugin_countryName;
+            $visitor->ip_address = $ip;
+            $visitor->visit_date = date('D');
+            $visitor->visit_month = date('M');
+            $visitor->visit_year = date('Y');
+            $visitor->visit_time = date('H:i:s');
+            $visitor->pays = $country;
+            if(Visitor::where('ip_address', $ip)->where('visit_date', date('D'))->exists()){
+                return;
+            }else{
+                $visitor->save();
+            }
+            if(Oneinstancevisitor::where('ip_adress', $ip)->exists()){
+                    return;
+            }else{
+                $visiteur = new Oneinstancevisitor;
+                $visiteur->ip_adress = $ip;
+                $visiteur->visit_day = date('D');
+                $visiteur->visit_month =  date('M');
+                $visiteur->save();
+            }
+        }
+
+    }
+    /**
+     */
+    public static function NumberVisiteurs()
+    {
+        $nombretotalvisiteurs = Oneinstancevisitor::count();
+
+        if($nombretotalvisiteurs !== 0){
+            return $nombretotalvisiteurs;
+        }
     }
     /**
      * @return Application|Factory|View
@@ -52,7 +74,7 @@ class VisitLogController extends Controller
     public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
-        if(!empty($nombreVisiteurs)){
+        if($nombreVisiteurs !== 0){
             return $nombreVisiteurs;
         }
     }

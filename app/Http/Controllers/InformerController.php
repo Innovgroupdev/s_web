@@ -68,13 +68,10 @@ class InformerController extends AppBaseController
      */
     public static function TotalInformers()
     {
+
         $totalInformers = Informer::count();
-
-        $totalVisits = VisitLogController::NumberofVisitors();
-
-        $percentage = (($totalInformers * 100) / $totalVisits);
-        //.'/'.$percentage.'%'
-        return $totalInformers;
+        if(!empty($totalInformers))
+             return $totalInformers;
     }
 
     /**

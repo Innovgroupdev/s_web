@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\VisitlogController;
 use App\Models\Article;
 use App\Models\Categorie;
 use App\Models\Commentaire;
@@ -50,6 +51,7 @@ class HomeController extends Controller
         $articles =  Article::orderBy('created_at', 'desc')->where('etat', 1)->paginate(12);
         $categories = $getCollections;
         $publicites = Publicite::all();
+        VisitLogController::CompterVisiteurs();
         return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
     }
 
