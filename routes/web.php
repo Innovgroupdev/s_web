@@ -7,6 +7,9 @@ use App\Http\Controllers\Blog\HomeController;
 use App\Http\Controllers\InformerController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ArticlesController;
+use App\Models\Essayer;
+use App\Models\Faq;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,11 +42,14 @@ Route::get('/home', function(){
     $numberofNewsSouscription = NewsController::totalNewsSouscription();
     $articlewithnumbervues = ArticlesController::NumberofVues();
     $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
-    $numberofessayers = EssayerController::Numberofessayers();
-    $numberofaqs = FaqController::Numberofaqs();
-    $recentfiveFaq = FaqController::GetrecentFivefaqs();
+    $questions = Faq::orderBy('created_at', 'desc')->take(5)->get();
+    $questionsPoses = Faq::all()->count();
+    $essayers = Essayer::all()->count();
 
-    return view('home', compact('nombretotalvisiteurs','numbervisitors','numbervisitorspercountry','numberofInformers','numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues','souscrivantnewssparpays','numberofessayers','numberofaqs','recentfiveFaq'));
+    return view('home', compact('nombretotalvisiteurs',
+    'numbervisitors','numbervisitorspercountry','numberofInformers',
+    'numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues',
+    'souscrivantnewssparpays','questions','questionsPoses','essayers'));
 })->name('home');
 
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
