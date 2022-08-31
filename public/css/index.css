@@ -19,10 +19,10 @@
 
 .count {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
-    grid-row-gap: 0px
+    grid-row-gap: 15px
 }
 
 .count .one {
@@ -41,6 +41,16 @@
 }
 
 .count .four {
+    background-color: #d0d7fd;
+color: #381f4d !important;
+}
+
+.count .five {
+    background-color: #eaead8;
+    color: #4d481f !important;
+}
+
+.count .six {
     background-color: #d9fdd0;
     color: #284d1f !important
 }
@@ -63,7 +73,7 @@
     align-items: left;
     flex: 3;
     text-align: left;
-    padding: 0px 30px;
+    padding: 0px 0px 0px 30px;
 }
 
 .count .box .info h3 {
@@ -202,10 +212,13 @@
 @media(max-width: 1350px) {
     .count {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 2fr;
         grid-column-gap: 10px;
         grid-row-gap: 10px
+    }
+    .count .box .info {
+        padding: 0px 0px 0px 15px;
     }
 }
 

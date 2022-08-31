@@ -50,6 +50,40 @@
                     />
                 </div>
                 <div class="info">
+                    <h3>Futurs utilisateurs</h3>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
+                        @if( $nombretotalvisiteurs < 1)
+                         {{ $numberofNewsSouscription * 100 }} %
+                         @else
+                         {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
+                         @endif
+                    </span></div>
+                </div>
+            </div>
+            <div class="box five">
+                <div class="icone">
+                    <img
+                        src="https://img.icons8.com/windows/40/284d1f/mailing.png"
+                    />
+                </div>
+                <div class="info">
+                    <h3>Questions posées</h3>
+                    <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
+                        @if( $nombretotalvisiteurs < 1)
+                         {{ $numberofNewsSouscription * 100 }} %
+                         @else
+                         {{ round(($numberofNewsSouscription * 100 / $nombretotalvisiteurs ),0)}} %
+                         @endif
+                    </span></div>
+                </div>
+            </div>
+            <div class="box six">
+                <div class="icone">
+                    <img
+                        src="https://img.icons8.com/windows/40/284d1f/mailing.png"
+                    />
+                </div>
+                <div class="info">
                     <h3>Inscrits à la newsletter</h3>
                     <div class="nombre">{{ $numberofNewsSouscription }} <span>| </span> <span class="pourecentage"> 
                         @if( $nombretotalvisiteurs < 1)
@@ -143,7 +177,7 @@
                                 <div class="nombre ">
                                 <strong>{{ $country->totalinformers }} </strong> <span>| </span> 
                                 <span class="pourecentage"> 
-                                {{ round($country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites,0) }} %
+                                {{ round(($country->totalinformers * 100 / $totalCountriesVisites == 0 ? 1 :  $totalCountriesVisites),0) }} %
                                     </span>
                                 </div>
                                
@@ -155,15 +189,72 @@
                         @endforeach
                 </div>
             </div>
-            <div class="container-fluid mt-5 py-5">
+            </div>
+            <div class="row">
+            <div class="col-6 questions-box ">
+                <div class="container-fluid mt-5 py-5 px-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Questions récentes </h6> 
+                    <a href="{{ route('faqs.index') }}" class="py-2  h6 pr-2"  style="text-decoration: none;">Toutes les questions <i class="fa fa-arrow-right ml-1"></i> </a>
+                    </div>
+                    <div class="br container-fluid mr-0 bg-white shadow-sm p-3 h-100 mt-4">
+                          <!-- Comments areas -->
+                          <div class="container-fluid py-4">
+                                        @php
+                                         $k = 0;
+                                        @endphp
+                                        @foreach($questions as $question)
+                                        @if($k > 0)
+                                        <hr>
+                                        @endif
+                                      
+                                        <div class="item-comment-area comtainer-fluid">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar">
+                                                    <img src="{{asset('images/cible-app-avatar.png')}}" style="border-radius:50%" alt="" width="50" height="50">
+                                                </div>
+                                                <div class=" ml-3 mt-2">
+                                                    <h6 class="mb-0 pb-0 fw-600" > {{$question->pays}} - User {{$question->id}}</h6>
+                                                    <small class="small mt-3 text-secondary" >{{$question->email}}</small>
+                                                </div>
+                                            </div>
+                                            
+                                         
+                                            <div class="comment-text">
+                                            <p class="text-secondary mt-3 ">
+                                             <strong>Téléphone   </strong> | {{$question->tel}}
+                                            </p>
+                                           
+                                            <p class="text-secondary mt-3 small" > 
+                                            <!-- <strong>Raison </strong> <br> -->
+                                            <span class="m-0 me-2 h5 text-info"> &#128630;</span>
+                                            {{$question->question}}
+                                            </p>
+                                            <p class="small text-right text-secondary">
+                                            {{$question->updated_at}}
+                                            </p>
+                                            </div>
+                                        </div>
+                                    
+                                        @php
+                                         $k ++;
+                                        @endphp
+                                        @endforeach
+                                    </div>
+                                    <!-- End Comments areas -->
+                    </div>
+                    </div>
+                </div>
+                <div class="col-6 articles-box pr-0">
+                <div class="container-fluid mt-5 pt-5 pb-3 px-0 mx-0">
             <div class="d-flex justify-content-between align-items-center">
-            <h6 class="text-secondary mb-3 text-uppercase ml-3">Articles les plus populaires</h6> 
-            <a href="{{ route('articles.index') }}" class="btn btn-primary py-2 px-3 h6" >Tous les articles</a>
+            <h6 class="text-secondary mb-3 text-uppercase ml-3 pr-3">Articles les plus populaires</h6> 
+            <a href="{{ route('articles.index') }}" class="py-2  h6 pr-2"  style="text-decoration: none;">Tous les articles <i class="fa fa-arrow-right ml-1"></i> </a>
             </div>
                 <div class="row">
                 @if($articlewithnumbervues->count())
                 @foreach($articlewithnumbervues as $article)
-                    <div class="col-md-6 col-lg-4 col-xl-3 mb-3 article-box">
+                    <div class="col-md-6 col-lg-4 col-xl-6 mb-3 article-box">
                       <a href="{{ route('articles.show', [$article->id]) }}" class="container-fluid" style="text-decoration: none;">
                       <div class="br container-fluid bg-white shadow-sm p-3 h-100">
                       <div class="iq-blog-image clearfix mb-3 br text-center" style="position : relative;height:238px;overflow:hidden">
@@ -210,6 +301,9 @@
                 </div>
                
             </div>
+                </div>
+              
+            </div>
             <!-- GraphesBox2 -->
             </div> 
             </div> 
@@ -221,6 +315,8 @@
     var box22 = document.querySelector('.box-22');
     var box3 = document.querySelector('.box-3');
     var box4 = document.querySelector('.box-4');
+    var articlesBox = document.querySelector('.articles-box');
+    var questionsBox = document.querySelector('.questions-box');
     var articleBoxs = document.getElementsByClassName('article-box')
 
      function responsive(){
@@ -236,12 +332,32 @@
         box3.classList.add('mb-3'); 
         box4.classList.add('d-none'); 
         // console.log(articleBoxs)
-        for(let i = 0; i < articleBoxs.length ; i++){
-            articleBoxs[i].classList.remove('col-xl-3')
-            if(screen.width < 1350){
-                articleBoxs[i].classList.remove('col-lg-4')
+        }
+        if(screen.width < 1600){
+            articlesBox.classList.remove('col-6');
+            articlesBox.classList.add('col-7');
+            questionsBox.classList.remove('col-6');
+            questionsBox.classList.add('col-5');
+        }
+        if(screen.width < 1450){
+            articlesBox.classList.add('col-6');
+            articlesBox.classList.remove('col-7');
+            questionsBox.classList.add('col-6');
+            questionsBox.classList.remove('col-5');
+            for(let i = 0; i < articleBoxs.length ; i++){
+            articleBoxs[i].classList.remove('col-xl-6')
+            articleBoxs[i].classList.add('col-xl-12')
             }
         }
+        if(screen.width < 1250){
+            articlesBox.classList.add('col-12');
+            articlesBox.classList.remove('col-6');
+            questionsBox.classList.add('col-12');
+            questionsBox.classList.remove('col-6');
+            for(let i = 0; i < articleBoxs.length ; i++){
+            articleBoxs[i].classList.add('col-xl-6')
+            articleBoxs[i].classList.remove('col-xl-12')
+            }
         }
      }
      responsive();
