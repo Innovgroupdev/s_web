@@ -60,7 +60,7 @@ class VisitLogController extends Controller
      */
     public static function NumberVisiteurs()
     {
-        $nombretotalvisiteurs = Visiteurs::count();
+        $nombretotalvisiteurs = Oneinstancevisitor::count();
         if(!empty($nombretotalvisiteurs)){
             return $nombretotalvisiteurs;
         }

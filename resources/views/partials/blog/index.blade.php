@@ -37,10 +37,6 @@
     }
 </script>
 @endsection
-<?php
-use App\Http\Controllers\VisitLogController;
-VisitLogController::CompterVisiteurs();
-?>
 @section('content')
 
 <section class="iq-breadcrumb overview-block-pb">

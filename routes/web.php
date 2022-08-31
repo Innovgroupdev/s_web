@@ -2,6 +2,11 @@
 
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VisitLogController;
+use App\Http\Controllers\Blog\HomeController;
+use App\Http\Controllers\InformerController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ArticlesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    VisitLogController::CompterVisiteurs();
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
@@ -21,8 +27,22 @@ Route::get('/', function () {
 });
 
 Auth::routes(['register' => false]);
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function(){
+
+    $nombretotalvisiteurs = VisitLogController::NumberVisiteurs();
+    $numbervisitors = VisitLogController::NumberofVisitors();
+    $numbervisitorspercountry = VisitLogController::NumberOfVisitorsPerCountry();
+    $numberofInformers = InformerController::TotalInformers();
+    $numberofInformerspercountry = InformerController::TotalInformersPerCountry();
+    $numberofNewsSouscription = NewsController::totalNewsSouscription();
+    $articlewithnumbervues = ArticlesController::NumberofVues();
+    $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
+    
+    return view('home', compact('nombretotalvisiteurs','numbervisitors','numbervisitorspercountry','numberofInformers','numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues','souscrivantnewssparpays'));
+})->name('home');
+
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');
 Route::get('blog/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
