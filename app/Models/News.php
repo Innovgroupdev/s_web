@@ -28,7 +28,8 @@ class News extends Model
 
     public $fillable = [
         'email',
-        'pays'
+        'pays',
+        'souscription_month'
     ];
 
     /**

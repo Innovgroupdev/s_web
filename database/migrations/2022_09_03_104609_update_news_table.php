@@ -15,7 +15,7 @@ return new class extends Migration
     {
         //
         Schema::table('news', function (Blueprint $table) {
-            $table->string('pays')->nullable();
+            $table->string('souscription_month');
         });
     }
 
@@ -28,7 +28,7 @@ return new class extends Migration
     {
         //
         Schema::table('news', function (Blueprint $table) {
-            $table->dropColumn('pays')->nullable();
+            $table->dropColumn('souscription_month');
         });
     }
 };

@@ -8,6 +8,9 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\InformerController;
+use App\Models\Informer;
 use Flash;
 use Response;
 
@@ -85,12 +88,50 @@ class EssayerController extends AppBaseController
     /**
      * 
      */
-
-     public static function Numberofessayers()
-     {
+     public static function Percentageessayers(){
         $numberofessayers = Essayer::count();
+        $data = Essayer::select(DB::raw('count(*) as nombreEssayers, pays'))
+        ->where('pays', '!=', 'null')
+        ->groupBy('pays')
+        ->get();
+        /*$tableaupays = [];
+        $tableauvaleures = [];
+        $tableauData = [];
+        $donneesfinaux = [];
+        foreach($data as $stats){
+            array_push($tableauvaleures ,(($stats['nombreEssayers']/$numberofessayers)*100));
+            array_push($tableaupays, $stats['pays']);
+            $donneesfinaux = array_combine($tableaupays,$tableauvaleures);
+        }*/
+        if(!empty($data)){
+            return response()->json([
+                "data" => $data
+            ]);
+        }
+     }
+     public static function TotalUsers()
+     {
+        $array1 = [];
+        $array2 =[];
+        $data = [];
+        $datafinish = [];
+        $essayersemails =   Essayer::all('email');
+        $informersemails = Informer::all('email');
+        foreach($essayersemails as $essayer){
+            array_push($array1, $essayer['email']);
+        }
+        foreach($informersemails as $informer){
+            array_push($array2, $informer['email']);
+        }
+        $data = array_merge($array1, $array2);
+        $datafinish = array_unique($data);
+        $number = count($datafinish);
+        return $number;
+     }
 
-        return $numberofessayers;
+     public static function totalEssayers(){
+        $number = Essayer::count();
+        return $number;
      }
 
 }

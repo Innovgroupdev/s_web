@@ -3,7 +3,7 @@
 use App\Models\Article;
 use App\Models\Faq;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VisitLogController;
+
 use App\Http\Controllers\Blog\HomeController;
 use App\Http\Controllers\InformerController;
 use App\Http\Controllers\FaqController;
@@ -22,7 +22,6 @@ use App\Http\Controllers\ArticlesController;
 */
 
 Route::get('/', function () {
-    VisitLogController::CompterVisiteurs();
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
@@ -33,21 +32,23 @@ Auth::routes(['register' => false]);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', function(){
-
-    $nombretotalvisiteurs = VisitLogController::NumberVisiteurs();
-    $numbervisitors = VisitLogController::NumberofVisitors();
-    $numbervisitorspercountry = VisitLogController::NumberOfVisitorsPerCountry();
-    $numberofInformers = InformerController::TotalInformers();
-    $numberofInformerspercountry = InformerController::TotalInformersPerCountry();
-    $numberofNewsSouscription = NewsController::totalNewsSouscription();
     $articlewithnumbervues = ArticlesController::NumberofVues();
-    $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
-    $numberofessayers = EssayerController::Numberofessayers();
+    //
+    $percentagesouscription = NewsController::PercentageSouscriptionsperCountry();
+    $users = EssayerController::TotalUsers();
+    $numberofNewsSouscription = NewsController::totalNewsSouscription();
+    //
+    $percentageofessayers = EssayerController::Percentageessayers();
+    //
     $numberofaqs = FaqController::Numberofaqs();
-    $recentfiveFaq = FaqController::GetrecentFivefaqs();
+    $questions = FaqController::GetrecentFivefaqs();
+    $newsstats = NewsController::Getnewsstats();
+    $numberessayers = EssayerController::totalEssayers();
 
-    return view('home', compact('nombretotalvisiteurs','numbervisitors','numbervisitorspercountry','numberofInformers','numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues','souscrivantnewssparpays','numberofessayers','numberofaqs','recentfiveFaq'));
+    return view('home', compact('users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
 })->name('home');
+
+Route::post('/getClientIp', [App\Http\Controllers\VisitLogController::class, 'getClientIp'])->name('getClientIp');
 
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');

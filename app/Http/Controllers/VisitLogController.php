@@ -17,17 +17,43 @@ use App\Models\Oneinstancevisitor;
 
 class VisitLogController extends Controller
 {
+    public static function getClientIp(Request $request){
+        dd($_SERVER);
+        $visiteur = new Visitor;
+        $oneInstanceOfVisiteur = new Oneinstancevisitor;
+        $visiteur->ip_address =  $request->ip;
+        $visiteur->visit_date = (new DateTime())->format('Y-M-d');
+        $visiteur->visit_month =  date('M');
+        $visiteur->visit_year = date('Y');
+        $visiteur->visit_time = date('H:i:s');
+        $visiteur->pays = $request->pays;
+        $visiteur->ville = $request->ville;
+        $visiteur->region = $request->region;
+        if(!Visitor::where('ip_address',  $request->ip)->where('visit_date',(new DateTime())->format('Y-M-d'))->exists()){
+            $visiteur->save();
+        }
+        if(!Oneinstancevisitor::where('ip_address',  $request->ip)->exists()){
+            $oneInstanceOfVisiteur->ip_address =  $request->ip;
+            $oneInstanceOfVisiteur->visit_date = (new DateTime())->format('Y-M-d');
+            $oneInstanceOfVisiteur->visit_month =  date('M');
+            $oneInstanceOfVisiteur->visit_year = date('Y');
+            $oneInstanceOfVisiteur->visit_time = date('H:i:s');
+            $oneInstanceOfVisiteur->pays = $request->pays;
+            $oneInstanceOfVisiteur->ville = $request->ville;
+            $oneInstanceOfVisiteur->region = $request->region;
+            $oneInstanceOfVisiteur->save();
+        }
 
+    }
     /**
      * @author Charles
      * Cette fonction Sauvegarde un internaute qui a visiter le site
      */
-    public static function CompterVisiteurs()
+    /*ublic static function CompterVisiteurs()
     {
         $visitor = new Visitor;
 
-        //$ip = request()->ip();
-        $ip=\Request::ip();
+        $ip = VisitLogController::IpClient();
         // --------------------------------------| Cette Api fournis 120 requêtes par minute |-------------
         $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
         // ----------------| API pour avoir le Pays a partir de L'IP ---------------------
@@ -58,7 +84,7 @@ class VisitLogController extends Controller
     }
     /**
      */
-    public static function NumberVisiteurs()
+    /*public static function NumberVisiteurs()
     {
         $nombretotalvisiteurs = Oneinstancevisitor::count();
             return $nombretotalvisiteurs;
@@ -68,7 +94,7 @@ class VisitLogController extends Controller
      *@author Charles
      * Cette fonction va compter le nombre de visiteurs dans la table Visistslog et va retourner le nombre
      */
-    public static function NumberofVisitors()
+    /*public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
         return $nombreVisiteurs;
@@ -79,10 +105,10 @@ class VisitLogController extends Controller
      *@author Charles
      * Cette fonction va retourner le nombre de visiteurs par pays
      */
-    public static function NumberOfVisitorsPerCountry()
+    /*public static function StatsVisitsPermonthandYear()
     {
-        $nombrevisiteursparpays = Visitor::select(DB::raw('count(*) as totalvisiteurs, pays, visit_month, visit_year'))
-        ->groupBy('pays', 'visit_month', 'visit_year')
+        $nombrevisiteursparpays = Visitor::select('count(*) as Numbervisits, visit_month, pays, visit_year')
+        ->groupBy('visit_month, pays, visit_year')
         ->get();
         if(!empty($nombrevisiteursparpays)){
             return response()->json([
@@ -90,5 +116,5 @@ class VisitLogController extends Controller
                 "data"=> $nombrevisiteursparpays
             ], 200);
         }
-    }
+    }*/
 }

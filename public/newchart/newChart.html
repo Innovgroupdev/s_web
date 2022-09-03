@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title></title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .chartCard {
+                width: 100vw;
+                height: calc(100vh - 40px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .chartBox {
+                width: 700px;
+                padding: 20px;
+                border-radius: 10px;
+                border: solid 3px rgb(255, 106, 26);
+                background: white;
+            }
+            .selects {
+                text-align: center;
+            }
+            select {
+                width: 49%;
+                padding: 5px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="chartCard">
+            <div class="chartBox">
+                <div class="selects">
+                    <select name="year" id="year" onchange="changeData()">
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+
+                    <select name="country" id="country" onchange="changeData()">
+                        <option value="Togo">Togo</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Senegal">Senegal</option>
+                    </select>
+                </div>
+
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="chartBox">
+                <div class="selects">
+                    <select name="year" id="year" onchange="changeData()">
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+
+                    <select name="country" id="country" onchange="changeData()">
+                        <option value="Togo">Togo</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Senegal">Senegal</option>
+                    </select>
+                </div>
+
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/chart.js"
+        ></script>
+        <script>
+            // setup
+            const data = {
+                // labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                datasets: [
+                    {
+                        label: "Par pays et annee",
+                        // data: [18, 12, 6, 9, 12, 3, 9],
+                        data: [
+                            {
+                                id: "Jan",
+                                countries: {
+                                    2020: { Togo: 10, Benin: 80, Senegal: 520 },
+                                    2021: {
+                                        Togo: 100,
+                                        Benin: 25,
+                                        Senegal: 666,
+                                    },
+                                    2022: { Togo: 44, Benin: 52, Senegal: 325 },
+                                },
+                            },
+                            {
+                                id: "Fev",
+                                countries: {
+                                    2020: { Togo: 8, Benin: 90, Senegal: 100 },
+                                    2021: { Togo: 3, Benin: 22, Senegal: 352 },
+                                    2022: { Togo: 25, Benin: 62, Senegal: 102 },
+                                },
+                            },
+                            {
+                                id: "Mar",
+                                countries: {
+                                    2020: { Togo: 4, Benin: 55, Senegal: 441 },
+                                    2021: { Togo: 142, Benin: 24, Senegal: 11 },
+                                    2022: { Togo: 66, Benin: 75, Senegal: 547 },
+                                },
+                            },
+                            {
+                                id: "Avr",
+                                countries: {
+                                    2020: { Togo: 2, Benin: 45, Senegal: 122 },
+                                    2021: { Togo: 3, Benin: 25, Senegal: 885 },
+                                    2022: { Togo: 4, Benin: 74, Senegal: 325 },
+                                },
+                            },
+                            {
+                                id: "Mai",
+                                countries: {
+                                    2020: { Togo: 3, Benin: 85, Senegal: 100 },
+                                    2021: { Togo: 6, Benin: 65, Senegal: 666 },
+                                    2022: { Togo: 9, Benin: 42, Senegal: 325 },
+                                },
+                            },
+                            {
+                                id: "Juin",
+                                countries: {
+                                    2020: {
+                                        Togo: 20,
+                                        Benin: 105,
+                                        Senegal: 100,
+                                    },
+                                    2021: { Togo: 91, Benin: 25, Senegal: 666 },
+                                    2022: { Togo: 34, Benin: 52, Senegal: 325 },
+                                },
+                            },
+                            {
+                                id: "Juil",
+                                countries: {
+                                    2020: { Togo: 40, Benin: 23, Senegal: 142 },
+                                    2021: { Togo: 20, Benin: 42, Senegal: 95 },
+                                    2022: { Togo: 65, Benin: 17, Senegal: 415 },
+                                },
+                            },
+                            {
+                                id: "Août",
+                                countries: {
+                                    2020: { Togo: 70, Benin: 15, Senegal: 288 },
+                                    2021: { Togo: 52, Benin: 32, Senegal: 122 },
+                                    2022: { Togo: 65, Benin: 21, Senegal: 205 },
+                                },
+                            },
+                            {
+                                id: "Sept",
+                                countries: {
+                                    2020: { Togo: 25, Benin: 20, Senegal: 288 },
+                                    2021: { Togo: 26, Benin: 12, Senegal: 122 },
+                                    2022: { Togo: 27, Benin: 44, Senegal: 205 },
+                                },
+                            },
+                            {
+                                id: "Oct",
+                                countries: {
+                                    2020: { Togo: 25, Benin: 20, Senegal: 123 },
+                                    2021: { Togo: 26, Benin: 12, Senegal: 456 },
+                                    2022: { Togo: 27, Benin: 44, Senegal: 741 },
+                                },
+                            },
+                            {
+                                id: "Nov",
+                                countries: {
+                                    2020: { Togo: 12, Benin: 20, Senegal: 288 },
+                                    2021: { Togo: 23, Benin: 12, Senegal: 122 },
+                                    2022: { Togo: 45, Benin: 44, Senegal: 205 },
+                                },
+                            },
+                            {
+                                id: "Dec",
+                                countries: {
+                                    2020: { Togo: 36, Benin: 20, Senegal: 210 },
+                                    2021: { Togo: 17, Benin: 12, Senegal: 123 },
+                                    2022: { Togo: 25, Benin: 44, Senegal: 410 },
+                                },
+                            },
+                        ],
+                        backgroundColor: [
+                            "rgba(255, 26, 104, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(255, 206, 86, 0.2)",
+                            "rgba(75, 192, 192, 0.2)",
+                            "rgba(153, 102, 255, 0.2)",
+                            "rgba(255, 159, 64, 0.2)",
+                            "rgba(0, 0, 0, 0.2)",
+                        ],
+                        borderColor: [
+                            "rgba(255, 26, 104, 1)",
+                            "rgba(54, 162, 235, 1)",
+                            "rgba(255, 206, 86, 1)",
+                            "rgba(75, 192, 192, 1)",
+                            "rgba(153, 102, 255, 1)",
+                            "rgba(255, 159, 64, 1)",
+                            "rgba(0, 0, 0, 1)",
+                        ],
+                        borderWidth: 1,
+                    },
+                ],
+            };
+
+            // config
+            const config = {
+                type: "bar",
+                data,
+                options: {
+                    parsing: {
+                        xAxisKey: "id",
+                        yAxisKey: "countries.2020.Togo",
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            };
+            const config2 = {
+                type: "line",
+                data,
+                options: {
+                    parsing: {
+                        xAxisKey: "id",
+                        yAxisKey: "countries.2020.Togo",
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            };
+
+            // render init block
+            const myChart = new Chart(
+                document.getElementById("myChart"),
+                config
+            );
+            const myChart2 = new Chart(
+                document.getElementById("myChart2"),
+                config2
+            );
+
+            function changeData() {
+                const year = document.getElementById("year").value;
+                const country = document.getElementById("country").value;
+                console.log(year);
+                console.log(country);
+
+                myChart.config.options.parsing.yAxisKey = `countries.${year}.${country}`;
+                myChart2.config.options.parsing.yAxisKey = `countries.${year}.${country}`;
+
+                myChart.update();
+            }
+        </script>
+    </body>
+</html>

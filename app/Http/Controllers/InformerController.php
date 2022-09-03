@@ -65,11 +65,11 @@ class InformerController extends AppBaseController
      * @return int
      * This function will return the number of Total Informers
      */
-    public static function TotalInformers()
+    /*public static function TotalInformers()
     {
         $totalInformers = Informer::count();
         return $totalInformers;
-    }
+    }*/
 
     /**
      * @author Charles
@@ -77,7 +77,7 @@ class InformerController extends AppBaseController
      * This function will return the number of Informers Group by Country
      */
 
-     public static function TotalInformersPerCountry()
+     /*public static function TotalInformersPerCountry()
      {
         $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
         ->groupBy('pays')
@@ -86,5 +86,5 @@ class InformerController extends AppBaseController
             "message" =>"Donnees reçus avec succes",
             "data" =>$informerspercountry
         ], 200);
-     }
+     }*/
 }

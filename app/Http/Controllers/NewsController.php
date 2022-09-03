@@ -11,6 +11,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Flash;
+use Carbon\Carbon;
 use Response;
 
 class NewsController extends AppBaseController
@@ -50,6 +51,7 @@ class NewsController extends AppBaseController
             $news = new News();
             $news->email = $request->email;
             $news->pays = $country;
+            $news->souscription_month = date('m');
             $news->save();
             return response()->json($news);
         }
@@ -73,14 +75,40 @@ class NewsController extends AppBaseController
      *@author Charles
      */
 
-     public static function TotalSouscriptionsperCountry()
+     public static function PercentageSouscriptionsperCountry()
      {
-        $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
+        $totalOfSouscriptions = News::count();
+        $donnees = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
         ->groupBy('pays')
         ->get();
-        return response()->json([
-            "message"=>"Données recupérer avec Succès",
-            "data"=>$souscrivantnewssparpays
-        ]);
+
+        /*$tableaudonnees = [];
+        $tab1 = [];
+        $tab2  = [];
+
+        foreach($donnees as $stats){
+            $pourcentage = ($stats['NombredeSouscrivant']/$totalOfSouscriptions)*100;
+            array_push($tab1,$pourcentage);
+            array_push($tab2, $stats['pays']);
+            $tableaudonnees = array_combine($tab2, $tab1);
+        }*/
+        if(!empty($donnees)){
+            return response()->json([
+                "data" =>$donnees
+            ]);
+        }
      }
+     /**
+      * 
+      */
+      public static function Getnewsstats()
+      {
+        $stats = News::select(DB::raw('count(*) as NombredeSouscrivant,pays'))->groupBy('pays')
+        ->get();
+        if(!empty($stats)){
+            return response()->json([
+                "data"=>$stats
+            ]);
+        }
+      }
 }
