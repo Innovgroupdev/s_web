@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
  <div class="container-fluid py-5 px-5">
         <!-- <h1 class="text-black-50">DASHBOARD!</h1> -->
         <!-- Comptage -->
@@ -41,13 +42,27 @@
             </div>
         </div>
         <!-- GraphesBox1 -->
-        <div class="container-fluid graphes">
-            <div class="row graph-1 ">
-                <div class="col-8 box-1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 box-1 mt-5">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
-                    <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100 ">
+                    <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100">
                     
-                        <canvas id="one" class="container-fluid"></canvas>
+                        <!---<canvas id="one" class="container-fluid"></canvas>-->
+                        <div class="chartBox">
+                            <div class="selects mb-5">
+                                <div class="d-flex justify-content-end align-items-center container-fluid">
+                                    <h6 class="text-secondary mr-3">Filtres :</h6>
+                                    <select name="year" id="year" onchange="changeData()" class="yearselect form-control w-25">
+                                        <option value="2022" selected>2022</option>
+                                    </select>
+                                    <select name="country" id="country" onchange="changeData()" class="countryselect form-control ml-2 w-25">
+                                        <option value="Togo" selected>TOGO</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <canvas id="myChart"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -77,13 +92,13 @@
                                 
                             </div>
                             <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                <div class="slideV bg-primary br h-100 p-0" style="width:  round(($country->nombreEssayers * 100 / $numberessayers), 0) }} %;"></div>
+                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->nombreEssayers * 100 / $numberessayers}}%;"></div>
                             </div>
                             </div>
                             @endforeach   
                         </div>
                 </div>
-                <div class="col-6 mt-5 box-22">
+                <div class="col-6 mt-5 box-20">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Pourcentage News par pays</h6> 
                         <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">
                             @php
@@ -114,13 +129,13 @@
                                 
                             </div>
                             <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                <div class="slideV bg-primary br h-100 p-0" style="width:  round(($country->NombredeSouscrivant * 100 / $numberofNewsSouscription), 0) }} %;"></div>
+                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->NombredeSouscrivant * 100 / $numberofNewsSouscription}}%;"></div>
                             </div>
-                            </div>
+                        </div>
                             @endforeach 
             
-            </div>
                 </div>
+            </div>
             </div>
             </div>
             <div class="row">
@@ -297,60 +312,120 @@
      window.addEventListener('resize', function(event) {
         responsive();
         }, true);
- </script>  
+ </script> 
+ <style>
+            .chartBox {
+                padding: 4px;
+                background: white;
+            }
+            .selects {
+                text-align: right;
+            }
+            select {
+                width: 20%;
+                padding: 5px;
+                border-radius: 5px;
+            }
+        </style> 
 <script type="text/javascript">
-
     var number_news_souscrivant = <?php echo json_encode($newsstats);?>;
-    sonsole.log(number_news_souscrivant);
     var nbnewssouscrivant=[];
     var payssouscrivant=[];
+    var mois =[];
+    var annees=[];
+    var our_data =[];
+    var our_final_data =[];
+    var displayedYears =[];
+    var displayCountries =[];
     var souscrivantdata;
-
-
-
-    // Données Recuperer a partir du Back
-    //-----------------------------------
     souscrivantdata = number_news_souscrivant.original.data;
-    
-    //----------------------------------------------
+    var elt = document.querySelector('.yearselect');
+    var countryselect = document.querySelector('.countryselect')
 
-    // Parcours Recupération des informations nécessaires pour le graphe
-    //----------------------|     |-----------------------------------
-
-
-    for (let i = 0; i < souscrivantdata.length; i++) {
+    for (let i = 0; i < souscrivantdata.length; i++){
         payssouscrivant[i] = souscrivantdata[i].pays;
         nbnewssouscrivant[i] = souscrivantdata[i].NombredeSouscrivant;
+        mois[i] = souscrivantdata[i].souscription_month;
+        annees[i] = souscrivantdata[i].souscription_year;
+        our_data[i] = {
+                    id:mois[i],
+                    countries: {
+                        [annees[i]]: {[payssouscrivant[i]]:nbnewssouscrivant[i]}
+                    }
+                };
+    };
+    displayedYears = [...new Set(annees)];
+    displayCountries = [...new Set(payssouscrivant)];
+    for(let i=0; i<displayedYears.length; i++){
+        if(displayedYears[i] != ""){
+            var option = new Option(`${displayedYears[i]}`,`${displayedYears[i]}`);
+            elt.options[elt.options.length] = option;
+            elt.options[0].selected === true;
+        }
     }
+    for(let i=0; i<displayCountries.length; i++){
+        if(displayCountries[i] != null){
+            var option = new Option(`${displayCountries[i]}`,`${displayCountries[i]}`);
+            countryselect.options[countryselect.options.length] = option;
+        }
+    }
+            const data = {
+                datasets: [
+                    {
+                        label: "Par pays et annee",
+                        data: our_data,
+                        backgroundColor: [
+                            "rgba(255, 26, 104, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(255, 206, 86, 0.2)",
+                            "rgba(75, 192, 192, 0.2)",
+                            "rgba(153, 102, 255, 0.2)",
+                            "rgba(255, 159, 64, 0.2)",
+                            "rgba(0, 0, 0, 0.2)",
+                        ],
+                        borderColor: [
+                            "rgba(255, 26, 104, 1)",
+                            "rgba(54, 162, 235, 1)",
+                            "rgba(255, 206, 86, 1)",
+                            "rgba(75, 192, 192, 1)",
+                            "rgba(153, 102, 255, 1)",
+                            "rgba(255, 159, 64, 1)",
+                            "rgba(0, 0, 0, 1)",
+                        ],
+                        borderWidth: 0.5,
+                    },
+                ],
+            };
 
-    //-------------------------|      |---------------------------------
-        const data = {
-            labels: payssouscrivant,
-            datasets: [
-                {
-                    label: "Nombre d'inscrits à la newsletter",
-                    backgroundColor: "rgba(251, 134, 80, 0.4)",
-                    hoverBackgroundColor: "rgb(251, 134, 80)",
-                    borderWidth: 2,
-                    borderColor: "rgb(251, 134, 80)",
-                    data: nbnewssouscrivant,
+            // config
+            const config = {
+                type: "bar",
+                data,
+                options: {
+                    parsing: {
+                        xAxisKey: "id",
+                        yAxisKey: "countries.2022.Togo",
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
                 },
-            ],
-        };
-        const config1 = {
-            type: "bar",
-            data: data,
-            options: {
-                scales: {},
-                plugins: {},
-            },
-        };
+            };
+            
 
+            // render init block
+            const myChart = new Chart(
+                document.getElementById("myChart"),
+                config
+            );
 
-        const myChart1 = new Chart(document.getElementById("one"), config1);
-        //const myChart2 = new Chart(document.getElementById("two"), config2);
-        //const myChart3 = new Chart(document.getElementById("three"), config3);
-
-    </script>
- 
+            function changeData() {
+                const year = document.getElementById("year").value;
+                const country = document.getElementById("country").value;
+                myChart.config.options.parsing.yAxisKey = `countries.${year}.${country}`;
+                myChart.update();
+            }
+        </script>
 @endsection

@@ -44,14 +44,16 @@ class NewsController extends AppBaseController
     public function enregistre(Request $request)
     {
         if($request->get('email')){
-            $ip = request()->ip();
+            $ip = $request->ip;
             // Cette Api fournis 120 requêtes par minute
-            $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
-            $country = $geoinformations->geoplugin_countryName;
+            //$geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
+            $ip = $request->ip;
+            $country = $request->pays;
             $news = new News();
             $news->email = $request->email;
             $news->pays = $country;
-            $news->souscription_month = date('m');
+            $news->souscription_month = date('M');
+            $news->souscription_year = date('Y');
             $news->save();
             return response()->json($news);
         }
@@ -103,8 +105,24 @@ class NewsController extends AppBaseController
       */
       public static function Getnewsstats()
       {
-        $stats = News::select(DB::raw('count(*) as NombredeSouscrivant,pays'))->groupBy('pays')
+        /*$annees = [];
+        $pays =[];
+        $number=[];
+        $month = [];
+        $paysNumber = [];
+        $paysNumberYear=[];
+        $anneesMois = [];
+        $data = [];*/
+        $stats = News::select(DB::raw('count(*) as NombredeSouscrivant,pays,souscription_month, souscription_year'))->groupBy('pays','souscription_month','souscription_year')
         ->get();
+        /*foreach($stats as $st){
+            array_push($annees, $st['souscription_year']);
+            array_push($pays,$st['pays']);
+            array_push($month, $st['souscription_month']);
+            array_push($number, $st['NombredeSouscrivant']);
+            $paysNumber = array_combine($pays, $number);
+
+        }*/
         if(!empty($stats)){
             return response()->json([
                 "data"=>$stats
