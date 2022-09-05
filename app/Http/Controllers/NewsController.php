@@ -84,16 +84,6 @@ class NewsController extends AppBaseController
         ->groupBy('pays')
         ->get();
 
-        /*$tableaudonnees = [];
-        $tab1 = [];
-        $tab2  = [];
-
-        foreach($donnees as $stats){
-            $pourcentage = ($stats['NombredeSouscrivant']/$totalOfSouscriptions)*100;
-            array_push($tab1,$pourcentage);
-            array_push($tab2, $stats['pays']);
-            $tableaudonnees = array_combine($tab2, $tab1);
-        }*/
         if(!empty($donnees)){
             return response()->json([
                 "data" =>$donnees
@@ -105,24 +95,8 @@ class NewsController extends AppBaseController
       */
       public static function Getnewsstats()
       {
-        /*$annees = [];
-        $pays =[];
-        $number=[];
-        $month = [];
-        $paysNumber = [];
-        $paysNumberYear=[];
-        $anneesMois = [];
-        $data = [];*/
         $stats = News::select(DB::raw('count(*) as NombredeSouscrivant,pays,souscription_month, souscription_year'))->groupBy('pays','souscription_month','souscription_year')
         ->get();
-        /*foreach($stats as $st){
-            array_push($annees, $st['souscription_year']);
-            array_push($pays,$st['pays']);
-            array_push($month, $st['souscription_month']);
-            array_push($number, $st['NombredeSouscrivant']);
-            $paysNumber = array_combine($pays, $number);
-
-        }*/
         if(!empty($stats)){
             return response()->json([
                 "data"=>$stats

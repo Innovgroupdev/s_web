@@ -94,15 +94,6 @@ class EssayerController extends AppBaseController
         ->where('pays', '!=', 'null')
         ->groupBy('pays')
         ->get();
-        /*$tableaupays = [];
-        $tableauvaleures = [];
-        $tableauData = [];
-        $donneesfinaux = [];
-        foreach($data as $stats){
-            array_push($tableauvaleures ,(($stats['nombreEssayers']/$numberofessayers)*100));
-            array_push($tableaupays, $stats['pays']);
-            $donneesfinaux = array_combine($tableaupays,$tableauvaleures);
-        }*/
         if(!empty($data)){
             return response()->json([
                 "data" => $data
