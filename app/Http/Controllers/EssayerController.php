@@ -106,7 +106,7 @@ class EssayerController extends AppBaseController
         $array2 =[];
         $data = [];
         $datafinish = [];
-        $essayersemails =   Essayer::all('email');
+        $essayersemails =  Essayer::all('email');
         $informersemails = Informer::all('email');
         foreach($essayersemails as $essayer){
             array_push($array1, $essayer['email']);
@@ -116,13 +116,59 @@ class EssayerController extends AppBaseController
         }
         $data = array_merge($array1, $array2);
         $datafinish = array_unique($data);
-        $number = count($datafinish);
-        return $number;
+        //$number = count($datafinish);
+        return $datafinish;
      }
 
      public static function totalEssayers(){
         $number = Essayer::count();
         return $number;
+     }
+     static function _group_by($array, $key) {
+        $return = array();
+        foreach($array as $val) {
+            $return[$val[$key]][] = $val;
+        }
+        return $return;
+    }
+
+     public static function userpercountry(){
+        $usercountry = [];
+        $single = [];
+        $info =[];
+        $informeinfos = [];
+        $total=0;
+        $pays = [];
+        $valuesinformers = [];
+        $valuesessayers = [];
+        $allusers = EssayerController::TotalUsers();
+        $informers = Informer::select(DB::raw('count(*) as number,pays'))->groupBy('pays')->get();
+        $informerEmails = Informer::all('email');
+        $essayers = Essayer::select(DB::raw('count(*) as totaluser, pays'))->groupBy('pays')->get();
+
+         foreach($informers as $informer){
+            // array_push($info, $informer['pays']);
+            // array_push($info, $informer['number']);
+            array_push($pays, $informer['pays']);
+            array_push($valuesinformers, $informer['number']);
+            //$keyvalues1 = array_combine($pays, $valuesinformers);
+        } 
+        foreach($essayers as $essayer){
+            /* array_push($info, $essayer['pays']);
+            array_push($info, $essayer['totaluser']); */
+            array_push($pays, $essayer['pays']);
+            array_push($valuesessayers, $essayer['totaluser']);
+            //$keyvalues2 = array_combine($pays, $valuesessayers);
+        }
+        $valuemixed=[];
+        for($i=0; $i<count($valuesessayers); $i++){
+            for($j=0; $j<count($valuesinformers); $j++){
+                $total= $valuesinformers[$j] + $valuesessayers[$i];
+                array_push($valuemixed, $total);
+            }
+
+        }
+        return $valuemixed;
      }
 
 }

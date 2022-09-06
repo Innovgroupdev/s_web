@@ -14,7 +14,7 @@
                 </div>
                 <div class="info">
                     <h3>Futurs utilisateurs</h3>
-                    <div class="nombre">{{ $users }} </div>
+                    <div class="nombre">{{ count($users) }} </div>
                 </div>
             </div>
             <div class="box two">
@@ -54,10 +54,10 @@
                                 <div class="d-flex justify-content-end align-items-center container-fluid">
                                     <h6 class="text-secondary mr-3">Filtres :</h6>
                                     <select name="year" id="year" onchange="changeData()" class="yearselect form-control w-25">
-                                        <option value="2022" selected>2022</option>
+                                        <option value="" disabled selected>Choisir une année</option>
                                     </select>
                                     <select name="country" id="country" onchange="changeData()" class="countryselect form-control ml-2 w-25">
-                                        <option value="Togo" selected>TOGO</option>
+                                        <option value="Tous">Tous</option>
                                     </select>
                                 </div> 
                             </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="row">
                   <div class="col-6 mt-5 box-22">
-                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Pourcentage Essayers par Pays</h6> 
+                    <h6 class="text-secondary mb-3 text-uppercase ml-3">Pourcentage Futurs Utilisateurs par Pays</h6> 
                         <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">
                             @php
                             $totalCountriesVisites = 0;
@@ -129,7 +129,7 @@
                                 
                             </div>
                             <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->NombredeSouscrivant * 100 / $numberofNewsSouscription}}%;"></div>
+                                <div class="slideV bg-danger br h-100 p-0" style="width: {{$country->NombredeSouscrivant * 100 / $numberofNewsSouscription}}%;"></div>
                             </div>
                         </div>
                             @endforeach 
@@ -329,38 +329,85 @@
         </style> 
 <script type="text/javascript">
     var number_news_souscrivant = <?php echo json_encode($newsstats);?>;
+    var news_stat_all = <?php echo json_encode($statsofNews);?>;
+
     var nbnewssouscrivant=[];
     var payssouscrivant=[];
     var mois =[];
     var annees=[];
-    var our_data =[];
-    var our_final_data =[];
+
+    var nball=[];
+    var paysall=[];
+    var moisall =[];
+    var anneesall=[];
+
+
+    var our_data_one =[];
+    var our_data_two=[];
     var displayedYears =[];
     var displayCountries =[];
     var souscrivantdata;
+    var statAll;
+    var our_final_data = [];
+        
+    
     souscrivantdata = number_news_souscrivant.original.data;
+    statAll = news_stat_all.original.data;
+
     var elt = document.querySelector('.yearselect');
     var countryselect = document.querySelector('.countryselect')
 
-    for (let i = 0; i < souscrivantdata.length; i++){
+    for (let i = 0; i <souscrivantdata.length; i++){
         payssouscrivant[i] = souscrivantdata[i].pays;
         nbnewssouscrivant[i] = souscrivantdata[i].NombredeSouscrivant;
         mois[i] = souscrivantdata[i].souscription_month;
         annees[i] = souscrivantdata[i].souscription_year;
-        our_data[i] = {
-                    id:mois[i],
+        our_data_one[i] = {
+            id:mois[i],
+            countries: {
+            [annees[i]]: {[payssouscrivant[i]]:nbnewssouscrivant[i]}
+                }
+        };
+    }
+            for(let i=0; i<statAll.length; i++){
+                paysall[i] = "Tous";
+                nball[i] = statAll[i].total;
+                moisall[i] = statAll[i].souscription_month;
+                anneesall[i] = statAll[i].souscription_year;
+                payssouscrivant.push(paysall[i]);
+                our_data_two[i] = {
+                    id:moisall[i],
                     countries: {
-                        [annees[i]]: {[payssouscrivant[i]]:nbnewssouscrivant[i]}
+                        [anneesall[i]]: {[paysall[i]]:nball[i]}
                     }
                 };
-    };
+            }
+            function renderGraph(){
+                //  console.log(document.getElementById("country").value);
+                if(document.getElementById("country").value != "Tous"){
+                     //console.log("test1")
+                     console.log(our_data_one)
+                   our_final_data = our_data_one;
+               }else{
+                   console.log(our_data_two)
+                   our_final_data = our_data_two;
+                } 
+
+                return our_final_data;
+            }
+            // }
+                /* const country = document.getElementById("country").value;
+                if(country == "Tous"){
+                    our_final_data = our_data_two;
+                }else{
+                    our_final_data = our_data_one;
+                } */
     displayedYears = [...new Set(annees)];
     displayCountries = [...new Set(payssouscrivant)];
     for(let i=0; i<displayedYears.length; i++){
         if(displayedYears[i] != ""){
             var option = new Option(`${displayedYears[i]}`,`${displayedYears[i]}`);
             elt.options[elt.options.length] = option;
-            elt.options[0].selected === true;
         }
     }
     for(let i=0; i<displayCountries.length; i++){
@@ -369,11 +416,12 @@
             countryselect.options[countryselect.options.length] = option;
         }
     }
+    
             const data = {
                 datasets: [
                     {
                         label: "Par pays et annee",
-                        data: our_data,
+                        data: renderGraph(),
                         backgroundColor: [
                             "rgba(255, 26, 104, 0.2)",
                             "rgba(54, 162, 235, 0.2)",
@@ -396,9 +444,8 @@
                     },
                 ],
             };
-
             // config
-            const config = {
+    const config = {
                 type: "bar",
                 data,
                 options: {
@@ -413,8 +460,6 @@
                     },
                 },
             };
-            
-
             // render init block
             const myChart = new Chart(
                 document.getElementById("myChart"),
@@ -422,8 +467,10 @@
             );
 
             function changeData() {
-                const year = document.getElementById("year").value;
-                const country = document.getElementById("country").value;
+                renderGraph();
+                console.log(renderGraph());
+                var year = document.getElementById("year").value;
+                var country = document.getElementById("country").value;
                 myChart.config.options.parsing.yAxisKey = `countries.${year}.${country}`;
                 myChart.update();
             }

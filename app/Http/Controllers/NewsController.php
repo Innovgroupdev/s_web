@@ -103,4 +103,17 @@ class NewsController extends AppBaseController
             ]);
         }
       }
+      /**
+       * 
+       */
+      public static function NewsStatsAll(){
+        $newsstats = News::select(DB::raw('count(*) as total,souscription_month,souscription_year'))
+        ->groupBy('souscription_month','souscription_year')
+        ->get();
+        if(!empty($newsstats)){
+            return response()->json([
+                "data" => $newsstats
+            ]);
+        }
+      }
 }
