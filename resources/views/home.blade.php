@@ -50,19 +50,50 @@
                     
                         <!---<canvas id="one" class="container-fluid"></canvas>-->
                         <div class="chartBox">
-                            <div class="selects mb-5">
+                            <!-- Les Tabs -->
+                            <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tous</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Filtre</a>
+                                </li>
+                            </ul>
+                                    
+                             <!-- Contenu des Tabs -->
+                            <div class="tab-content" id="myTabContent">
+
+                                <!-- Pour Tous -->
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="d-flex justify-content-end align-items-center container-fluid">
-                                    <h6 class="text-secondary mr-3">Filtres :</h6>
-                                    <select name="year" id="year" onchange="changeData()" class="yearselect form-control w-25">
-                                        <option value="" disabled selected>Choisir une année</option>
-                                    </select>
-                                    <select name="country" id="country" onchange="changeData()" class="countryselect form-control ml-2 w-25">
-                                        <option value="Tous">Tous</option>
-                                    </select>
-                                </div> 
+                                            <h6 class="text-secondary mr-3">Filtre :</h6>
+                                                <select name="yearTous" id="yearTous" onchange="changeDataTous()" class="yearTousselect form-control w-25">
+                                                    <option selected>Année</option>
+                                                </select>
+                                            </div> 
+                                    <canvas id="myChartTous"></canvas>
+                                </div>
+
+                                <!-- Pour Filtre -->
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="selects mb-5">
+                                        <div class="d-flex justify-content-end align-items-center container-fluid">
+                                            <h6 class="text-secondary mr-3">Filtre :</h6>
+                                                <select name="year" id="year" onchange="changeData()" class="yearselect form-control w-25">
+                                                    <option selected>Année</option>
+                                                </select>
+                                                <select name="country" id="country" onchange="changeData()" class="countryselect form-control ml-2 w-25">
+                                                    <option selected>Pays</option>
+                                                </select>
+                                            </div> 
+                                        </div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
                             </div>
-                            <canvas id="myChart"></canvas>
+
+                              
                         </div>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -341,6 +372,8 @@
     var moisall =[];
     var anneesall=[];
 
+    var curYear=new Date().getFullYear() ;
+
 
     var our_data_one =[];
     var our_data_two=[];
@@ -355,6 +388,7 @@
     statAll = news_stat_all.original.data;
 
     var elt = document.querySelector('.yearselect');
+    var yearsTous = document.querySelector('.yearTousselect');
     var countryselect = document.querySelector('.countryselect')
 
     for (let i = 0; i <souscrivantdata.length; i++){
@@ -370,44 +404,31 @@
         };
     }
             for(let i=0; i<statAll.length; i++){
-                paysall[i] = "Tous";
                 nball[i] = statAll[i].total;
                 moisall[i] = statAll[i].souscription_month;
                 anneesall[i] = statAll[i].souscription_year;
-                payssouscrivant.push(paysall[i]);
                 our_data_two[i] = {
-                    id:moisall[i],
-                    countries: {
-                        [anneesall[i]]: {[paysall[i]]:nball[i]}
+                    month:moisall[i],
+                    year:{
+                        [anneesall[i]]: nball[i]
                     }
                 };
             }
-            function renderGraph(){
-                //  console.log(document.getElementById("country").value);
-                if(document.getElementById("country").value != "Tous"){
-                     //console.log("test1")
-                     console.log(our_data_one)
-                   our_final_data = our_data_one;
-               }else{
-                   console.log(our_data_two)
-                   our_final_data = our_data_two;
-                } 
+            
 
-                return our_final_data;
-            }
-            // }
-                /* const country = document.getElementById("country").value;
-                if(country == "Tous"){
-                    our_final_data = our_data_two;
-                }else{
-                    our_final_data = our_data_one;
-                } */
     displayedYears = [...new Set(annees)];
+    displayedYearsTous = [...new Set(anneesall)];
     displayCountries = [...new Set(payssouscrivant)];
     for(let i=0; i<displayedYears.length; i++){
         if(displayedYears[i] != ""){
             var option = new Option(`${displayedYears[i]}`,`${displayedYears[i]}`);
             elt.options[elt.options.length] = option;
+        }
+    }
+    for(let i=0; i<displayedYearsTous.length; i++){
+        if(displayedYearsTous[i] != ""){
+            var option = new Option(`${displayedYearsTous[i]}`,`${displayedYearsTous[i]}`);
+            yearsTous.options[yearsTous.options.length] = option;
         }
     }
     for(let i=0; i<displayCountries.length; i++){
@@ -421,7 +442,7 @@
                 datasets: [
                     {
                         label: "Par pays et annee",
-                        data: renderGraph(),
+                        data: our_data_one,
                         backgroundColor: [
                             "rgba(255, 26, 104, 0.2)",
                             "rgba(54, 162, 235, 0.2)",
@@ -444,6 +465,34 @@
                     },
                 ],
             };
+            const dataTous = {
+                datasets: [
+                    {
+                        label: "Par année",
+                        data:our_data_two,
+                        backgroundColor: [
+                            "rgba(255, 26, 104, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(255, 206, 86, 0.2)",
+                            "rgba(75, 192, 192, 0.2)",
+                            "rgba(153, 102, 255, 0.2)",
+                            "rgba(255, 159, 64, 0.2)",
+                            "rgba(0, 0, 0, 0.2)",
+                        ],
+                        borderColor: [
+                            "rgba(255, 26, 104, 1)",
+                            "rgba(54, 162, 235, 1)",
+                            "rgba(255, 206, 86, 1)",
+                            "rgba(75, 192, 192, 1)",
+                            "rgba(153, 102, 255, 1)",
+                            "rgba(255, 159, 64, 1)",
+                            "rgba(0, 0, 0, 1)",
+                        ],
+                        borderWidth: 0.5,
+                        
+                    },
+                ],
+            };
             // config
     const config = {
                 type: "bar",
@@ -451,7 +500,7 @@
                 options: {
                     parsing: {
                         xAxisKey: "id",
-                        yAxisKey: "countries.2022.Togo",
+                        yAxisKey: `countries.${curYear}.Togo`,
                     },
                     scales: {
                         y: {
@@ -460,19 +509,42 @@
                     },
                 },
             };
-            // render init block
+    const configTous = {
+                type: "bar",
+                data:dataTous,
+                options: {
+                    parsing: {
+                        xAxisKey: "month",
+                        yAxisKey: `year.${curYear}`,
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            };
+
             const myChart = new Chart(
                 document.getElementById("myChart"),
                 config
             );
+            const myChartTous = new Chart(
+                document.getElementById("myChartTous"),
+                configTous
+            );
 
             function changeData() {
-                renderGraph();
-                console.log(renderGraph());
                 var year = document.getElementById("year").value;
                 var country = document.getElementById("country").value;
                 myChart.config.options.parsing.yAxisKey = `countries.${year}.${country}`;
                 myChart.update();
+            }
+            function changeDataTous() {
+                console.log(curYear)
+                var yearTous = document.getElementById("yearTous").value;
+                myChartTous.config.options.parsing.yAxisKey = `year.${yearTous}`;
+                myChartTous.update();
             }
         </script>
 @endsection
