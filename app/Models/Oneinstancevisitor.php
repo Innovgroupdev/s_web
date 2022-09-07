@@ -9,5 +9,5 @@ class Oneinstancevisitor extends Model
 {
     use HasFactory;
     protected $table = 'visiteurs';
-    protected $fillable = ['ip_address','visit_date','visit_month'];
+    protected $fillable = ['ip_adress','visit_date','visit_month'];
 }

@@ -22,6 +22,7 @@ use App\Models\Faq;
 */
 
 Route::get('/', function () {
+    dd(exec('getmac'));
     VisitLogController::CompterVisiteurs();
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();

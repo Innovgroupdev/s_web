@@ -1442,7 +1442,7 @@
                                 @csrf
                                 <div class="row my-4">
                                     <div class="col-4 mb-3 pr-0 mr-0">
-                                        <select class="" required>
+                                        <select  class="" required>
                                             @foreach ($countries as $country)
                                             <option value="{{$country->name}}" id="pays">{{$country->name}} - {{$country->code}}</option>
                                             @endforeach
@@ -1858,6 +1858,12 @@
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script>
+       $.getJSON("https://ipinfo.io",function(data){
+           alert(1)
+           console.log(data.ip)
+       })
+   </script>
     <script>
         $('#appino_subscription').submit(function(e) {
             e.preventDefault();
@@ -2141,7 +2147,6 @@
             });
         });
     </script>
-
     <script>
         const formQues = document.querySelector("#poserQestion");
 
@@ -2149,6 +2154,7 @@
             let pays_ = "";
             $('#select_id').on('change', function() {
                 pays_ = this.value;
+                console.log(pays_);
                 //alert(this.value); //or alert($(this).val());
             });
             formQues.addEventListener('submit', function(e) {
@@ -2224,5 +2230,10 @@
             });
         }
     </script>
-
+    <script>
+        $.getJSON("https://api.myip.com", function(data) {
+            // Display the visitor's IP in the console
+            console.log(data.ip);
+        });
+    </script>
     @endsection
