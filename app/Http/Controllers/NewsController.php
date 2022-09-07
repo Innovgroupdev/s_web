@@ -112,7 +112,7 @@ class NewsController extends AppBaseController
         ->get();
         if(!empty($newsstats)){
             return response()->json([
-                "data" => $newsstats
+                "data" =>$newsstats
             ]);
         }
       }

@@ -44,11 +44,11 @@ Route::get('/home', function(){
     $questions = FaqController::GetrecentFivefaqs();
     $newsstats = NewsController::Getnewsstats();
     $statsofNews = NewsController::NewsStatsAll();
-    $numberessayers = EssayerController::totalEssayers();
-    $userandpercentage = EssayerController::userpercountry();
+    $numberessayers = EssayerController::TotalEssayers();
+    $userandpercentage = EssayerController::UserperCountry();
 
 
-    return view('home', compact('statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
+    return view('home', compact('userandpercentage','statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
 })->name('home');
 
 Route::post('/getClientIp', [App\Http\Controllers\VisitLogController::class, 'getClientIp'])->name('getClientIp');

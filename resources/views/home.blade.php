@@ -72,27 +72,27 @@
                             @php
                             $totalCountriesVisites = 0;
                             @endphp
-                            @foreach($percentageofessayers->getData()->data as $country)
+                            @foreach($userandpercentage->getData()->data as $country)
                                 @php
-                                $totalCountriesVisites += $country->nombreEssayers;
+                                $totalCountriesVisites += $country->NombreUser;
                                 @endphp
                             @endforeach
 
-                            @foreach($percentageofessayers->getData()->data as $country)
+                            @foreach($userandpercentage->getData()->data as $country)
                         
                         <div class="country mb-4">
                             <div class="d-flex justify-content-between align-items-center">
                                     <h6>{{$country->pays}}</h6>
                                     <div class="nombre ">
-                                    <strong>{{ $country->nombreEssayers }} </strong> <span>| </span> 
+                                    <strong>{{ $country->NombreUser }} </strong> <span>| </span> 
                                     <span class="pourecentage"> 
-                                    {{ round(($country->nombreEssayers * 100 / $numberessayers), 0) }} %
+                                    {{ round(($country->NombreUser * 100 / count($users)), 0) }} %
                                         </span>
                                     </div>
                                 
                             </div>
                             <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->nombreEssayers * 100 / $numberessayers}}%;"></div>
+                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->NombreUser * 100 / count($users)}}%;"></div>
                             </div>
                             </div>
                             @endforeach   
