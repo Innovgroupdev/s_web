@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Essayer;
+use App\Models\FuturUser;
 use App\Repositories\EssayerRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -106,69 +107,46 @@ class EssayerController extends AppBaseController
         $array2 =[];
         $data = [];
         $datafinish = [];
-        $essayersemails =  Essayer::all('email');
-        $informersemails = Informer::all('email');
+        $essayersemails =  Essayer::all('email','pays');
+        $informersemails = Informer::all('email','pays');
         foreach($essayersemails as $essayer){
-            array_push($array1, $essayer['email']);
+            array_push($array1, $essayer);
         }
+
         foreach($informersemails as $informer){
-            array_push($array2, $informer['email']);
+            array_push($array2, $informer);
         }
+
         $data = array_merge($array1, $array2);
-        $datafinish = array_unique($data);
-        //$number = count($datafinish);
+        $datafinish = array_unique($data); 
         return $datafinish;
      }
 
-     public static function totalEssayers(){
-        $number = Essayer::count();
-        return $number;
-     }
-     static function _group_by($array, $key) {
-        $return = array();
-        foreach($array as $val) {
-            $return[$val[$key]][] = $val;
-        }
-        return $return;
-    }
-
-     public static function userpercountry(){
-        $usercountry = [];
-        $single = [];
-        $info =[];
-        $informeinfos = [];
-        $total=0;
-        $pays = [];
-        $valuesinformers = [];
-        $valuesessayers = [];
-        $allusers = EssayerController::TotalUsers();
-        $informers = Informer::select(DB::raw('count(*) as number,pays'))->groupBy('pays')->get();
-        $informerEmails = Informer::all('email');
-        $essayers = Essayer::select(DB::raw('count(*) as totaluser, pays'))->groupBy('pays')->get();
-
-         foreach($informers as $informer){
-            // array_push($info, $informer['pays']);
-            // array_push($info, $informer['number']);
-            array_push($pays, $informer['pays']);
-            array_push($valuesinformers, $informer['number']);
-            //$keyvalues1 = array_combine($pays, $valuesinformers);
-        } 
-        foreach($essayers as $essayer){
-            /* array_push($info, $essayer['pays']);
-            array_push($info, $essayer['totaluser']); */
-            array_push($pays, $essayer['pays']);
-            array_push($valuesessayers, $essayer['totaluser']);
-            //$keyvalues2 = array_combine($pays, $valuesessayers);
-        }
-        $valuemixed=[];
-        for($i=0; $i<count($valuesessayers); $i++){
-            for($j=0; $j<count($valuesinformers); $j++){
-                $total= $valuesinformers[$j] + $valuesessayers[$i];
-                array_push($valuemixed, $total);
+     public static function UserperCountry()
+     {
+        $userdata = EssayerController::TotalUsers();
+        foreach($userdata as $user){
+            $futuruser = new FuturUser;
+            $futuruser->email = $user['email'];
+            $futuruser->pays = $user['pays'];
+            if(!FuturUser::where('email', '=',$user['email'])->exists()){
+                $futuruser->save();
             }
-
         }
-        return $valuemixed;
+        $userandNumber = FuturUser::select(DB::raw('count(*) as NombreUser, pays'))
+        ->groupBy('pays')
+        ->get();
+        if(!empty($userandNumber)){
+            return response()->json([
+                "data" =>$userandNumber
+            ]);
+        }
      }
+        public static function TotalEssayers(){
+            $number = Essayer::count();
+
+            return $number;
+        }
+
 
 }
