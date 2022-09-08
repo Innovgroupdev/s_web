@@ -43,7 +43,7 @@
         </div>
         <!-- GraphesBox1 -->
         <div class="container-fluid">
-            <div class="row">
+            <div class="">
                 <div class="col-12 box-1 mt-5">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Nombre d'inscrits à la newsletters</h6> 
                     <div class="box one bg-white px-4 py-5 shadow-sm br container-fluid h-100">
@@ -96,7 +96,7 @@
                         
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-2">
                   <div class="col-6 mt-5 box-22">
                     <h6 class="text-secondary mb-3 text-uppercase ml-3">Pourcentage Futurs Utilisateurs par Pays</h6> 
                         <div class="box two bg-white px-4 py-5 shadow-sm br container-fluid h-100 text-left">

@@ -101,14 +101,46 @@ class EssayerController extends AppBaseController
             ]);
         }
      }
-     public static function TotalUsers()
+     public static function UserperCountry()
      {
-        $array1 = [];
-        $array2 =[];
-        $data = [];
-        $datafinish = [];
         $essayersemails =  Essayer::all('email','pays');
         $informersemails = Informer::all('email','pays');
+        foreach($essayersemails as $essayeruser){
+            $futuruser = new FuturUser;
+            $futuruser->email = $essayeruser['email'];
+            $futuruser->pays = $essayeruser['pays'];
+
+            if(!FuturUser::where('email', '=',$essayeruser['email'])->exists()){
+                $futuruser->save();
+            }
+        }
+        foreach($informersemails as $informeruser){
+            $futuruser2= new FuturUser;
+            $futuruser2->email = $informeruser['email'];
+            $futuruser2->pays = $informeruser['pays'];
+
+            if(!FuturUser::where('email', '=',$informeruser['email'])->exists()){
+                $futuruser2->save();
+            }
+        }
+        $userandNumber = FuturUser::select(DB::raw('count(*) as NombreUser, pays'))
+        ->groupBy('pays')
+        ->get();
+            if(!empty($userandNumber)){
+                return response()->json([
+                    "data" =>$userandNumber
+                ]);
+            }
+     }
+     public static function TotalUsers()
+     {
+        // $array1 = [];
+        // $array2 =[];
+        // $data = [];
+        // $datafinish = [];
+        /* $essayersemails =  Essayer::all('email','pays');
+        $informersemails = Informer::all('email','pays');
+        $user = FuturUser::select('email')->get();
         foreach($essayersemails as $essayer){
             array_push($array1, $essayer);
         }
@@ -118,35 +150,14 @@ class EssayerController extends AppBaseController
         }
 
         $data = array_merge($array1, $array2);
-        $datafinish = array_unique($data); 
-        return $datafinish;
-     }
-
-     public static function UserperCountry()
-     {
-        $userdata = EssayerController::TotalUsers();
-        foreach($userdata as $user){
-            $futuruser = new FuturUser;
-            $futuruser->email = $user['email'];
-            $futuruser->pays = $user['pays'];
-            if(!FuturUser::where('email', '=',$user['email'])->exists()){
-                $futuruser->save();
-            }
-        }
-        $userandNumber = FuturUser::select(DB::raw('count(*) as NombreUser, pays'))
-        ->groupBy('pays')
-        ->get();
-        if(!empty($userandNumber)){
-            return response()->json([
-                "data" =>$userandNumber
-            ]);
+        $datafinish = array_unique($data); */
+        $datafinish = FuturUser::all('email');
+        if(!empty($datafinish)){
+            return $datafinish;
         }
      }
         public static function TotalEssayers(){
             $number = Essayer::count();
-
             return $number;
         }
-
-
 }

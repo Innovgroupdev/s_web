@@ -35,7 +35,7 @@ Route::get('/home', function(){
     $articlewithnumbervues = ArticlesController::NumberofVues();
     //
     $percentagesouscription = NewsController::PercentageSouscriptionsperCountry();
-    $users = EssayerController::TotalUsers();
+    $userandpercentage = EssayerController::UserperCountry();
     $numberofNewsSouscription = NewsController::totalNewsSouscription();
     //
     $percentageofessayers = EssayerController::Percentageessayers();
@@ -45,8 +45,7 @@ Route::get('/home', function(){
     $newsstats = NewsController::Getnewsstats();
     $statsofNews = NewsController::NewsStatsAll();
     $numberessayers = EssayerController::TotalEssayers();
-    $userandpercentage = EssayerController::UserperCountry();
-
+    $users = EssayerController::TotalUsers();
 
     return view('home', compact('userandpercentage','statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
 })->name('home');
