@@ -10,6 +10,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\EssayerController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\VisitLogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,7 @@ use App\Http\Controllers\ArticlesController;
 */
 
 Route::get('/', function () {
+    /* dd($ipapiinfos = json_decode(file_get_contents('http://ip-api.com/json/'))); */
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
@@ -50,7 +52,7 @@ Route::get('/home', function(){
     return view('home', compact('userandpercentage','statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
 })->name('home');
 
-Route::post('/getClientIp', [App\Http\Controllers\VisitLogController::class, 'getClientIp'])->name('getClientIp');
+// Route::post('/getClientIp', [App\Http\Controllers\VisitLogController::class, 'getClientIp'])->name('getClientIp');
 
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');

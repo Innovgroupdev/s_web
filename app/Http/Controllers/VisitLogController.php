@@ -18,7 +18,7 @@ use App\Models\Oneinstancevisitor;
 class VisitLogController extends Controller
 {
     public static function getClientIp(Request $request){
-        dd($_SERVER);
+        /* $_SERVER; */
         $visiteur = new Visitor;
         $oneInstanceOfVisiteur = new Oneinstancevisitor;
         $visiteur->ip_address =  $request->ip;
@@ -44,5 +44,5 @@ class VisitLogController extends Controller
             $oneInstanceOfVisiteur->save();
         }
 
-    }
+    } 
 }

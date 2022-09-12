@@ -2340,31 +2340,4 @@
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function(){
-            $.getJSON("http://ip-api.com/json",function(response){
-                console.log(response)
-                $.ajax({
-                    url: "/getClientIp",
-                    type: "POST",
-                    data: {
-                        _token: $("input[name=_token]").val(),
-                        ip: response.query,
-                        ville: response.city,
-                        region : response.regionName,
-                        pays : response.country
-                    },
-                    success: function(response) {
-                        console.log(response)
-                    },
-                    error: function(response) {
-                        console.log(response)
-                    }
-                })
-            })
-
-        })
-
-    </script>
-    @endsection
+@endsection

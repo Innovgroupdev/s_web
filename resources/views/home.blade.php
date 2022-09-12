@@ -117,7 +117,7 @@
                                     <div class="nombre ">
                                     <strong>{{ $country->NombreUser }} </strong> <span>| </span> 
                                     <span class="pourecentage"> 
-                                    {{ round(($country->NombreUser * 100 / count($users)), 0) }} %
+                                    {{ round(($country->NombreUser * 100 / (count($users) == 0?1:count($users))), 0) }} %
                                         </span>
                                     </div>
                                 
@@ -154,7 +154,7 @@
                                     <div class="nombre ">
                                     <strong>{{ $country->NombredeSouscrivant }} </strong> <span>| </span> 
                                     <span class="pourecentage"> 
-                                    {{ round(($country->NombredeSouscrivant * 100 / $numberofNewsSouscription),0) }} %
+                                    {{ round(($country->NombredeSouscrivant * 100 / ($numberofNewsSouscription == 0 ? 1 : $numberofNewsSouscription)),0) }} %
                                         </span>
                                     </div>
                                 

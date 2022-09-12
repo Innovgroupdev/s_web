@@ -134,23 +134,6 @@ class EssayerController extends AppBaseController
      }
      public static function TotalUsers()
      {
-        // $array1 = [];
-        // $array2 =[];
-        // $data = [];
-        // $datafinish = [];
-        /* $essayersemails =  Essayer::all('email','pays');
-        $informersemails = Informer::all('email','pays');
-        $user = FuturUser::select('email')->get();
-        foreach($essayersemails as $essayer){
-            array_push($array1, $essayer);
-        }
-
-        foreach($informersemails as $informer){
-            array_push($array2, $informer);
-        }
-
-        $data = array_merge($array1, $array2);
-        $datafinish = array_unique($data); */
         $datafinish = FuturUser::all('email');
         if(!empty($datafinish)){
             return $datafinish;
