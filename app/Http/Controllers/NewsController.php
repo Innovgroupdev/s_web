@@ -99,7 +99,10 @@ class NewsController extends AppBaseController
       */
       public static function Getnewsstats()
       {
-        $stats = News::select(DB::raw('count(*) as NombredeSouscrivant,pays,souscription_month, souscription_year'))->groupBy('pays','souscription_month','souscription_year')
+        $stats = News::where('souscription_month', '!=',null)
+        ->where('souscription_year', '!=', null)
+        ->select(DB::raw('count(*) as NombredeSouscrivant,pays,souscription_month,souscription_year'))
+        ->groupBy('pays','souscription_month','souscription_year')
         ->get();
         if(!empty($stats)){
             return response()->json([
@@ -111,9 +114,15 @@ class NewsController extends AppBaseController
        * 
        */
       public static function NewsStatsAll(){
-        $newsstats = News::select(DB::raw('count(*) as total,souscription_month,souscription_year'))
+
+        $newsstats = News::where('souscription_month','!=', '')
+        ->where('souscription_year','!=',null)
+        ->select(DB::raw('count(*) as total,souscription_month,souscription_year'))
         ->groupBy('souscription_month','souscription_year')
         ->get();
+        /* $newsstats = News::select(DB::raw('count(*) as total,souscription_month,souscription_year'))
+        ->groupBy('souscription_month','souscription_year')
+        ->get(); */
         if(!empty($newsstats)){
             return response()->json([
                 "data" =>$newsstats

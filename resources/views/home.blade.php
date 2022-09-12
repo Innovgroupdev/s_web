@@ -359,8 +359,8 @@
             }
         </style> 
 <script type="text/javascript">
-    var number_news_souscrivant = <?php echo json_encode($newsstats);?>;
-    var news_stat_all = <?php echo json_encode($statsofNews);?>;
+    var number_news_souscrivant = <?php if($newsstats != null) echo json_encode($newsstats);?>;
+    var news_stat_all = <?php if($statsofNews != null) echo json_encode($statsofNews);?>;
 
     var nbnewssouscrivant=[];
     var payssouscrivant=[];
