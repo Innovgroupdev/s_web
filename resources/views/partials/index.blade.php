@@ -2339,10 +2339,31 @@
             });
         }
     </script>
+
     <script>
-        $.getJSON("https://api.myip.com", function(data) {
-            // Display the visitor's IP in the console
-            console.log(data.ip);
-        });
+        $(document).ready(function(){
+            $.getJSON("http://ip-api.com/json",function(response){
+                console.log(response)
+                $.ajax({
+                    url: "/getClientIp",
+                    type: "POST",
+                    data: {
+                        _token: $("input[name=_token]").val(),
+                        ip: response.query,
+                        ville: response.city,
+                        region : response.regionName,
+                        pays : response.country
+                    },
+                    success: function(response) {
+                        console.log(response)
+                    },
+                    error: function(response) {
+                        console.log(response)
+                    }
+                })
+            })
+
+        })
+
     </script>
     @endsection
