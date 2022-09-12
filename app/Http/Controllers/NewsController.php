@@ -115,7 +115,7 @@ class NewsController extends AppBaseController
        */
       public static function NewsStatsAll(){
 
-        $newsstats = News::where('souscription_month','!=', '')
+        $newsstats = News::where('souscription_month','!=', null)
         ->where('souscription_year','!=',null)
         ->select(DB::raw('count(*) as total,souscription_month,souscription_year'))
         ->groupBy('souscription_month','souscription_year')
