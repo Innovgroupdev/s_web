@@ -82,11 +82,9 @@ class FaqController extends AppBaseController
       */
       public static function GetrecentFivefaqs()
       {
-        $recentfiveFaq = Faq::Orderby('created_at', 'ASC')->take(4)->get();
+        $recentfiveFaq = Faq::Orderby('created_at', 'ASC')->take(5)->get();
         if(!empty($recentfiveFaq)){
-            return response()->json([
-                'data'=>$recentfiveFaq
-            ]);
+            return $recentfiveFaq;
         }
       }
 

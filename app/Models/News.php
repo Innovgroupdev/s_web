@@ -28,7 +28,12 @@ class News extends Model
 
     public $fillable = [
         'email',
-        'pays'
+        'pays',
+        'ip',
+        'region',
+        'ville',
+        'souscription_month',
+        'souscription_year'
     ];
 
     /**

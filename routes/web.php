@@ -1,15 +1,16 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Faq;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VisitLogController;
+
 use App\Http\Controllers\Blog\HomeController;
 use App\Http\Controllers\InformerController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\EssayerController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ArticlesController;
-use App\Models\Essayer;
-use App\Models\Faq;
-
+use App\Http\Controllers\VisitLogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,7 @@ use App\Models\Faq;
 */
 
 Route::get('/', function () {
-    VisitLogController::CompterVisiteurs();
+    /* dd($ipapiinfos = json_decode(file_get_contents('http://ip-api.com/json/'))); */
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
@@ -33,24 +34,25 @@ Auth::routes(['register' => false]);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', function(){
-
-    $nombretotalvisiteurs = VisitLogController::NumberVisiteurs();
-    $numbervisitors = VisitLogController::NumberofVisitors();
-    $numbervisitorspercountry = VisitLogController::NumberOfVisitorsPerCountry();
-    $numberofInformers = InformerController::TotalInformers();
-    $numberofInformerspercountry = InformerController::TotalInformersPerCountry();
-    $numberofNewsSouscription = NewsController::totalNewsSouscription();
     $articlewithnumbervues = ArticlesController::NumberofVues();
-    $souscrivantnewssparpays = NewsController::TotalSouscriptionsperCountry();
-    $questions = Faq::orderBy('created_at', 'desc')->take(5)->get();
-    $questionsPoses = Faq::all()->count();
-    $essayers = Essayer::all()->count();
+    //
+    $percentagesouscription = NewsController::PercentageSouscriptionsperCountry();
+    $userandpercentage = EssayerController::UserperCountry();
+    $numberofNewsSouscription = NewsController::totalNewsSouscription();
+    //
+    $percentageofessayers = EssayerController::Percentageessayers();
+    //
+    $numberofaqs = FaqController::Numberofaqs();
+    $questions = FaqController::GetrecentFivefaqs();
+    $newsstats = NewsController::Getnewsstats();
+    $statsofNews = NewsController::NewsStatsAll();
+    $numberessayers = EssayerController::TotalEssayers();
+    $users = EssayerController::TotalUsers();
 
-    return view('home', compact('nombretotalvisiteurs',
-    'numbervisitors','numbervisitorspercountry','numberofInformers',
-    'numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues',
-    'souscrivantnewssparpays','questions','questionsPoses','essayers'));
+    return view('home', compact('userandpercentage','statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
 })->name('home');
+
+// Route::post('/getClientIp', [App\Http\Controllers\VisitLogController::class, 'getClientIp'])->name('getClientIp');
 
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
 Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search'])->name('search');
@@ -75,5 +77,4 @@ Route::post("essayer-enregistre", [App\Http\Controllers\EssayerController::class
 Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/etat/{id}", [App\Http\Controllers\ArticlesController::class, 'etat'])->name('etat');
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
-
 

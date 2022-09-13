@@ -7,7 +7,6 @@ use App\Repositories\InformerRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\VisitLogController;
@@ -60,34 +59,4 @@ class InformerController extends AppBaseController
             $informer->save();
             return response()->json($informer);
     }
-
-    /**
-     * @author Charles
-     * @return int
-     * This function will return the number of Total Informers
-     */
-    public static function TotalInformers()
-    {
-
-        $totalInformers = Informer::count();
-        if(!empty($totalInformers))
-             return $totalInformers;
-    }
-
-    /**
-     * @return JsonResponse
-     * This function will return the number of Informers Group by Country
-     *@author Charles
-     */
-
-     public static function TotalInformersPerCountry()
-     {
-        $informerspercountry = Informer::select(DB::raw('count(*) as totalinformers, pays'))
-        ->groupBy('pays')
-        ->get();
-        return response()->json([
-            "message" =>"Donnees reçus avec succes",
-            "data" =>$informerspercountry
-        ], 200);
-     }
 }
