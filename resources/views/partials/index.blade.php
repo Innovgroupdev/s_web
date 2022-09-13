@@ -1865,15 +1865,15 @@
             let _token = $("input[name=_token]").val();
             let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-                $.getJSON("http://ip-api.com/json", function(data){  
+                $.getJSON("https://ipapi.co/json", function(data){  
                     $.ajax({
                         url: "{{route('enregistre')}}",
                         type: "POST",
                         data: {
                             email: email,
                             _token: _token,
-                            ip: data.query,
-                            pays: data.country,
+                            ip: data.ip,
+                            pays: data.country_name,
                             region: data.region,
                             ville: data.city
                         },
@@ -2342,10 +2342,15 @@
             });
         }
     </script>
-    <!-- <script>
-       $.getJSON("http://ip-api.com/json",function(data){
-          // alert(1)
-           console.log(data)
-       })
-   </script> -->
+    <!-- <script type="application/javascript">
+        //https://api.ipify.org?format=jsonp&callback=?
+    $(function() {
+        $.getJSON("https://ipapi.co/json",
+        function(json) {
+            
+            console.log(json)
+        }
+        );
+      });
+</script> -->
 @endsection
