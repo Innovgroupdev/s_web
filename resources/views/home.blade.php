@@ -56,7 +56,7 @@
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tous</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Filtre</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Filtré par Pays et Années </a>
                                 </li>
                             </ul>
                                     
@@ -66,7 +66,7 @@
                                 <!-- Pour Tous -->
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="d-flex justify-content-end align-items-center container-fluid">
-                                            <h6 class="text-secondary mr-3">Filtre :</h6>
+                                            <h6 class="text-secondary mr-3">Filtré par Année :</h6>
                                                 <select name="yearTous" id="yearTous" onchange="changeDataTous()" class="yearTousselect form-control w-25">
                                                     <option selected>Année</option>
                                                 </select>
@@ -78,7 +78,7 @@
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="selects mb-5">
                                         <div class="d-flex justify-content-end align-items-center container-fluid">
-                                            <h6 class="text-secondary mr-3">Filtre :</h6>
+                                            <h6 class="text-secondary mr-3">Filtré par Pays et Année:</h6>
                                                 <select name="year" id="year" onchange="changeData()" class="yearselect form-control w-25">
                                                     <option selected>Année</option>
                                                 </select>
