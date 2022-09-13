@@ -47,15 +47,12 @@ class NewsController extends AppBaseController
             $request->validate([
                 'email' => 'unique:news'
             ]);
-            // Cette Api fournis 120 requêtes par minute
-            //$geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}')); 
-            $ipapiinfos = json_decode(file_get_contents('http://ip-api.com/json/'));
             $news = new News();
             $news->email = $request->email;
-            $news->ip = $ipapiinfos->query;
-            $news->pays = $ipapiinfos->country;
-            $news->region = $ipapiinfos->regionName;
-            $news->ville = $ipapiinfos->city;
+            $news->ip = $request->ip;
+            $news->pays = $request->pays;
+            $news->region = $request->region;
+            $news->ville = $request->ville;
             $news->souscription_month = date('M');
             $news->souscription_year = date('Y');
             $news->save();

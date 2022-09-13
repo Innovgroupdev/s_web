@@ -1858,12 +1858,6 @@
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   <script>
-       $.getJSON("https://ipinfo.io",function(data){
-           alert(1)
-           console.log(data.ip)
-       })
-   </script>
     <script>
         $('#appino_subscription').submit(function(e) {
             e.preventDefault();
@@ -1871,33 +1865,42 @@
             let _token = $("input[name=_token]").val();
             let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-            $.ajax({
-                url: "{{route('enregistre')}}",
-                type: "POST",
-                data: {
-                    email: email,
-                    _token: _token
-                },
-                success: function(response) {
-                    if (response) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Envoyé avec succès',
-                            text: "Vos informations ont été prises en compte avec succès",
-                            showConfirmButton: true,
-                        })
-                        $('#appino_subscription')[0].reset();
-                        $('#error_email').hide();
-                    }
-                    setCookie('email', email, 180);
-                },
-                error: function() {
-                    $('#error_email').html('<label> Email existe déjà</label>')
-                }
+                $.getJSON("http://ip-api.com/json", function(data){  
+                    $.ajax({
+                        url: "{{route('enregistre')}}",
+                        type: "POST",
+                        data: {
+                            email: email,
+                            _token: _token,
+                            ip: data.query,
+                            pays: data.country,
+                            region: data.region,
+                            ville: data.city
+                        },
+                        success: function(response) {
+                            if (response) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text: "Vos informations ont été prises en compte avec succès",
+                                    showConfirmButton: true,
+                                })
+                                $('#appino_subscription')[0].reset();
+                                $('#error_email').hide();
+                            }
+                            setCookie('email', email, 180);
+                        },
+                        error: function() {
+                            $('#error_email').html('<label> Email existe déjà</label>')
+                        }
 
-            });
+                    });
+                });
         });
     </script>
+    <script>
+
+    </script>
     <script>
         $('#inform').submit(function(e) {
             e.preventDefault();
@@ -2339,5 +2342,10 @@
             });
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script>
+       $.getJSON("http://ip-api.com/json",function(data){
+          // alert(1)
+           console.log(data)
+       })
+   </script> -->
 @endsection

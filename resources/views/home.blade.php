@@ -123,7 +123,7 @@
                                 
                             </div>
                             <div class="slideP p-0  br container-fluid mt-2" style="height: .5rem;background-color:#e3e3e3">
-                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->NombreUser * 100 / count($users)}}%;"></div>
+                                <div class="slideV bg-primary br h-100 p-0" style="width: {{$country->NombreUser * 100 / (count($users) == 0?1:count($users))}}%;"></div>
                             </div>
                             </div>
                             @endforeach   
