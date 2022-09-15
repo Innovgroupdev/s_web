@@ -57,7 +57,7 @@
                                                                 <div class="row flex-row-reverse">
                                                                     <div class="col-sm-5 col-lg-5 col-md-5 hidden-xs">
                                                                         <div class="img-one">
-                                                                            <img loading="lazy" class="iq-mobile-img" src="{{ asset('images/Billeterie_en_ligne.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
+                                                                            <img  class="iq-mobile-img" src="{{ asset('images/Billeterie_en_ligne.png')}}" alt="application de vente et d’achat de tickets pour événement en ligne">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-7 col-lg-7 col-md-7 align-self-center">
