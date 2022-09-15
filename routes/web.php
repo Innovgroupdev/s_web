@@ -10,7 +10,6 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\EssayerController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ArticlesController;
-use App\Http\Controllers\VisitLogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
