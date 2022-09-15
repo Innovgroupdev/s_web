@@ -117,9 +117,6 @@ class NewsController extends AppBaseController
         ->select(DB::raw('count(*) as total,souscription_month,souscription_year'))
         ->groupBy('souscription_month','souscription_year')
         ->get();
-        /* $newsstats = News::select(DB::raw('count(*) as total,souscription_month,souscription_year'))
-        ->groupBy('souscription_month','souscription_year')
-        ->get(); */
         if(!empty($newsstats)){
             return response()->json([
                 "data" =>$newsstats
