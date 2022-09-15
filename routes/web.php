@@ -50,7 +50,7 @@ Route::get('/home', function(){
     $questions = Faq::orderBy('created_at', 'desc')->take(5)->get();
     $questionsPoses = Faq::all()->count();
     $essayers = Essayer::all()->count();
-    
+
     return view('home', compact('nombretotalvisiteurs',
     'numbervisitors','numbervisitorspercountry','numberofInformers',
     'numberofInformerspercountry','numberofNewsSouscription','articlewithnumbervues',

@@ -26,7 +26,7 @@ class HomeController extends Controller
     /*
      * show blog
      * */
-    public function blog()
+    public static function blog()
     {
         $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
         $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();

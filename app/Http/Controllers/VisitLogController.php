@@ -19,7 +19,6 @@ use Symfony\Component\HttpFoundation\IpUtils;
 
 class VisitLogController extends Controller
 {
-
     /**
      * @author Charles
      * Cette fonction Sauvegarde un internaute qui a visiter le site
@@ -29,13 +28,15 @@ class VisitLogController extends Controller
         $visitor = new Visitor;
 
         //$ip = request()->ip();
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = '196.170.107.60';
+        $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
+        //$ip=$this->getIp();
         // --------------------------------------| Cette Api fournis 120 requêtes par minute |-------------
-        $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip_address}'));
+        $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
         // ----------------| API pour avoir le Pays a partir de L'IP ---------------------
         if($geoinformations){
             $country = $geoinformations->geoplugin_countryName;
-            $visitor->ip_address = $ip;
+            $visitor->ip_address =  $ip;
             $visitor->visit_date = date('D');
             $visitor->visit_month = date('M');
             $visitor->visit_year = date('Y');
@@ -63,8 +64,9 @@ class VisitLogController extends Controller
     public static function NumberVisiteurs()
     {
         $nombretotalvisiteurs = Oneinstancevisitor::count();
-
-        return $nombretotalvisiteurs;
+        if(!empty($nombretotalvisiteurs)){
+            return $nombretotalvisiteurs;
+        }
     }
     /**
      * @return Application|Factory|View
@@ -74,7 +76,9 @@ class VisitLogController extends Controller
     public static function NumberofVisitors()
     {
         $nombreVisiteurs = Visitor::count();
-        return $nombreVisiteurs;
+        if(!empty($nombreVisiteurs)){
+            return $nombreVisiteurs;
+        }
     }
 
     /**

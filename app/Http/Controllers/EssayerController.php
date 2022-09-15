@@ -82,4 +82,15 @@ class EssayerController extends AppBaseController
         return view('essayers.show')->with('essayer', $essayer);
     }
 
+    /**
+     * 
+     */
+
+     public static function Numberofessayers()
+     {
+        $numberofessayers = Essayer::count();
+
+        return $numberofessayers;
+     }
+
 }

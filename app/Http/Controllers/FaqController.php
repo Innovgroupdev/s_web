@@ -53,19 +53,41 @@ class FaqController extends AppBaseController
                 'email' => 'unique:faqs',
             ]);
         }
-      
+
         $request->validate([
             'tel' => 'required|min:5|unique:faqs',
         ]);
-        // dd($request->all()); 
+
         $faq = new Faq();
-        $faq->pays = $request->pays;  
-        $faq->tel = $request->tel; 
-        $faq->email = $request->email; 
-        $faq->question = $request->question; 
+        $faq->pays = $request->pays;
+        $faq->tel = $request->tel;
+        $faq->email = $request->email;
+        $faq->question = $request->question;
         $faq->save();
 
         return response()->json($faq);
     }
+    /**
+     *
+     */
+
+     public static function Numberofaqs()
+     {
+        $numberofaqs = Faq::count();
+
+        return $numberofaqs;
+     }
+     /**
+      *
+      */
+      public static function GetrecentFivefaqs()
+      {
+        $recentfiveFaq = Faq::Orderby('created_at', 'ASC')->take(4)->get();
+        if(!empty($recentfiveFaq)){
+            return response()->json([
+                'data'=>$recentfiveFaq
+            ]);
+        }
+      }
 
 }
