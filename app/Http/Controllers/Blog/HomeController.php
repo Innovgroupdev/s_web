@@ -171,5 +171,7 @@ class HomeController extends Controller
         $catArticles = Categorie::find($categorie->id)->articles()->where('etat',1)->paginate(9);
         return view('partials.blog.category',compact(['catArticles','categorie']));
     }
-
+    public function amen(Request $request){
+        dd($request);
+     }
 }
