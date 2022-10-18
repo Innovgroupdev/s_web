@@ -29,7 +29,7 @@ class Informer extends Model
     attributes for class Informer
      */
     public $fillable = [
-        'email',
+        // 'email',
         'pays',
         'numero'
     ];

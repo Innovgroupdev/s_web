@@ -71,7 +71,7 @@
 
 
 
-                                                                            <a data-target="#exampleModalCenterHeader" data-toggle="modal" title="Modal Soyez informé au lancement de cible" class="button  button-icon " href="#">
+                                                                            <a data-target="#exampleModalCenterHeader" data-toggle="modal" title="Modal Soyez informé au lancement de cible" class="button  button-icon" id="informerBtnEvent" href="#">
                                                                                 Soyez informé au lancement </a>
 
 
@@ -1536,6 +1536,58 @@
             </div>
         </div>
         <!-- =========================================Header================================================================================= -->
+         <!-- =========================================Header================================================================================= -->
+         <div class="modal fade" id="exampleModalCenterHeaderGain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content pt-0">
+                  
+                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                        <div class="container-fluid p-0 m-0" style="position:relative">
+                            <img src="{{ asset('images/afficheGainImage.png')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.png')}}">
+                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#000">&times;</span>
+                            </button>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:bold">Soyez informé au lancement !</h5>
+                                <p class="mb-0 pb-0 text-secondary">
+                                    Votre adresse email ne sera pas publiée.
+                                </p>
+                                <form id="informHeader" class="comment-form text-left">
+                                    @csrf
+                                    <div class="row my-4">
+                                        <div class="col-4 mb-3 pr-0 mr-0">
+                                            <select class="" required id="select_Gain">
+                                                <option value="" disabled hidden selected>Choix du pays</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{$country->name}}" id="paysGain">{{$country->name}} - {{$country->code}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-8 mb-3">
+                                            <input id="numberGain" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                        </div>
+                                        <div class="col-12">
+                                            <input id="emailGain" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
+                                        </div>
+                                        <div class="col-12 text-center text-danger mt-3">
+                                            <strong> <span id="error_informGain" style="color:red!important"></span></strong>
+                                        </div>
+                                        <div class="col-12 mt-4 d-flex justify-content-center">
+
+                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                        </div>
+                                    </div>
+
+                                </form>
+                        </div>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- =========================================Header================================================================================= -->
         <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content pt-0">
@@ -1548,7 +1600,7 @@
                     <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                         <div class="container-fluid p-0 m-0" style="position:relative">
                             <img src="{{ asset('images/FAQ.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/FAQ.jpg')}}">
-                            <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                            <!-- <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div> -->
                             <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:3rem;left:3rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
                             <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" style="color:#fff">&times;</span>
@@ -1593,10 +1645,7 @@
                         </div>
 
                     </div>
-                    <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">D'accord</button>
-                                                    </div> -->
+                   
                 </div>
             </div>
         </div>
@@ -1827,6 +1876,10 @@
         </style>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
+            // alert(1)
+            // $('#informerBtnEvent').modal('show')
+
+        //    document.getElementById('informerBtnEvent').modal('show');
             setTimeout(() => {
                 setCookieValueToInput('email', 'email');
                 setCookieValueToInput('nom', 'nomE');
@@ -2003,6 +2056,89 @@
                         },
                         error: function() {
                             $('#error_informH').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                            })
+                        }
+
+                    });
+                });
+            }
+        </script>
+        <script>
+            const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
+            if (formCommentIn1) {
+                let pays_ = "";
+                $('#select_Gain').on('change', function() {
+                    pays_ = this.value;
+                    //alert(this.value); //or alert($(this).val());
+                });
+                formCommentIn1.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(e.target)
+                    //console.log(formData.entries())
+                    //    e.preventDefault();
+                    let pays = pays_
+                    let email = $("#emailGain").val();
+                    let numero = $("#numberGain").val();
+                    let _token = $("input[name=_token]").val();
+                    console.log(pays, $("#emailGain").val(), numero)
+                    //debugger
+                    $.ajax({
+                        url: "{{route('informer-enregistre')}}",
+                        type: "POST",
+                        data: {
+                            email: email,
+                            pays: pays,
+                            numero: numero,
+                            _token: _token
+                        },
+                        beforeSend: function() {
+                            let timerInterval;
+                            Swal.fire({
+                                title: 'Envoie en cours ...',
+                                html: 'Chargement dans <b></b> milliseconds.',
+                                timer: 1000000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                    const b = Swal.getHtmlContainer().querySelector('b')
+                                    timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                    }, 100)
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval)
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    console.log('I was closed by the timer')
+                                }
+                            })
+                            setCookie('numero', numero, 180);
+                            setCookie('email', email, 180);
+                            setCookie('modalGain', 'true', 180);
+                        },
+                        success: function(response) {
+                            if (response) {
+
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text: "Vos informations ont été prises en compte avec succès",
+                                    showConfirmButton: true,
+                                })
+                                $('#informHeader')[0].reset();
+                                $('#error_informGain').hide();
+                                $('#informHeader')[0].hide();
+                            }
+                        },
+                        error: function() {
+                            $('#error_informGain').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Erreur !',
@@ -2340,5 +2476,18 @@
                     });
                 });
             }
+        </script>
+        <script>
+           
+             $(window).on('load', function() {
+                var temp = getCookie('modalGain').split('=')[1]
+             console.log(temp);
+                setTimeout(() => {
+                    if(temp == null){   
+                        $('#exampleModalCenterHeaderGain').modal('show');
+                    }
+                }, 10000);   
+            });
+             
         </script>
 @endsection

@@ -3,7 +3,7 @@
 @section('content')
 
 <link href="https://csummernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet"/>
-      <script href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+      <script href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
 
     <section class="content-header">
         <div class="container-fluid">
@@ -45,7 +45,7 @@
                         <button class="btn btn-sm btn-danger" id="btn-reset">Reset</button>
                         </div>
 
-                        <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" name="contenu" id="ta-1" cols="30" rows="2"> {{old('contenu')}}</textarea>
+                        <textarea type="texte" placeholder="" class="form-control br border-none @error('contenu') is-invalid @enderror" autocomplete="contenu" name="contenu" id="contenu" cols="30" rows="2"> {{old('contenu')}}</textarea>
                         @error('contenu')
                         <div class="invalid-feedback">{{$message}}</div>
                         @enderror
@@ -165,7 +165,7 @@
     <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
 
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))

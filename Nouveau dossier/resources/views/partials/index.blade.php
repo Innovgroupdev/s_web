@@ -1830,6 +1830,8 @@
             setTimeout(() => {
                 setCookieValueToInput('email', 'email');
                 setCookieValueToInput('nom', 'nomE');
+                setCookieValueToInput('numero', 'numberGain');
+                setCookieValueToInput('email', 'emailGain');
                 setCookieValueToInput('numero', 'numberH');
                 setCookieValueToInput('email', 'emailH');
                 setCookieValueToInput('numero', 'numeroE');
@@ -2340,5 +2342,14 @@
                     });
                 });
             }
+        </script>
+         <script>
+             
+             $(window).on('load', function() {
+                setTimeout(() => {
+                    $('#exampleModalCenterHeaderGain').modal('show');
+                }, 10000);   
+            });
+             
         </script>
 @endsection
