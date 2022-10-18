@@ -1,0 +1,49 @@
+.card,%card{
+    border: 2px solid $greyColor;
+
+    border-radius: 20px;
+    .card__content{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-content: space-between;
+        flex-flow: wrap;
+        padding-left: space(3);
+        padding-right: space(3);
+        padding-bottom: space(2);
+    }
+
+    .card_img{
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-bottom: space(2);
+
+    }
+    .card__title{
+        color: $primaryColor;
+        font-size: 1.87em;
+        margin-bottom: space(2);
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: space(2);
+            height: space(2);
+            background-color: $primaryColor;
+            top: -30px;
+            left: 0;
+            border-radius: 50%;
+
+
+        }
+    }
+
+    p{
+        font-size: 1.12em;
+        font-weight: 400;
+        color: $greyColor;
+        margin-bottom: space(4);
+    }
+}

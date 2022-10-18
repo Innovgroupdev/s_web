@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
+<link href="https://csummernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet"/>
+      <script href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <section class="content-header">
         <div class="container-fluid">
@@ -244,6 +246,6 @@
 		$("#content").empty();
 	});
 })();
- 
+
 </script>
 @endsection

@@ -1,0 +1,109 @@
+
+
+// Outils
+// ==================
+@import "tools/reset";
+@import "tools/functions";
+@import "tools/mixins";
+// Variables
+// ==================
+$primaryColor: #EA5806;
+$secondaryColor: #0000;
+$greyColor:#B3B3B3;
+$erroColor: #db2929;
+$telecomColor: #003146;
+$consultingColor:#CA7C1B;
+$businessColor: #92C83E;
+$greenBusinessColor:#007366;
+$gradiant: linear-gradient(
+                120deg
+        ,$primaryColor,$secondaryColor);
+
+$duration: .5s;
+:root{
+        --border: #B3B3B3;
+}
+
+//Modules
+//=============
+@import "modules/fonts";
+@import "modules/typography";
+@import "modules/container";
+@import "modules/grid";
+@import "modules/flex";
+@import "modules/form";
+@import "modules/btn";
+@import "modules/grid";
+@import "modules/header";
+@import "modules/section";
+@import "modules/card";
+@import "modules/footer";
+@import "modules/slider";
+@import "modules/animate";
+
+
+
+
+// Spaces
+// =============
+@for $i from 1 through 3 {
+        .p-#{$i} {
+                padding: space($i);
+        }
+        .py-#{$i} {
+                padding-top: space($i);
+                padding-bottom: space($i);
+        }
+        .ml-#{$i} {
+                margin-left: space($i);
+        }
+        .mt-#{$i}, %mt-#{$i} {
+                margin-top: space($i);
+        }
+        .mb-#{$i} {
+                margin-bottom: space($i);
+        }
+}
+
+
+// media query
+@media only screen and (max-width: 1024px) {
+        .section{
+        padding-left: 60px;
+        padding-right: 60px;
+        }
+
+        li {
+                padding: 10px;
+            }
+
+        .service__banner__content {
+                padding-left: 70px;
+            }
+            .footer {
+                padding-right: 43px;
+                padding-left: 66px;
+            }
+            form.form {
+                min-width: 195px !important;
+            }
+            .header {
+                padding-left: 66px;
+                padding-right: 48px;
+            }
+            .contact {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+
+}
+
+// @media only screen and (max-width: 768px) {
+//         .grid_first {
+//                 display: inline-grid !important;
+//             }
+
+//             .grid_second {
+//                 display: inline-grid !important;
+//             }
+// }

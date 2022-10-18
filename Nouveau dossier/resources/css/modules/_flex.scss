@@ -1,0 +1,21 @@
+%flex,.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.flex__around{
+  justify-content: space-around;
+}
+
+.flex__column{
+  @extend %flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .nav__item + .nav__item{
+    margin-left: 0;
+  }
+}
+.flex__center{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}

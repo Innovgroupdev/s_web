@@ -1,0 +1,61 @@
+.footer{
+  .form{
+    justify-self: end;
+  }
+}
+// Label
+// ==================
+label {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: .85em;
+}
+
+input:disabled {
+  opacity: .7;
+}
+
+// Champs texte
+// ==================
+.form-group input,
+.form-group textarea,
+.choices__inner,
+.form-group select,
+%input {
+  font: $font;
+  font-size: 1.25em;
+  color: var(--border);
+  border: 1px solid var(--border);
+  background: var(--background);
+  border-radius: 3px;
+  padding: space(1.5) space(1);
+  align-items: end;
+  width: 100%;
+  outline: none;
+  min-height: 44px;
+  transition: $duration;
+  &[placeholder],&[-internal-autofill-selected]{
+    font: $font;
+    font-size: 1.25em;
+    color: var(--border);
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group textarea {
+  min-height: 150px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: space(1);
+}
+
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus{
+  font: $font;
+  font-size: 1.25em;
+  color: var(--border);
+  background-color: transparent;
+}
