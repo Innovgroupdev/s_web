@@ -1485,11 +1485,15 @@
                                                     </div> -->
                     <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                         <div class="container-fluid p-0 m-0" style="position:relative">
-                            <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
+                            <!-- <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                             <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                             <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                             <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" style="color:#fff">&times;</span>
+                            </button> -->
+                            <img src="{{ asset('images/afficheGainImage1.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage1.jpeg')}}">
+                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#000">&times;</span>
                             </button>
                         </div>
                         <div class="p-3">
@@ -1543,7 +1547,7 @@
                   
                     <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                         <div class="container-fluid p-0 m-0" style="position:relative">
-                            <img src="{{ asset('images/afficheGainImage.png')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.png')}}">
+                            <img src="{{ asset('images/afficheGainImage.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.jpeg')}}">
                             <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" style="color:#000">&times;</span>
                             </button>
