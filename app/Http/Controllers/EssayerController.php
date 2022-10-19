@@ -53,7 +53,7 @@ class EssayerController extends AppBaseController
         $request->validate([
             'numero' => 'required|min:5|unique:essayers',
         ]);
-     
+
         $essayer = new Essayer();
         $essayer->nom = $request->nom;
         $essayer->numero = $request->numero;
@@ -87,7 +87,7 @@ class EssayerController extends AppBaseController
     }
 
     /**
-     * 
+     *
      */
      public static function Percentageessayers(){
         $numberofessayers = Essayer::count();
@@ -103,14 +103,15 @@ class EssayerController extends AppBaseController
      }
      public static function UserperCountry()
      {
-        $essayersemails =  Essayer::all('email','pays');
-        $informersemails = Informer::all('email','pays');
+        $essayersemails =  Essayer::all('numero','pays');
+        $informersemails = Informer::all('numero','pays');
         foreach($essayersemails as $essayeruser){
             $futuruser = new FuturUser;
+            $futuruser->numero = $essayeruser['numero'];
             $futuruser->email = $essayeruser['email'];
             $futuruser->pays = $essayeruser['pays'];
 
-            if(!FuturUser::where('email', '=',$essayeruser['email'])->exists()){
+            if(!FuturUser::where('numero', '=',$essayeruser['numero'])->exists()){
                 $futuruser->save();
             }
         }
@@ -118,8 +119,9 @@ class EssayerController extends AppBaseController
             $futuruser2= new FuturUser;
             $futuruser2->email = $informeruser['email'];
             $futuruser2->pays = $informeruser['pays'];
+            $futuruser2->numero = $informeruser['numero'];
 
-            if(!FuturUser::where('email', '=',$informeruser['email'])->exists()){
+            if(!FuturUser::where('numero', '=',$informeruser['numero'])->exists()){
                 $futuruser2->save();
             }
         }

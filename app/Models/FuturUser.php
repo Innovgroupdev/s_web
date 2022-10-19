@@ -10,5 +10,5 @@ class FuturUser extends Model
     use HasFactory;
 
     protected $table = "futursutilisateurs";
-    protected $fillable=['email','pays'];
+    protected $fillable=['email','pays','numero'];
 }
