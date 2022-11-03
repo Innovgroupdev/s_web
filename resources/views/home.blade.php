@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
  <div class="container-fluid py-5 px-5">
         <!-- <h1 class="text-black-50">DASHBOARD!</h1> -->
         <!-- Comptage -->

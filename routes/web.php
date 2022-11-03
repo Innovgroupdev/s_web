@@ -3,12 +3,14 @@
 use App\Models\Article;
 use App\Models\Faq;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\Blog\HomeController;
 use App\Http\Controllers\InformerController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\EssayerController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CheckCookieController;
 use App\Http\Controllers\ArticlesController;
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,9 @@ Route::get('/', function () {
 });
 
 Auth::routes(['register' => false]);
-Route::get('/home', function(){
+
+Route::get('/home', function(Request $request){
+    //CheckCookieController::checkcookiepresence($request);
     $articlewithnumbervues = ArticlesController::NumberofVues();
     //
     $percentagesouscription = NewsController::PercentageSouscriptionsperCountry();

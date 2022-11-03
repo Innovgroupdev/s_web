@@ -132,6 +132,9 @@ class EssayerController extends AppBaseController
                 ]);
             }
      }
+     /**
+      * 
+      */
      public static function TotalUsers()
      {
         $datafinish = FuturUser::all('email');

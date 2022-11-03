@@ -23,7 +23,6 @@
 
     @stack('page_css')
 </head>
-
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
     <!-- Main Header -->
@@ -39,9 +38,7 @@
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle text-center" data-toggle="dropdown">
                     <img src="{{ asset('images/equipe-cible-la-diva.png')}}"
-                         class="user-image img-circle elevation-2" alt="User Image">
-                         <!-- <br>
-                    <span class="d-none d-md-inline">{{ Auth::user()->name }}</span> -->
+                    class="user-image img-circle elevation-2" alt="User Image">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
@@ -50,8 +47,15 @@
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
-                            {{ Auth::user()->name }}
-                            <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                            @if(Cookie::get('cible_session') !== null)
+                                {{ Auth::user()->name }}
+                                <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                            @else
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Your session has Expired click <a href="{{ route('login') }}">here</a> to Log in
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>    
+                            @endif       
                         </p>
                     </li>
                     <!-- Menu Footer-->
@@ -69,7 +73,6 @@
             </li>
         </ul>
     </nav>
-
     <!-- Left side column. contains the logo and sidebar -->
 @include('layouts.sidebar')
 
@@ -99,7 +102,8 @@
             reader.readAsDataURL(document.getElementById('motivationImages').files[0]);
             return document.getElementById("imageMotivation");
         }
- </script>
+</script>
+
 
 @yield('third_party_scripts')
 
