@@ -9,7 +9,8 @@
             <th class="p-4">Email</th>
         <th class="p-4">Pays</th>
         <th class="p-4">Numero</th>
-            <th class="p-3 text-right">Date  de création</th>
+        <th class="p-4">Organisateur</th>
+            <th class="p-3 text-right">Date de création</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,11 @@
                 <td class="p-4">{{ $informer->email }}</td>
             <td class="p-4">{{ $informer->pays }}</td>
             <td class="p-4">{{ $informer->numero }}</td>
+                @if($informer->is_organisateur == 0)
+            <td class="p-4">Non</td>
+                    @else
+             <td class="p-4">oui</td>
+                @endif
                 <td class="p-4 text-right">
                 {{ $informer->created_at }}
 {{--                    {!! Form::open(['route' => ['informers.destroy', $informer->id], 'method' => 'delete']) !!}--}}
@@ -33,7 +39,7 @@
 {{--                            <i class="far fa-edit"></i>--}}
 {{--                        </a>--}}
 {{--                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}--}}
-                   
+
                     {!! Form::close() !!}
                 </td>
             </tr>
@@ -64,27 +70,27 @@ buttons: [
     {
         extend: 'copy',
         text: 'Copy',
-       
+
     },
     {
         extend: 'excel',
         text: 'Excel',
-       
+
     },
     {
         extend: 'pdf',
         text: 'Pdf',
         orientation: 'landscape',
         pageSize: 'LEGAL'
-       
+
     },
-   
+
 ],
 select: true
 } );
 } );
-  
-   
+
+
 </script>
 
 <style>
@@ -197,14 +203,14 @@ select: true
         border-color: #E28C3C!important;
         border-radius: 5px!important;
         color:#fff!important;
-        background-image:none!important 
+        background-image:none!important
     }
     .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
         background-color: #8A8989!important;
         border-color: #8A8989!important;
         border-radius: 5px!important;
         color:#fff!important;
-        background-image:none!important 
+        background-image:none!important
     }
     .dataTables_info,.dataTables_paginate {
             margin-top: 1rem;
@@ -212,7 +218,7 @@ select: true
     table.dataTable.no-footer {
     border-bottom: 1px solid #D4D4D4!important;
     border-top: 1px solid #D4D4D4!important;
-    
+
 }
 thead tr th{
     border-bottom: 1px solid #D4D4D4!important;

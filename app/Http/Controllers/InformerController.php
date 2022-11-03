@@ -51,11 +51,14 @@ class InformerController extends AppBaseController
         $request->validate([
             'numero' => 'required|min:5|unique:informers',
         ]);
-
             $informer = new Informer();
             $informer->pays = $request->pays;
             $informer->numero = $request->numero;
             $informer->email = $request->email;
+            //$informer->is_organisateur = $request->is_organisateur;
+            $informer->is_organisateur = $request->is_organisateur;
+
+           // dd($informer);
             $informer->save();
             return response()->json($informer);
     }

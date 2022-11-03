@@ -37,6 +37,7 @@ class Essayer extends Model
         'email',
         'pays',
         'profession',
+        //  'is_organisateur',
         'raison'
     ];
 
@@ -50,6 +51,7 @@ class Essayer extends Model
         'numero' => 'string',
         'email' => 'string',
         'pays' => 'string',
+        // 'is_organisateur' => 'boolean',
         'profession' => 'string',
         'raison' => 'string'
     ];
@@ -65,6 +67,7 @@ class Essayer extends Model
 //        'email' => 'required',
         'pays' => 'required',
         'profession' => 'required',
+        //  'is_organisateur' => 'boolean',
         'raison' => 'required'
     ];
 

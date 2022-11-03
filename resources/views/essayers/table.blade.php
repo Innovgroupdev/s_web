@@ -1,6 +1,6 @@
 
 <div class="d-flex justify-content-end w-100 mt-3 pr-4">
-   
+
    <div>
    <input type="text" placeholder="Rechercher" oninput="searchItem(this.value,{{$essayers}})">
    </div>
@@ -16,6 +16,7 @@
         <th class="p-4">Email</th>
         <th class="p-4">Pays</th>
         <th class="p-4">Profession</th>
+            <th class="p-4">Organisateur</th>
         <th colspan="3" class="p-4">Actions</th>
         </tr>
         </thead>
@@ -28,6 +29,11 @@
                 <td class="p-4">{{ $essayer->email }}</td>
                 <td class="p-4">{{ $essayer->pays }}</td>
                 <td class="p-4">{{ $essayer->profession }}</td>
+                @if($essayer->is_organisateur == 0)
+                    <td class="p-4">Non</td>
+                @else
+                    <td class="p-4">oui</td>
+                @endif
                 <td width="120">
                     <div class='btn-group'>
                         <a href="{{ route('essayers.show', [$essayer->id]) }}" data-toggle="modal" data-target="#exampleModalCenter{{ $essayer->id }}"
@@ -47,12 +53,12 @@
                                             </button>
                                             </div>
                                             <div class="modal-body text-left pb-0 pt-0">
-                                               
-                                           
-                                            
+
+
+
                                              <!-- Comments areas -->
                                          <div class="container-fluid">
-                                       
+
                                             <div class="item-comment-area comtainer-fluid">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
@@ -65,17 +71,17 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                
+
                                                 </div>
                                                 </div>
                                                 <div class="comment-text">
                                                 <p class="text-secondary mt-3 ">
-                                                {{ $essayer->pays }}, {{ $essayer->numero }} 
+                                                {{ $essayer->pays }}, {{ $essayer->numero }}
                                                 </p>
                                                 <p class="text-secondary mt-3 ">
                                                <strong>Profession </strong> | {{ $essayer->profession }}
                                                 </p>
-                                                <p class="text-secondary mt-3 " > 
+                                                <p class="text-secondary mt-3 " >
                                                 <strong>Raison </strong> <br>
                                                 <span class="m-0 me-2 text-info" style="font-size:1.75rem;color:gray"> &#128630;</span>
                                                 {{ $essayer->raison }}
@@ -85,12 +91,12 @@
                                                 </p>
                                                 </div>
                                             </div>
-                                          
-                                        
+
+
                                         </div>
                                         <!-- End Comments areas -->
                                             </div>
-                                           
+
                                         </div>
                                         </div>
                                     </div>
