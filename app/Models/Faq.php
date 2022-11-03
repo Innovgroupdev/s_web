@@ -27,7 +27,7 @@ class Faq extends Model
     protected $dates = ['deleted_at'];
 
     /**
-    attributes for class Faq
+    *attributes for class Faq
      */
     public $fillable = [
         'pays',

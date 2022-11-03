@@ -162,7 +162,8 @@ class HomeController extends Controller
             }
         }
         $categories = $getCollections;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        $countries = Country::all();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives', 'countries']));
     }
 
     /*
