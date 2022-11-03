@@ -51,8 +51,9 @@ class HomeController extends Controller
         $articles =  Article::orderBy('created_at', 'desc')->where('etat', 1)->paginate(12);
         $categories = $getCollections;
         $publicites = Publicite::all();
-        VisitLogController::CompterVisiteurs();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        $countries = Country::all();
+        //VisitLogController::CompterVisiteurs();
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives','countries']));
     }
 
    /*
@@ -125,7 +126,8 @@ class HomeController extends Controller
         }
         $categories = $getCollections;
         $articleCommentaires = Article::find($article->id)->commentaires;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires']));
+        $countries = Country::all();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires', 'countries']));
     }
 
     public function detail()
