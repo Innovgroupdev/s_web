@@ -1491,7 +1491,7 @@
                             <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" style="color:#fff">&times;</span>
                             </button> -->
-                            <img src="{{ asset('images/afficheGainImage1.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage1.jpeg')}}">
+                            <img src="{{ asset('images/a                           fficheGainImage1.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage1.jpeg')}}">
                             <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true" style="color:#000">&times;</span>
                             </button>
@@ -1540,57 +1540,7 @@
             </div>
         </div>
         <!-- =========================================Header================================================================================= -->
-         <!-- =========================================Header================================================================================= -->
-         <div class="modal fade" id="exampleModalCenterHeaderGain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content pt-0">
-                  
-                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
-                        <div class="container-fluid p-0 m-0" style="position:relative">
-                            <img src="{{ asset('images/afficheGainImage.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.jpeg')}}">
-                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" style="color:#000">&times;</span>
-                            </button>
-                        </div>
-                        <div class="p-3">
-                            <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:bold">Soyez informé au lancement !</h5>
-                                <p class="mb-0 pb-0 text-secondary">
-                                    Votre adresse email ne sera pas publiée.
-                                </p>
-                                <form id="informHeader" class="comment-form text-left">
-                                    @csrf
-                                    <div class="row my-4">
-                                        <div class="col-4 mb-3 pr-0 mr-0">
-                                            <select class="" required id="select_Gain">
-                                                <option value="" disabled hidden selected>Choix du pays</option>
-                                                @foreach ($countries as $country)
-                                                    <option value="{{$country->name}}" id="paysGain">{{$country->name}} - {{$country->code}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-8 mb-3">
-                                            <input id="numberGain" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                        </div>
-                                        <div class="col-12">
-                                            <input id="emailGain" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
-                                        </div>
-                                        <div class="col-12 text-center text-danger mt-3">
-                                            <strong> <span id="error_informGain" style="color:red!important"></span></strong>
-                                        </div>
-                                        <div class="col-12 mt-4 d-flex justify-content-center">
-
-                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
-                                        </div>
-                                    </div>
-
-                                </form>
-                        </div>
-
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
+        
         <!-- =========================================Header================================================================================= -->
         <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1878,7 +1828,7 @@
         filter: grayscale(100%) */
             }
         </style>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
         <script>
             // alert(1)
             // $('#informerBtnEvent').modal('show')
@@ -2071,7 +2021,7 @@
                 });
             }
         </script>
-        <script>
+        <!-- <script>
             const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
             if (formCommentIn1) {
                 let pays_ = "";
@@ -2153,7 +2103,7 @@
                     });
                 });
             }
-        </script>
+        </script> -->
 
         <script>
             const formBilleterie = document.querySelector("#informBilleterie");
@@ -2481,17 +2431,5 @@
                 });
             }
         </script>
-        <script>
-           
-             $(window).on('load', function() {
-                var temp = getCookie('modalGain').split('=')[1]
-             console.log(temp);
-                setTimeout(() => {
-                    if(temp == null){   
-                        $('#exampleModalCenterHeaderGain').modal('show');
-                    }
-                }, 10000);   
-            });
-             
-        </script>
+       
 @endsection
