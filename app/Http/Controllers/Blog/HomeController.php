@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\VisitlogController;
 use App\Models\Article;
 use App\Models\Categorie;
+use App\Models\Country;
 use App\Models\Commentaire;
 use App\Models\Publicite;
 use Illuminate\Http\Request;
