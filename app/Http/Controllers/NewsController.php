@@ -11,6 +11,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Flash;
+use Carbon\Carbon;
 use Response;
 
 class NewsController extends AppBaseController
@@ -44,15 +45,20 @@ class NewsController extends AppBaseController
     {
         if($request->get('email')){
             $request->validate([
-                'email' => 'unique:news',
+                'email' => 'unique:news'
             ]);
-            $ip = request()->ip();
             // Cette Api fournis 120 requêtes par minute
-            $geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
-            $country = $geoinformations->geoplugin_countryName;
+            //$geoinformations = json_decode(file_get_contents('http://www.geoplugin.net/json.gp?ip={$ip}'));
+            $ipapiinfos = json_decode(file_get_contents('http://ip-api.com/json/'));
+           // dd($ipapiinfos);
             $news = new News();
             $news->email = $request->email;
-            $news->pays = $country;
+            $news->ip = $ipapiinfos->query;
+            $news->pays = $ipapiinfos->country;
+            $news->region = $ipapiinfos->regionName;
+            $news->ville = $ipapiinfos->city;
+            $news->souscription_month = date('M');
+            $news->souscription_year = date('Y');
             $news->save();
             return response()->json($news);
         }
@@ -76,14 +82,52 @@ class NewsController extends AppBaseController
      *@author Charles
      */
 
-     public static function TotalSouscriptionsperCountry()
+     public static function PercentageSouscriptionsperCountry()
      {
-        $souscrivantnewssparpays = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
+        $totalOfSouscriptions = News::count();
+        $donnees = News::select(DB::raw('count(*) as NombredeSouscrivant, pays'))
         ->groupBy('pays')
         ->get();
-        return response()->json([
-            "message"=>"Données recupérer avec Succès",
-            "data"=>$souscrivantnewssparpays
-        ]);
+
+        if(!empty($donnees)){
+            return response()->json([
+                "data" =>$donnees
+            ]);
+        }
      }
+     /**
+      *
+      */
+      public static function Getnewsstats()
+      {
+        $stats = News::where('souscription_month', '!=',null)
+        ->where('souscription_year', '!=', null)
+        ->select(DB::raw('count(*) as NombredeSouscrivant,pays,souscription_month,souscription_year'))
+        ->groupBy('pays','souscription_month','souscription_year')
+        ->get();
+        if(!empty($stats)){
+            return response()->json([
+                "data"=>$stats
+            ]);
+        }
+      }
+      /**
+       *
+       */
+      public static function NewsStatsAll(){
+
+        $newsstats = News::where('souscription_month','!=', null)
+        ->where('souscription_year','!=',null)
+        ->select(DB::raw('count(*) as total,souscription_month,souscription_year'))
+        ->groupBy('souscription_month','souscription_year')
+        ->get();
+        /* $newsstats = News::select(DB::raw('count(*) as total,souscription_month,souscription_year'))
+        ->groupBy('souscription_month','souscription_year')
+        ->get(); */
+        if(!empty($newsstats)){
+            return response()->json([
+                "data" =>$newsstats
+            ]);
+        }
+      }
 }

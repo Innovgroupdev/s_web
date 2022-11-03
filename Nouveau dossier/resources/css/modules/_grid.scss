@@ -1,0 +1,28 @@
+%grid,.grid{
+  display: grid;
+  grid-column-gap: space(5);
+  grid-row-gap: space(2);
+  grid-template-columns: repeat(2,1fr);
+}
+
+.grid_first,.grid_second{
+  @extend %grid;
+  grid-gap: space(3);
+  grid-template-columns: 475px 1fr;
+  margin-bottom: 50px;
+}
+.grid_second{
+  grid-template-columns:  1fr 475px;
+}
+
+.grid_article{
+  @extend %grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: space(4);
+}
+
+.grid_offert{
+  @extend %grid;
+  grid-template-columns: repeat(2,240px);
+  grid-gap: 10%;
+}

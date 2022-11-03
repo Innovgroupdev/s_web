@@ -97,8 +97,8 @@
                     $i++;
                     @endphp
                     <div class="carousel-item @if($i == 1) active @endif">
-                        <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer" title="{{$categorie->lib}}">
-                            <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="{{$categorie->lib}}">
+                        <a href="{{$publicites->libelle}}" target="_blank" rel="noopener noreferrer" title="{{$publicites->libelle}}">
+                            <img class="d-block w-100 pub" src="{{asset($publicites->img_url)}}" alt="{{$publicites->libelle}}">
                         </a>
 
                     </div>
@@ -121,7 +121,8 @@
 <style>
     img.pub {
         border-radius: 5px;
-        height: 25rem
+        height: 25rem;
+        aspect-ratio: 496/701;
     }
 </style>
 <script>

@@ -1,0 +1,66 @@
+.btn{
+  padding: space(1) space(1);
+  font: $font;
+  border-radius: 2px;
+  border: 1px solid transparent ;
+  font-weight: 400;
+  font-size: 1.25em;
+  transition: $duration;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.btn__consulting{
+  color: white;
+  background-color: $consultingColor;
+
+  &:hover{
+    background: transparent;
+    color: $consultingColor;
+    border-color:$consultingColor;
+  }
+}
+.btn__green{
+  color: white;
+  background-color: $greenBusinessColor;
+
+  &:hover{
+    background: transparent;
+    color: $greenBusinessColor;
+    border-color:$greenBusinessColor;
+  }
+}
+
+.btn__primary{
+  color: $primaryColor;
+    border-color: $primaryColor;
+  background-color: transparent;
+    border-radius: 9px;
+;
+
+  &:hover{
+    background: $primaryColor;
+    color: white;
+    border-color:transparent;
+
+  }
+}
+
+.btn-secondary{
+  color: black;
+  background-color: white;
+  &:hover{
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+}
+
+.btn-darken{
+  color: white;
+  background-color: black;
+  &:hover{
+    background: transparent;
+    color: black;
+    border-color: black;
+  }
+}

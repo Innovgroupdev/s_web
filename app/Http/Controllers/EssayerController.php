@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Essayer;
+use App\Models\FuturUser;
 use App\Repositories\EssayerRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\InformerController;
+use App\Models\Informer;
 use Flash;
 use Response;
 
@@ -49,7 +53,7 @@ class EssayerController extends AppBaseController
         $request->validate([
             'numero' => 'required|min:5|unique:essayers',
         ]);
-     
+
         $essayer = new Essayer();
         $essayer->nom = $request->nom;
         $essayer->numero = $request->numero;
@@ -83,14 +87,62 @@ class EssayerController extends AppBaseController
     }
 
     /**
-     * 
+     *
      */
-
-     public static function Numberofessayers()
-     {
+     public static function Percentageessayers(){
         $numberofessayers = Essayer::count();
-
-        return $numberofessayers;
+        $data = Essayer::select(DB::raw('count(*) as nombreEssayers, pays'))
+        ->where('pays', '!=', 'null')
+        ->groupBy('pays')
+        ->get();
+        if(!empty($data)){
+            return response()->json([
+                "data" => $data
+            ]);
+        }
      }
+     public static function UserperCountry()
+     {
+        $essayersemails =  Essayer::all('numero','pays');
+        $informersemails = Informer::all('numero','pays');
+        foreach($essayersemails as $essayeruser){
+            $futuruser = new FuturUser;
+            $futuruser->numero = $essayeruser['numero'];
+            $futuruser->email = $essayeruser['email'];
+            $futuruser->pays = $essayeruser['pays'];
 
+            if(!FuturUser::where('numero', '=',$essayeruser['numero'])->exists()){
+                $futuruser->save();
+            }
+        }
+        foreach($informersemails as $informeruser){
+            $futuruser2= new FuturUser;
+            $futuruser2->email = $informeruser['email'];
+            $futuruser2->pays = $informeruser['pays'];
+            $futuruser2->numero = $informeruser['numero'];
+
+            if(!FuturUser::where('numero', '=',$informeruser['numero'])->exists()){
+                $futuruser2->save();
+            }
+        }
+        $userandNumber = FuturUser::select(DB::raw('count(*) as NombreUser, pays'))
+        ->groupBy('pays')
+        ->get();
+            if(!empty($userandNumber)){
+                return response()->json([
+                    "data" =>$userandNumber
+                ]);
+            }
+     }
+     public static function TotalUsers()
+     {
+        $datafinish = FuturUser::all('email');
+        if(!empty($datafinish)){
+            return $datafinish;
+        }
+     }
+        public static function TotalEssayers(){
+            $number = Essayer::count();
+            return $number;
+        }
 }
