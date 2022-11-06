@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\VisitlogController;
 use App\Models\Article;
 use App\Models\Categorie;
+use App\Models\Country;
 use App\Models\Commentaire;
 use App\Models\Publicite;
 use Illuminate\Http\Request;
@@ -51,7 +52,9 @@ class HomeController extends Controller
         $articles =  Article::orderBy('created_at', 'desc')->where('etat', 1)->paginate(12);
         $categories = $getCollections;
         $publicites = Publicite::all();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        $countries = Country::all();
+        //VisitLogController::CompterVisiteurs();
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives','countries']));
     }
 
    /*
@@ -124,7 +127,8 @@ class HomeController extends Controller
         }
         $categories = $getCollections;
         $articleCommentaires = Article::find($article->id)->commentaires;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires']));
+        $countries = Country::all();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires', 'countries']));
     }
 
     public function detail()
@@ -159,7 +163,8 @@ class HomeController extends Controller
             }
         }
         $categories = $getCollections;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        $countries = Country::all();
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives', 'countries']));
     }
 
     /*

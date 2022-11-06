@@ -35,6 +35,15 @@
         ]
     }
 </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','G-T4BZFY5676');
+    </script>
+    <!-- End Google Tag Manager -->
 @endsection
 @section('content')
     <div class="site-content-contain">
@@ -71,7 +80,7 @@
 
 
 
-                                                                            <a data-target="#exampleModalCenterHeader" data-toggle="modal" title="Modal Soyez informé au lancement de cible" class="button  button-icon " href="#">
+                                                                            <a data-target="#exampleModalCenterHeader" data-toggle="modal" title="Modal Soyez informé au lancement de cible" class="button  button-icon" id="informerBtnEvent" href="#">
                                                                                 Soyez informé au lancement </a>
 
 
@@ -1474,6 +1483,82 @@
         </div>
 
         <!-- =========================================Header================================================================================= -->
+        <div class="modal fade" id="exampleModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content pt-0">
+                    <!-- <div class="modal-header" style="border: none;">
+
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div> -->
+                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
+                        <div class="container-fluid p-0 m-0" style="position:relative">
+                        <!-- <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
+                            <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
+                            <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
+                            <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#fff">&times;</span>
+                            </button> -->
+                            <img src="{{ asset('images/a                           fficheGainImage1.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage1.jpeg')}}">
+                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#000">&times;</span>
+                            </button>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:900">Soyez informé au lancement !</h5>
+                                <p class="mb-0 pb-0">
+                                    Votre adresse email ne sera pas publiée.
+
+                                </p>
+                                <form id="informHeader" class="comment-form text-left">
+                                    @csrf
+                                    <div class="row my-4">
+                                        <div class="col-4 mb-3 pr-0 mr-0">
+                                            <select class="" required id="select_h">
+                                                <option value="" disabled hidden selected>Choix du pays</option>
+                                                @foreach ($countries as $country)
+                                                    <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-8 mb-3">
+                                            <input id="numberH" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
+                                        </div>
+                                        <div class="col-12">
+                                            <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
+                                        </div>
+                                        <div class="col-12 px-4">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input mr-3" type="checkbox" onchange="get_check()"  id="is_org">
+                                                <label class="form-check-label mt-1" style="cursor:pointer" for="is_org">
+                                                    Je suis un organisateur
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center text-danger mt-3">
+                                            <strong> <span id="error_informH" style="color:red!important"></span></strong>
+                                        </div>
+                                        <div class="col-12 mt-4 d-flex justify-content-center">
+
+                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
+                                        </div>
+                                    </div>
+
+                                </form>
+                        </div>
+
+                    </div>
+                    <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">D'accord</button>
+                                                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- =========================================Header================================================================================= -->
+
+        <!-- =========================================Header================================================================================= -->
         <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content pt-0">
@@ -1532,216 +1617,6 @@
 
                     </div>
 
-                </div>
-            </div>
-        </div>
-
-
-        <!-- =========================================Header================================================================================= -->
-        <div class="modal fade" id="exampleModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content pt-0">
-                    <!-- <div class="modal-header" style="border: none;">
-
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    </div> -->
-                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
-                        <div class="container-fluid p-0 m-0" style="position:relative">
-                        <!--<img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">-->
-                            <!--<div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>-->
-                        <!--<img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">-->
-                            <!--<button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">-->
-                            <!--    <span aria-hidden="true" style="color:#fff">&times;</span>-->
-                            <!--</button>-->
-                            <img src="{{ asset('images/afficheGainImage1.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage1.jpeg')}}">
-                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" style="color:#000">&times;</span>
-                            </button>
-                        </div>
-                        <div class="p-3">
-                            <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:900">Soyez informé au lancement !</h5>
-                                <p class="mb-0 pb-0">
-                                    Votre adresse email ne sera pas publiée.
-
-                                </p>
-                                <form id="informHeader" class="comment-form text-left">
-                                    @csrf
-                                    <div class="row my-4">
-                                        <div class="col-4 mb-3 pr-0 mr-0">
-                                            <select class="" required id="select_h">
-                                                <option value="" disabled hidden selected>Choix du pays</option>
-                                                @foreach ($countries as $country)
-                                                    <option value="{{$country->name}}" id="paysH">{{$country->name}} - {{$country->code}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-8 mb-3">
-                                            <input id="numberH" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                        </div>
-                                        <div class="col-12 mb-3">
-                                            <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
-                                        </div>
-                                        <div class="col-12 px-4">
-                                            <div class="form-check d-flex align-items-center">
-                                            <input class="form-check-input mr-3" type="checkbox" onchange="get_check()"  id="is_org">
-                                            <label class="form-check-label mt-1" style="cursor:pointer" for="is_org">
-                                                Je suis un organisateur
-                                            </label>
-                                        </div>
-                                        </div>
-                                        <div class="col-12 text-center text-danger mt-3">
-                                            <strong> <span id="error_informH" style="color:red!important"></span></strong>
-                                        </div>
-                                        <div class="col-12 mt-4 d-flex justify-content-center">
-
-                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
-                                        </div>
-                                    </div>
-
-                                </form>
-                        </div>
-
-                    </div>
-                    <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">D'accord</button>
-                                                    </div> -->
-                </div>
-            </div>
-        </div>
-        <!-- =========================================Header================================================================================= -->
-        <!-- =========================================Header================================================================================= -->
-        <div class="modal fade" id="exampleModalCenterHeaderGain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content pt-0">
-
-                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
-                        <div class="container-fluid p-0 m-0" style="position:relative">
-                            <img src="{{ asset('images/afficheGainImage.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.jpeg')}}">
-                            <button type="button" class="close" style="position:absolute;top:1rem;right: 0.5rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" style="color:#000">&times;</span>
-                            </button>
-                        </div>
-                        <div class="p-3">
-                            <h3 class="modal-title mt-4 h5 fw-600" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight:bold">Soyez informé au lancement !</h5>
-                                <p class="mb-0 pb-0 text-secondary">
-                                    Votre adresse email ne sera pas publiée.
-                                </p>
-                                <form id="informHeader" class="comment-form text-left">
-                                    @csrf
-                                    <div class="row my-4">
-                                        <div class="col-4 mb-3 pr-0 mr-0">
-                                            <select class="" required id="select_Gain">
-                                                <option value="" disabled hidden selected>Choix du pays</option>
-                                                @foreach ($countries as $country)
-                                                    <option value="{{$country->name}}" id="paysGain">{{$country->name}} - {{$country->code}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-8 mb-3">
-                                            <input id="numberGain" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                        </div>
-                                        <div class="col-12">
-                                            <input id="emailGain" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="is_organisateur">
-                                            <label class="form-check-label" for="defaultCheck1">
-                                                Je suis un organisateur
-                                            </label>
-                                        </div>
-                                        <div class="col-12 text-center text-danger mt-3">
-                                            <strong> <span id="error_informGain" style="color:red!important"></span></strong>
-                                        </div>
-
-                                        <div class="col-12 px-4">
-                                            <div class="form-check d-flex align-items-center">
-                                                <input class="form-check-input mr-3" type="checkbox" onchange="get_check_title()"  id="is_org_title">
-                                                <label class="form-check-label mt-1" style="cursor:pointer" for="is_org_title">
-                                                    Je suis un organisateur
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 mt-4 d-flex justify-content-center">
-
-                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
-                                        </div>
-                                    </div>
-
-                                </form>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- =========================================Header================================================================================= -->
-
-        <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content pt-0">
-                    <!-- <div class="modal-header" style="border: none;">
-
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    </div> -->
-                    <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
-                        <div class="container-fluid p-0 m-0" style="position:relative">
-                            <img src="{{ asset('images/FAQ.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/FAQ.jpg')}}">
-                            <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
-                            <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:3rem;left:3rem;transform:translate(-50%,-50%);width:3.5rem" alt="cible-app-logo">
-                            <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" style="color:#fff">&times;</span>
-                            </button>
-                        </div>
-                        <div class="p-3">
-                            <h4 class="modal-title mt-4 h5" id="exampleModalLongTitle" style="font-size: 1.5rem;font-weight : 900">Posez votre question !</h5>
-                                <p class="mb-0 pb-0">
-                                    Votre adresse email ne sera pas publiée.
-
-                                </p>
-                                <form id="poserQestion" class="comment-form text-left">
-                                    @csrf
-                                    <div class="row my-4">
-                                        <div class="col-4 mb-3 pr-0 mr-0">
-                                            <select class="" id="select_id_q" required>
-                                                <option value="" disabled hidden selected>Choix du pays</option>
-                                                @foreach ($countries as $country)
-                                                    <option value="{{$country->name}}" id="paysQ">{{$country->name}} - {{$country->code}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-8 mb-3">
-                                            <input id="telQ" placeholder="Numéro de téléphone" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required='required' />
-                                        </div>
-                                        <div class="col-12">
-                                            <input id="emailQ" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" />
-                                        </div>
-                                        <div class="col-12 my-3 ">
-                                            <textarea id="question" placeholder="Votre question " name="raison" type="text" value="" size="30" maxlength="100" aria-describedby="profession-notes" required></textarea>
-                                        </div>
-                                        <div class="col-12 text-center text-danger mt-3">
-                                            <strong> <span id="errorQ" style="color:red!important"></span></strong>
-                                        </div>
-                                        <div class="col-12 mt-4 d-flex justify-content-center">
-
-                                            <input name="submit" type="submit" class="submit w-50 mx-auto" value="Envoyer" />
-                                        </div>
-                                    </div>
-
-                                </form>
-                        </div>
-
-                    </div>
-                    <!-- <div class="modal-footer justify-content-center m-0 border-none" style="border: none;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">D'accord</button>
-                                                    </div> -->
                 </div>
             </div>
         </div>
@@ -1905,11 +1780,6 @@
                                         <div class="col-sm-8 mb-3">
                                             <input id="numeroE" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required />
                                         </div>
-                                        <div class="col-12 text-center">
-                                            <span id="error_informE" class="text-danger"></span>
-                                        </div>
-
-
                                         <div class="col-12 px-4">
                                             <div class="form-check d-flex align-items-center">
                                                 <input class="form-check-input mr-3" type="checkbox" onchange="get_check_cible()"  id="is_org_cible">
@@ -1917,6 +1787,9 @@
                                                     Je suis un organisateur
                                                 </label>
                                             </div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <span id="error_informE" class="text-danger"></span>
                                         </div>
                                         <div class="col-12 mt-4 d-flex justify-content-center">
 
@@ -1980,8 +1853,12 @@
         filter: grayscale(100%) */
             }
         </style>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
         <script>
+            // alert(1)
+            // $('#informerBtnEvent').modal('show')
+
+            //    document.getElementById('informerBtnEvent').modal('show');
             setTimeout(() => {
                 setCookieValueToInput('email', 'email');
                 setCookieValueToInput('nom', 'nomE');
@@ -2188,6 +2065,89 @@
                 });
             }
         </script>
+    <!-- <script>
+            const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
+            if (formCommentIn1) {
+                let pays_ = "";
+                $('#select_Gain').on('change', function() {
+                    pays_ = this.value;
+                    //alert(this.value); //or alert($(this).val());
+                });
+                formCommentIn1.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(e.target)
+                    //console.log(formData.entries())
+                    //    e.preventDefault();
+                    let pays = pays_
+                    let email = $("#emailGain").val();
+                    let numero = $("#numberGain").val();
+                    let _token = $("input[name=_token]").val();
+                    console.log(pays, $("#emailGain").val(), numero)
+                    //debugger
+                    $.ajax({
+                        url: "{{route('informer-enregistre')}}",
+                        type: "POST",
+                        data: {
+                            email: email,
+                            pays: pays,
+                            numero: numero,
+                            _token: _token
+                        },
+                        beforeSend: function() {
+                            let timerInterval;
+                            Swal.fire({
+                                title: 'Envoie en cours ...',
+                                html: 'Chargement dans <b></b> milliseconds.',
+                                timer: 1000000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading()
+                                    const b = Swal.getHtmlContainer().querySelector('b')
+                                    timerInterval = setInterval(() => {
+                                        b.textContent = Swal.getTimerLeft()
+                                    }, 100)
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval)
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    console.log('I was closed by the timer')
+                                }
+                            })
+                            setCookie('numero', numero, 180);
+                            setCookie('email', email, 180);
+                            setCookie('modalGain', 'true', 180);
+                        },
+                        success: function(response) {
+                            if (response) {
+
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text: "Vos informations ont été prises en compte avec succès",
+                                    showConfirmButton: true,
+                                })
+                                $('#informHeader')[0].reset();
+                                $('#error_informGain').hide();
+                                $('#informHeader')[0].hide();
+                            }
+                        },
+                        error: function() {
+                            $('#error_informGain').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Erreur !',
+                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                            })
+                        }
+
+                    });
+                });
+            }
+        </script> -->
 
         <script>
             const formBilleterie = document.querySelector("#informBilleterie");
@@ -2529,117 +2489,5 @@
                 });
             }
         </script>
-        <script>
-            const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
-            if (formCommentIn1) {
-                let pays_ = "";
-                $('#select_Gain').on('change', function() {
-                    pays_ = this.value;
-                    //alert(this.value); //or alert($(this).val());
-                });
-
-                var check_ = "";
-
-                function get_check_title(){
-                    const elem = document.querySelector('#is_org_title')
-                    if (elem.checked) {
-                        check_ = 1
-                        console.log(check_)
-                    } else {
-                        check_ = 0
-                        console.log(check_)
-                    }
-                }
-                formCommentIn1.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const formData = new FormData(e.target)
-                    //console.log(formData.entries())
-                    //    e.preventDefault();
-                    let pays = pays_
-                    let email = $("#emailGain").val();
-                    let numero = $("#numberGain").val();
-                    let is_organisateur = check_;
-                    let _token = $("input[name=_token]").val();
-                    console.log(pays, $("#emailGain").val(), numero)
-                    //debugger
-                    $.ajax({
-                        url: "{{route('informer-enregistre')}}",
-                        type: "POST",
-                        data: {
-                            email: email,
-                            pays: pays,
-                            numero: numero,
-                            is_organisateur: is_organisateur,
-                            _token: _token
-                        },
-                        beforeSend: function() {
-                            let timerInterval;
-                            Swal.fire({
-                                title: 'Envoie en cours ...',
-                                html: 'Chargement dans <b></b> milliseconds.',
-                                timer: 1000000,
-                                timerProgressBar: true,
-                                didOpen: () => {
-                                    Swal.showLoading()
-                                    const b = Swal.getHtmlContainer().querySelector('b')
-                                    timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                    }, 100)
-                                },
-                                willClose: () => {
-                                    clearInterval(timerInterval)
-                                }
-                            }).then((result) => {
-                                /* Read more about handling dismissals below */
-                                if (result.dismiss === Swal.DismissReason.timer) {
-                                    console.log('I was closed by the timer')
-                                }
-                            })
-                            setCookie('numero', numero, 180);
-                            setCookie('email', email, 180);
-                            setCookie('modalGain', 'true', 180);
-                        },
-                        success: function(response) {
-                            if (response) {
-
-
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text: "Vos informations ont été prises en compte avec succès",
-                                    showConfirmButton: true,
-                                })
-                                $('#informHeader')[0].reset();
-                                $('#error_informGain').hide();
-                                $('#informHeader')[0].hide();
-                            }
-                        },
-                        error: function() {
-                            $('#error_informGain').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Erreur !',
-                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                            })
-                        }
-
-                    });
-                });
-            }
-        </script>
-        <script>
-
-            $(window).on('load', function() {
-                var temp = getCookie('modalGain')
-                console.log(temp);
-                setTimeout(() => {
-                    if(temp == null){
-                        $('#exampleModalCenterHeaderGain').modal('show');
-                    }
-                }, 10000);
-            });
-
-        </script>
-
 
 @endsection
