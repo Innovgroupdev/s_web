@@ -61,6 +61,7 @@ class EssayerController extends AppBaseController
         $essayer->pays = $request->pays;
         $essayer->profession = $request->profession;
         $essayer->raison = $request->raison;
+        $essayer->is_organisateur = $request->is_organisateur;
         $essayer->save();
         return response()->json($essayer);
 

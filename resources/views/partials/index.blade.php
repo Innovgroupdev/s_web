@@ -35,6 +35,15 @@
         ]
     }
 </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','G-T4BZFY5676');
+    </script>
+    <!-- End Google Tag Manager -->
 @endsection
 @section('content')
     <div class="site-content-contain">
@@ -1494,7 +1503,7 @@
                                                     </div> -->
                     <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                         <div class="container-fluid p-0 m-0" style="position:relative">
-                            <!-- <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
+                        <!-- <img src="{{ asset('images/clible_app.jpg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/clible_app.jpg')}}">
                             <div style="position:absolute;top:0;left:0;background: linear-gradient(to bottom, rgba(252, 119, 50, 0.5) 0%, rgba(236, 68, 86, 0.5) 100%);" class="w-100 h-100"></div>
                             <img src="{{ asset("images/logo.png")}}" loading="lazy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:5rem" alt="cible-app-logo">
                             <button type="button" class="close" style="position:absolute;top:1.5rem;right:1rem;transform:translate(-50%,-50%);" data-dismiss="modal" aria-label="Close">
@@ -1528,6 +1537,14 @@
                                         <div class="col-12">
                                             <input id="emailH" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                         </div>
+                                        <div class="col-12 px-4">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input mr-3" type="checkbox" onchange="get_check()"  id="is_org">
+                                                <label class="form-check-label mt-1" style="cursor:pointer" for="is_org">
+                                                    Je suis un organisateur
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="col-12 text-center text-danger mt-3">
                                             <strong> <span id="error_informH" style="color:red!important"></span></strong>
                                         </div>
@@ -1549,7 +1566,7 @@
             </div>
         </div>
         <!-- =========================================Header================================================================================= -->
-        
+
         <!-- =========================================Header================================================================================= -->
         <div class="modal fade" id="FAQModalCenterHeader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1608,7 +1625,7 @@
                         </div>
 
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -1772,6 +1789,14 @@
                                         <div class="col-sm-8 mb-3">
                                             <input id="numeroE" placeholder="Numéro de téléphone" name="number" type="number" value="" size="30" maxlength="100" aria-describedby="number-notes" required />
                                         </div>
+                                        <div class="col-12 px-4">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input mr-3" type="checkbox" onchange="get_check_cible()"  id="is_org_cible">
+                                                <label class="form-check-label mt-1" style="cursor:pointer" for="is_org_cible">
+                                                    Je suis un organisateur
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="col-12 text-center">
                                             <span id="error_informE" class="text-danger"></span>
                                         </div>
@@ -1842,7 +1867,7 @@
             // alert(1)
             // $('#informerBtnEvent').modal('show')
 
-        //    document.getElementById('informerBtnEvent').modal('show');
+            //    document.getElementById('informerBtnEvent').modal('show');
             setTimeout(() => {
                 setCookieValueToInput('email', 'email');
                 setCookieValueToInput('nom', 'nomE');
@@ -1910,13 +1935,31 @@
             });
         </script>
         <script>
+
             const formCommentIn = document.querySelector("#informHeader");
+
             if (formCommentIn) {
                 let pays_ = "";
+                var check_ = "";
+                //let is_org = "";
                 $('#select_h').on('change', function() {
                     pays_ = this.value;
                     //alert(this.value); //or alert($(this).val());
                 });
+
+                var check_ = "";
+
+                function get_check(){
+                    const elem = document.querySelector('#is_org')
+                    if (elem.checked) {
+                        check_ = 1
+                        console.log(check_)
+                    } else {
+                        check_ = 0
+                        console.log(check_)
+                    }
+                }
+
                 formCommentIn.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const formData = new FormData(e.target)
@@ -1926,7 +1969,7 @@
                     let email = $("#emailH").val();
                     let numero = $("#numberH").val();
                     let _token = $("input[name=_token]").val();
-                    console.log(pays, $("#emailH").val(), numero)
+                    console.log(pays, $("#emailH").val(), numero, check_)
                     //debugger
                     $.ajax({
                         url: "{{route('informer-enregistre')}}",
@@ -1935,6 +1978,7 @@
                             email: email,
                             pays: pays,
                             numero: numero,
+                            is_organisateur: check_,
                             _token: _token
                         },
                         beforeSend: function() {
@@ -1955,7 +1999,7 @@
                                     clearInterval(timerInterval)
                                 }
                             }).then((result) => {
-                                /* Read more about handling dismissals below */
+                                /!* Read more about handling dismissals below *!/
                                 if (result.dismiss === Swal.DismissReason.timer) {
                                     console.log('I was closed by the timer')
                                 }
@@ -1991,7 +2035,7 @@
                 });
             }
         </script>
-        <!-- <script>
+    <!-- <script>
             const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
             if (formCommentIn1) {
                 let pays_ = "";
@@ -2243,16 +2287,29 @@
                     pays_ = this.value;
                     //alert(this.value); //or alert($(this).val());
                 });
+                var check_ = "";
+
+                function get_check_cible(){
+                    const elem = document.querySelector('#is_org_cible')
+                    if (elem.checked) {
+                        check_ = 1
+                        console.log(check_)
+                    } else {
+                        check_ = 0
+                        console.log(check_)
+                    }
+                }
                 formQues.addEventListener('submit', function(e) {
                     e.preventDefault();
                     let nom = $("#nomE").val();
                     let email = $("#emailE").val();
                     let numero = $("#numeroE").val();
                     let pays = pays_;
+                    let is_organisateur = check_;
                     let profession = $("#professionE").val();
                     let raison = $("#raisonE").val();
                     let _token = $("input[name=_token]").val();
-                    console.log(nom, pays, email, numero, profession, raison)
+                    console.log(nom, pays, email, numero, profession, raison, is_organisateur)
 
                     $.ajax({
                         url: "{{route('essayer-enregistre')}}",
@@ -2263,6 +2320,7 @@
                             email: email,
                             profession: profession,
                             raison: raison,
+                            is_organisateur: is_organisateur,
                             nom: nom,
                             _token: _token
                         },
@@ -2401,5 +2459,5 @@
                 });
             }
         </script>
-       
+
 @endsection

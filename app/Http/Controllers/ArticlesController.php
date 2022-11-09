@@ -74,7 +74,15 @@ class ArticlesController extends AppBaseController
         ]);
 
         $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
-        $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
+        $urlTitre = str_replace(':', '', strtolower($urlTitre));
+        $urlTitre = str_replace('?', '', strtolower($urlTitre));
+        $urlTitre = str_replace('!', '', strtolower($urlTitre));
+        $urlTitre = str_replace('(', '', strtolower($urlTitre));
+        $urlTitre = str_replace(')', '', strtolower($urlTitre));
+        $urlTitre = str_replace("'", '', strtolower($urlTitre));
+        $urlTitre = str_replace(',', '', strtolower($urlTitre));
+        $urlTitre = str_replace(';', '', strtolower($urlTitre));
+        $urlTitre = str_replace('.', '', strtolower($urlTitre));
         $urlTitre = str_replace('--', '-', strtolower($urlTitre));
 
         $user = auth()->user();
@@ -90,7 +98,7 @@ class ArticlesController extends AppBaseController
         $article->urlTitre =  $urlTitre;
         $fileName = time().$request->file('img')->getClientOriginalName();
         $path = $request->file('img')->storeAs('images', $fileName, 'public');
-        $article["img"] = '/storage/'.$path;
+        $article["img"] = '/storage/app/public/'.$path;
 
         $article->save();
 
@@ -162,8 +170,17 @@ class ArticlesController extends AppBaseController
             'contenu'=>'required|string|min:50',
             'desc'=>'required|string|min:10'
         ]);
+
         $urlTitre = str_replace(' ', '-', strtolower($request->libelle));
-        $urlTitre = preg_replace('/[^A-Za-z0-9\-]/', '',$urlTitre);
+        $urlTitre = str_replace(':', '', strtolower($urlTitre));
+        $urlTitre = str_replace('?', '', strtolower($urlTitre));
+        $urlTitre = str_replace('!', '', strtolower($urlTitre));
+        $urlTitre = str_replace('(', '', strtolower($urlTitre));
+        $urlTitre = str_replace(')', '', strtolower($urlTitre));
+        $urlTitre = str_replace("'", '', strtolower($urlTitre));
+        $urlTitre = str_replace(',', '', strtolower($urlTitre));
+        $urlTitre = str_replace(';', '', strtolower($urlTitre));
+        $urlTitre = str_replace('.', '', strtolower($urlTitre));
         $urlTitre = str_replace('--', '-', strtolower($urlTitre));
 
         $user = auth()->user();
@@ -175,7 +192,7 @@ class ArticlesController extends AppBaseController
             $article->urlTitre =  $urlTitre;
             $fileName = time().$request->file('img')->getClientOriginalName();
             $path = $request->file('img')->storeAs('images', $fileName, 'public');
-            $article->img = '/storage/'.$path;
+            $article->img = '/storage/app/public/'.$path;
             $article->user_id = $user->id;
             $article->categorie_id = $request->categorie_id;
             $article->contenu = $request->contenu;
@@ -225,7 +242,7 @@ class ArticlesController extends AppBaseController
                 }
             }
         }
-         Article::where('id',$id)->forceDelete();
+        Article::where('id',$id)->forceDelete();
 
         Flash::success('Article supprimé avec succès.');
 
@@ -249,14 +266,15 @@ class ArticlesController extends AppBaseController
         return redirect(route('articles.index'));
     }
 
-   /*
-    *  get all comments related to Article
-    * */
+    /*
+     *  get all comments related to Article
+     * */
     public function articleCommentaires($id)
     {
         $articleCommentaires = Article::find($id)->commentaires;
         return  $articleCommentaires;
     }
+
     /**
      * @author Charles
      * This method returns The tottal of vues for an article

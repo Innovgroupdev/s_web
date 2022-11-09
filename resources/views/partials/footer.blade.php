@@ -23,8 +23,8 @@
                     <div class="fancy-content">
                         <h5>Notre présence</h5>
                         <!-- <span class="lead"><a href="tel:+22899328853">+228 99 32 88 53</a></span> -->
-                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO | Benin | Burkina Faso </span> 
-                        
+                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO | Benin | Burkina Faso </span>
+
                         <!-- <p>Lundi – Vendredi : 09h 00 – 18h 00</p> -->
                     </div>
                 </div>
@@ -79,7 +79,7 @@
  <div class="modal fade" id="exampleModalCenterHeaderGain" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content pt-0">
-                  
+
                     <div class="modal-body text-center py-0 px-0" style="overflow : hidden">
                         <div class="container-fluid p-0 m-0" style="position:relative">
                             <img src="{{ asset('images/afficheGainImage.jpeg')}}" class="container-fluid p-0 m-0" loading="lazy" alt="" srcset="{{ asset('images/afficheGainImage.jpeg')}}">
@@ -109,6 +109,14 @@
                                         <div class="col-12">
                                             <input id="emailGain" placeholder="Email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes"  />
                                         </div>
+                                        <div class="col-12 px-4">
+                                            <div class="form-check d-flex align-items-center">
+                                                <input class="form-check-input mr-3" type="checkbox" onchange="get_check_title()"  id="is_org_title">
+                                                <label class="form-check-label mt-1" style="cursor:pointer" for="is_org_title">
+                                                    Je suis un organisateur
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="col-12 text-center text-danger mt-3">
                                             <strong> <span id="error_informGain" style="color:red!important"></span></strong>
                                         </div>
@@ -122,7 +130,7 @@
                         </div>
 
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -154,89 +162,104 @@
 </style>
 
 <script>
-            const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
-            if (formCommentIn1) {
-                let pays_ = "";
-                $('#select_Gain').on('change', function() {
-                    pays_ = this.value;
-                    //alert(this.value); //or alert($(this).val());
-                });
-                formCommentIn1.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const formData = new FormData(e.target)
-                    //console.log(formData.entries())
-                    //    e.preventDefault();
-                    let pays = pays_
-                    let email = $("#emailGain").val();
-                    let numero = $("#numberGain").val();
-                    let _token = $("input[name=_token]").val();
-                    console.log(pays, $("#emailGain").val(), numero)
-                    //debugger
-                    $.ajax({
-                        url: "{{route('informer-enregistre')}}",
-                        type: "POST",
-                        data: {
-                            email: email,
-                            pays: pays,
-                            numero: numero,
-                            _token: _token
-                        },
-                        beforeSend: function() {
-                            let timerInterval;
-                            Swal.fire({
-                                title: 'Envoie en cours ...',
-                                html: 'Chargement dans <b></b> milliseconds.',
-                                timer: 1000000,
-                                timerProgressBar: true,
-                                didOpen: () => {
-                                    Swal.showLoading()
-                                    const b = Swal.getHtmlContainer().querySelector('b')
-                                    timerInterval = setInterval(() => {
-                                        b.textContent = Swal.getTimerLeft()
-                                    }, 100)
-                                },
-                                willClose: () => {
-                                    clearInterval(timerInterval)
-                                }
-                            }).then((result) => {
-                                /* Read more about handling dismissals below */
-                                if (result.dismiss === Swal.DismissReason.timer) {
-                                    console.log('I was closed by the timer')
-                                }
-                            })
-                           
-                        },
-                        success: function(response) {
-                            if (response) {
-                                
-                                setCookie('numero', numero, 180);
-                                setCookie('email', email, 180);
-                                setCookie('modalGain', 'true', 180);
+    const formCommentIn1 = document.querySelector("#exampleModalCenterHeaderGain");
+    if (formCommentIn1) {
+        let pays_ = "";
+        $('#select_Gain').on('change', function() {
+            pays_ = this.value;
+            //alert(this.value); //or alert($(this).val());
+        });
 
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text: "Vos informations ont été prises en compte avec succès",
-                                    showConfirmButton: true,
-                                })
-                                $('#informHeader')[0].reset();
-                                $('#error_informGain').hide();
-                                $('#informHeader')[0].hide();
-                            }
-                        },
-                        error: function() {
-                            $('#error_informGain').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Erreur !',
-                                text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
-                            })
-                        }
+        var check_ = "";
 
-                    });
-                });
+        function get_check_title(){
+            const elem = document.querySelector('#is_org_title')
+            if (elem.checked) {
+                check_ = 1
+                console.log(check_)
+            } else {
+                check_ = 0
+                console.log(check_)
             }
-        </script>
+        }
+        formCommentIn1.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target)
+            //console.log(formData.entries())
+            //    e.preventDefault();
+            let pays = pays_
+            let email = $("#emailGain").val();
+            let numero = $("#numberGain").val();
+            let is_organisateur = check_;
+            let _token = $("input[name=_token]").val();
+            console.log(pays, $("#emailGain").val(), numero)
+            //debugger
+            $.ajax({
+                url: "{{route('informer-enregistre')}}",
+                type: "POST",
+                data: {
+                    email: email,
+                    pays: pays,
+                    numero: numero,
+                    is_organisateur: is_organisateur,
+                    _token: _token
+                },
+                beforeSend: function() {
+                    let timerInterval;
+                    Swal.fire({
+                        title: 'Envoie en cours ...',
+                        html: 'Chargement dans <b></b> milliseconds.',
+                        timer: 1000000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            const b = Swal.getHtmlContainer().querySelector('b')
+                            timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    }).then((result) => {
+                        /* Read more about handling dismissals below */
+                        if (result.dismiss === Swal.DismissReason.timer) {
+                            console.log('I was closed by the timer')
+                        }
+                    })
+                    setCookie('numero', numero, 180);
+                    setCookie('email', email, 180);
+                    setCookie('modalGain', 'true', 180);
+                },
+                success: function(response) {
+                    if (response) {
+
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Envoyé avec succès',
+                            text: "Vos informations ont été prises en compte avec succès",
+                            showConfirmButton: true,
+                        })
+                        $('#informHeader')[0].reset();
+                        $('#error_informGain').hide();
+                        $('#informHeader')[0].hide();
+                    }
+                },
+                error: function() {
+                    $('#error_informGain').html("<label class='text-danger'> Votre numéro ou email existe déjà </label>")
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erreur !',
+                        text: 'Le formulaire contient une ou plusieurs erreurs . \n Veuillez revérifier!',
+                    })
+                }
+
+            });
+        });
+    }
+</script>
+
 <script>
             $('#appino_subscription').submit(function(e) {
                 e.preventDefault();
@@ -279,18 +302,19 @@
         </script>
 
 
+
 <script>
-           
+
            $(window).on('load', function() {
               var temp = getCookie('modalGain')
            console.log(temp);
               setTimeout(() => {
-                  if(temp == null){   
+                  if(temp == null){
                       $('#exampleModalCenterHeaderGain').modal('show');
                   }
               }, 40000);   
           });
-           
+
       </script>
 <script async rel="preconnect" src="{{ asset('/js/js_composer_front.min31dc.js?ver=6.6.0')}}" id='wpb_composer_front_js-js'></script>
 <script async rel="preconnect" src="{{ asset('/js/bootstrap.min5152.js?ver=1.0')}}" id='bootstrap-js'></script>

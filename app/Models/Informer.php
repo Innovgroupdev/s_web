@@ -31,6 +31,7 @@ class Informer extends Model
     public $fillable = [
         // 'email',
         'pays',
+       // 'is_organisateur',
         'numero'
     ];
 
@@ -42,6 +43,7 @@ class Informer extends Model
     protected $casts = [
         'email' => 'string',
         'pays' => 'string',
+        //'is_organisateur' => 'boolean',
         'numero' => 'string'
     ];
 
@@ -53,6 +55,7 @@ class Informer extends Model
     public static $rules = [
 //        'email' => 'required',
         'pays' => 'required',
+        //'is_organisateur' => 'boolean',
         'numero' => 'required'
     ];
 
