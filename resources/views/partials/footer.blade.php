@@ -237,7 +237,46 @@
                 });
             }
         </script>
+<script>
+            $('#appino_subscription').submit(function(e) {
+                e.preventDefault();
+                let email = $("#email").val();
+                let _token = $("input[name=_token]").val();
+                let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
+                $.getJSON("https://ipapi.co/json", function(data){
+                    $.ajax({
+                        url: "{{route('enregistre')}}",
+                        type: "POST",
+                        data: {
+                            email: email,
+                            _token: _token,
+                            ip: data.ip,
+                            pays: data.country_name,
+                            region: data.region,
+                            ville: data.city
+                        },
+                        success: function(response) {
+                            if (response) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Envoyé avec succès',
+                                    text: "Vos informations ont été prises en compte avec succès",
+                                    showConfirmButton: true,
+                                })
+                                $('#appino_subscription')[0].reset();
+                                $('#error_email').hide();
+                            }
+                            setCookie('email', email, 180);
+                        },
+                        error: function() {
+                            $('#error_email').html('<label> Email existe déjà</label>')
+                        }
+
+                    });
+                });
+            });
+        </script>
 
 
 <script>
@@ -249,7 +288,7 @@
                   if(temp == null){   
                       $('#exampleModalCenterHeaderGain').modal('show');
                   }
-              }, 10000);   
+              }, 40000);   
           });
            
       </script>

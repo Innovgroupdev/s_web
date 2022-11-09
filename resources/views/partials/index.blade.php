@@ -226,16 +226,25 @@
                                                                 <div class="wpb_wrapper">
                                                                     <div class="heading-title text-left">
                                                                         <h2 class="title">Plus qu’une billetterie en ligne</h2>
-                                                                        <p>Avec CIBLE, trouvez des sponsors ou des investisseurs pour vos événements sans vous déplacer.
-                                                                        </p>
+                                                                        <!-- <p>Avec CIBLE, trouvez des sponsors ou des investisseurs pour vos événements sans vous déplacer.
+                                                                        </p> -->
                                                                     </div>
                                                                     <div class="wpb_text_column wpb_content_element ">
                                                                         <div class="wpb_wrapper">
-                                                                            <p>Recruter vos prestataires (organisateurs, restaurateurs, sonorisateurs, décorateurs…) et
+                                                                            <!-- <p>Recruter vos prestataires (organisateurs, restaurateurs, sonorisateurs, décorateurs…) et
                                                                                 choisissez le lieu idéal pour votre événement en moins de 1h depuis votre téléphone.
                                                                                 Invitez vos proches à vos anniversaires, mariages… Puis soyez informés
-                                                                                et participez à tous les événements gratuits.</p>
-
+                                                                                et participez à tous les événements gratuits.</p> -->
+                                                                        <ul class="iq-list">
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un véritable monde des affaires pour tout acteur événementiel     </span></li>
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un business à part entier pour gagner jusqu’à 250 000 FCFA/mois par recommandation
+                                                                        </span></li>
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span> Une place de location des salles et matériels pour vos événements</span></li>
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un carrefour des sponsors les plus sérieux </span></li>
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un évaluateur de la qualité des événements grâce aux enquêtes de satisfaction</span></li>
+                                                                        <li> <i aria-hidden="true" class="ion ion-android-done-all"></i> <span>Un lieu de recrutement des prestataires événementiels</span></li>
+ 
+                                                                    </ul>
                                                                         </div>
                                                                     </div>
                                                                     <div class="button-position text-left">
@@ -308,7 +317,7 @@
                                         </div>
                                     </div>
                                     <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid iq-video-live vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -488,7 +497,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="screenshots" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid iq-app-screenshots vc_custom_1548668011635 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
+                                    <div id="screenshots" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid iq-app-screenshots vc_custom_1548668011635 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -528,7 +537,7 @@
                                         </div>
                                     </div>
                                     <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div class="vc_row wpb_row vc_row-fluid">
+                                    <div class="vc_row wpb_row vc_row-fluid d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -710,7 +719,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid iq-loved-customers vc_custom_1548668656196 vc_row-has-fill">
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid iq-loved-customers vc_custom_1548668656196 vc_row-has-fill d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -989,7 +998,7 @@
                                         </div>
                                     </div>
                                     <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_custom_1549711819014 vc_row-has-fill vc_row-o-content-middle vc_row-flex vc_general vc_parallax vc_parallax-content-moving d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -1171,7 +1180,7 @@
                                         </div>
                                     </div>
                                     <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/cible_application_evennementiel.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving d-none">
                                         <div class="wpb_column vc_column_container vc_col-sm-12">
                                             <div class="vc_column-inner">
                                                 <div class="wpb_wrapper">
@@ -1866,46 +1875,7 @@
             }
         </script>
 
-        <script>
-            $('#appino_subscription').submit(function(e) {
-                e.preventDefault();
-                let email = $("#email").val();
-                let _token = $("input[name=_token]").val();
-                let filter = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-
-                $.getJSON("https://ipapi.co/json", function(data){
-                    $.ajax({
-                        url: "{{route('enregistre')}}",
-                        type: "POST",
-                        data: {
-                            email: email,
-                            _token: _token,
-                            ip: data.ip,
-                            pays: data.country_name,
-                            region: data.region,
-                            ville: data.city
-                        },
-                        success: function(response) {
-                            if (response) {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Envoyé avec succès',
-                                    text: "Vos informations ont été prises en compte avec succès",
-                                    showConfirmButton: true,
-                                })
-                                $('#appino_subscription')[0].reset();
-                                $('#error_email').hide();
-                            }
-                            setCookie('email', email, 180);
-                        },
-                        error: function() {
-                            $('#error_email').html('<label> Email existe déjà</label>')
-                        }
-
-                    });
-                });
-            });
-        </script>
+        
 
         <script>
             $('#inform').submit(function(e) {

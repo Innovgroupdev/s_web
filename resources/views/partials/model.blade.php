@@ -162,6 +162,59 @@ input[type=number] {
 }
    
 </style>
+<script>
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var sideBar = document.getElementById("sideBar");
+
+// Get the offset position of the navbar
+var sticky = sideBar.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    // console.log(sticky)
+    // console.log(window.pageYOffset)
+  if (window.pageYOffset  > 300) {
+    sideBar.classList.add("stickyPosition");
+  } else {
+    sideBar.classList.remove("stickyPosition");
+  }
+} 
+</script>
+<style>
+    .stickyPosition{
+        top: 80px!important;
+        position: sticky!important;
+        position: -webkit-sticky;
+        overflow:auto;
+    }
+    @media(max-width: 990px){
+        .stickyPosition{
+        top: 100px!important;}
+    }
+    @media (min-width: 767px) {
+        .stickyPosition .sideContent{
+            overflow: auto;
+            max-height:90vh ;
+        }
+        .site-content {
+            display: inline-block !important;
+            width: 100% !important;
+            float: left !important;
+            overflow: initial;
+            }
+    }   
+
+.site-content-contain > .vc_row.wpb_row.vc_row-fluid {
+  padding: 100px 0 !important;
+    padding-right: 0px;
+    padding-left: 0px;
+  overflow: inherit;
+}
+   
+</style>
 <script rel="preconnect"  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </html>

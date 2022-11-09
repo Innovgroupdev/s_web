@@ -58,7 +58,8 @@
         {!! Form::label('categorie_id', 'Categories:') !!}
         <select class="form-control" name="categorie_id">
             @foreach($categories as $cat)
-                <option value="{{$cat->id}}">
+                
+                <option value="{{$cat->id}}" @if($articles->categorie_id == $cat->id) selected @endif>
                     {{ $cat->lib }}
                 </option>
             @endforeach

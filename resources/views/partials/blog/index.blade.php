@@ -62,13 +62,13 @@
     </div>
 
 </section>
-<div class="site-content-contain blog">
+<div class="site-content-contain blog" >
     <div id="content" class="site-content">
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main">
                 <div class="container">
-                    <div class="row">
+                    <div class="row"  >
                         <div class="col-lg-8 col-md-7 col-sm-12">
                             <article id="post-879" class="post-879 post type-post status-publish format-image has-post-thumbnail hentry category-photography tag-picture post_format-post-format-image">
                                 @foreach($articles as $article)
@@ -135,8 +135,13 @@
 
                         </div>
 
-                        <div class="col-lg-4 col-md-5 col-sm-12">
-                            @include('partials.blog.aside')
+                        <div class="col-lg-4 col-md-5 col-sm-12" style="position: relative!important;">
+                           <div class="container-fluid m-0 p-0"  id="sideBar">
+                           <div class="container-fluid m-0 p-0 sideContent">
+                                 @include('partials.blog.aside')
+                           </div>
+                           </div>
+                           
                         </div>
                     </div><!-- #row -->
 
@@ -145,8 +150,78 @@
             </main><!-- #main -->
         </div><!-- #primary -->
     </div><!-- #content -->
+    <div class="vc_row-full-width vc_clearfix"></div>
+                                    <div id="contact" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-parallax="1.5" data-vc-parallax-image="{{ asset('images/Présentation_application_événementielle.jpg')}}" class="vc_row wpb_row vc_row-fluid vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
+                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                            <div class="vc_column-inner container">
+                                                <div class="wpb_wrapper">
+                                                    <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                            <div class="vc_column-inner">
+                                                                <div class="wpb_wrapper">
+                                                                    <div class="heading-title title-white text-center" style="color:#fff">
+                                                                        <h2 class="title">Souscrire à notre Newsletter
+                                                                        </h2>
+                                                                        <p>Ne manquez pas d'être informé sur nos nouvelles fonctionnalités
+                                                                            et de recevoir nos meilleurs articles autour de l'événementiel.
+                                                                            Soyez dans l’action ; agissez aujourd’hui.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                                                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                            <div class="vc_column-inner">
+                                                                <div class="wpb_wrapper ">
+                                                                    <div class="row justify-content-center">
+                                                                        <div class="col-lg-7">
+                                                                            <div class="text-center ">
+                                                                                <div class="widget_appino_widget">
+                                                                                    <form id="appino_subscription">
+                                                                                        @csrf
+                                                                                        <div class="email-form">
+                                                                                            <div class="newsletter-email d-flex" style="position:relative">
+                                                                                                <input placeholder="Entrez votre Adresse mail *" style="border-radius : 50px 0 0 50px" type="email" name="sub_email" class="news_text" id="email" required />
+                                                                                                <div class="alax-loader" style="position:absolute;left : 485px;top:10%">
+                                                                                                    <img loading="lazy" alt="chargement" src="{{ asset('images/ajax-loader.gif')}}" style="display:none;" id="loader" class="loading" />
+                                                                                                </div>
+                                                                                                <input type="submit" class="sub_button bg-dark" style="margin-left:-15%;background:#343a40!important" value="Soumettre">
 
+                                                                                            </div>
+                                                                                            <div class="email-subscribe">
+                                                                                                <span id="error_email" style="color:#fff!important"></span>
+
+                                                                                            </div>
+                                                                                            <div class="subscribe">
+                                                                                                <input type="hidden" name="action" value="subscribe" />
+                                                                                            </div>
+                                                                                            <div class="loading">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                    <div class="epic_results"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="newsletter-phone iq-mt-50 wow fadeInUp" data-wow-duration="1s">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="iq-background-overlay" id="overlay_873265226"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vc_row-full-width vc_clearfix"></div>
 </div><!-- .site-content-contain -->
 </div><!-- #page -->
+
+
 
 @endsection
