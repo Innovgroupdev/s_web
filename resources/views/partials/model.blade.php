@@ -198,6 +198,9 @@ function myFunction() {
         .stickyPosition .sideContent{
             overflow: auto;
             max-height:90vh ;
+            scrollbar-color: transparent transparent ;
+            scrollbar-width: 0px;
+            scrollbar-shadow-color: transparent;
         }
         .site-content {
             display: inline-block !important;
