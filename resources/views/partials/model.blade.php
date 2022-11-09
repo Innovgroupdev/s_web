@@ -195,12 +195,16 @@ function myFunction() {
         top: 100px!important;}
     }
     @media (min-width: 767px) {
+        .stickyPosition .sideContent::-webkit-scrollbar {
+  display: none;
+}
         .stickyPosition .sideContent{
             overflow: auto;
             max-height:90vh ;
-            scrollbar-color: transparent transparent ;
-            scrollbar-width: 0px;
-            scrollbar-shadow-color: transparent;
+            scrollbar-color: transparent transparent !important;
+            scrollbar-width: thin !important;
+             -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  
         }
         .site-content {
             display: inline-block !important;
