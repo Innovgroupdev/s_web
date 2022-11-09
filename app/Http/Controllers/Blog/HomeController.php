@@ -84,6 +84,7 @@ class HomeController extends Controller
     * */
     public function article($titre)
     {
+      //  dd($titre);
         $articles = Article::firstWhere('urlTitre', $titre);
         if(!$articles->etat){
             return abort('503');
@@ -174,7 +175,8 @@ class HomeController extends Controller
     {
         $categorie = Categorie::firstWhere('urlTitre', $titre);
         $catArticles = Categorie::find($categorie->id)->articles()->where('etat',1)->paginate(9);
-        return view('partials.blog.category',compact(['catArticles','categorie']));
+        $countries = Country::all();
+        return view('partials.blog.category',compact(['catArticles','categorie','countries']));
     }
     public function amen(Request $request){
         dd($request);

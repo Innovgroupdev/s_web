@@ -62,7 +62,18 @@ class CategoriesController extends AppBaseController
             'lib' => 'string|required|min:3|unique:categories'
         ]);
         $user = auth()->user();
+        //$urlTitre = str_replace(' ', '-', strtolower($request->lib));
         $urlTitre = str_replace(' ', '-', strtolower($request->lib));
+        $urlTitre = str_replace(':', '', strtolower($urlTitre));
+        $urlTitre = str_replace('?', '', strtolower($urlTitre));
+        $urlTitre = str_replace('!', '', strtolower($urlTitre));
+        $urlTitre = str_replace('(', '', strtolower($urlTitre));
+        $urlTitre = str_replace(')', '', strtolower($urlTitre));
+        $urlTitre = str_replace("'", '', strtolower($urlTitre));
+        $urlTitre = str_replace(',', '', strtolower($urlTitre));
+        $urlTitre = str_replace(';', '', strtolower($urlTitre));
+        $urlTitre = str_replace('.', '', strtolower($urlTitre));
+        $urlTitre = str_replace('--', '-', strtolower($urlTitre));
         $categorie = new Categorie();
         $categorie->lib = $request->lib;
         $categorie->desc = $request->desc;

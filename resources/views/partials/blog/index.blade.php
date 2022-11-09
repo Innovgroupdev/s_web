@@ -1,12 +1,12 @@
 @extends('partials.model')
 
 @section('ref')
-<title> Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils</title>
+<title> Meilleur Blog Evénementiel : Opportunités – Annonces – Conseils</title>
 <meta name="description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
 <link rel="canonical" href="{{url('/blog')}}" />
 <meta name="keywords" content="l’événementiel,cible,cible-app,fêtes,Concerts,festivals,formations,séminaires,cinéma,conférences,salons,foires,congrès,concours,affaires,comédie,Opportunités,Annonces,Conseils">
 <meta name="author" content="DIGITAL INNOV GROUP">
-<meta property="og:title" content="Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils">
+<meta property="og:title" content="Meilleur Blog Evénementiel : Opportunités – Annonces – Conseils">
 <meta property="og:site_name" content="CIBLE">
 <meta property="og:url" content="{{url('/blog')}}">
 <meta property="og:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
@@ -14,7 +14,7 @@
 <meta property="og:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
-<meta name="twitter:title" content="Meilleurs Blog Evénementiel : Opportunités – Annonces – Conseils">
+<meta name="twitter:title" content="Meilleur Blog Evénementiel : Opportunités – Annonces – Conseils">
 <meta name="twitter:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:description" content="Trouvez les articles sur vos artistes préférés, les célébrités tendances. Des partages d’astuces événementielles, des annonces d’événements gratuits, des articles sur les lieux (meilleurs endroits) à visiter dans chaque pays, les opportunités dans l’événementiel en Afrique. Les lieux pour organiser son événement et les organisateurs ou agences événementielles à contacter.">
 <script type="application/ld+json">
