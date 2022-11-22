@@ -23,7 +23,7 @@
                     <div class="fancy-content">
                         <h5>Notre présence</h5>
                         <!-- <span class="lead"><a href="tel:+22899328853">+228 99 32 88 53</a></span> -->
-                        <span class="lead">Sénégal | Côté d'ivoire | RDC | Cameroun | TOGO | Benin | Burkina Faso </span>
+                        <span class="lead">Sénégal | Côte d'ivoire | RDC | Cameroun | TOGO | Bénin | Burkina Faso </span>
 
                         <!-- <p>Lundi – Vendredi : 09h 00 – 18h 00</p> -->
                     </div>
