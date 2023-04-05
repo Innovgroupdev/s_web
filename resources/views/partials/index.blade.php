@@ -2342,7 +2342,7 @@
             });
         }
     </script>
-    <!-- <script type="application/javascript">
+<!-- <script type="application/javascript">
         //https://api.ipify.org?format=jsonp&callback=?
     $(function() {
         $.getJSON("https://ipapi.co/json",
@@ -2353,4 +2353,13 @@
         );
       });
 </script> -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYBQCCQPFS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EYBQCCQPFS');
+</script>
 @endsection
