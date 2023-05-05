@@ -29,12 +29,11 @@ class HomeController extends Controller
     public static function blog()
     {
         $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
-        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
+        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid', '=', '1')->take(5)->get();
         $articleCommentes = collect([]);
-        foreach( $articleCommentes1 as $articleCommente){
-            if($articleCommente->article){
-                if($articleCommente->article->etat == 1 )
-                {
+        foreach ($articleCommentes1 as $articleCommente) {
+            if ($articleCommente->article) {
+                if ($articleCommente->article->etat == 1) {
                     $articleCommentes->push($articleCommente);
                 }
             }
@@ -42,47 +41,46 @@ class HomeController extends Controller
         $articlePopFives = Article::orderBy('nbvue', 'desc')->where('etat', 1)->take(5)->get();
         $cats = Categorie::all();
         $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id)->where('etat', 1);
-            if ($art->count()>0 ){
+        foreach ($cats as $cat) {
+            $art = Article::where('categorie_id', $cat->id)->where('etat', 1);
+            if ($art->count() > 0) {
                 $getCollections = $getCollections->push($cat);
             }
         }
         $articles =  Article::orderBy('created_at', 'desc')->where('etat', 1)->paginate(12);
         $categories = $getCollections;
         $publicites = Publicite::all();
-        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        return view('partials.blog.index', compact(['articles', 'publicites', 'articleRecentFive', 'articleCommentes', 'categories', 'articlePopFives']));
     }
 
-   /*
+    /*
     *  search article
     * */
     public function search(Request $request)
     {
         $search =  $request->input('q');
-        if($search!=""){
-            $articles = Article::where(function ($query) use ($search){
-                $query->where('libelle', 'like', '%'.$search.'%')
-                    ->orWhere('contenu', 'like', '%'.$search.'%')
-                    ->orWhere('created_at', 'like', '%'.$search.'%');
+        if ($search != "") {
+            $articles = Article::where(function ($query) use ($search) {
+                $query->where('libelle', 'like', '%' . $search . '%')
+                    ->orWhere('contenu', 'like', '%' . $search . '%')
+                    ->orWhere('created_at', 'like', '%' . $search . '%');
             })->where('etat', 1)
                 ->paginate(12);
             $articles->appends(['q' => $search]);
-        }
-        else{
+        } else {
             $articles = Article::orderBy('created_at', 'desc')->where('etat', 1)->paginate(12);
             Flash::error('Article non trouvé');
         }
-        return view('partials.search', compact(['articles','search']));
+        return view('partials.search', compact(['articles', 'search']));
     }
 
-   /*
+    /*
     *  article detail
     * */
     public function article($titre)
     {
         $articles = Article::firstWhere('urlTitre', $titre);
-        if(!$articles->etat){
+        if (!$articles->etat) {
             return abort('503');
         }
         $nb = 0;
@@ -96,19 +94,18 @@ class HomeController extends Controller
         $publicites = Publicite::all();
         $cats = Categorie::all();
         $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id);
-            if ($art->count()>0){
+        foreach ($cats as $cat) {
+            $art = Article::where('categorie_id', $cat->id);
+            if ($art->count() > 0) {
                 $getCollections = $getCollections->push($cat);
             }
         }
         $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
-        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
+        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid', '=', '1')->take(5)->get();
         $articleCommentes = collect([]);
-         foreach( $articleCommentes1 as $articleCommente){
-            if($articleCommente->article){
-                if($articleCommente->article->etat == 1 )
-                {
+        foreach ($articleCommentes1 as $articleCommente) {
+            if ($articleCommente->article) {
+                if ($articleCommente->article->etat == 1) {
                     $articleCommentes->push($articleCommente);
                 }
             }
@@ -116,15 +113,15 @@ class HomeController extends Controller
         $articlePopFives = Article::orderBy('nbvue', 'desc')->where('etat', 1)->take(5)->get();
         $cats = Categorie::all();
         $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id)->where('etat', 1);
-            if ($art->count()>0 ){
+        foreach ($cats as $cat) {
+            $art = Article::where('categorie_id', $cat->id)->where('etat', 1);
+            if ($art->count() > 0) {
                 $getCollections = $getCollections->push($cat);
             }
         }
         $categories = $getCollections;
         $articleCommentaires = Article::find($article->id)->commentaires;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles','articleCommentes','categories','articlePopFives','articleCommentaires']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articles', 'articleCommentes', 'categories', 'articlePopFives', 'articleCommentaires']));
     }
 
     public function detail()
@@ -132,19 +129,18 @@ class HomeController extends Controller
         $publicites = Publicite::all();
         $cats = Categorie::all();
         $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id);
-            if ($art->count()>0){
+        foreach ($cats as $cat) {
+            $art = Article::where('categorie_id', $cat->id);
+            if ($art->count() > 0) {
                 $getCollections = $getCollections->push($cat);
             }
         }
         $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
-        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid','=','1')->take(5)->get();
+        $articleCommentes1 = Commentaire::orderBy('created_at', 'desc')->where('is_valid', '=', '1')->take(5)->get();
         $articleCommentes = collect([]);
-         foreach( $articleCommentes1 as $articleCommente){
-            if($articleCommente->article){
-                if($articleCommente->article->etat == 1 )
-                {
+        foreach ($articleCommentes1 as $articleCommente) {
+            if ($articleCommente->article) {
+                if ($articleCommente->article->etat == 1) {
                     $articleCommentes->push($articleCommente);
                 }
             }
@@ -152,14 +148,14 @@ class HomeController extends Controller
         $articlePopFives = Article::orderBy('nbvue', 'desc')->where('etat', 1)->take(5)->get();
         $cats = Categorie::all();
         $getCollections = collect([]);
-        foreach ($cats as $cat){
-            $art = Article::where('categorie_id',$cat->id)->where('etat', 1);
-            if ($art->count()>0 ){
+        foreach ($cats as $cat) {
+            $art = Article::where('categorie_id', $cat->id)->where('etat', 1);
+            if ($art->count() > 0) {
                 $getCollections = $getCollections->push($cat);
             }
         }
         $categories = $getCollections;
-        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive','articleCommentes','categories','articlePopFives']));
+        return view('partials.blog.detail', compact(['publicites', 'articleRecentFive', 'articleCommentes', 'categories', 'articlePopFives']));
     }
 
     /*
@@ -168,8 +164,12 @@ class HomeController extends Controller
     public function category($titre)
     {
         $categorie = Categorie::firstWhere('urlTitre', $titre);
-        $catArticles = Categorie::find($categorie->id)->articles()->where('etat',1)->paginate(9);
-        return view('partials.blog.category',compact(['catArticles','categorie']));
+        $catArticles = Categorie::find($categorie->id)->articles()->where('etat', 1)->paginate(9);
+        return view('partials.blog.category', compact(['catArticles', 'categorie']));
     }
 
+    public function functioning()
+    {
+        return view('partials.functioning');
+    }
 }
