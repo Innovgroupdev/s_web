@@ -1,8 +1,6 @@
 <aside id="secondary" class="widget-area" aria-label="Blog Sidebar">
     <div id="search-2" class="widget widget_search">
 
-
-
         <form method="get" class="search-form" action="{{url('/search/')}}">
             <label for="search-form-62d674f53a6e7">
                 <span class="screen-reader-text">Recherche pour:</span>

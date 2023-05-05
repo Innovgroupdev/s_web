@@ -107,6 +107,9 @@
                                             </li>
                                         </ul> -->
                                         </li>
+                                        <li id="menu-item-1041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1041">
+                                            <a href="{{route('functioning')}}" title="Fonctionnement de CIBLE">Fonctionnement</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

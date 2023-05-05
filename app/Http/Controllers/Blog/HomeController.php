@@ -172,4 +172,12 @@ class HomeController extends Controller
         return view('partials.blog.category',compact(['catArticles','categorie']));
     }
 
+    /**
+     * Create a new page
+     */
+
+     public function functioning(){
+        return view('partials.functioning');
+     }
+
 }

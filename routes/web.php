@@ -59,6 +59,10 @@ Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'
 Route::get('categorie/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
 Route::get('/validate-email',[App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
 
+// route for functioning page
+
+Route::get('/functionning', [App\Http\Controllers\Blog\HomeController::class, 'functioning'])->name('functioning');
+
 Route::resource('categories', App\Http\Controllers\CategoriesController::class);
 Route::resource('publicites', App\Http\Controllers\PublicitesController::class);
 Route::resource('articles', App\Http\Controllers\ArticlesController::class);
