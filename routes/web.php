@@ -27,12 +27,12 @@ Route::get('/', function () {
     $articleRecentFive = Article::orderBy('created_at', 'desc')->where('etat', 1)->take(5)->get();
     $countries = \App\Models\Country::all();
     $essayers = \App\Models\Essayer::all();
-    return view('partials.index',compact('countries','articleRecentFive','essayers'));
+    return view('partials.index', compact('countries', 'articleRecentFive', 'essayers'));
 });
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', function(Request $request){
+Route::get('/home', function (Request $request) {
     //CheckCookieController::checkcookiepresence($request);
     $articlewithnumbervues = ArticlesController::NumberofVues();
     //
@@ -49,7 +49,7 @@ Route::get('/home', function(Request $request){
     $numberessayers = EssayerController::TotalEssayers();
     $users = EssayerController::TotalUsers();
 
-    return view('home', compact('userandpercentage','statsofNews','users','numberessayers','articlewithnumbervues','percentagesouscription','numberofNewsSouscription','numberofaqs','questions','newsstats','percentageofessayers'));
+    return view('home', compact('userandpercentage', 'statsofNews', 'users', 'numberessayers', 'articlewithnumbervues', 'percentagesouscription', 'numberofNewsSouscription', 'numberofaqs', 'questions', 'newsstats', 'percentageofessayers'));
 })->name('home');
 
 Route::get('blog', [App\Http\Controllers\Blog\HomeController::class, 'blog'])->name('blog');
@@ -57,7 +57,9 @@ Route::get('/search/', [App\Http\Controllers\Blog\HomeController::class, 'search
 Route::get('blog/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'article']);
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('categorie/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
-Route::get('/validate-email',[App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
+Route::get('/validate-email', [App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
+// route for functioning page
+Route::get('functioning', [App\Http\Controllers\Blog\HomeController::class, 'functioning'])->name('functioning');
 
 // route for functioning page
 
@@ -79,5 +81,3 @@ Route::post("essayer-enregistre", [App\Http\Controllers\EssayerController::class
 Route::post("commentaire-enregistre", [App\Http\Controllers\CommentaireController::class, 'enregistreCom'])->name('commentaire-enregistre');
 Route::put("articles/etat/{id}", [App\Http\Controllers\ArticlesController::class, 'etat'])->name('etat');
 Route::put("/commentaire-update/{id}", [App\Http\Controllers\CommentaireController::class, 'updateDetail']);
-
-
