@@ -64,8 +64,9 @@
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="footer-copyright">
-                        Copyright 2021 <a href="http://www.innovgroup.tech/" target="_blank" rel="noopener noreferrer">DIGITAL INNOV GROUP</a> All
-                        Rights Reserved. </div>
+                        &copy; 2021DIGITAL INNOV GROUP. Tous droits réservés <a href="{{ url('/cgu') }}"
+                        title="TConditions Générales d'Utilisation">| CGU |</a> <a href="{{ url('/policy') }}"
+                        title="Tous droits réservés">Politique de Confidentialité .</a></div>
                 </div>
             </div>
         </div>

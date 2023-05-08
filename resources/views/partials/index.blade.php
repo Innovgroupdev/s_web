@@ -1,11 +1,11 @@
 @extends('partials.model')
 @section('ref')
-<title> Billetterie en ligne – Sponsors – Recrutement | CIBLE</title>
+<title> Billetterie en ligne – Evènements - Sponsors – Recrutement | CIBLE</title>
 <meta name="description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
 <link rel="canonical" href="{{url('/')}}" />
 <meta name="keywords" content="l’événementiel,cible,cible-app,fêtes,Concerts,festivals,formations,séminaires,cinéma,conférences,salons,foires,congrès,concours,affaires,comédie,Opportunités,Annonces,Conseils">
 <meta name="author" content="DIGITAL INNOV GROUP">
-<meta property="og:title" content="Billetterie en ligne – Sponsors – Recrutement | CIBLE">
+<meta property="og:title" content="Billetterie en ligne – Evènements - Sponsors – Recrutement | CIBLE">
 <meta property="og:site_name" content="CIBLE">
 <meta property="og:url" content="{{url('/')}}">
 <meta property="og:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
@@ -13,7 +13,7 @@
 <meta property="og:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@CIBLE">
-<meta name="twitter:title" content="Billetterie en ligne – Sponsors – Recrutement | CIBLE">
+<meta name="twitter:title" content="Billetterie en ligne – Evènements - Sponsors – Recrutement | CIBLE">
 <meta name="twitter:image" content="{{ asset("images/logo-cible.jpg")}}">
 <meta name="twitter:description" content="Nous digitalisons l’événementiel pour le bonheur des acteurs de tout type d’événement. Qu’il s’agisse de publier gratuitement un événement, de vendre ses tickets en ligne, de trouver un sponsor pour son événement, de recruter des hôtesses … Concerts, festivals, formations, séminaires, cinéma, conférences, salons, foires, congrès, concours, affaires, comédie…">
 <script type="application/ld+json">
