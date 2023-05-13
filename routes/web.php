@@ -60,15 +60,15 @@ Route::get('categorie/{titre?}', [App\Http\Controllers\Blog\HomeController::clas
 Route::get('/validate-email', [App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
 
 // route for functioning page
-Route::get('features', [App\Http\Controllers\Blog\HomeController::class, 'features'])->name('features');
+Route::get('les-fonctionnalites-de-cible', [App\Http\Controllers\Blog\HomeController::class, 'features'])->name('features');
 // route for termsOfService page
 Route::get('cgu', [App\Http\Controllers\Blog\HomeController::class, 'termsOfService'])->name('termsOfService');
 // route for policy page
-Route::get('policy', [App\Http\Controllers\Blog\HomeController::class, 'policy'])->name('policy');
+Route::get('la-politique-de-confidentialite', [App\Http\Controllers\Blog\HomeController::class, 'policy'])->name('policy');
 // route for about page
-Route::get('about', [App\Http\Controllers\Blog\HomeController::class, 'about'])->name('about');
+Route::get('a-propos-de-cible', [App\Http\Controllers\Blog\HomeController::class, 'about'])->name('about');
 // route for earnMoney page
-Route::get('earn-money', [App\Http\Controllers\Blog\HomeController::class, 'earnMoney'])->name('earnMoney');
+Route::get('comment-gagner-de-l-argent-sur-cible', [App\Http\Controllers\Blog\HomeController::class, 'earnMoney'])->name('earnMoney');
 
 Route::resource('categories', App\Http\Controllers\CategoriesController::class);
 Route::resource('publicites', App\Http\Controllers\PublicitesController::class);

@@ -70,25 +70,25 @@
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-658">
                                             <a href="{{ url('/') }}" title="page d'Accueil">Accueil</a>
                                         </li>
+                                        <li id="menu-item-552"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-552">
+                                            <a href="{{ url('/a-propos-de-cible') }}" title="A propos de CIBLE">A
+                                                propos de CIBLE</a>
+                                        </li>
                                         <li id="menu-item-553"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-553">
-                                            <a href="{{ url('/features') }}"
+                                            <a href="{{ url('/les-fonctionnalites-de-cible') }}"
                                                 title="Les fonctionnalités de l'application CIBLE">Fonctionnalités</a>
                                         </li>
                                         <li id="menu-item-554"
                                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554">
-                                            <a href="{{ url('/earn-money') }}"
-                                                title="Gagner de l'argent avec CIBLE">Gagner
+                                            <a href="{{ url('/comment-gagner-de-l-argent-sur-cible') }}"
+                                                title="Gagner de l'argent sur CIBLE">Gagner
                                                 de
                                                 l'argent</a>
                                         </li>
-                                        <li id="menu-item-552"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-552">
-                                            <a href="{{ url('/about') }}" title="A propos de CIBLE">A
-                                                propos</a>
-                                        </li>
                                         <!-- <li id="menu-item-556"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-556">
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-sitem-556">
                                         <a href="#pricing">Pricing</a></li> -->
                                         <!-- <li id="menu-item-1636"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1636">
