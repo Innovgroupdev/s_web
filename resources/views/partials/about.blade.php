@@ -131,9 +131,18 @@
                     événements auxquelles vous participez. Vous disposez d’une version pour Android et pour IPhone.<br />
 
                 </p>
-                <div class="d-flex gap-3 w-100 justify-content-around">
-                    <a href="">Téléchargement sur Play Store (Android)</a>
-                    <a href="">Téléchargement sur App Store (IPhone)</a>
+                <div class="d-flex gap-3 w-100 justify-content-around mb-5">
+                    <a href="https://play.google.com/store/apps/details?id=com.cibleapp.cible" target="_blank"
+                        class="store-link">
+                        <img src="{{ url('images/google-play.svg') }}" class="" alt="A propos de agnassan"
+                            style="width:10%" />
+                        <span>
+                            Téléchargement sur
+                            Play Store
+                            (Android)
+                        </span>
+                    </a>
+                    {{-- <a href="">Téléchargement sur App Store (IPhone)</a> --}}
                 </div>
                 {{-- <div class="d-flex gap-3 w-100 justify-content-between">
                     <a href="">
@@ -167,9 +176,18 @@
                     IPhone.<br />
                     Téléchargement sur Play Store (Android) Téléchargement sur App Store (IPhone)
                 </p>
-                <div class="d-flex gap-3 w-100 justify-content-around">
-                    <a href="">Téléchargement sur Play Store (Android)</a>
-                    <a href="">Téléchargement sur App Store (IPhone)</a>
+                <div class="d-flex gap-3 w-100 justify-content-around mb-5">
+                    <a href="https://play.google.com/store/apps/details?id=com.cibleapp.ciblepro" target="_blank"
+                        class="store-link">
+                        <img src="{{ url('images/google-play.svg') }}" class="" alt="A propos de agnassan"
+                            style="width:10%" />
+                        <span>
+                            Téléchargement sur
+                            Play Store
+                            (Android)
+                        </span>
+                    </a>
+                    {{-- <a href="">Téléchargement sur App Store (IPhone)</a> --}}
                 </div>
             </div>
             <div class="col-3 d-none d-lg-block  pt-0 pr-5 pt-xl-5 pt-xl-0">
@@ -200,11 +218,36 @@
                     code. Vous disposez d’une version pour Android et pour IPhone.<br />
                     Téléchargement sur Play Store (Android) Téléchargement sur App Store (IPhone)
                 </p>
-                <div class="d-flex gap-3 w-100 justify-content-around">
-                    <a href="">Téléchargement sur Play Store (Android)</a>
-                    <a href="">Téléchargement sur App Store (IPhone)</a>
+                <div class="d-flex gap-3 w-100 justify-content-around mb-5">
+                    <a href="https://play.google.com/store/apps/details?id=com.cibleapp.scan" target="_blank"
+                        class="store-link">
+                        <img src="{{ url('images/google-play.svg') }}" class="" alt="A propos de agnassan"
+                            style="width:10%" />
+                        <span>
+                            Téléchargement sur
+                            Play Store
+                            (Android)
+                        </span>
+                    </a>
+                    {{-- <a href="">Téléchargement sur App Store (IPhone)</a> --}}
                 </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .store-link {
+            background-color: #fc7732;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .store-link span {
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 @endsection
