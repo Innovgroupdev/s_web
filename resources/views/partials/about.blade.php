@@ -174,7 +174,6 @@
                     pour contrôler les accès à la salle de l’événement. C’est également grâce à elle qu’ils accèdent à leurs
                     facteurs et aux résultats des enquêtes de satisfaction. Vous disposez d’une version pour Android et pour
                     IPhone.<br />
-                    Téléchargement sur Play Store (Android) Téléchargement sur App Store (IPhone)
                 </p>
                 <div class="d-flex gap-3 w-100 justify-content-around mb-5">
                     <a href="https://play.google.com/store/apps/details?id=com.cibleapp.ciblepro" target="_blank"
@@ -216,7 +215,6 @@
                     préalable le code scan de l’événement auprès de l’organisateur va sélectionner son événement puis entrer
                     le
                     code. Vous disposez d’une version pour Android et pour IPhone.<br />
-                    Téléchargement sur Play Store (Android) Téléchargement sur App Store (IPhone)
                 </p>
                 <div class="d-flex gap-3 w-100 justify-content-around mb-5">
                     <a href="https://play.google.com/store/apps/details?id=com.cibleapp.scan" target="_blank"
