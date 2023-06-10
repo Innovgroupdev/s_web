@@ -1,12 +1,28 @@
 @extends('partials.model')
 
 @section('ref')
-    <title>A propos - CIBLE</title>
+    <title>Evènements - Réservation - Scan code QR - Gadgets - Sondages</title>
     <meta name="description"
-        content="Découvrez Cible, l'application d'événementiel qui simplifie la planification et l'organisation de vos événements. Notre mission est de vous offrir une expérience d'utilisation simple et intuitive, tout en vous proposant des fonctionnalités de pointe pour la gestion de vos événements. Nous nous engageons à offrir un service de qualité à nos utilisateurs et à les accompagner dans toutes les étapes de l'organisation de leurs événements. Consultez notre section À propos pour en savoir plus sur notre histoire, notre équipe et notre vision pour l'avenir chez Cible.">
+    content="Achetez vos e-tickets avec code QR. Obtenez vos gadgets souvenirs personnalisés et participez aux enquêtes de satisfaction via l’appli CIBLE">
     <link rel="canonical" href="{{ url('/a-propos-de-cible') }}" />
     <meta name="keywords"
-        content="l’événementiel,cible,cible-app,fêtes,Concerts,festivals,formations,séminaires,cinéma,conférences,salons,foires,congrès,concours,affaires,comédie,Opportunités,Annonces,Conseils">
+        content="CIBLE,
+        CIBLE PRO,
+        CIBLE SCAN,
+        Evènement,
+        Evènementiel,
+        Application Mobile,
+        Startup,
+        Afrique,
+        Innovation,
+        Green tech,
+        Tickets,
+        Gain,
+        Argent,
+        Sondages,
+        Gadgets,
+        Cadeaux"
+        >
     <meta name="author" content="DIGITAL INNOV GROUP">
     <meta property="og:title" content="A propos - CIBLE">
     <meta property="og:site_name" content="CIBLE">
@@ -197,12 +213,12 @@
 
         <div class="row bg-white">
             <div class="col-3 d-none d-lg-block  pt-0 pr-5 pt-xl-5 pt-xl-0">
-                <img src="{{ url('images/scanner_ticket_événementiel_CIBLE.png') }}" class="my-auto mt-md-5 mt-xl-0"
+                <img src="{{ url('images/scanner_ticket_evenementiel_CIBLE.png') }}" class="my-auto mt-md-5 mt-xl-0"
                     alt="A propos de cible" style="width:100%">
             </div>
             <div class="col-12 col-lg-9  pt-0 pt-xl-5 align-self-center">
                 <div class="col-10 col-md-8 mx-auto d-block d-lg-none mt-3 mb-5">
-                    <img src="{{ url('images/scanner_ticket_événementiel_CIBLE.png') }}" class="my-auto mt-md-5 mt-xl-0"
+                    <img src="{{ url('images/scanner_ticket_evenementiel_CIBLE.png') }}" class="my-auto mt-md-5 mt-xl-0"
                         alt="A propos de agnassan" style="width:100%">
                 </div>
                 <h3 class=" text-uppercase titre2" style="font-weight: bold!important">

@@ -38,6 +38,15 @@
         ]
     }
 </script>
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EYBQCCQPFS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EYBQCCQPFS');
+</script>
 @endsection
 @section('content')
     <div class="site-content-contain">
@@ -905,7 +914,6 @@
                                                         </li>
 
                                                     </ul>
-
 
                                                     <div class="vc_row wpb_row vc_inner vc_row-fluid" id="cp-par-view">
                                                         <div
