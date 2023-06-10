@@ -167,4 +167,12 @@ class HomeController extends Controller
         $catArticles = Categorie::find($categorie->id)->articles()->where('etat', 1)->paginate(9);
         return view('partials.blog.category', compact(['catArticles', 'categorie']));
     }
+
+    /**
+     * create a new Page
+     */
+
+     public function functioning(){
+        return view('partials.functioning');
+    }
 }
