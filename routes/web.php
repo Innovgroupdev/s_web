@@ -58,12 +58,17 @@ Route::get('blog/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'a
 Route::get('article', [App\Http\Controllers\Blog\HomeController::class, 'detail'])->name('detail');
 Route::get('categorie/{titre?}', [App\Http\Controllers\Blog\HomeController::class, 'category']);
 Route::get('/validate-email', [App\Http\Controllers\Blog\HomeController::class, 'validateEmail']);
-// route for functioning page
-Route::get('functioning', [App\Http\Controllers\Blog\HomeController::class, 'functioning'])->name('functioning');
 
 // route for functioning page
-
-Route::get('/functionning', [App\Http\Controllers\Blog\HomeController::class, 'functioning'])->name('functioning');
+Route::get('les-fonctionnalites-de-cible', [App\Http\Controllers\Blog\HomeController::class, 'features'])->name('features');
+// route for termsOfService page
+Route::get('cgu', [App\Http\Controllers\Blog\HomeController::class, 'termsOfService'])->name('termsOfService');
+// route for policy page
+Route::get('la-politique-de-confidentialite', [App\Http\Controllers\Blog\HomeController::class, 'policy'])->name('policy');
+// route for about page
+Route::get('a-propos-de-cible', [App\Http\Controllers\Blog\HomeController::class, 'about'])->name('about');
+// route for earnMoney page
+Route::get('comment-gagner-de-l-argent-sur-cible', [App\Http\Controllers\Blog\HomeController::class, 'earnMoney'])->name('earnMoney');
 
 Route::resource('categories', App\Http\Controllers\CategoriesController::class);
 Route::resource('publicites', App\Http\Controllers\PublicitesController::class);

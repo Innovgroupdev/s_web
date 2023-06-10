@@ -54,41 +54,48 @@
                 <div class="col-sm-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="/" title="logo CIBLE">
-                            <img class=" " style="width: clac(height*0,995666)!important;" src="{{ asset("images/logo.png")}}"  alt="cible-app logo">
+                            <img class=" " style="width: clac(height*0,995666)!important;"
+                                src="{{ asset('images/logo.png') }}" alt="cible-app logo">
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="ion-navicon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <div class="menu-main-menu-container">
                                 <div class="menu-top-menu-container">
                                     <ul id="top-menu" class="menu">
-                                        <li id="menu-item-658" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-658">
-                                            <a href="{{url('/')}}#home" title="page d'Accueil">Accueil</a>
+                                        <li id="menu-item-658"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-658">
+                                            <a href="{{ url('/') }}" title="page d'Accueil">Accueil</a>
                                         </li>
-                                        <li id="menu-item-552" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-552">
-                                            <a href="{{url('/')}}#about" title="A propos de l'équipe CIBLE">A propos</a>
+                                        <li id="menu-item-552"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-552">
+                                            <a href="{{ url('/a-propos-de-cible') }}" title="A propos de CIBLE">A
+                                                propos de CIBLE</a>
                                         </li>
-                                        <li id="menu-item-553" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-553">
-                                            <a href="{{url('/')}}#features" title="Les fonctionnalité de l'application CIBLE">Fonctionnalités</a>
+                                        <li id="menu-item-553"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-553">
+                                            <a href="{{ url('/les-fonctionnalites-de-cible') }}"
+                                                title="Les fonctionnalités de l'application CIBLE">Fonctionnalités</a>
                                         </li>
-                                        <li id="menu-item-554" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554">
-                                            <a href="{{url('/')}}#team" title="L'équipe CIBLE"> L’équipe </a>
-                                        </li>
-                                        <!-- <li id="menu-item-555"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-555">
-                                        <a href="#screenshots">FAQ </a></li> -->
-                                        <li id="menu-item-1041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1041">
-                                            <a href="{{url('/')}}#faq" title="Foire aux questions">FAQ</a>
+                                        <li id="menu-item-554"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-554">
+                                            <a href="{{ url('/comment-gagner-de-l-argent-sur-cible') }}"
+                                                title="Gagner de l'argent sur CIBLE">Gagner
+                                                de
+                                                l'argent</a>
                                         </li>
                                         <!-- <li id="menu-item-556"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-556">
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-sitem-556">
                                         <a href="#pricing">Pricing</a></li> -->
                                         <!-- <li id="menu-item-1636"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1636">
                                         <a href="shop-2/index.html">Shop</a></li> -->
-                                        <li id="menu-item-557" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-557">
-                                            <a href="{{route('blog')}}" title="BLOG - CIBLE">Blog</a>
+                                        <li id="menu-item-557"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-557">
+                                            <a href="{{ route('blog') }}" title="BLOG - CIBLE">Blog</a>
                                             <!-- <ul class="sub-menu">
                                             <li id="menu-item-571"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-571">
@@ -106,9 +113,6 @@
                                                 <a href="three-columns-blogs/index.html">Three Columns Blogs</a>
                                             </li>
                                         </ul> -->
-                                        </li>
-                                        <li id="menu-item-1041" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1041">
-                                            <a href="{{route('functioning')}}" title="Fonctionnement de CIBLE">Fonctionnement</a>
                                         </li>
                                     </ul>
                                 </div>

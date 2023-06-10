@@ -168,11 +168,25 @@ class HomeController extends Controller
         return view('partials.blog.category', compact(['catArticles', 'categorie']));
     }
 
-    /**
-     * create a new Page
-     */
+    public function features()
+    {
+        return view('partials.features');
+    }
 
-     public function functioning(){
-        return view('partials.functioning');
+    public function termsOfService()
+    {
+        return view('partials.termsOfService');
+    }
+    public function policy()
+    {
+        return view('partials.policy');
+    }
+    public function about()
+    {
+        return view('partials.about');
+    }
+    public function earnMoney()
+    {
+        return view('partials.earnMoney');
     }
 }
